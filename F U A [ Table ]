@@ -1,7 +1,3 @@
---  // Made by : MLord / Kai
--- || = ReceiveAge == 0 / Can manipulate
---  \\ = ReceiveAge ~= 0 / Either no owner or owner lost
-
 _G.F = {}
 _G.U = {}
 _G.A = {}

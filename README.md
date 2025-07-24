@@ -47,5 +47,6 @@ settings()["Physics"].AreRegionsShown = true
 ## Technical Notes
 
 Uses `ReceiveAge` property to determine Owner ( Not 100% reliable )
+
 Filters body parts and destroys trash
 Natural Disaster uses Weld system where Baseparts are constantly unanchored. New constructions spawn with unanchored AssemblyRootPart that only gets anchored later, wait(0.8) fixes this issue.

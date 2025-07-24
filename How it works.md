@@ -1,5 +1,3 @@
-A super simplified way to track which parts you can manipulate based on ownership status in Roblox.
-
 ## How it Works
 
 The script automatically categorizes all `Baseparts` in the workspace into three global tables:
@@ -14,6 +12,8 @@ The script automatically categorizes all `Baseparts` in the workspace into three
 
 ### Debug
 ```lua
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Kai1l1/Projects/refs/heads/main/F%20U%20A%20%5B%20Table%20%5D'))()
+
 -- // >> Color parts based on ownership status
 game:GetService("RunService").RenderStepped:Connect(function()
     for P in pairs(_G.F) do P.Color = Color3.fromRGB(255, 0, 0) end  -- // >> Red = Owned
@@ -23,6 +23,8 @@ end)
 
 ### Black Hole
 ```lua
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Kai1l1/Projects/refs/heads/main/F%20U%20A%20%5B%20Table%20%5D'))()
+
 -- // >> Example: Move all owned parts to your position
 local Players = game:GetService("Players")
 local Root = Players.LocalPlayer.Character.HumanoidRootPart

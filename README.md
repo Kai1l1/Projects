@@ -5,7 +5,9 @@ A super simplified way to track which parts you can manipulate based on ownershi
 The script automatically categorizes all `Baseparts` in the workspace into three global tables:
 
 **`_G.F`** = `ReceiveAge == 0` / **Can manipulate** ( you own these parts )
-**`_G.U`** = `ReceiveAge ~= 0` / **Either no owner or owner lost** ( unowned parts )  
+
+**`_G.U`** = `ReceiveAge ~= 0` / **Either no owner or owner lost** ( unowned parts )
+
 **`_G.A`** = **Anchored Baseparts** ( cannot be moved )
 
 ## Usage Example

@@ -14,12 +14,10 @@ The script automatically categorizes all `Baseparts` in the workspace into three
 ```lua
 loadstring(game:HttpGet("https://gist.githubusercontent.com/Kai1l1/c3fb5878ce43031ff660be508c096bd1/raw/3aa8dbe633a816abeb104fd5cdf095da395124f1/Table"))()
 
--- // >> Move all owned parts to your position in loop
-game:GetService("RunService").Heartbeat:Connect(function()
-    local Root = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart
-    for P in pairs(_G.F) do
-        P.CFrame = Root.CFrame
-    end
+-- // >> Color parts based on ownership status
+game:GetService("RunService").RenderStepped:Connect(function()
+    for P in pairs(_G.F) do P.Color = Color3.fromRGB(255, 0, 0) end  -- // >> Red = Owned
+    for P in pairs(_G.U) do P.Color = Color3.fromRGB(0, 0, 0) end    -- // >> Black = Unowned
 end)
 ```
 

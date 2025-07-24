@@ -1,0 +1,50 @@
+-- Made by : MLord / Kai
+-- F = ReceiveAge == 0 / Can manipulate
+-- U = ReceiveAge ~= 0 / Either no owner or owner lost
+
+_G.F = {}
+_G.U = {}
+_G.A = {}
+
+local Body = {}
+local Trash = {}
+
+for _, v in ipairs(("Head,Torso,Left Arm,Right Arm,Left Leg,Right Leg,HumanoidRootPart,Handle,UpperTorso,LowerTorso,LeftUpperArm,LeftLowerArm,LeftHand,RightUpperArm,RightLowerArm,RightHand,LeftUpperLeg,LeftLowerLeg,LeftFoot,RightUpperLeg,RightLowerLeg,RightFoot"):split(",")) do Body[v] = true end
+for _, v in ipairs(("Light,ParticleEmitter,Fire,Smoke,Beam,Trail,Explosion,Sound,BodyPosition,AlignPosition,LinearPosition,BodyVelocity,RocketPropulsion,VectorForce,LinearConstraints,AlignOrientation,Torque,AngularVelocity,HingeConstraint,BallSocketConstraint,CylindricalConstraint,AngularConstraint,BodyGyro,BodyAngularVelocity"):split(",")) do Trash[v] = true end
+
+local function Filter(P)
+    if not P:IsA("BasePart") or Body[P.Name] or not P.AssemblyRootPart or P.Parent == game:GetService("Players").LocalPlayer.Character then return end
+    P.CastShadow = false
+    for _, v in pairs(P:GetChildren()) do if Trash[v.ClassName] then v:Destroy() end end
+    if P.AssemblyRootPart.Anchored then _G.A[P] = true else _G[P.ReceiveAge == 0 and "F" or "U"][P] = true end
+end
+
+game:GetService("RunService").Heartbeat:Connect(function()
+    for P in pairs(_G.F) do
+        if not P.Parent then _G.F[P] = nil
+        elseif P.ReceiveAge ~= 0 then _G.F[P], _G.U[P] = nil, true end
+    end
+
+    for P in pairs(_G.U) do
+        if not P.Parent then _G.U[P] = nil
+        elseif P.ReceiveAge == 0 then _G.U[P], _G.F[P] = nil, true end
+    end
+
+    for P in pairs(_G.A) do
+        if not P.Parent then _G.A[P] = nil
+        elseif not P.AssemblyRootPart.Anchored then
+            _G.A[P] = nil
+            _G[P.ReceiveAge == 0 and "F" or "U"][P] = true
+        end
+    end
+end)
+
+for _, P in pairs(workspace:GetDescendants()) do Filter(P) end
+workspace.DescendantAdded:Connect(function(C)
+    if C:IsA("BasePart") then
+        task.spawn(function()
+            task.wait((game.PlaceId == 189707 or game.PlaceId == 7057417395) and 0.8 or 0)
+            Filter(C)
+        end)
+    end
+end)

@@ -4,9 +4,9 @@ A super simplified way to track which parts you can manipulate based on ownershi
 
 The script automatically categorizes all `Baseparts` in the workspace into three global tables:
 
-**`_G.F`** = `ReceiveAge == 0` / **Can manipulate** (you own these parts)
-**`_G.U`** = `ReceiveAge ~= 0` / **Either no owner or owner lost** (unowned parts)  
-**`_G.A`** = **Anchored Baseparts** (cannot be moved)
+**`_G.F`** = `ReceiveAge == 0` / **Can manipulate** ( you own these parts )
+**`_G.U`** = `ReceiveAge ~= 0` / **Either no owner or owner lost** ( unowned parts )  
+**`_G.A`** = **Anchored Baseparts** ( cannot be moved )
 
 ## Usage Example
 
@@ -44,7 +44,6 @@ settings()["Physics"].AreRegionsShown = true
 
 ## Technical Notes
 
-Uses `ReceiveAge` property to determine Owner (Not 100% reliable)
+Uses `ReceiveAge` property to determine Owner ( Not 100% reliable )
 Filters body parts and destroys trash
 Natural Disaster uses Weld system where Baseparts are constantly unanchored. New constructions spawn with unanchored AssemblyRootPart that only gets anchored later, wait(0.8) fixes this issue.
-Updates ownership status every heartbeat

@@ -9,7 +9,7 @@ for _, v in ipairs(("Head,Torso,Left Arm,Right Arm,Left Leg,Right Leg,HumanoidRo
 for _, v in ipairs(("Light,ParticleEmitter,Fire,Smoke,Beam,Trail,Explosion,Sound,BodyPosition,AlignPosition,LinearPosition,BodyVelocity,RocketPropulsion,VectorForce,LinearConstraints,AlignOrientation,Torque,AngularVelocity,HingeConstraint,BallSocketConstraint,CylindricalConstraint,AngularConstraint,BodyGyro,BodyAngularVelocity"):split(",")) do Trash[v] = true end
 
 local function Filter(P)
-    if not P:IsA("BasePart") or Body[P.Name] or not P.AssemblyRootPart then return end
+    if not P:IsA("BasePart") or Body[P.Name] or not P.AssemblyRootPart or P.Parent == game:GetService("Players").LocalPlayer.Character then return end
     P.CastShadow = false
     for _, v in pairs(P:GetChildren()) do if Trash[v.ClassName] then v:Destroy() end end
     if P.AssemblyRootPart.Anchored then _G.A[P] = true else _G[P.ReceiveAge == 0 and "F" or "U"][P] = true end

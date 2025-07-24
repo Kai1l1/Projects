@@ -12,7 +12,7 @@ The script automatically categorizes all `Baseparts` in the workspace into three
 
 ### Debug
 ```lua
-loadstring(game:HttpGet('https://raw.githubusercontent.com/Kai1l1/Projects/refs/heads/main/F%20U%20A%20%5B%20Table%20%5D'))()
+loadstring(game:HttpGet("https://gist.githubusercontent.com/Kai1l1/c3fb5878ce43031ff660be508c096bd1/raw/3aa8dbe633a816abeb104fd5cdf095da395124f1/Table"))()
 
 -- // >> Color parts based on ownership status
 game:GetService("RunService").RenderStepped:Connect(function()
@@ -23,7 +23,7 @@ end)
 
 ### Black Hole
 ```lua
-loadstring(game:HttpGet('https://raw.githubusercontent.com/Kai1l1/Projects/refs/heads/main/F%20U%20A%20%5B%20Table%20%5D'))()
+loadstring(game:HttpGet("https://gist.githubusercontent.com/Kai1l1/c3fb5878ce43031ff660be508c096bd1/raw/3aa8dbe633a816abeb104fd5cdf095da395124f1/Table"))()
 
 -- // >> Example: Move all owned parts to your position
 local Players = game:GetService("Players")

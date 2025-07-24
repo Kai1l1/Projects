@@ -25,11 +25,12 @@ end)
 ```lua
 loadstring(game:HttpGet("https://gist.githubusercontent.com/Kai1l1/c3fb5878ce43031ff660be508c096bd1/raw/3aa8dbe633a816abeb104fd5cdf095da395124f1/Table"))()
 
--- // >> Move all parts to your root
+-- // >> Move all owned parts to your position in loop
 game:GetService("RunService").Heartbeat:Connect(function()
     local Root = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart
     for P in pairs(_G.F) do
-        P.CFrame = Root.CFrame
+        P.AssemblyLinearVelocity = (Root.Position - P.Position) * 50
+        P.AssemblyAngularVelocity = Vector3.new(math.random(-50, 50), math.random(-50, 50), math.random(-50, 50))
         P.CanCollide = false
         P.Massless = true
     end

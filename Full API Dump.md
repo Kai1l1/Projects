@@ -1,31 +1,33 @@
-# Object
+# CLASSES
+
+## Object
 **Tags:** NotCreatable, NotReplicated
 
-## Properties
+### Properties
 ```
 ClassName: string [ReadOnly]
 className: string [ReadOnly] [Deprecated]
 ```
 
-## Functions
+### Functions
 ```
 GetPropertyChangedSignal(property: string) → RBXScriptSignal
 IsA(className: string) → bool
 isA(className: string) → bool [Deprecated]
 ```
 
-## Events
+### Events
 ```
 Changed(property: string)
 ```
 
 ---
 
-# Capture
+## Capture
 **Extends:** Object
 **Tags:** NotCreatable, NotReplicated
 
-## Properties
+### Properties
 ```
 CaptureTime: DateTime [ReadOnly]
 CaptureType: CaptureType = __api_dump_failed_to_create_class__ [ReadOnly]
@@ -36,17 +38,17 @@ SourceUniverseId: int64 = __api_dump_failed_to_create_class__ [ReadOnly]
 
 ---
 
-# ScreenshotCapture
+## ScreenshotCapture
 **Extends:** Capture
 **Tags:** NotCreatable, NotReplicated
 
 ---
 
-# VideoCapture
+## VideoCapture
 **Extends:** Capture
 **Tags:** NotCreatable, NotReplicated
 
-## Properties
+### Properties
 ```
 FilePath: string = __api_dump_failed_to_create_class__ [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity] [ReadOnly]
 TimeLength: double = __api_dump_failed_to_create_class__ [ReadOnly]
@@ -54,42 +56,42 @@ TimeLength: double = __api_dump_failed_to_create_class__ [ReadOnly]
 
 ---
 
-# ConfigSnapshot
+## ConfigSnapshot
 **Extends:** Object
 **Tags:** NotCreatable, NotReplicated
 
-## Properties
+### Properties
 ```
 Error: ConfigSnapshotErrorState [ReadOnly]
 Outdated: bool [ReadOnly]
 ```
 
-## Functions
+### Functions
 ```
 GetValue(key: string, defaultValue: Variant) → Variant
 GetValueChangedSignal(key: string) → RBXScriptSignal
 Refresh() → null
 ```
 
-## Events
+### Events
 ```
 UpdateAvailable()
 ```
 
 ---
 
-# EditableImage
+## EditableImage
 **Extends:** Object
 **Tags:** NotCreatable
 
-## Properties
+### Properties
 ```
 ImageData: BinaryString = __api_dump_failed_to_create_class__ [Read:RobloxSecurity] [Write:RobloxSecurity]
 IsReplicatedCopy: bool = __api_dump_failed_to_create_class__ [Read:RobloxSecurity] [Write:RobloxSecurity]
 Size: Vector2 = __api_dump_failed_to_create_class__ [ReadOnly]
 ```
 
-## Functions
+### Functions
 ```
 Destroy() → null
 DrawCircle(center: Vector2, radius: int, color: Color3, transparency: float, combineType: ImageCombineType) → null
@@ -105,11 +107,11 @@ WritePixelsBuffer(position: Vector2, size: Vector2, buffer: buffer) → null
 
 ---
 
-# EditableMesh
+## EditableMesh
 **Extends:** Object
 **Tags:** NotCreatable
 
-## Properties
+### Properties
 ```
 FixedSize: bool = __api_dump_failed_to_create_class__ [Write:RobloxSecurity] [ReadOnly]
 IsReplicatedCopy: bool = __api_dump_failed_to_create_class__ [Read:RobloxSecurity] [Write:RobloxSecurity]
@@ -117,7 +119,7 @@ MeshData: SharedString [Read:RobloxSecurity] [Write:RobloxSecurity]
 SkinningEnabled: bool = __api_dump_failed_to_create_class__ [Deprecated]
 ```
 
-## Functions
+### Functions
 ```
 AddBone(boneProperties: Dictionary) → int64
 AddColor(color: Color3, alpha: float) → int64
@@ -207,11 +209,11 @@ Triangulate() → null
 
 ---
 
-# Instance
+## Instance
 **Extends:** Object
 **Tags:** NotCreatable, NotBrowsable
 
-## Properties
+### Properties
 ```
 Archivable: bool
 Attributes: string [Read:RobloxSecurity] [Write:RobloxSecurity] [ReadOnly]
@@ -233,7 +235,7 @@ archivable: bool [Deprecated]
 numExpectedDirectChildren: int
 ```
 
-## Functions
+### Functions
 ```
 AddTag(tag: string) → null
 ClearAllChildren() → null
@@ -275,7 +277,7 @@ isDescendantOf(ancestor: Instance) → bool [Deprecated]
 remove() → null [Deprecated]
 ```
 
-## Events
+### Events
 ```
 AncestryChanged(child: Instance, parent: Instance)
 AttributeChanged(attribute: string)
@@ -290,10 +292,10 @@ childAdded(child: Instance)
 
 ---
 
-# AccessoryDescription
+## AccessoryDescription
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 AccessoryType: AccessoryType = Unknown
 AssetId: int64 = 0
@@ -306,18 +308,18 @@ Rotation: Vector3 = 0, 0, 0
 Scale: Vector3 = 1, 1, 1
 ```
 
-## Functions
+### Functions
 ```
 GetAppliedInstance() → Instance
 ```
 
 ---
 
-# AccountService
+## AccountService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 DeviceAccessTokenAvailable() → bool [RobloxScriptSecurity]
 DeviceIntegrityAvailable() → bool [RobloxScriptSecurity]
@@ -328,17 +330,17 @@ GetDeviceAccessToken() → string [RobloxScriptSecurity]
 GetDeviceIntegrityTokenYield(data: string) → string [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 MagicLoginEvent(data: string) [RobloxScriptSecurity]
 ```
 
 ---
 
-# Accoutrement
+## Accoutrement
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 AttachmentForward: Vector3 = -0, -0, -1
 AttachmentPoint: CFrame
@@ -348,7 +350,7 @@ AttachmentUp: Vector3 = 0, 1, 0
 BackendAccoutrementState: int = 0
 ```
 
-## Events
+### Events
 ```
 ServerEquipAccoutrement(character: Instance) [RobloxSecurity]
 ServerUnequipAccoutrement(oldCharacter: Instance) [RobloxSecurity]
@@ -356,27 +358,27 @@ ServerUnequipAccoutrement(oldCharacter: Instance) [RobloxSecurity]
 
 ---
 
-# Accessory
+## Accessory
 **Extends:** Accoutrement
 
-## Properties
+### Properties
 ```
 AccessoryType: AccessoryType = Unknown
 ```
 
 ---
 
-# Hat
+## Hat
 **Extends:** Accoutrement
 **Tags:** Deprecated
 
 ---
 
-# AchievementService
+## AchievementService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 IsAvailable() → bool [RobloxScriptSecurity]
 GrantAchievement(achievementName: string) → bool [RobloxScriptSecurity]
@@ -385,28 +387,28 @@ HasAchieved(achievementName: string) → bool [RobloxScriptSecurity]
 
 ---
 
-# ActivityHistoryEventService
+## ActivityHistoryEventService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
-## Events
+### Events
 ```
 WriteActivityHistoryEventFromStudio(eventType: int, resourceId: int64, metadata: string) [RobloxScriptSecurity]
 ```
 
 ---
 
-# AdPortal
+## AdPortal
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 PortalInvalidReason: string [ReadOnly]
 PortalVersion: int64 = 1 [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity] [ReadOnly]
 Status: AdUnitStatus = Inactive [ReadOnly]
 ```
 
-## Functions
+### Functions
 ```
 TeleportConfirmed(placeId: int64, player: Player) → null [RobloxScriptSecurity]
 TeleportRejected(shouldCooldown: bool, rejectedByDistance: bool) → null [RobloxScriptSecurity]
@@ -414,11 +416,11 @@ TeleportRejected(shouldCooldown: bool, rejectedByDistance: bool) → null [Roblo
 
 ---
 
-# AdService
+## AdService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
-## Functions
+### Functions
 ```
 CreateAdRewardFromDevProductId(devProductId: int64) → AdReward
 GetAdTeleportInfo() → Tuple [RobloxScriptSecurity]
@@ -435,7 +437,7 @@ RegisterAdOpportunityAsync(instance: Instance, placementId: int64?) → null
 ShowRewardedVideoAdAsync(player: Player, reward: AdReward, placementId: int64?) → ShowAdResult
 ```
 
-## Events
+### Events
 ```
 AdTeleportEnded() [RobloxScriptSecurity]
 AdTeleportInitiated() [RobloxScriptSecurity]
@@ -457,21 +459,21 @@ rewardedVideoAdResultClientToServer(result: ShowAdResult, encryptedAdTrackingDat
 
 ---
 
-# AdvancedDragger
+## AdvancedDragger
 **Extends:** Instance
 
 ---
 
-# AnalyticsService
+## AnalyticsService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Properties
+### Properties
 ```
 ApiKey: string [Read:LocalUserSecurity] [Write:LocalUserSecurity] [Deprecated]
 ```
 
-## Functions
+### Functions
 ```
 FireCustomEvent(player: Instance, eventCategory: string, customData: Variant) → null [Deprecated]
 FireEvent(category: string, value: Variant) → null [Deprecated]
@@ -490,21 +492,21 @@ LogProgressionStartEvent(player: Player, progressionPathName: string, level: int
 
 ---
 
-# Animation
+## Animation
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 AnimationId: ContentId
 ```
 
 ---
 
-# AnimationClip
+## AnimationClip
 **Extends:** Instance
 **Tags:** NotCreatable
 
-## Properties
+### Properties
 ```
 Guid: string [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
 GuidBinaryString: BinaryString [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
@@ -514,20 +516,20 @@ Priority: AnimationPriority
 
 ---
 
-# CurveAnimation
+## CurveAnimation
 **Extends:** AnimationClip
 
 ---
 
-# KeyframeSequence
+## KeyframeSequence
 **Extends:** AnimationClip
 
-## Properties
+### Properties
 ```
 AuthoredHipHeight: float = 2 [Read:PluginSecurity] [Write:PluginSecurity]
 ```
 
-## Functions
+### Functions
 ```
 AddKeyframe(keyframe: Instance) → null
 GetKeyframes() → Instances
@@ -536,11 +538,11 @@ RemoveKeyframe(keyframe: Instance) → null
 
 ---
 
-# AnimationClipProvider
+## AnimationClipProvider
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 GetAnimationClip(assetId: ContentId) → AnimationClip [PluginSecurity] [Deprecated]
 GetAnimationClipById(assetId: int64, useCache: bool) → AnimationClip [PluginSecurity] [Deprecated]
@@ -554,27 +556,27 @@ GetClipEvaluatorAsync(assetId: ContentId) → ClipEvaluator
 
 ---
 
-# AnimationController
+## AnimationController
 **Extends:** Instance
 
-## Functions
+### Functions
 ```
 GetPlayingAnimationTracks() → Array [Deprecated]
 LoadAnimation(animation: Animation) → AnimationTrack [Deprecated]
 ```
 
-## Events
+### Events
 ```
 AnimationPlayed(animationTrack: AnimationTrack)
 ```
 
 ---
 
-# AnimationFromVideoCreatorService
+## AnimationFromVideoCreatorService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
-## Functions
+### Functions
 ```
 CreateJob(filePath: string) → string [RobloxScriptSecurity]
 DownloadJobResult(jobId: string, outputFilePath: string) → string [RobloxScriptSecurity]
@@ -584,11 +586,11 @@ GetJobStatus(jobId: string) → string [RobloxScriptSecurity]
 
 ---
 
-# AnimationFromVideoCreatorStudioService
+## AnimationFromVideoCreatorStudioService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 IsAgeRestricted() → bool [RobloxScriptSecurity]
 CreateAnimationByUploadingVideo(progressCallback: Function) → string [RobloxScriptSecurity]
@@ -597,10 +599,10 @@ ImportVideoWithPrompt() → string [RobloxScriptSecurity]
 
 ---
 
-# AnimationRigData
+## AnimationRigData
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 label: BinaryString = 
 name: BinaryString = 
@@ -610,7 +612,7 @@ preTransform: BinaryString = 
 transform: BinaryString = 
 ```
 
-## Functions
+### Functions
 ```
 LoadFromHumanoid(humanoid: Instance) → bool [RobloxScriptSecurity]
 LoadFromModel(model: Instance) → bool [RobloxScriptSecurity]
@@ -618,11 +620,11 @@ LoadFromModel(model: Instance) → bool [RobloxScriptSecurity]
 
 ---
 
-# AnimationStreamTrack
+## AnimationStreamTrack
 **Extends:** Instance
 **Tags:** NotCreatable, NotReplicated
 
-## Properties
+### Properties
 ```
 Animation: TrackerStreamAnimation [ReadOnly]
 FACSDataLod: FACSDataLod [ReadOnly]
@@ -632,7 +634,7 @@ WeightCurrent: float [ReadOnly]
 WeightTarget: float [ReadOnly]
 ```
 
-## Functions
+### Functions
 ```
 AdjustWeight(weight: float, fadeTime: float) → null [RobloxScriptSecurity]
 GetActive() → bool [RobloxScriptSecurity]
@@ -642,18 +644,18 @@ Stop(fadeTime: float) → null [RobloxScriptSecurity]
 TogglePause(paused: bool) → null [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 Stopped() [RobloxScriptSecurity]
 ```
 
 ---
 
-# AnimationTrack
+## AnimationTrack
 **Extends:** Instance
 **Tags:** NotCreatable
 
-## Properties
+### Properties
 ```
 Animation: Animation [ReadOnly]
 IsPlaying: bool [ReadOnly]
@@ -666,7 +668,7 @@ WeightCurrent: float [ReadOnly]
 WeightTarget: float [ReadOnly]
 ```
 
-## Functions
+### Functions
 ```
 AdjustSpeed(speed: float) → null
 AdjustWeight(weight: float, fadeTime: float) → null
@@ -679,7 +681,7 @@ SetTargetInstance(name: string, target: Instance) → null
 Stop(fadeTime: float) → null
 ```
 
-## Events
+### Events
 ```
 DidLoop()
 Ended()
@@ -689,10 +691,10 @@ Stopped()
 
 ---
 
-# Animator
+## Animator
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 EvaluationThrottled: bool = false [ReadOnly]
 FacsReplicationData: FacsReplicationData [Read:RobloxSecurity] [Write:RobloxSecurity]
@@ -701,7 +703,7 @@ RootMotion: CFrame [ReadOnly]
 RootMotionWeight: float = 0 [ReadOnly]
 ```
 
-## Functions
+### Functions
 ```
 ApplyJointVelocities(motors: Variant) → null
 GetPlayingAnimationTracks() → Array
@@ -716,7 +718,7 @@ StepAnimations(deltaTime: float) → null [PluginSecurity]
 SynchronizeWith(otherAnimator: Animator) → null [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 AnimationPlayed(animationTrack: AnimationTrack)
 AnimationPlayedCoreScript(animationTrack: AnimationTrack) [RobloxScriptSecurity]
@@ -730,10 +732,10 @@ StreamSyncRequest(player: Player) [RobloxSecurity]
 
 ---
 
-# Annotation
+## Annotation
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 AuthorColor3: Color3 = 0, 0, 0 [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
 AuthorId: int64 = 0 [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
@@ -748,14 +750,14 @@ Resolved: bool = false [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
 TaggedUsers: string [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
 ```
 
-## Functions
+### Functions
 ```
 GetRequests() → Dictionary [RobloxScriptSecurity]
 GetStringUniqueId() → string [RobloxScriptSecurity]
 IsThreadParent() → bool [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 RequestCompleted(requestId: string, requestType: AnnotationRequestType, result: AnnotationRequestStatus) [RobloxScriptSecurity]
 RequestInitiated(requestId: string, requestType: AnnotationRequestType) [RobloxScriptSecurity]
@@ -763,16 +765,16 @@ RequestInitiated(requestId: string, requestType: AnnotationRequestType) [RobloxS
 
 ---
 
-# WorkspaceAnnotation
+## WorkspaceAnnotation
 **Extends:** Annotation
 
-## Properties
+### Properties
 ```
 Adornee: PVInstance [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
 AdorneeOffset: Vector3 = 0, 0, 0 [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
 ```
 
-## Functions
+### Functions
 ```
 GetAbsolutePosition() → Vector3 [RobloxScriptSecurity]
 SetAdorneeOffsetFromAbsolutePosition(position: Vector3) → null [RobloxScriptSecurity]
@@ -780,11 +782,11 @@ SetAdorneeOffsetFromAbsolutePosition(position: Vector3) → null [RobloxScriptSe
 
 ---
 
-# AnnotationsService
+## AnnotationsService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
-## Properties
+### Properties
 ```
 AnnotationsLoadingStatus: AnnotationRequestStatus = Loading [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
 AnnotationsVisible: bool = true [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
@@ -794,7 +796,7 @@ ResolvedLoadingStatus: AnnotationRequestStatus = Loading [Read:RobloxScriptSecur
 Selected: Annotation [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
 ```
 
-## Functions
+### Functions
 ```
 CreateAnnotation(annotation: Annotation) → null [RobloxScriptSecurity]
 DeleteAnnotation(annotation: Annotation) → null [RobloxScriptSecurity]
@@ -806,7 +808,7 @@ LoadResolvedAnnotations(count: int) → null [RobloxScriptSecurity] [Deprecated]
 ResolveAnnotation(annotation: Annotation, resolved: bool) → null [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 AnnotationAdded(requestId: string, annotation: Annotation, channelId: string) [RobloxScriptSecurity]
 AnnotationDeleted(requestId: string, annotation: Annotation) [RobloxScriptSecurity]
@@ -819,11 +821,11 @@ ServerLoadResolvedAnnotations(count: int) [RobloxSecurity]
 
 ---
 
-# AppLifecycleObserverService
+## AppLifecycleObserverService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 GetCurrentState() → AppLifecycleManagerState [RobloxScriptSecurity]
 IsDidDetachSupported() → bool [RobloxScriptSecurity]
@@ -831,7 +833,7 @@ TriggerOnLandingPageMount() → null [RobloxScriptSecurity]
 TriggerOnLuaAppInteractive() → null [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 OnBecomeActive() [RobloxScriptSecurity]
 OnDetach() [RobloxScriptSecurity]
@@ -843,11 +845,11 @@ OnUnhide() [RobloxScriptSecurity]
 
 ---
 
-# AppUpdateService
+## AppUpdateService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 CanPerformBinaryUpdate() → bool [RobloxScriptSecurity]
 CheckForUpdate(handler: Function) → null [RobloxScriptSecurity]
@@ -856,17 +858,17 @@ PerformManagedUpdate() → bool [RobloxScriptSecurity]
 
 ---
 
-# AssetCounterService
+## AssetCounterService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
 ---
 
-# AssetDeliveryProxy
+## AssetDeliveryProxy
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Properties
+### Properties
 ```
 Interface: string
 Port: int = 0
@@ -875,11 +877,11 @@ StartServer: bool = false
 
 ---
 
-# AssetImportService
+## AssetImportService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 GetAllPresets() → Dictionary [RobloxScriptSecurity]
 GetPreset(name: string) → Dictionary [RobloxScriptSecurity]
@@ -894,11 +896,11 @@ StartSessionWithPathAsync(filePath: string) → AssetImportSession [RobloxScript
 
 ---
 
-# AssetManagerService
+## AssetManagerService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 GetMeshIdFromAliasName(aliasName: string) → int64 [RobloxScriptSecurity]
 GetMeshIdFromAssetId(assetId: int64) → int64 [RobloxScriptSecurity]
@@ -925,7 +927,7 @@ RenameModel(modelId: int64, newName: string) → null [RobloxScriptSecurity]
 RenamePlace(placeId: int64, newName: string) → null [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 AssetImportedSignal(assetType: AssetType, assetId: string, assetName: int64) [RobloxScriptSecurity]
 ImportSessionFinished() [RobloxScriptSecurity]
@@ -934,11 +936,11 @@ ImportSessionStarted() [RobloxScriptSecurity]
 
 ---
 
-# AssetPatchSettings
+## AssetPatchSettings
 **Extends:** Instance
 **Tags:** NotCreatable, NotReplicated
 
-## Properties
+### Properties
 ```
 ContentId: string
 OutputPath: string
@@ -947,11 +949,11 @@ PatchId: string
 
 ---
 
-# AssetService
+## AssetService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
-## Functions
+### Functions
 ```
 CreateEditableImage(editableImageOptions: Dictionary?) → EditableImage
 CreateEditableMesh(editableMeshOptions: Dictionary?) → EditableMesh
@@ -979,7 +981,7 @@ SavePlaceAsync() → null
 SearchAudio(searchParameters: AudioSearchParams) → AudioPages
 ```
 
-## Events
+### Events
 ```
 AudioMetadataFailedResponse(requestid: int64) [RobloxScriptSecurity]
 AudioMetadataRequest(requestid: int64, request: Array) [RobloxScriptSecurity]
@@ -990,10 +992,10 @@ OpenPublishResultModal(resultType: PromptPublishAssetResult) [RobloxScriptSecuri
 
 ---
 
-# Atmosphere
+## Atmosphere
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 Color: Color3 = 0.7843, 0.6667, 0.4235
 Decay: Color3 = 0.3608, 0.2353, 0.0549
@@ -1005,10 +1007,10 @@ Offset: float = 0
 
 ---
 
-# Attachment
+## Attachment
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 Axis: Vector3 = 1, 0, 0
 CFrame: CFrame
@@ -1025,7 +1027,7 @@ WorldRotation: Vector3 = -0, 0, -0 [ReadOnly] [Deprecated]
 WorldSecondaryAxis: Vector3 = 0, 1, 0
 ```
 
-## Functions
+### Functions
 ```
 GetAxis() → Vector3 [Deprecated]
 GetConstraints() → Instances
@@ -1036,10 +1038,10 @@ SetSecondaryAxis(axis: Vector3) → null [Deprecated]
 
 ---
 
-# Bone
+## Bone
 **Extends:** Attachment
 
-## Properties
+### Properties
 ```
 Transform: CFrame
 TransformedCFrame: CFrame [ReadOnly]
@@ -1048,10 +1050,10 @@ TransformedWorldCFrame: CFrame [ReadOnly]
 
 ---
 
-# AudioAnalyzer
+## AudioAnalyzer
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 PeakLevel: float = 0 [ReadOnly]
 RmsLevel: float = 0 [ReadOnly]
@@ -1059,7 +1061,7 @@ SpectrumEnabled: bool = true
 WindowSize: AudioWindowSize = Medium
 ```
 
-## Functions
+### Functions
 ```
 GetConnectedWires(pin: string) → Instances
 GetInputPins() → Array
@@ -1067,61 +1069,61 @@ GetOutputPins() → Array
 GetSpectrum() → Array
 ```
 
-## Events
+### Events
 ```
 WiringChanged(connected: bool, pin: string, wire: Wire, instance: Instance)
 ```
 
 ---
 
-# AudioChannelMixer
+## AudioChannelMixer
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 Layout: AudioChannelLayout = Stereo
 ```
 
-## Functions
+### Functions
 ```
 GetConnectedWires(pin: string) → Instances
 GetInputPins() → Array
 GetOutputPins() → Array
 ```
 
-## Events
+### Events
 ```
 WiringChanged(connected: bool, pin: string, wire: Wire, instance: Instance)
 ```
 
 ---
 
-# AudioChannelSplitter
+## AudioChannelSplitter
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 Layout: AudioChannelLayout = Stereo
 ```
 
-## Functions
+### Functions
 ```
 GetConnectedWires(pin: string) → Instances
 GetInputPins() → Array
 GetOutputPins() → Array
 ```
 
-## Events
+### Events
 ```
 WiringChanged(connected: bool, pin: string, wire: Wire, instance: Instance)
 ```
 
 ---
 
-# AudioChorus
+## AudioChorus
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 Bypass: bool = false
 Depth: float = 0.449999988
@@ -1129,24 +1131,24 @@ Mix: float = 0.850000024
 Rate: float = 5
 ```
 
-## Functions
+### Functions
 ```
 GetConnectedWires(pin: string) → Instances
 GetInputPins() → Array
 GetOutputPins() → Array
 ```
 
-## Events
+### Events
 ```
 WiringChanged(connected: bool, pin: string, wire: Wire, instance: Instance)
 ```
 
 ---
 
-# AudioCompressor
+## AudioCompressor
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 Attack: float = 0.100000001
 Bypass: bool = false
@@ -1157,24 +1159,24 @@ Release: float = 0.100000001
 Threshold: float = -40
 ```
 
-## Functions
+### Functions
 ```
 GetConnectedWires(pin: string) → Instances
 GetInputPins() → Array
 GetOutputPins() → Array
 ```
 
-## Events
+### Events
 ```
 WiringChanged(connected: bool, pin: string, wire: Wire, instance: Instance)
 ```
 
 ---
 
-# AudioDeviceInput
+## AudioDeviceInput
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 AccessList: BinaryString [Read:RobloxSecurity] [Write:RobloxSecurity]
 AccessType: AccessModifierType = Deny
@@ -1186,7 +1188,7 @@ Player: Player
 Volume: float = 1
 ```
 
-## Functions
+### Functions
 ```
 GetConnectedWires(pin: string) → Instances
 GetInputPins() → Array
@@ -1195,62 +1197,62 @@ GetUserIdAccessList() → Array
 SetUserIdAccessList(userIds: Array) → null
 ```
 
-## Events
+### Events
 ```
 WiringChanged(connected: bool, pin: string, wire: Wire, instance: Instance)
 ```
 
 ---
 
-# AudioDeviceOutput
+## AudioDeviceOutput
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 Player: Player
 ```
 
-## Functions
+### Functions
 ```
 GetConnectedWires(pin: string) → Instances
 GetInputPins() → Array
 GetOutputPins() → Array
 ```
 
-## Events
+### Events
 ```
 WiringChanged(connected: bool, pin: string, wire: Wire, instance: Instance)
 ```
 
 ---
 
-# AudioDistortion
+## AudioDistortion
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 Bypass: bool = false
 Level: float = 0.5
 ```
 
-## Functions
+### Functions
 ```
 GetConnectedWires(pin: string) → Instances
 GetInputPins() → Array
 GetOutputPins() → Array
 ```
 
-## Events
+### Events
 ```
 WiringChanged(connected: bool, pin: string, wire: Wire, instance: Instance)
 ```
 
 ---
 
-# AudioEcho
+## AudioEcho
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 Bypass: bool = false
 DelayTime: float = 1
@@ -1260,7 +1262,7 @@ RampTime: float = 0
 WetLevel: float = 0
 ```
 
-## Functions
+### Functions
 ```
 GetConnectedWires(pin: string) → Instances
 GetInputPins() → Array
@@ -1268,17 +1270,17 @@ GetOutputPins() → Array
 Reset() → null [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 WiringChanged(connected: bool, pin: string, wire: Wire, instance: Instance)
 ```
 
 ---
 
-# AudioEmitter
+## AudioEmitter
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 AngleAttenuation: BinaryString [Read:RobloxSecurity] [Write:RobloxSecurity]
 AudioInteractionGroup: string
@@ -1287,7 +1289,7 @@ PositionOverride: Instance [Read:RobloxSecurity] [Write:RobloxSecurity]
 SimulationFidelity: AudioSimulationFidelity = Automatic
 ```
 
-## Functions
+### Functions
 ```
 GetAngleAttenuation() → Dictionary
 GetAudibilityFor(listener: AudioListener) → float
@@ -1300,17 +1302,17 @@ SetAngleAttenuation(curve: Dictionary) → null
 SetDistanceAttenuation(curve: Dictionary) → null
 ```
 
-## Events
+### Events
 ```
 WiringChanged(connected: bool, pin: string, wire: Wire, instance: Instance)
 ```
 
 ---
 
-# AudioEqualizer
+## AudioEqualizer
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 Bypass: bool = false
 Editor: bool = false [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
@@ -1320,47 +1322,47 @@ MidGain: float = 0
 MidRange: NumberRange = 400 4000 
 ```
 
-## Functions
+### Functions
 ```
 GetConnectedWires(pin: string) → Instances
 GetInputPins() → Array
 GetOutputPins() → Array
 ```
 
-## Events
+### Events
 ```
 WiringChanged(connected: bool, pin: string, wire: Wire, instance: Instance)
 ```
 
 ---
 
-# AudioFader
+## AudioFader
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 Bypass: bool = false
 Volume: float = 1
 ```
 
-## Functions
+### Functions
 ```
 GetConnectedWires(pin: string) → Instances
 GetInputPins() → Array
 GetOutputPins() → Array
 ```
 
-## Events
+### Events
 ```
 WiringChanged(connected: bool, pin: string, wire: Wire, instance: Instance)
 ```
 
 ---
 
-# AudioFilter
+## AudioFilter
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 Bypass: bool = false
 Editor: bool = false [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
@@ -1370,7 +1372,7 @@ Gain: float = 0
 Q: float = 0.707000017
 ```
 
-## Functions
+### Functions
 ```
 GetConnectedWires(pin: string) → Instances
 GetGainAt(frequency: float) → float
@@ -1378,17 +1380,17 @@ GetInputPins() → Array
 GetOutputPins() → Array
 ```
 
-## Events
+### Events
 ```
 WiringChanged(connected: bool, pin: string, wire: Wire, instance: Instance)
 ```
 
 ---
 
-# AudioFlanger
+## AudioFlanger
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 Bypass: bool = false
 Depth: float = 0.449999988
@@ -1396,25 +1398,25 @@ Mix: float = 0.850000024
 Rate: float = 5
 ```
 
-## Functions
+### Functions
 ```
 GetConnectedWires(pin: string) → Instances
 GetInputPins() → Array
 GetOutputPins() → Array
 ```
 
-## Events
+### Events
 ```
 WiringChanged(connected: bool, pin: string, wire: Wire, instance: Instance)
 ```
 
 ---
 
-# AudioFocusService
+## AudioFocusService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 AcquireFocus(contextId: int) → bool [RobloxScriptSecurity]
 GetFocusedContextId() → int [RobloxScriptSecurity]
@@ -1423,7 +1425,7 @@ RegisterContextIdFromLua(contextId: int) → null [RobloxScriptSecurity]
 RequestFocus(contextId: int, priority: int) → bool [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 OnContextRegistered(contextId: int) [RobloxScriptSecurity]
 OnContextUnregistered(contextId: int) [RobloxScriptSecurity]
@@ -1433,10 +1435,10 @@ OnUndeafenVoiceAudio(contextId: int) [RobloxScriptSecurity]
 
 ---
 
-# AudioGate
+## AudioGate
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 Attack: float = 0.00999999978
 Bypass: bool = false
@@ -1444,7 +1446,7 @@ Release: float = 0.100000001
 Threshold: NumberRange = -36 -24 
 ```
 
-## Functions
+### Functions
 ```
 GetConnectedWires(pin: string) → Instances
 GetInputPins() → Array
@@ -1452,17 +1454,17 @@ GetOutputPins() → Array
 Reset() → null [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 WiringChanged(connected: bool, pin: string, wire: Wire, instance: Instance)
 ```
 
 ---
 
-# AudioLimiter
+## AudioLimiter
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 Bypass: bool = false
 Editor: bool = false [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
@@ -1470,24 +1472,24 @@ MaxLevel: float = 0
 Release: float = 0.00999999978
 ```
 
-## Functions
+### Functions
 ```
 GetConnectedWires(pin: string) → Instances
 GetInputPins() → Array
 GetOutputPins() → Array
 ```
 
-## Events
+### Events
 ```
 WiringChanged(connected: bool, pin: string, wire: Wire, instance: Instance)
 ```
 
 ---
 
-# AudioListener
+## AudioListener
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 AngleAttenuation: BinaryString [Read:RobloxSecurity] [Write:RobloxSecurity]
 AudioInteractionGroup: string
@@ -1496,7 +1498,7 @@ PositionOverride: Instance [Read:RobloxSecurity] [Write:RobloxSecurity]
 SimulationFidelity: AudioSimulationFidelity = Automatic
 ```
 
-## Functions
+### Functions
 ```
 GetAngleAttenuation() → Dictionary
 GetAudibilityFor(emitter: AudioEmitter) → float
@@ -1510,41 +1512,41 @@ SetAngleAttenuation(curve: Dictionary) → null
 SetDistanceAttenuation(curve: Dictionary) → null
 ```
 
-## Events
+### Events
 ```
 WiringChanged(connected: bool, pin: string, wire: Wire, instance: Instance)
 ```
 
 ---
 
-# AudioPitchShifter
+## AudioPitchShifter
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 Bypass: bool = false
 Pitch: float = 1.25
 WindowSize: AudioWindowSize = Medium
 ```
 
-## Functions
+### Functions
 ```
 GetConnectedWires(pin: string) → Instances
 GetInputPins() → Array
 GetOutputPins() → Array
 ```
 
-## Events
+### Events
 ```
 WiringChanged(connected: bool, pin: string, wire: Wire, instance: Instance)
 ```
 
 ---
 
-# AudioPlayer
+## AudioPlayer
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 Asset: ContentId
 AssetId: string [Deprecated]
@@ -1561,7 +1563,7 @@ TimePosition: double = 0
 Volume: float = 1
 ```
 
-## Functions
+### Functions
 ```
 GetConnectedWires(pin: string) → Instances
 GetInputPins() → Array
@@ -1571,7 +1573,7 @@ Stop() → null
 GetWaveformAsync(timeRange: NumberRange, samples: int) → Array
 ```
 
-## Events
+### Events
 ```
 Ended()
 Looped()
@@ -1580,17 +1582,17 @@ WiringChanged(connected: bool, pin: string, wire: Wire, instance: Instance)
 
 ---
 
-# AudioRecorder
+## AudioRecorder
 **Extends:** Instance
 **Tags:** NotBrowsable
 
-## Properties
+### Properties
 ```
 IsRecording: bool = false [Write:RobloxSecurity]
 TimeLength: double = 0 [ReadOnly]
 ```
 
-## Functions
+### Functions
 ```
 Clear() → null
 GetConnectedWires(pin: string) → Instances
@@ -1603,17 +1605,17 @@ GetUnrecordableInstancesAsync() → Instances
 RecordAsync() → null
 ```
 
-## Events
+### Events
 ```
 WiringChanged(connected: bool, pin: string, wire: Wire, instance: Instance)
 ```
 
 ---
 
-# AudioReverb
+## AudioReverb
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 Bypass: bool = false
 DecayRatio: float = 0.5
@@ -1630,7 +1632,7 @@ ReferenceFrequency: float = 5000
 WetLevel: float = -6
 ```
 
-## Functions
+### Functions
 ```
 GetConnectedWires(pin: string) → Instances
 GetInputPins() → Array
@@ -1638,18 +1640,18 @@ GetOutputPins() → Array
 Reset() → null [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 WiringChanged(connected: bool, pin: string, wire: Wire, instance: Instance)
 ```
 
 ---
 
-# AudioSearchParams
+## AudioSearchParams
 **Extends:** Instance
 **Tags:** NotReplicated
 
-## Properties
+### Properties
 ```
 Album: string
 Artist: string
@@ -1664,33 +1666,33 @@ Title: string
 
 ---
 
-# AudioSpeechToText
+## AudioSpeechToText
 **Extends:** Instance
 **Tags:** NotBrowsable
 
-## Properties
+### Properties
 ```
 Enabled: bool = false
 Text: string
 VoiceDetected: bool = false [ReadOnly]
 ```
 
-## Functions
+### Functions
 ```
 GetConnectedWires(pin: string) → Instances
 ```
 
-## Events
+### Events
 ```
 WiringChanged(connected: bool, pin: string, wire: Wire, instance: Instance)
 ```
 
 ---
 
-# AudioTextToSpeech
+## AudioTextToSpeech
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 IsLoaded: bool = false [ReadOnly]
 IsPlaying: bool = false [Write:RobloxSecurity]
@@ -1705,7 +1707,7 @@ VoiceId: string
 Volume: float = 1
 ```
 
-## Functions
+### Functions
 ```
 GetConnectedWires(pin: string) → Instances
 Pause() → null
@@ -1715,7 +1717,7 @@ GetWaveformAsync(timeRange: NumberRange, samples: int) → Array
 LoadAsync() → AssetFetchStatus
 ```
 
-## Events
+### Events
 ```
 Ended()
 Looped()
@@ -1724,11 +1726,11 @@ WiringChanged(connected: bool, pin: string, wire: Wire, instance: Instance)
 
 ---
 
-# AuroraScriptObject
+## AuroraScriptObject
 **Extends:** Instance
 **Tags:** NotCreatable, Deprecated
 
-## Properties
+### Properties
 ```
 BehaviorWeak: AuroraScript [Read:RobloxSecurity] [Write:RobloxSecurity]
 BoundInstanceWeak: Instance [Read:RobloxSecurity] [Write:RobloxSecurity]
@@ -1740,11 +1742,11 @@ PriorFrameInvoked: int
 
 ---
 
-# AuroraScriptService
+## AuroraScriptService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, Deprecated
 
-## Functions
+### Functions
 ```
 GetLocalFrameId() → int
 SendMessage(instance: Instance, behaviorName: string, functionName: string, args: Tuple) → null
@@ -1752,11 +1754,11 @@ SendMessage(instance: Instance, behaviorName: string, functionName: string, args
 
 ---
 
-# AuroraService
+## AuroraService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, Deprecated
 
-## Properties
+### Properties
 ```
 BufferFullInputCount: int [Read:RobloxSecurity] [Write:RobloxSecurity]
 HashRoundingPoint: double
@@ -1769,7 +1771,7 @@ RollbackOffset: int
 TooOldInputCount: int [Read:RobloxSecurity] [Write:RobloxSecurity]
 ```
 
-## Functions
+### Functions
 ```
 GetPredictedInstances() → Array
 GetRemoteWorldStepId() → int
@@ -1788,7 +1790,7 @@ StopPrediction(target: Instance) → null
 UpdateProperties(target: Instance) → null
 ```
 
-## Events
+### Events
 ```
 FixedRateTick(deltaTime: double, worldStepId: int)
 Misprediction(worldStepId: int, mispredictedInstances: Array)
@@ -1798,10 +1800,10 @@ Step()
 
 ---
 
-# AvatarAccessoryRules
+## AvatarAccessoryRules
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 AccessoryMode: AvatarSettingsAccessoryMode = PlayerChoice [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
 CustomAccessoryMode: AvatarSettingsCustomAccessoryMode = PlayerChoice [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
@@ -1827,17 +1829,17 @@ LimitBounds: Vector3 = 0, 0, 0 [Read:RobloxScriptSecurity] [Write:RobloxScriptSe
 LimitMethod: AvatarSettingsAccessoryLimitMethod = Remove [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
 ```
 
-## Functions
+### Functions
 ```
 willRemoveAccessory(humanoid: Humanoid, accessory: Accoutrement) → bool [RobloxScriptSecurity]
 ```
 
 ---
 
-# AvatarAnimationRules
+## AvatarAnimationRules
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 AnimationClipsMode: AvatarSettingsAnimationClipsMode = PlayerChoice [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
 AnimationPacksMode: AvatarSettingsAnimationPacksMode = PlayerChoice [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
@@ -1865,10 +1867,10 @@ CustomWalkAnimationId: int64 = 0 [Read:RobloxScriptSecurity] [Write:RobloxScript
 
 ---
 
-# AvatarBodyRules
+## AvatarBodyRules
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 AppearanceMode: AvatarSettingsAppearanceMode = PlayerChoice [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
 BuildMode: AvatarSettingsBuildMode = PlayerChoice [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
@@ -1906,18 +1908,18 @@ ScaleMode: AvatarSettingsScaleMode = PlayerChoice [Read:RobloxScriptSecurity] [W
 
 ---
 
-# AvatarChatService
+## AvatarChatService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
-## Properties
+### Properties
 ```
 ClientFeatures: int = 0 [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity] [ReadOnly]
 ClientFeaturesInitialized: bool = false [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity] [ReadOnly]
 ServerFeatures: int = 0 [Read:RobloxScriptSecurity] [Write:RobloxSecurity]
 ```
 
-## Functions
+### Functions
 ```
 DebugCounterGet(label: string, playerId: int64) → int64 [RobloxScriptSecurity]
 EnableVoice() → bool [RobloxScriptSecurity]
@@ -1931,7 +1933,7 @@ GetClientFeaturesAsync() → int [RobloxScriptSecurity]
 GetServerFeaturesAsync() → int [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 OnClientFeatures(features: int) [RobloxSecurity]
 RefreshClientFeatures() [RobloxSecurity]
@@ -1939,10 +1941,10 @@ RefreshClientFeatures() [RobloxSecurity]
 
 ---
 
-# AvatarClothingRules
+## AvatarClothingRules
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 ClothingMode: AvatarSettingsClothingMode = PlayerChoice [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
 CustomClassicPantsAccessoryEnabled: bool = false [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
@@ -1975,10 +1977,10 @@ LimitBounds: Vector3 = 0, 0, 0 [Read:RobloxScriptSecurity] [Write:RobloxScriptSe
 
 ---
 
-# AvatarCollisionRules
+## AvatarCollisionRules
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 CollisionMode: AvatarSettingsCollisionMode = Default [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
 HitAndTouchDetectionMode: AvatarSettingsHitAndTouchDetectionMode = UseParts [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
@@ -1988,11 +1990,11 @@ SingleColliderSize: Vector3 = 2, 4, 1 [Read:RobloxScriptSecurity] [Write:RobloxS
 
 ---
 
-# AvatarCreationService
+## AvatarCreationService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
-## Functions
+### Functions
 ```
 DeserializeAvatarModel(serializedModel: string) → Instance [RobloxScriptSecurity]
 GetValidationRules() → Dictionary
@@ -2011,7 +2013,7 @@ ValidateUGCBodyPartAsync(player: Player, instance: Instance, bodyPart: BodyPart)
 ValidateUGCFullBodyAsync(player: Player, humanoidDescription: HumanoidDescription) → Tuple
 ```
 
-## Events
+### Events
 ```
 AvatarModerationCompleted(outfitId: int64, moderationStatus: ModerationStatus)
 ReplicateAvatarGenerationImageId(fileId: string, error: string) [RobloxSecurity]
@@ -2026,11 +2028,11 @@ UgcValidationSuccess(guid: string, serializedModel: string, price: int64) [Roblo
 
 ---
 
-# AvatarEditorService
+## AvatarEditorService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 GetAccessoryType(avatarAssetType: AvatarAssetType) → AccessoryType
 NoPromptCreateOutfit(humanoidDescription: HumanoidDescription, rigType: HumanoidRigType, name: string, gearAssetId: int64) → bool [RobloxScriptSecurity]
@@ -2081,7 +2083,7 @@ GetRecommendedBundles(bundleId: int64) → Array
 SearchCatalog(searchParameters: CatalogSearchParams) → CatalogPages
 ```
 
-## Events
+### Events
 ```
 OpenAllowInventoryReadAccess() [RobloxScriptSecurity]
 OpenPromptCreateOufit(humanoidDescription: HumanoidDescription, rigType: HumanoidRigType) [RobloxScriptSecurity]
@@ -2102,11 +2104,11 @@ PromptUpdateOutfitCompleted(result: AvatarPromptResult)
 
 ---
 
-# AvatarImportService
+## AvatarImportService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 ImportFBXAnimationFromFilePathUserMayChooseModel(fbxFilePath: string, selectedRig: Instance, userChooseModelThenImportCB: Function) → Instance [RobloxScriptSecurity]
 ImportFBXAnimationUserMayChooseModel(selectedRig: Instance, userChooseModelThenImportCB: Function) → Instance [RobloxScriptSecurity]
@@ -2117,43 +2119,43 @@ LoadRigAndDetectType(promptR15Callback: Function) → Instance [RobloxScriptSecu
 
 ---
 
-# AvatarPreloader
+## AvatarPreloader
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 PreloadModelAssets(models: Instances) → Array [RobloxScriptSecurity]
 ```
 
 ---
 
-# AvatarRules
+## AvatarRules
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 AvatarType: GameAvatarType = R15 [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
 ```
 
 ---
 
-# AvatarSettings
+## AvatarSettings
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
-## Properties
+### Properties
 ```
 Loaded: bool = false [Read:RobloxScriptSecurity] [Write:NotAccessibleSecurity]
 ```
 
-## Functions
+### Functions
 ```
 Discard() → null [RobloxScriptSecurity]
 Publish() → null [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 DiscardRequested() [RobloxSecurity]
 RefreshPluginState() [RobloxScriptSecurity]
@@ -2161,16 +2163,16 @@ RefreshPluginState() [RobloxScriptSecurity]
 
 ---
 
-# Backpack
+## Backpack
 **Extends:** Instance
 
 ---
 
-# BadgeService
+## BadgeService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
-## Functions
+### Functions
 ```
 AwardBadge(userId: int64, badgeId: int64) → bool
 CheckUserBadgesAsync(userId: int64, badgeIds: Array) → Array
@@ -2181,7 +2183,7 @@ UserHasBadge(userId: int64, badgeId: int64) → bool [Deprecated]
 UserHasBadgeAsync(userId: int64, badgeId: int64) → bool
 ```
 
-## Events
+### Events
 ```
 BadgeAwarded(message: string, userId: int64, badgeId: int64) [RobloxScriptSecurity]
 OnBadgeAwarded(userId: int64, creatorId: int64, badgeId: int64) [RobloxScriptSecurity]
@@ -2189,25 +2191,25 @@ OnBadgeAwarded(userId: int64, creatorId: int64, badgeId: int64) [RobloxScriptSec
 
 ---
 
-# BaseImportData
+## BaseImportData
 **Extends:** Instance
 **Tags:** NotCreatable, NotReplicated
 
-## Properties
+### Properties
 ```
 Id: string [ReadOnly]
 ImportName: string
 ShouldImport: bool
 ```
 
-## Functions
+### Functions
 ```
 CreatePresetFromData() → Dictionary [RobloxScriptSecurity]
 GetPreview() → Instance [RobloxScriptSecurity]
 GetStatuses() → Dictionary [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 StatusRemoved(status: Dictionary)
 StatusReported(status: Dictionary)
@@ -2215,23 +2217,23 @@ StatusReported(status: Dictionary)
 
 ---
 
-# AnimationImportData
+## AnimationImportData
 **Extends:** BaseImportData
 **Tags:** NotCreatable, NotReplicated
 
 ---
 
-# FacsImportData
+## FacsImportData
 **Extends:** BaseImportData
 **Tags:** NotCreatable, NotReplicated
 
 ---
 
-# GroupImportData
+## GroupImportData
 **Extends:** BaseImportData
 **Tags:** NotCreatable, NotReplicated
 
-## Properties
+### Properties
 ```
 Anchored: bool
 ImportAsModelAsset: bool
@@ -2240,17 +2242,17 @@ InsertInWorkspace: bool
 
 ---
 
-# JointImportData
+## JointImportData
 **Extends:** BaseImportData
 **Tags:** NotCreatable, NotReplicated
 
 ---
 
-# MaterialImportData
+## MaterialImportData
 **Extends:** BaseImportData
 **Tags:** NotCreatable, NotReplicated
 
-## Properties
+### Properties
 ```
 DiffuseFilePath: string
 IsPbr: bool [ReadOnly]
@@ -2261,11 +2263,11 @@ RoughnessFilePath: string
 
 ---
 
-# MeshImportData
+## MeshImportData
 **Extends:** BaseImportData
 **Tags:** NotCreatable, NotReplicated
 
-## Properties
+### Properties
 ```
 Anchored: bool
 CageManifold: bool [ReadOnly]
@@ -2291,11 +2293,11 @@ UseImportedPivot: bool
 
 ---
 
-# RootImportData
+## RootImportData
 **Extends:** BaseImportData
 **Tags:** NotCreatable, NotReplicated
 
-## Properties
+### Properties
 ```
 AddModelToInventory: bool
 Anchored: bool
@@ -2325,11 +2327,11 @@ WorldUp: NormalId
 
 ---
 
-# BasePlayerGui
+## BasePlayerGui
 **Extends:** Instance
 **Tags:** NotCreatable
 
-## Functions
+### Functions
 ```
 GetGuiObjectsAtPosition(x: int, y: int) → Instances
 GetGuiObjectsInCircle(position: Vector2, radius: float) → Instances [RobloxScriptSecurity]
@@ -2337,59 +2339,59 @@ GetGuiObjectsInCircle(position: Vector2, radius: float) → Instances [RobloxScr
 
 ---
 
-# CoreGui
+## CoreGui
 **Extends:** BasePlayerGui
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Properties
+### Properties
 ```
 SelectionImageObject: GuiObject [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
 Version: int [ReadOnly]
 ```
 
-## Functions
+### Functions
 ```
 SetUserGuiRendering(enabled: bool, guiAdornee: Instance, faceId: NormalId, horizontalCurvature: float) → null [RobloxScriptSecurity]
 TakeScreenshot() → null [RobloxScriptSecurity]
 ToggleRecording() → null [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 UserGuiRenderingChanged(enabled: bool, guiAdornee: Instance, faceId: NormalId, horizontalCurvature: float) [RobloxScriptSecurity]
 ```
 
 ---
 
-# PlayerGui
+## PlayerGui
 **Extends:** BasePlayerGui
 **Tags:** NotCreatable, PlayerReplicated
 
-## Properties
+### Properties
 ```
 CurrentScreenOrientation: ScreenOrientation = LandscapeLeft [ReadOnly]
 ScreenOrientation: ScreenOrientation = LandscapeSensor
 SelectionImageObject: GuiObject
 ```
 
-## Functions
+### Functions
 ```
 GetTopbarTransparency() → float [Deprecated]
 SetTopbarTransparency(transparency: float) → null [Deprecated]
 ```
 
-## Events
+### Events
 ```
 TopbarTransparencyChangedSignal(transparency: float)
 ```
 
 ---
 
-# StarterGui
+## StarterGui
 **Extends:** BasePlayerGui
 **Tags:** NotCreatable, Service
 
-## Properties
+### Properties
 ```
 ProcessUserInput: bool [Read:PluginSecurity] [Write:PluginSecurity]
 ResetPlayerGuiOnSpawn: bool [Deprecated]
@@ -2401,7 +2403,7 @@ StudioInsertWidgetLayerCollectorAutoLinkStyleSheet: StyleSheet [Read:RobloxScrip
 VirtualCursorMode: VirtualCursorMode
 ```
 
-## Functions
+### Functions
 ```
 GetCoreGuiEnabled(coreGuiType: CoreGuiType) → bool
 RegisterGetCore(parameterName: string, getFunction: Function) → null [RobloxScriptSecurity]
@@ -2411,30 +2413,30 @@ SetCoreGuiEnabled(coreGuiType: CoreGuiType, enabled: bool) → null
 GetCore(parameterName: string) → Variant
 ```
 
-## Events
+### Events
 ```
 CoreGuiChangedSignal(coreGuiType: CoreGuiType, enabled: bool) [RobloxScriptSecurity]
 ```
 
 ---
 
-# BaseRemoteEvent
+## BaseRemoteEvent
 **Extends:** Instance
 **Tags:** NotCreatable
 
 ---
 
-# RemoteEvent
+## RemoteEvent
 **Extends:** BaseRemoteEvent
 
-## Functions
+### Functions
 ```
 FireAllClients(arguments: Tuple) → null
 FireClient(player: Player, arguments: Tuple) → null
 FireServer(arguments: Tuple) → null
 ```
 
-## Events
+### Events
 ```
 OnClientEvent(arguments: Tuple)
 OnRemoteServerEvent(arguments: Tuple) [RobloxSecurity]
@@ -2443,17 +2445,17 @@ OnServerEvent(player: Player, arguments: Tuple)
 
 ---
 
-# UnreliableRemoteEvent
+## UnreliableRemoteEvent
 **Extends:** BaseRemoteEvent
 
-## Functions
+### Functions
 ```
 FireAllClients(arguments: Tuple) → null
 FireClient(player: Player, arguments: Tuple) → null
 FireServer(arguments: Tuple) → null
 ```
 
-## Events
+### Events
 ```
 OnClientEvent(arguments: Tuple)
 OnRemoteServerEvent(arguments: Tuple) [RobloxSecurity]
@@ -2462,11 +2464,11 @@ OnServerEvent(player: Player, arguments: Tuple)
 
 ---
 
-# BaseWrap
+## BaseWrap
 **Extends:** Instance
 **Tags:** NotCreatable
 
-## Properties
+### Properties
 ```
 CageMeshContent: Content [Write:PluginSecurity]
 CageMeshId: ContentId [Write:PluginSecurity]
@@ -2481,7 +2483,7 @@ ImportOriginWorld: CFrame [ReadOnly]
 TemporaryCageMeshId: ContentId [Read:RobloxSecurity] [Write:RobloxSecurity]
 ```
 
-## Functions
+### Functions
 ```
 GetCageOffset() → Vector3 [RobloxScriptSecurity]
 GetFaces(cageType: CageType) → Array [RobloxScriptSecurity]
@@ -2491,17 +2493,17 @@ IsHSRReady() → bool [RobloxScriptSecurity]
 ModifyVertices(cageType: CageType, vertices: Array) → null [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 VerticesModified(vertices: Array) [RobloxScriptSecurity]
 ```
 
 ---
 
-# WrapDeformer
+## WrapDeformer
 **Extends:** BaseWrap
 
-## Functions
+### Functions
 ```
 SetCageMeshContent(content: Content, cageOrigin: CoordinateFrame?) → null
 CreateEditableMeshAsync() → EditableMesh
@@ -2510,10 +2512,10 @@ GetDeformedCFrameAsync(originalCFrame: CFrame) → CFrame
 
 ---
 
-# WrapLayer
+## WrapLayer
 **Extends:** BaseWrap
 
-## Properties
+### Properties
 ```
 AutoSkin: WrapLayerAutoSkin = Disabled
 BindOffset: CFrame [Write:PluginSecurity]
@@ -2534,10 +2536,10 @@ TemporaryReferenceId: ContentId [Read:RobloxSecurity] [Write:RobloxSecurity]
 
 ---
 
-# WrapTarget
+## WrapTarget
 **Extends:** BaseWrap
 
-## Properties
+### Properties
 ```
 Color: Color3 = 1, 1, 1
 DebugMode: WrapTargetDebugMode = None
@@ -2546,10 +2548,10 @@ Stiffness: float = 0 [Write:PluginSecurity]
 
 ---
 
-# Beam
+## Beam
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 Attachment0: Attachment
 Attachment1: Attachment
@@ -2573,49 +2575,49 @@ Width1: float = 1
 ZOffset: float = 0
 ```
 
-## Functions
+### Functions
 ```
 SetTextureOffset(offset: float) → null
 ```
 
 ---
 
-# BindableEvent
+## BindableEvent
 **Extends:** Instance
 
-## Functions
+### Functions
 ```
 Fire(arguments: Tuple) → null
 ```
 
-## Events
+### Events
 ```
 Event(arguments: Tuple)
 ```
 
 ---
 
-# BindableFunction
+## BindableFunction
 **Extends:** Instance
 
-## Functions
+### Functions
 ```
 Invoke(arguments: Tuple) → Tuple
 ```
 
 ---
 
-# BodyMover
+## BodyMover
 **Extends:** Instance
 **Tags:** NotCreatable, Deprecated
 
 ---
 
-# BodyAngularVelocity
+## BodyAngularVelocity
 **Extends:** BodyMover
 **Tags:** Deprecated
 
-## Properties
+### Properties
 ```
 AngularVelocity: Vector3 = 0, 2, 0
 MaxTorque: Vector3 = 4000, 4000, 4000
@@ -2626,11 +2628,11 @@ maxTorque: Vector3 = 4000, 4000, 4000 [Deprecated]
 
 ---
 
-# BodyForce
+## BodyForce
 **Extends:** BodyMover
 **Tags:** Deprecated
 
-## Properties
+### Properties
 ```
 Force: Vector3 = 0, 1, 0
 force: Vector3 = 0, 1, 0 [Deprecated]
@@ -2638,11 +2640,11 @@ force: Vector3 = 0, 1, 0 [Deprecated]
 
 ---
 
-# BodyGyro
+## BodyGyro
 **Extends:** BodyMover
 **Tags:** Deprecated
 
-## Properties
+### Properties
 ```
 CFrame: CFrame
 D: float = 500
@@ -2654,11 +2656,11 @@ maxTorque: Vector3 = 400000, 0, 400000 [Deprecated]
 
 ---
 
-# BodyPosition
+## BodyPosition
 **Extends:** BodyMover
 **Tags:** Deprecated
 
-## Properties
+### Properties
 ```
 D: float = 1250
 MaxForce: Vector3 = 4000, 4000, 4000
@@ -2668,24 +2670,24 @@ maxForce: Vector3 = 4000, 4000, 4000 [Deprecated]
 position: Vector3 = 0, 50, 0 [Deprecated]
 ```
 
-## Functions
+### Functions
 ```
 GetLastForce() → Vector3
 lastForce() → Vector3 [Deprecated]
 ```
 
-## Events
+### Events
 ```
 ReachedTarget()
 ```
 
 ---
 
-# BodyThrust
+## BodyThrust
 **Extends:** BodyMover
 **Tags:** Deprecated
 
-## Properties
+### Properties
 ```
 Force: Vector3 = 0, 1, 0
 Location: Vector3 = 0, 0, 0
@@ -2695,11 +2697,11 @@ location: Vector3 = 0, 0, 0 [Deprecated]
 
 ---
 
-# BodyVelocity
+## BodyVelocity
 **Extends:** BodyMover
 **Tags:** Deprecated
 
-## Properties
+### Properties
 ```
 MaxForce: Vector3 = 4000, 4000, 4000
 P: float = 1250
@@ -2708,7 +2710,7 @@ maxForce: Vector3 = 4000, 4000, 4000 [Deprecated]
 velocity: Vector3 = 0, 2, 0 [Deprecated]
 ```
 
-## Functions
+### Functions
 ```
 GetLastForce() → Vector3
 lastForce() → Vector3
@@ -2716,11 +2718,11 @@ lastForce() → Vector3
 
 ---
 
-# RocketPropulsion
+## RocketPropulsion
 **Extends:** BodyMover
 **Tags:** Deprecated
 
-## Properties
+### Properties
 ```
 Active: bool = false
 CartoonFactor: float = 0.699999988
@@ -2736,24 +2738,24 @@ TurnD: float = 500
 TurnP: float = 3000
 ```
 
-## Functions
+### Functions
 ```
 Abort() → null
 Fire() → null
 fire() → null [Deprecated]
 ```
 
-## Events
+### Events
 ```
 ReachedTarget()
 ```
 
 ---
 
-# BodyPartDescription
+## BodyPartDescription
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 AssetId: int64 = 0
 BodyPart: BodyPart = Head
@@ -2763,11 +2765,11 @@ Instance: Instance
 
 ---
 
-# Breakpoint
+## Breakpoint
 **Extends:** Instance
 **Tags:** NotReplicated
 
-## Properties
+### Properties
 ```
 Condition: string [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
 ContinueExecution: bool = false [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
@@ -2784,11 +2786,11 @@ Verified: bool = false [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity] 
 
 ---
 
-# BrowserService
+## BrowserService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 CloseBrowserWindow() → null [RobloxScriptSecurity]
 CopyAuthCookieFromBrowserToEngine() → null [RobloxScriptSecurity]
@@ -2801,7 +2803,7 @@ ReturnToJavaScript(callbackId: string, success: bool, params: string) → null [
 SendCommand(command: string) → null [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 AuthCookieCopiedToEngine() [RobloxScriptSecurity]
 BrowserWindowClosed() [RobloxScriptSecurity]
@@ -2811,33 +2813,33 @@ JavaScriptCallback(content: string) [RobloxScriptSecurity]
 
 ---
 
-# BugReporterService
+## BugReporterService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 IsAvailable() → bool [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 BugReportRequested(trigger: string) [RobloxScriptSecurity]
 ```
 
 ---
 
-# BulkImportService
+## BulkImportService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 LaunchBulkImport(assetTypeToImport: int) → null [RobloxScriptSecurity]
 ShowBulkImportView() → null [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 AssetImported(assetType: AssetType, name: string, id: int64) [RobloxScriptSecurity]
 BulkImportFinished(state: int) [RobloxScriptSecurity]
@@ -2846,51 +2848,51 @@ BulkImportStarted() [RobloxScriptSecurity]
 
 ---
 
-# CacheableContentProvider
+## CacheableContentProvider
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
 ---
 
-# HSRDataContentProvider
+## HSRDataContentProvider
 **Extends:** CacheableContentProvider
 **Tags:** NotCreatable, Service, NotReplicated
 
 ---
 
-# MeshContentProvider
+## MeshContentProvider
 **Extends:** CacheableContentProvider
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 GetContentMemoryData() → Dictionary [RobloxScriptSecurity]
 ```
 
 ---
 
-# SlimContentProvider
+## SlimContentProvider
 **Extends:** CacheableContentProvider
 **Tags:** NotCreatable, Service
 
-## Functions
+### Functions
 ```
 GetContentMemoryData() → Dictionary [RobloxSecurity]
 ```
 
 ---
 
-# SolidModelContentProvider
+## SolidModelContentProvider
 **Extends:** CacheableContentProvider
 **Tags:** NotCreatable, Service, NotReplicated
 
 ---
 
-# CalloutService
+## CalloutService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 AttachCallout(definitionId: string, locationId: string, target: Instance) → null [RobloxScriptSecurity]
 DefineCallout(definitionId: string, title: string, description: string, learnMoreURL: string) → null [RobloxScriptSecurity]
@@ -2899,11 +2901,11 @@ DetachCalloutsByDefinitionId(definitionId: string) → null [RobloxScriptSecurit
 
 ---
 
-# CaptureService
+## CaptureService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
-## Functions
+### Functions
 ```
 CanCaptureVideo() → bool [RobloxScriptSecurity]
 CaptureScreenshot(onCaptureReady: Function) → null
@@ -2943,7 +2945,7 @@ StartVideoCaptureInternalAsync() → VideoCaptureStartedResult [RobloxScriptSecu
 UploadCaptureAsync(capture: Capture) → Tuple
 ```
 
-## Events
+### Events
 ```
 CaptureBegan(captureType: CaptureType)
 CaptureEnded(captureType: CaptureType)
@@ -2965,11 +2967,11 @@ VideoCaptureInProgress(isInProgress: bool, captureTrigger: string) [RobloxScript
 
 ---
 
-# ChangeHistoryService
+## ChangeHistoryService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
-## Functions
+### Functions
 ```
 FinishRecording(identifier: string, operation: FinishRecordingOperation, finalOptions: Dictionary?) → null [PluginSecurity]
 GetCanRedo() → Tuple [PluginSecurity]
@@ -2983,7 +2985,7 @@ TryBeginRecording(name: string, displayName: string?) → string? [PluginSecurit
 Undo() → null [PluginSecurity]
 ```
 
-## Events
+### Events
 ```
 OnRecordingFinished(name: string, displayName: string?, identifier: string?, operation: FinishRecordingOperation, finalOptions: Dictionary?) [PluginSecurity]
 OnRecordingStarted(name: string, displayName: string?) [PluginSecurity]
@@ -2993,16 +2995,16 @@ OnUndo(waypoint: string) [PluginSecurity]
 
 ---
 
-# CharacterAppearance
+## CharacterAppearance
 **Extends:** Instance
 **Tags:** NotCreatable
 
 ---
 
-# BodyColors
+## BodyColors
 **Extends:** CharacterAppearance
 
-## Properties
+### Properties
 ```
 HeadColor: BrickColor
 HeadColor3: Color3 = 0.992157, 0.917647, 0.552941
@@ -3020,10 +3022,10 @@ TorsoColor3: Color3 = 0.156863, 0.498039, 0.278431
 
 ---
 
-# CharacterMesh
+## CharacterMesh
 **Extends:** CharacterAppearance
 
-## Properties
+### Properties
 ```
 BaseTextureId: int64 = 0
 BodyPart: BodyPart = Head
@@ -3033,11 +3035,11 @@ OverlayTextureId: int64 = 0
 
 ---
 
-# Clothing
+## Clothing
 **Extends:** CharacterAppearance
 **Tags:** NotCreatable
 
-## Properties
+### Properties
 ```
 Color3: Color3
 Outfit1: ContentId
@@ -3046,30 +3048,30 @@ Outfit2: ContentId
 
 ---
 
-# Pants
+## Pants
 **Extends:** Clothing
 
-## Properties
+### Properties
 ```
 PantsTemplate: ContentId
 ```
 
 ---
 
-# Shirt
+## Shirt
 **Extends:** Clothing
 
-## Properties
+### Properties
 ```
 ShirtTemplate: ContentId
 ```
 
 ---
 
-# ShirtGraphic
+## ShirtGraphic
 **Extends:** CharacterAppearance
 
-## Properties
+### Properties
 ```
 Color3: Color3 = 1, 1, 1
 Graphic: ContentId
@@ -3077,29 +3079,29 @@ Graphic: ContentId
 
 ---
 
-# Skin
+## Skin
 **Extends:** CharacterAppearance
 **Tags:** Deprecated
 
-## Properties
+### Properties
 ```
 SkinColor: BrickColor
 ```
 
 ---
 
-# Chat
+## Chat
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Properties
+### Properties
 ```
 BubbleChatEnabled: bool = false
 IsAutoMigrated: bool = false [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
 LoadDefaultChat: bool = true [Write:NotAccessibleSecurity]
 ```
 
-## Functions
+### Functions
 ```
 Chat(partOrCharacter: Instance, message: string, color: ChatColor) → null
 ChatLocal(partOrCharacter: Instance, message: string, color: ChatColor) → null [RobloxScriptSecurity]
@@ -3114,7 +3116,7 @@ FilterStringForBroadcast(stringToFilter: string, playerFrom: Player) → string
 FilterStringForPlayerAsync(stringToFilter: string, playerToFilterFor: Player) → string [Deprecated]
 ```
 
-## Events
+### Events
 ```
 BubbleChatSettingsChanged(settings: Variant) [RobloxScriptSecurity]
 Chatted(part: Instance, message: string, color: ChatColor)
@@ -3126,17 +3128,17 @@ TimeoutChatAttempt(isPermanentTimeout: bool, endTime: int64) [RobloxScriptSecuri
 
 ---
 
-# ChatbotUIService
+## ChatbotUIService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 DisplayContent(contentType: string, data: Dictionary) → null [RobloxScriptSecurity]
 GetSettings() → Dictionary [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 ActionActivatedSignal(action: string) [RobloxScriptSecurity]
 FindVariationsSignal(action: string) [RobloxScriptSecurity]
@@ -3148,16 +3150,16 @@ ShiftVariationSignal(action: string, change: int) [RobloxScriptSecurity]
 
 ---
 
-# ClickDetector
+## ClickDetector
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 CursorIcon: ContentId
 MaxActivationDistance: float = 32
 ```
 
-## Events
+### Events
 ```
 MouseActionReplicated(player: Player, actionType: int) [RobloxSecurity]
 MouseClick(playerWhoClicked: Player)
@@ -3169,10 +3171,10 @@ mouseClick(playerWhoClicked: Player)
 
 ---
 
-# DragDetector
+## DragDetector
 **Extends:** ClickDetector
 
-## Properties
+### Properties
 ```
 ActivatedCursorIcon: ContentId
 ApplyAtCenterOfMass: bool = false
@@ -3206,7 +3208,7 @@ WorldAxis: Vector3 = 0, 1, 0
 WorldSecondaryAxis: Vector3 = 1, 0, 0
 ```
 
-## Functions
+### Functions
 ```
 AddConstraintFunction(priority: int, function: Function) → RBXScriptConnection
 GetReferenceFrame() → CFrame
@@ -3215,7 +3217,7 @@ SetDragStyleFunction(function: Function) → null
 SetPermissionPolicyFunction(function: Function) → null
 ```
 
-## Events
+### Events
 ```
 DragContinue(playerWhoDragged: Player, cursorRay: Ray, viewFrame: CFrame, vrInputFrame: OptionalCoordinateFrame, isModeSwitchKeyDown: bool)
 DragContinueReplicate(playerWhoDragged: Player, cursorRay: Ray, viewFrame: CFrame, vrInputFrame: OptionalCoordinateFrame, isModeSwitchKeyDown: bool)
@@ -3228,16 +3230,16 @@ RestartPhysicalDragReplicate(hitPoint: Vector3)
 
 ---
 
-# CloudCRUDService
+## CloudCRUDService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
 ---
 
-# Clouds
+## Clouds
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 Color: Color3 = 1, 1, 1
 Cover: float = 0.5
@@ -3247,17 +3249,17 @@ Enabled: bool = true
 
 ---
 
-# ClusterPacketCache
+## ClusterPacketCache
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
 ---
 
-# Collaborator
+## Collaborator
 **Extends:** Instance
 **Tags:** NotCreatable
 
-## Properties
+### Properties
 ```
 CFrame: CFrame
 CollaboratorColor: int = 0 [Deprecated]
@@ -3272,11 +3274,11 @@ Username: string
 
 ---
 
-# CollaboratorsService
+## CollaboratorsService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
-## Functions
+### Functions
 ```
 GetCollaboratorsList() → Instances [RobloxScriptSecurity]
 GetSelectionHighlightsEnabled() → bool [RobloxScriptSecurity]
@@ -3285,7 +3287,7 @@ ToggleSelectionHighlights(showHighlights: bool) → null [RobloxScriptSecurity]
 ToggleTeamCreate(on: bool) → null [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 CollaboratorIdleUpdate(collaboratorId: int64, isIdle: bool) [RobloxScriptSecurity]
 CollaboratorInstanceCreatedSignal(collaboratorId: int64) [RobloxScriptSecurity]
@@ -3297,11 +3299,11 @@ ToggleSelectionHighlightsSignal(areHighlightsShown: bool) [RobloxScriptSecurity]
 
 ---
 
-# CollectionService
+## CollectionService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
-## Functions
+### Functions
 ```
 AddTag(instance: Instance, tag: string) → null
 GetAllTags() → Array
@@ -3314,7 +3316,7 @@ HasTag(instance: Instance, tag: string) → bool
 RemoveTag(instance: Instance, tag: string) → null
 ```
 
-## Events
+### Events
 ```
 ItemAdded(instance: Instance)
 ItemRemoved(instance: Instance)
@@ -3324,11 +3326,11 @@ TagRemoved(tag: string)
 
 ---
 
-# CommerceService
+## CommerceService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
-## Functions
+### Functions
 ```
 PromptCommerceProductPurchase(user: Player, commerceProductId: string) → null
 PromptRealWorldCommerceBrowser(player: Player, url: string) → null
@@ -3338,7 +3340,7 @@ PrepareCommerceProductPurchase(commerceProductId: string) → Dictionary [Roblox
 UserEligibleForRealWorldCommerceAsync() → bool
 ```
 
-## Events
+### Events
 ```
 BenefitStatusReceived(isGranted: bool) [RobloxScriptSecurity]
 FetchReceipt() [RobloxSecurity]
@@ -3350,11 +3352,11 @@ PurchaseBrowserClosed() [RobloxScriptSecurity]
 
 ---
 
-# ConfigService
+## ConfigService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 ClearTestingValue(key: string) → null
 SetTestingValue(key: string, value: Variant) → null
@@ -3364,38 +3366,38 @@ GetConfigForPlayerAsync(player: Player) → ConfigSnapshot
 
 ---
 
-# Configuration
+## Configuration
 **Extends:** Instance
 
 ---
 
-# ConfigureServerService
+## ConfigureServerService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
 ---
 
-# ConnectivityService
+## ConnectivityService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Properties
+### Properties
 ```
 NetworkStatus: NetworkStatus = Unknown [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity] [ReadOnly]
 ```
 
-## Functions
+### Functions
 ```
 IsNetworkStateAvailable() → bool [RobloxScriptSecurity]
 ```
 
 ---
 
-# Constraint
+## Constraint
 **Extends:** Instance
 **Tags:** NotCreatable
 
-## Properties
+### Properties
 ```
 Active: bool [ReadOnly]
 Attachment0: Attachment
@@ -3405,7 +3407,7 @@ Enabled: bool
 Visible: bool
 ```
 
-## Functions
+### Functions
 ```
 GetDebugAppliedForce(bodyId: int) → Vector3 [Deprecated]
 GetDebugAppliedTorque(bodyId: int) → Vector3 [Deprecated]
@@ -3413,10 +3415,10 @@ GetDebugAppliedTorque(bodyId: int) → Vector3 [Deprecated]
 
 ---
 
-# AlignOrientation
+## AlignOrientation
 **Extends:** Constraint
 
-## Properties
+### Properties
 ```
 AlignType: AlignType = AllAxes
 CFrame: CFrame
@@ -3434,10 +3436,10 @@ SecondaryAxis: Vector3 = 0, 1, 0
 
 ---
 
-# AlignPosition
+## AlignPosition
 **Extends:** Constraint
 
-## Properties
+### Properties
 ```
 ApplyAtCenterOfMass: bool = false
 ForceLimitMode: ForceLimitMode = Magnitude
@@ -3454,10 +3456,10 @@ RigidityEnabled: bool = false
 
 ---
 
-# AngularVelocity
+## AngularVelocity
 **Extends:** Constraint
 
-## Properties
+### Properties
 ```
 AngularVelocity: Vector3 = 0, 0, 0
 MaxTorque: float = 0
@@ -3467,10 +3469,10 @@ RelativeTo: ActuatorRelativeTo = World
 
 ---
 
-# AnimationConstraint
+## AnimationConstraint
 **Extends:** Constraint
 
-## Properties
+### Properties
 ```
 C0: CFrame [ReadOnly] [Deprecated]
 C1: CFrame [ReadOnly] [Deprecated]
@@ -3484,10 +3486,10 @@ Transform: CFrame
 
 ---
 
-# BallSocketConstraint
+## BallSocketConstraint
 **Extends:** Constraint
 
-## Properties
+### Properties
 ```
 LimitsEnabled: bool = false
 MaxFrictionTorque: float = 0
@@ -3502,10 +3504,10 @@ UpperAngle: float = 45
 
 ---
 
-# HingeConstraint
+## HingeConstraint
 **Extends:** Constraint
 
-## Properties
+### Properties
 ```
 ActuatorType: ActuatorType = None
 AngularResponsiveness: float = 45
@@ -3526,10 +3528,10 @@ UpperAngle: float = 45
 
 ---
 
-# LineForce
+## LineForce
 **Extends:** Constraint
 
-## Properties
+### Properties
 ```
 ApplyAtCenterOfMass: bool = false
 InverseSquareLaw: bool = false
@@ -3540,10 +3542,10 @@ ReactionForceEnabled: bool = false
 
 ---
 
-# LinearVelocity
+## LinearVelocity
 **Extends:** Constraint
 
-## Properties
+### Properties
 ```
 ForceLimitMode: ForceLimitMode = Magnitude
 ForceLimitsEnabled: bool = true
@@ -3563,26 +3565,26 @@ VelocityConstraintMode: VelocityConstraintMode = Vector
 
 ---
 
-# PlaneConstraint
+## PlaneConstraint
 **Extends:** Constraint
 
 ---
 
-# Plane
+## Plane
 **Extends:** PlaneConstraint
 **Tags:** Deprecated
 
 ---
 
-# RigidConstraint
+## RigidConstraint
 **Extends:** Constraint
 
 ---
 
-# RodConstraint
+## RodConstraint
 **Extends:** Constraint
 
-## Properties
+### Properties
 ```
 CurrentDistance: float = 0 [ReadOnly]
 Length: float = 5
@@ -3594,10 +3596,10 @@ Thickness: float = 0.100000001
 
 ---
 
-# RopeConstraint
+## RopeConstraint
 **Extends:** Constraint
 
-## Properties
+### Properties
 ```
 CurrentDistance: float = 0 [ReadOnly]
 Length: float = 5
@@ -3612,11 +3614,11 @@ WinchTarget: float = 5
 
 ---
 
-# SlidingBallConstraint
+## SlidingBallConstraint
 **Extends:** Constraint
 **Tags:** NotCreatable
 
-## Properties
+### Properties
 ```
 ActuatorType: ActuatorType
 CurrentPosition: float [ReadOnly]
@@ -3637,10 +3639,10 @@ Velocity: float
 
 ---
 
-# CylindricalConstraint
+## CylindricalConstraint
 **Extends:** SlidingBallConstraint
 
-## Properties
+### Properties
 ```
 AngularActuatorType: ActuatorType = None
 AngularLimitsEnabled: bool = false
@@ -3663,15 +3665,15 @@ WorldRotationAxis: Vector3 = 1, 0, 0 [ReadOnly]
 
 ---
 
-# PrismaticConstraint
+## PrismaticConstraint
 **Extends:** SlidingBallConstraint
 
 ---
 
-# SpringConstraint
+## SpringConstraint
 **Extends:** Constraint
 
-## Properties
+### Properties
 ```
 Coils: float = 3
 CurrentLength: float = 0 [ReadOnly]
@@ -3688,10 +3690,10 @@ Thickness: float = 0.100000001
 
 ---
 
-# Torque
+## Torque
 **Extends:** Constraint
 
-## Properties
+### Properties
 ```
 RelativeTo: ActuatorRelativeTo = Attachment0
 Torque: Vector3 = 0, 0, 0
@@ -3699,10 +3701,10 @@ Torque: Vector3 = 0, 0, 0
 
 ---
 
-# TorsionSpringConstraint
+## TorsionSpringConstraint
 **Extends:** Constraint
 
-## Properties
+### Properties
 ```
 Coils: float = 8
 CurrentAngle: float = 0 [ReadOnly]
@@ -3718,10 +3720,10 @@ Stiffness: float = 100
 
 ---
 
-# UniversalConstraint
+## UniversalConstraint
 **Extends:** Constraint
 
-## Properties
+### Properties
 ```
 LimitsEnabled: bool = false
 MaxAngle: float = 45
@@ -3731,10 +3733,10 @@ Restitution: float = 0
 
 ---
 
-# VectorForce
+## VectorForce
 **Extends:** Constraint
 
-## Properties
+### Properties
 ```
 ApplyAtCenterOfMass: bool = false
 Force: Vector3 = 1000, 0, 0
@@ -3743,17 +3745,17 @@ RelativeTo: ActuatorRelativeTo = Attachment0
 
 ---
 
-# ContentProvider
+## ContentProvider
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Properties
+### Properties
 ```
 BaseUrl: string [ReadOnly]
 RequestQueueSize: int [ReadOnly]
 ```
 
-## Functions
+### Functions
 ```
 GetAssetFetchStatus(contentId: ContentId) → AssetFetchStatus
 GetAssetFetchStatusChangedSignal(contentId: ContentId) → RBXScriptSignal
@@ -3771,18 +3773,18 @@ UnregisterEncryptedAsset(assetId: ContentId) → null
 PreloadAsync(contentIdList: Array, callbackFunction: Function) → null
 ```
 
-## Events
+### Events
 ```
 AssetFetchFailed(assetId: ContentId)
 ```
 
 ---
 
-# ContextActionService
+## ContextActionService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
-## Functions
+### Functions
 ```
 BindAction(actionName: string, functionToBind: Function, createTouchButton: bool, inputTypes: Tuple) → null
 BindActionAtPriority(actionName: string, functionToBind: Function, createTouchButton: bool, priorityLevel: int, inputTypes: Tuple) → null
@@ -3810,7 +3812,7 @@ UnbindCoreActivate(userInputTypeForActivation: UserInputType, keyCodeForActivati
 GetButton(actionName: string) → Instance
 ```
 
-## Events
+### Events
 ```
 BoundActionAdded(actionAdded: string, createTouchButton: bool, functionInfoTable: Dictionary, isCore: bool) [RobloxScriptSecurity]
 BoundActionChanged(actionChanged: string, changeName: string, changeTable: Dictionary) [RobloxScriptSecurity]
@@ -3822,11 +3824,11 @@ LocalToolUnequipped(toolUnequipped: Instance)
 
 ---
 
-# Controller
+## Controller
 **Extends:** Instance
 **Tags:** NotCreatable
 
-## Functions
+### Functions
 ```
 BindButton(button: Button, caption: string) → null
 GetButton(button: Button) → bool
@@ -3835,44 +3837,44 @@ bindButton(button: Button, caption: string) → null [Deprecated]
 getButton(button: Button) → bool [Deprecated]
 ```
 
-## Events
+### Events
 ```
 ButtonChanged(button: Button)
 ```
 
 ---
 
-# HumanoidController
+## HumanoidController
 **Extends:** Controller
 
 ---
 
-# SkateboardController
+## SkateboardController
 **Extends:** Controller
 
-## Properties
+### Properties
 ```
 Steer: float = 0 [ReadOnly]
 Throttle: float = 0 [ReadOnly]
 ```
 
-## Events
+### Events
 ```
 AxisChanged(axis: string)
 ```
 
 ---
 
-# VehicleController
+## VehicleController
 **Extends:** Controller
 
 ---
 
-# ControllerBase
+## ControllerBase
 **Extends:** Instance
 **Tags:** NotCreatable
 
-## Properties
+### Properties
 ```
 Active: bool [ReadOnly]
 BalanceRigidityEnabled: bool
@@ -3881,10 +3883,10 @@ MoveSpeedFactor: float
 
 ---
 
-# AirController
+## AirController
 **Extends:** ControllerBase
 
-## Properties
+### Properties
 ```
 BalanceMaxTorque: float = 10000
 BalanceSpeed: float = 100
@@ -3898,10 +3900,10 @@ TurnSpeedFactor: float = 1
 
 ---
 
-# ClimbController
+## ClimbController
 **Extends:** ControllerBase
 
-## Properties
+### Properties
 ```
 AccelerationTime: float = 0
 BalanceMaxTorque: float = 10000
@@ -3911,10 +3913,10 @@ MoveMaxForce: float = 10000
 
 ---
 
-# GroundController
+## GroundController
 **Extends:** ControllerBase
 
-## Properties
+### Properties
 ```
 AccelerationLean: float = 1
 AccelerationTime: float = 0
@@ -3931,10 +3933,10 @@ TurnSpeedFactor: float = 1
 
 ---
 
-# SwimController
+## SwimController
 **Extends:** ControllerBase
 
-## Properties
+### Properties
 ```
 AccelerationTime: float = 0
 PitchMaxTorque: float = 10000
@@ -3945,10 +3947,10 @@ RollSpeedFactor: float = 1
 
 ---
 
-# ControllerManager
+## ControllerManager
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 ActiveController: ControllerBase
 BaseMoveSpeed: float = 16
@@ -3963,17 +3965,17 @@ UpDirection: Vector3 = 0, 1, 0
 
 ---
 
-# ControllerService
+## ControllerService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
 ---
 
-# ConversationalAIAcceptanceService
+## ConversationalAIAcceptanceService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 AlternativeAssetSelected(requestId: string, previousAssetId: int64, assetId: int64) → null [RobloxScriptSecurity]
 AssetInserted(requestId: string, assetId: int64) → null [RobloxScriptSecurity]
@@ -3994,46 +3996,46 @@ SendMeshGenPublishedAssetsTelemetry(requestId: string, generationId: string, suc
 
 ---
 
-# CookiesService
+## CookiesService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
 ---
 
-# CorePackages
+## CorePackages
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
 ---
 
-# CoreScriptDebuggingManagerHelper
+## CoreScriptDebuggingManagerHelper
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
 ---
 
-# CoreScriptSyncService
+## CoreScriptSyncService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 GetScriptFilePath(script: Instance) → Variant [RobloxScriptSecurity]
 ```
 
 ---
 
-# CreationDBService
+## CreationDBService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
 ---
 
-# CreatorStoreService
+## CreatorStoreService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
-## Functions
+### Functions
 ```
 GetAssetInfoAsync(assetId: int64) → Dictionary [RobloxScriptSecurity]
 GetCreatorStoreProductInfoAsync(productTargetId: int64, assetType: string) → Dictionary [RobloxScriptSecurity]
@@ -4042,17 +4044,17 @@ PerformCreatorStorePurchase(productTargetId: int64, assetType: string) → Dicti
 
 ---
 
-# CrossDMScriptChangeListener
+## CrossDMScriptChangeListener
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 IsWatchingScriptLine(scriptRef: string, lineNumber: int) → bool [RobloxScriptSecurity]
 StartWatchingScriptLine(scriptRef: string, debuggerConnectionId: int, lineNumber: int) → null [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 GuidLineContentsChanged(guid: string, lineNumber: int, contents: string) [RobloxScriptSecurity]
 GuidNameChanged(guid: string, fullName: string) [RobloxScriptSecurity]
@@ -4060,22 +4062,22 @@ GuidNameChanged(guid: string, fullName: string) [RobloxScriptSecurity]
 
 ---
 
-# CustomEvent
+## CustomEvent
 **Extends:** Instance
 **Tags:** Deprecated
 
-## Properties
+### Properties
 ```
 PersistedCurrentValue: float = 0
 ```
 
-## Functions
+### Functions
 ```
 GetAttachedReceivers() → Instances
 SetValue(newValue: float) → null
 ```
 
-## Events
+### Events
 ```
 ReceiverConnected(receiver: Instance)
 ReceiverDisconnected(receiver: Instance)
@@ -4083,21 +4085,21 @@ ReceiverDisconnected(receiver: Instance)
 
 ---
 
-# CustomEventReceiver
+## CustomEventReceiver
 **Extends:** Instance
 **Tags:** Deprecated
 
-## Properties
+### Properties
 ```
 Source: Instance
 ```
 
-## Functions
+### Functions
 ```
 GetCurrentValue() → float
 ```
 
-## Events
+### Events
 ```
 EventConnected(event: Instance)
 EventDisconnected(event: Instance)
@@ -4106,11 +4108,11 @@ SourceValueChanged(newValue: float)
 
 ---
 
-# CustomLog
+## CustomLog
 **Extends:** Instance
 **Tags:** NotReplicated
 
-## Functions
+### Functions
 ```
 Close() → null
 GetLogPath() → string
@@ -4120,11 +4122,11 @@ WriteAppend(append: string) → null
 
 ---
 
-# DataModelMesh
+## DataModelMesh
 **Extends:** Instance
 **Tags:** NotCreatable, NotBrowsable
 
-## Properties
+### Properties
 ```
 Offset: Vector3
 Scale: Vector3
@@ -4133,11 +4135,11 @@ VertexColor: Vector3
 
 ---
 
-# BevelMesh
+## BevelMesh
 **Extends:** DataModelMesh
 **Tags:** NotCreatable, NotBrowsable, Deprecated
 
-## Properties
+### Properties
 ```
 Bevel: float
 Bevel Roundness: float
@@ -4146,21 +4148,21 @@ Bulge: float
 
 ---
 
-# BlockMesh
+## BlockMesh
 **Extends:** BevelMesh
 
 ---
 
-# CylinderMesh
+## CylinderMesh
 **Extends:** BevelMesh
 **Tags:** Deprecated
 
 ---
 
-# FileMesh
+## FileMesh
 **Extends:** DataModelMesh
 
-## Properties
+### Properties
 ```
 MeshId: ContentId
 TextureId: ContentId
@@ -4168,21 +4170,21 @@ TextureId: ContentId
 
 ---
 
-# SpecialMesh
+## SpecialMesh
 **Extends:** FileMesh
 
-## Properties
+### Properties
 ```
 MeshType: MeshType = Head
 ```
 
 ---
 
-# DataModelPatchService
+## DataModelPatchService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 GetLuaVersion(patchName: string) → string [RobloxScriptSecurity]
 GetPatch(patchName: string) → Instance [RobloxScriptSecurity]
@@ -4192,17 +4194,17 @@ UpdatePatch(userId: int64, patchName: string, callbackFunction: Function) → nu
 
 ---
 
-# DataModelSession
+## DataModelSession
 **Extends:** Instance
 **Tags:** NotCreatable
 
-## Properties
+### Properties
 ```
 CurrentDataModelType: StudioDataModelType [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity] [ReadOnly]
 SessionId: string [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity] [ReadOnly]
 ```
 
-## Events
+### Events
 ```
 CurrentDataModelTypeAboutToChange(dataModelType: StudioDataModelType) [RobloxScriptSecurity]
 CurrentDataModelTypeChanged() [RobloxScriptSecurity]
@@ -4210,22 +4212,22 @@ CurrentDataModelTypeChanged() [RobloxScriptSecurity]
 
 ---
 
-# DataStoreGetOptions
+## DataStoreGetOptions
 **Extends:** Instance
 **Tags:** NotReplicated
 
-## Properties
+### Properties
 ```
 UseCache: bool = true
 ```
 
 ---
 
-# DataStoreIncrementOptions
+## DataStoreIncrementOptions
 **Extends:** Instance
 **Tags:** NotReplicated
 
-## Functions
+### Functions
 ```
 GetMetadata() → Dictionary
 SetMetadata(attributes: Dictionary) → null
@@ -4233,11 +4235,11 @@ SetMetadata(attributes: Dictionary) → null
 
 ---
 
-# DataStoreInfo
+## DataStoreInfo
 **Extends:** Instance
 **Tags:** NotCreatable, NotReplicated
 
-## Properties
+### Properties
 ```
 CreatedTime: int64 [ReadOnly]
 DataStoreName: string [ReadOnly]
@@ -4246,29 +4248,29 @@ UpdatedTime: int64 [ReadOnly]
 
 ---
 
-# DataStoreKey
+## DataStoreKey
 **Extends:** Instance
 **Tags:** NotCreatable, NotReplicated
 
-## Properties
+### Properties
 ```
 KeyName: string [ReadOnly]
 ```
 
 ---
 
-# DataStoreKeyInfo
+## DataStoreKeyInfo
 **Extends:** Instance
 **Tags:** NotCreatable, NotReplicated
 
-## Properties
+### Properties
 ```
 CreatedTime: int64 [ReadOnly]
 UpdatedTime: int64 [ReadOnly]
 Version: string [ReadOnly]
 ```
 
-## Functions
+### Functions
 ```
 GetMetadata() → Dictionary
 GetUserIds() → Array
@@ -4276,11 +4278,11 @@ GetUserIds() → Array
 
 ---
 
-# DataStoreObjectVersionInfo
+## DataStoreObjectVersionInfo
 **Extends:** Instance
 **Tags:** NotCreatable, NotReplicated
 
-## Properties
+### Properties
 ```
 CreatedTime: int64 [ReadOnly]
 IsDeleted: bool [ReadOnly]
@@ -4289,33 +4291,33 @@ Version: string [ReadOnly]
 
 ---
 
-# DataStoreOptions
+## DataStoreOptions
 **Extends:** Instance
 **Tags:** NotReplicated
 
-## Properties
+### Properties
 ```
 AllScopes: bool = false
 ```
 
-## Functions
+### Functions
 ```
 SetExperimentalFeatures(experimentalFeatures: Dictionary) → null
 ```
 
 ---
 
-# DataStoreService
+## DataStoreService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Properties
+### Properties
 ```
 AutomaticRetry: bool = true [Read:LocalUserSecurity] [Write:LocalUserSecurity]
 LegacyNamingScheme: bool = false [Read:LocalUserSecurity] [Write:LocalUserSecurity] [Deprecated]
 ```
 
-## Functions
+### Functions
 ```
 GetDataStore(name: string, scope: string, options: Instance) → DataStore
 GetGlobalDataStore() → DataStore
@@ -4326,11 +4328,11 @@ ListDataStoresAsync(prefix: string, pageSize: int, cursor: string) → DataStore
 
 ---
 
-# DataStoreSetOptions
+## DataStoreSetOptions
 **Extends:** Instance
 **Tags:** NotReplicated
 
-## Functions
+### Functions
 ```
 GetMetadata() → Dictionary
 SetMetadata(attributes: Dictionary) → null
@@ -4338,16 +4340,16 @@ SetMetadata(attributes: Dictionary) → null
 
 ---
 
-# Debris
+## Debris
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
-## Properties
+### Properties
 ```
 MaxItems: int [Deprecated]
 ```
 
-## Functions
+### Functions
 ```
 AddItem(item: Instance, lifetime: double) → null
 SetLegacyMaxItems(enabled: bool) → null [LocalUserSecurity]
@@ -4356,11 +4358,11 @@ addItem(item: Instance, lifetime: double) → null [Deprecated]
 
 ---
 
-# DebugSettings
+## DebugSettings
 **Extends:** Instance
 **Tags:** NotCreatable, Settings, NotReplicated, NotBrowsable
 
-## Properties
+### Properties
 ```
 DataModel: int [ReadOnly]
 InstanceCount: int [ReadOnly]
@@ -4374,17 +4376,17 @@ TickCountPreciseOverride: TickCountSampleMethod
 
 ---
 
-# DebuggablePluginWatcher
+## DebuggablePluginWatcher
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
 ---
 
-# DebuggerBreakpoint
+## DebuggerBreakpoint
 **Extends:** Instance
 **Tags:** NotCreatable
 
-## Properties
+### Properties
 ```
 Condition: string
 ContinueExecution: bool
@@ -4397,11 +4399,11 @@ line: int
 
 ---
 
-# DebuggerConnection
+## DebuggerConnection
 **Extends:** Instance
 **Tags:** NotCreatable, NotReplicated
 
-## Properties
+### Properties
 ```
 ErrorMessage: string [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity] [ReadOnly]
 HasError: bool [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity] [ReadOnly]
@@ -4409,7 +4411,7 @@ Id: int [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity] [ReadOnly]
 IsPaused: bool [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity] [ReadOnly]
 ```
 
-## Functions
+### Functions
 ```
 AddBreakpoint(script: string, line: int, breakpoint: Breakpoint) → null [RobloxScriptSecurity]
 Close() → null [RobloxScriptSecurity]
@@ -4431,7 +4433,7 @@ StepOut(thread: ThreadState, callback: Function) → int [RobloxScriptSecurity]
 UpdateSelectedFrame(threadId: int, frameNumber: int) → null [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 BreakpointAdded(breakpoint: Breakpoint) [RobloxScriptSecurity]
 BreakpointChanged(breakpoint: Breakpoint) [RobloxScriptSecurity]
@@ -4442,22 +4444,22 @@ Resumed(pausedState: PausedState) [RobloxScriptSecurity]
 
 ---
 
-# LocalDebuggerConnection
+## LocalDebuggerConnection
 **Extends:** DebuggerConnection
 **Tags:** NotCreatable, NotReplicated
 
 ---
 
-# DebuggerConnectionManager
+## DebuggerConnectionManager
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Properties
+### Properties
 ```
 Timeout: double [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
 ```
 
-## Functions
+### Functions
 ```
 ConnectLocal(dataModel: DataModel) → int [RobloxScriptSecurity]
 ConnectRemote(host: string, port: int) → int [RobloxScriptSecurity]
@@ -4466,7 +4468,7 @@ GetAvailableConnection() → DebuggerConnection [RobloxScriptSecurity]
 GetConnectionById(id: int) → DebuggerConnection [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 ConnectionEnded(connection: DebuggerConnection, reason: DebuggerEndReason) [RobloxScriptSecurity]
 ConnectionStarted(connection: DebuggerConnection) [RobloxScriptSecurity]
@@ -4475,11 +4477,11 @@ FocusChanged(connection: DebuggerConnection) [RobloxScriptSecurity]
 
 ---
 
-# DebuggerLuaResponse
+## DebuggerLuaResponse
 **Extends:** Instance
 **Tags:** NotCreatable, NotReplicated
 
-## Properties
+### Properties
 ```
 IsError: bool [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity] [ReadOnly]
 IsSuccess: bool [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity] [ReadOnly]
@@ -4488,23 +4490,23 @@ RequestId: int [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity] [ReadOnl
 Status: DebuggerStatus [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity] [ReadOnly]
 ```
 
-## Functions
+### Functions
 ```
 GetArg() → Variant [RobloxScriptSecurity]
 ```
 
 ---
 
-# DebuggerManager
+## DebuggerManager
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Properties
+### Properties
 ```
 DebuggingEnabled: bool [ReadOnly]
 ```
 
-## Functions
+### Functions
 ```
 AddDebugger(script: Instance) → Instance
 EnableDebugging() → null [LocalUserSecurity]
@@ -4515,7 +4517,7 @@ StepOut() → null [Deprecated]
 StepOver() → null [Deprecated]
 ```
 
-## Events
+### Events
 ```
 DebuggerAdded(debugger: Instance)
 DebuggerRemoved(debugger: Instance)
@@ -4523,11 +4525,11 @@ DebuggerRemoved(debugger: Instance)
 
 ---
 
-# DebuggerUIService
+## DebuggerUIService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 EditBreakpoint(metaBreakpointId: int) → null [RobloxScriptSecurity]
 EditWatch(expression: string) → null [RobloxScriptSecurity]
@@ -4542,7 +4544,7 @@ SetScriptLineMarker(guid: string, debuggerConnectionId: int, line: int, lineMark
 SetWatchExpressions(expressions: Array) → null [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 ExpressionAdded(expression: string) [RobloxScriptSecurity]
 ExpressionsCleared() [RobloxScriptSecurity]
@@ -4550,11 +4552,11 @@ ExpressionsCleared() [RobloxScriptSecurity]
 
 ---
 
-# DebuggerVariable
+## DebuggerVariable
 **Extends:** Instance
 **Tags:** NotCreatable, NotReplicated
 
-## Properties
+### Properties
 ```
 Name: string [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity] [ReadOnly]
 Populated: bool [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity] [ReadOnly]
@@ -4564,7 +4566,7 @@ VariableId: int [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity] [ReadOn
 VariablesCount: int [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity] [ReadOnly]
 ```
 
-## Functions
+### Functions
 ```
 GetVariableByIndex(index: int) → DebuggerVariable [RobloxScriptSecurity]
 GetVariableByName(name: string) → DebuggerVariable [RobloxScriptSecurity]
@@ -4572,31 +4574,31 @@ GetVariableByName(name: string) → DebuggerVariable [RobloxScriptSecurity]
 
 ---
 
-# DebuggerWatch
+## DebuggerWatch
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 Expression: string
 ```
 
 ---
 
-# DeviceIdService
+## DeviceIdService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 GetDeviceId() → string [RobloxScriptSecurity]
 ```
 
 ---
 
-# Dialog
+## Dialog
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 BehaviorType: DialogBehaviorType = SinglePlayer
 ConversationDistance: float = 25
@@ -4610,7 +4612,7 @@ TriggerDistance: float = 0
 TriggerOffset: Vector3 = 0, 0, 0
 ```
 
-## Functions
+### Functions
 ```
 GetCurrentPlayers() → Instances
 SetGuiObject(gui: BillboardGui) → null [RobloxScriptSecurity]
@@ -4618,17 +4620,17 @@ SetPlayerIsUsing(player: Instance, isUsing: bool) → null [RobloxScriptSecurity
 SignalDialogChoiceSelected(player: Instance, dialogChoice: Instance) → null [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 DialogChoiceSelected(player: Instance, dialogChoice: Instance)
 ```
 
 ---
 
-# DialogChoice
+## DialogChoice
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 GoodbyeChoiceActive: bool = true
 GoodbyeDialog: string
@@ -4638,11 +4640,11 @@ UserDialog: string
 
 ---
 
-# DraftsService
+## DraftsService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 DiscardEdits(scripts: Instances) → null [RobloxScriptSecurity]
 GetDraftStatus(script: Instance) → DraftStatusCode [RobloxScriptSecurity]
@@ -4656,7 +4658,7 @@ GetDrafts() → Instances [RobloxScriptSecurity]
 UpdateToLatestVersion(scripts: Instances) → null [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 CommitStatusChanged(script: Instance, status: DraftStatusCode) [RobloxScriptSecurity]
 DraftAdded(script: Instance) [RobloxScriptSecurity]
@@ -4668,10 +4670,10 @@ UpdateStatusChanged(script: Instance, status: DraftStatusCode) [RobloxScriptSecu
 
 ---
 
-# Dragger
+## Dragger
 **Extends:** Instance
 
-## Functions
+### Functions
 ```
 AxisRotate(axis: Axis) → null
 MouseDown(mousePart: Instance, pointOnMousePart: Vector3, parts: Instances) → null
@@ -4681,11 +4683,11 @@ MouseUp() → null
 
 ---
 
-# DraggerService
+## DraggerService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Properties
+### Properties
 ```
 AlignDraggedObjects: bool
 AngleSnapEnabled: bool
@@ -4709,26 +4711,26 @@ ShowPivotIndicator: bool
 
 ---
 
-# EditableService
+## EditableService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
-## Properties
+### Properties
 ```
 EditableStatus: EditableStatus = Unknown [Read:RobloxSecurity] [Write:RobloxSecurity]
 ```
 
 ---
 
-# EulerRotationCurve
+## EulerRotationCurve
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 RotationOrder: RotationOrder = XYZ
 ```
 
-## Functions
+### Functions
 ```
 GetAnglesAtTime(time: float) → Array
 GetRotationAtTime(time: float) → CFrame
@@ -4739,11 +4741,11 @@ Z() → FloatCurve
 
 ---
 
-# EventIngestService
+## EventIngestService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
-## Functions
+### Functions
 ```
 SendEventDeferred(target: string, eventContext: string, eventName: string, additionalArgs: Dictionary) → null [RobloxScriptSecurity]
 SendEventImmediately(target: string, eventContext: string, eventName: string, additionalArgs: Dictionary) → null [RobloxScriptSecurity]
@@ -4753,48 +4755,48 @@ SetRBXEventStream(target: string, eventContext: string, eventName: string, addit
 
 ---
 
-# ExampleService
+## ExampleService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 PrintHello() → null [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 OnPolo(message: string) [RobloxScriptSecurity]
 ```
 
 ---
 
-# ExampleV2Service
+## ExampleV2Service
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 PrintHello() → null [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 OnPolo(message: string) [RobloxScriptSecurity]
 ```
 
 ---
 
-# ExperienceAuthService
+## ExperienceAuthService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
-## Functions
+### Functions
 ```
 ScopeCheckUIComplete(guid: string, scopes: Array, result: ScopeCheckResult, metadata: Dictionary) → null [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 OpenAuthPrompt(guid: string, scopes: Array, metadata: Dictionary) [RobloxScriptSecurity]
 ScopeCheckResult(guid: string, result: ScopeCheckResult, token: string, scopes: Array, metadata: Dictionary) [RobloxSecurity]
@@ -4802,11 +4804,11 @@ ScopeCheckResult(guid: string, result: ScopeCheckResult, token: string, scopes: 
 
 ---
 
-# ExperienceInviteOptions
+## ExperienceInviteOptions
 **Extends:** Instance
 **Tags:** NotReplicated
 
-## Properties
+### Properties
 ```
 InviteMessageId: string
 InviteUser: int64 = 0
@@ -4816,18 +4818,18 @@ PromptMessage: string
 
 ---
 
-# ExperienceNotificationService
+## ExperienceNotificationService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 InvokeOptInPromptClosed() → null [RobloxScriptSecurity]
 PromptOptIn() → null
 CanPromptOptInAsync() → bool
 ```
 
-## Events
+### Events
 ```
 OptInPromptClosed()
 PromptOptInRequested() [RobloxScriptSecurity]
@@ -4835,11 +4837,11 @@ PromptOptInRequested() [RobloxScriptSecurity]
 
 ---
 
-# ExperienceService
+## ExperienceService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 ExecuteCrossExperienceCall(callId: string, params: Dictionary, successCallback: Function, errorCallback: Function) → null [RobloxScriptSecurity]
 GetPendingJoinAttempt() → Dictionary [RobloxScriptSecurity]
@@ -4852,7 +4854,7 @@ StartCrossExperience(type: string, params: Dictionary) → null [RobloxScriptSec
 StopCrossExperience(type: string, params: Dictionary) → null [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 OnCrossExperienceStarted(type: string, params: Dictionary) [RobloxScriptSecurity]
 OnCrossExperienceStopped(type: string, params: Dictionary) [RobloxScriptSecurity]
@@ -4861,42 +4863,42 @@ OnNewJoinAttempt(params: Dictionary) [RobloxScriptSecurity]
 
 ---
 
-# ExperienceStateCaptureService
+## ExperienceStateCaptureService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Properties
+### Properties
 ```
 HiddenSelectionEnabled: bool = false [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
 IsInBackground: bool = false [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity] [ReadOnly]
 IsInCaptureMode: bool = false [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity] [ReadOnly]
 ```
 
-## Functions
+### Functions
 ```
 CanEnterCaptureMode() → bool [RobloxScriptSecurity]
 ResetHighlight() → null [RobloxScriptSecurity]
 ToggleCaptureMode() → null [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 ItemSelectedInCaptureMode(instance: Instance) [RobloxScriptSecurity]
 ```
 
 ---
 
-# ExperienceStateRecordingService
+## ExperienceStateRecordingService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
 ---
 
-# ExplorerFilter
+## ExplorerFilter
 **Extends:** Instance
 **Tags:** NotReplicated
 
-## Functions
+### Functions
 ```
 BeginSearch(root: Instance) → null [RobloxScriptSecurity]
 GetAutocompleter() → ExplorerFilterAutocompleter [RobloxScriptSecurity]
@@ -4910,38 +4912,38 @@ SetFilter(search: string) → null [RobloxScriptSecurity]
 
 ---
 
-# ExplorerFilterAutocompleter
+## ExplorerFilterAutocompleter
 **Extends:** Instance
 **Tags:** NotCreatable, NotReplicated
 
-## Properties
+### Properties
 ```
 ReplaceRange: Vector2 [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity] [ReadOnly]
 RequiresOutsideContext: bool [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity] [ReadOnly]
 ```
 
-## Functions
+### Functions
 ```
 GetSuggestions() → Array [RobloxScriptSecurity]
 ```
 
 ---
 
-# ExplorerServiceVisibilityService
+## ExplorerServiceVisibilityService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 GetServiceVisibility(service: Instance) → bool
 ```
 
 ---
 
-# Explosion
+## Explosion
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 BlastPressure: float = 500000
 BlastRadius: float = 4
@@ -4953,18 +4955,18 @@ TimeScale: float = 1
 Visible: bool = true
 ```
 
-## Events
+### Events
 ```
 Hit(part: BasePart, distance: float)
 ```
 
 ---
 
-# FaceAnimatorService
+## FaceAnimatorService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Properties
+### Properties
 ```
 AudioAnimationEnabled: bool = true [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
 FaceTrackingStatusEnum: TrackerFaceTrackingStatus = FaceTrackingUninitialized [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
@@ -4972,7 +4974,7 @@ FlipHeadOrientation: bool = false [Read:RobloxScriptSecurity] [Write:RobloxScrip
 VideoAnimationEnabled: bool = true [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
 ```
 
-## Functions
+### Functions
 ```
 GetTrackerLodController() → TrackerLodController [RobloxScriptSecurity]
 Init(videoEnabled: bool, audioEnabled: bool) → null [RobloxScriptSecurity]
@@ -4982,7 +4984,7 @@ Step() → null [RobloxScriptSecurity]
 Stop() → null [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 TrackerError(error: TrackerError) [RobloxScriptSecurity]
 TrackerPrompt(prompt: TrackerPromptEvent) [RobloxScriptSecurity]
@@ -4990,10 +4992,10 @@ TrackerPrompt(prompt: TrackerPromptEvent) [RobloxScriptSecurity]
 
 ---
 
-# FaceControls
+## FaceControls
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 ChinRaiser: float = 0 [Read:PluginSecurity] [Write:PluginSecurity]
 ChinRaiserUpperLip: float = 0 [Read:PluginSecurity] [Write:PluginSecurity]
@@ -5049,21 +5051,21 @@ UpperLipSuck: float = 0 [Read:PluginSecurity] [Write:PluginSecurity]
 
 ---
 
-# FaceInstance
+## FaceInstance
 **Extends:** Instance
 **Tags:** NotCreatable, NotBrowsable
 
-## Properties
+### Properties
 ```
 Face: NormalId
 ```
 
 ---
 
-# Decal
+## Decal
 **Extends:** FaceInstance
 
-## Properties
+### Properties
 ```
 Color3: Color3 = 1, 1, 1
 LocalTransparencyModifier: float = 0
@@ -5085,10 +5087,10 @@ ZIndex: int = 1
 
 ---
 
-# Texture
+## Texture
 **Extends:** Decal
 
-## Properties
+### Properties
 ```
 OffsetStudsU: float = 0
 OffsetStudsV: float = 0
@@ -5098,11 +5100,11 @@ StudsPerTileV: float = 2
 
 ---
 
-# FacialAgeEstimationService
+## FacialAgeEstimationService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 IsAvailable() → bool [RobloxScriptSecurity]
 InquiryAsync(inquiryRequest: Dictionary) → Dictionary [RobloxScriptSecurity]
@@ -5110,16 +5112,16 @@ InquiryAsync(inquiryRequest: Dictionary) → Dictionary [RobloxScriptSecurity]
 
 ---
 
-# FacialAnimationRecordingService
+## FacialAnimationRecordingService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Properties
+### Properties
 ```
 BiometricDataConsent: bool [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
 ```
 
-## Functions
+### Functions
 ```
 IsAgeRestricted() → bool [RobloxScriptSecurity]
 CheckOrRequestCameraPermission() → string [RobloxScriptSecurity]
@@ -5127,11 +5129,11 @@ CheckOrRequestCameraPermission() → string [RobloxScriptSecurity]
 
 ---
 
-# FacialAnimationStreamingServiceStats
+## FacialAnimationStreamingServiceStats
 **Extends:** Instance
 **Tags:** NotCreatable, NotReplicated
 
-## Functions
+### Functions
 ```
 Get(label: string) → int64 [RobloxScriptSecurity]
 GetWithPlayerId(label: string, playerId: int64) → int64 [RobloxScriptSecurity]
@@ -5139,16 +5141,16 @@ GetWithPlayerId(label: string, playerId: int64) → int64 [RobloxScriptSecurity]
 
 ---
 
-# FacialAnimationStreamingServiceV2
+## FacialAnimationStreamingServiceV2
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
-## Properties
+### Properties
 ```
 ServiceState: int = 0 [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
 ```
 
-## Functions
+### Functions
 ```
 GetStats() → FacialAnimationStreamingServiceStats [RobloxScriptSecurity]
 IsAudioEnabled(mask: int) → bool [RobloxScriptSecurity]
@@ -5160,17 +5162,17 @@ ResolveStateForUser(userId: int64) → int [RobloxScriptSecurity]
 
 ---
 
-# FacialAnimationStreamingSubsessionStats
+## FacialAnimationStreamingSubsessionStats
 **Extends:** Instance
 **Tags:** NotCreatable, NotReplicated
 
 ---
 
-# Feature
+## Feature
 **Extends:** Instance
 **Tags:** NotCreatable
 
-## Properties
+### Properties
 ```
 FaceId: NormalId
 InOut: InOut
@@ -5180,23 +5182,23 @@ TopBottom: TopBottom
 
 ---
 
-# Hole
+## Hole
 **Extends:** Feature
 **Tags:** Deprecated
 
 ---
 
-# MotorFeature
+## MotorFeature
 **Extends:** Feature
 **Tags:** Deprecated
 
 ---
 
-# FeatureRestrictionManager
+## FeatureRestrictionManager
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
-## Events
+### Events
 ```
 TimeoutChatAttempt(isPermanentTimeout: bool, endTime: int64) [RobloxScriptSecurity]
 UpdateExperienceChatTimeout(startTime: int64, duration: int64) [RobloxSecurity]
@@ -5204,16 +5206,16 @@ UpdateExperienceChatTimeout(startTime: int64, duration: int64) [RobloxSecurity]
 
 ---
 
-# File
+## File
 **Extends:** Instance
 **Tags:** NotCreatable, NotReplicated
 
-## Properties
+### Properties
 ```
 Size: int64 [Read:PluginSecurity] [Write:PluginSecurity] [ReadOnly]
 ```
 
-## Functions
+### Functions
 ```
 GetBinaryContents() → string [PluginSecurity]
 GetTemporaryId() → ContentId [PluginSecurity]
@@ -5221,10 +5223,10 @@ GetTemporaryId() → ContentId [PluginSecurity]
 
 ---
 
-# Fire
+## Fire
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 Color: Color3 = 0.92549, 0.545098, 0.27451
 Enabled: bool = true
@@ -5238,29 +5240,29 @@ size: float = 5 [Deprecated]
 size_xml: float = 5
 ```
 
-## Functions
+### Functions
 ```
 FastForward(numFrames: int) → null [RobloxScriptSecurity]
 ```
 
 ---
 
-# FlagStandService
+## FlagStandService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
 ---
 
-# FloatCurve
+## FloatCurve
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 Length: int = 0 [ReadOnly]
 ValuesAndTimes: BinaryString = 
 ```
 
-## Functions
+### Functions
 ```
 GetKeyAtIndex(index: int) → FloatCurveKey
 GetKeyIndicesAtTime(time: float) → Array
@@ -5273,54 +5275,54 @@ SetKeys(keys: Array) → int
 
 ---
 
-# FlyweightService
+## FlyweightService
 **Extends:** Instance
 **Tags:** Service
 
 ---
 
-# CSGDictionaryService
+## CSGDictionaryService
 **Extends:** FlyweightService
 **Tags:** Service
 
 ---
 
-# NonReplicatedCSGDictionaryService
+## NonReplicatedCSGDictionaryService
 **Extends:** FlyweightService
 **Tags:** Service
 
 ---
 
-# Folder
+## Folder
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 ReplicatedGuiInsertionOrder: int = 2147483647 [Read:RobloxSecurity] [Write:RobloxSecurity]
 ```
 
 ---
 
-# ForceField
+## ForceField
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 Visible: bool = true
 ```
 
 ---
 
-# FriendService
+## FriendService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
-## Functions
+### Functions
 ```
 GetPlatformFriends() → Array [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 FriendsUpdated(friendData: Array) [RobloxScriptSecurity]
 RemoteFriendEventSignal(userId: int64, userId: int64, event: FriendRequestEvent) [RobloxSecurity]
@@ -5329,11 +5331,11 @@ RemoteFriendStatusSignal(userId: int64, userId: int64, status: FriendStatus) [Ro
 
 ---
 
-# FunctionalTest
+## FunctionalTest
 **Extends:** Instance
 **Tags:** Deprecated
 
-## Properties
+### Properties
 ```
 AllowSleep: bool = true
 Description: string = ?
@@ -5343,7 +5345,7 @@ PhysicsEnvironmentalThrottle: bool = true
 Timeout: double = 60
 ```
 
-## Functions
+### Functions
 ```
 Error(message: string) → null
 Failed(message: string) → null
@@ -5354,44 +5356,44 @@ Warn(message: string) → null
 
 ---
 
-# GamePassService
+## GamePassService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
-## Functions
+### Functions
 ```
 PlayerHasPass(player: Player, gamePassId: int64) → bool [Deprecated]
 ```
 
 ---
 
-# GameSettings
+## GameSettings
 **Extends:** Instance
 **Tags:** NotCreatable, Settings, NotReplicated, NotBrowsable
 
-## Properties
+### Properties
 ```
 VideoCaptureEnabled: bool
 VideoRecording: bool [Read:RobloxScriptSecurity] [Write:RobloxSecurity]
 ```
 
-## Events
+### Events
 ```
 VideoRecordingChangeRequest(recording: bool) [RobloxScriptSecurity]
 ```
 
 ---
 
-# GamepadService
+## GamepadService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Properties
+### Properties
 ```
 GamepadCursorEnabled: bool = false [Write:RobloxScriptSecurity]
 ```
 
-## Functions
+### Functions
 ```
 DisableGamepadCursor() → null
 EnableGamepadCursor(guiObject: Instance) → null
@@ -5399,25 +5401,25 @@ GetGamepadCursorPosition() → Vector2 [RobloxScriptSecurity]
 SetGamepadCursorPosition(position: Vector2) → null [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 GamepadThumbstick1Changed(event: Vector2) [RobloxScriptSecurity]
 ```
 
 ---
 
-# GenerationService
+## GenerationService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
-## Functions
+### Functions
 ```
 GenerateMeshAsync(inputs: Dictionary, player: Player, options: Dictionary, intermediateResultCallback: Function?) → Tuple
 InternalGenerateMeshAsync(inputs: Dictionary, userId: int64, options: Dictionary, intermediateResultCallback: Function?) → Tuple [RobloxScriptSecurity]
 LoadGeneratedMeshAsync(generationId: string) → MeshPart
 ```
 
-## Events
+### Events
 ```
 ReplicateGeneration(id: string, success: bool, serializedModel: string) [RobloxSecurity]
 RequestGenerationReplication(id: string) [RobloxSecurity]
@@ -5425,11 +5427,11 @@ RequestGenerationReplication(id: string) [RobloxSecurity]
 
 ---
 
-# GenericChallengeService
+## GenericChallengeService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
-## Functions
+### Functions
 ```
 SignalChallengeAbandoned(challengeID: string) → null [RobloxScriptSecurity]
 SignalChallengeCompleted(challengeID: string, challengeType: string, challengeMetadata: string) → null [RobloxScriptSecurity]
@@ -5438,7 +5440,7 @@ SignalChallengeLoaded(challengeID: string, success: bool) → null [RobloxScript
 SignalChallengeRequired(challengeID: string, challengeType: string, challengeMetadata: string) → null [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 ChallengeAbandonedEvent(challengeID: string) [RobloxScriptSecurity]
 ChallengeCompletedEvent(challengeID: string, challengeType: string, challengeMetadata: string) [RobloxScriptSecurity]
@@ -5449,17 +5451,17 @@ ChallengeRequiredEvent(challengeID: string, challengeType: string, challengeMeta
 
 ---
 
-# Geometry
+## Geometry
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
 ---
 
-# GeometryService
+## GeometryService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
-## Functions
+### Functions
 ```
 CalculateConstraintsToPreserve(source: Instance, destination: Array, options: Dictionary) → Array
 HashMeshAsync(meshId: ContentId) → string [RobloxScriptSecurity]
@@ -5470,11 +5472,11 @@ UnionAsync(part: Instance, parts: Array, options: Dictionary) → Array
 
 ---
 
-# GetTextBoundsParams
+## GetTextBoundsParams
 **Extends:** Instance
 **Tags:** NotReplicated
 
-## Properties
+### Properties
 ```
 Font: Font
 RichText: bool = false
@@ -5485,11 +5487,11 @@ Width: float = 0
 
 ---
 
-# GlobalDataStore
+## GlobalDataStore
 **Extends:** Instance
 **Tags:** NotCreatable, NotReplicated
 
-## Functions
+### Functions
 ```
 OnUpdate(key: string, callback: Function) → RBXScriptConnection [Deprecated]
 GetAsync(key: string, options: DataStoreGetOptions) → Tuple
@@ -5501,11 +5503,11 @@ UpdateAsync(key: string, transformFunction: Function) → Tuple
 
 ---
 
-# DataStore
+## DataStore
 **Extends:** GlobalDataStore
 **Tags:** NotCreatable, NotReplicated
 
-## Functions
+### Functions
 ```
 GetVersionAsync(key: string, version: string) → Tuple
 GetVersionAtTimeAsync(key: string, timestamp: int64) → Tuple
@@ -5516,22 +5518,22 @@ RemoveVersionAsync(key: string, version: string) → null
 
 ---
 
-# OrderedDataStore
+## OrderedDataStore
 **Extends:** GlobalDataStore
 **Tags:** NotCreatable, NotReplicated
 
-## Functions
+### Functions
 ```
 GetSortedAsync(ascending: bool, pagesize: int, minValue: Variant, maxValue: Variant) → DataStorePages
 ```
 
 ---
 
-# GroupService
+## GroupService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 GetAlliesAsync(groupId: int64) → StandardPages
 GetEnemiesAsync(groupId: int64) → StandardPages
@@ -5541,17 +5543,17 @@ GetGroupsAsync(userId: int64) → Array
 
 ---
 
-# GuiBase
+## GuiBase
 **Extends:** Instance
 **Tags:** NotCreatable
 
 ---
 
-# GuiBase2d
+## GuiBase2d
 **Extends:** GuiBase
 **Tags:** NotCreatable, NotBrowsable
 
-## Properties
+### Properties
 ```
 AbsolutePosition: Vector2 [ReadOnly]
 AbsoluteRotation: float [ReadOnly]
@@ -5572,18 +5574,18 @@ SelectionGroup: bool
 TotalGroupScale: float [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity] [ReadOnly]
 ```
 
-## Events
+### Events
 ```
 SelectionChanged(amISelected: bool, previousSelection: GuiObject, newSelection: GuiObject)
 ```
 
 ---
 
-# GuiObject
+## GuiObject
 **Extends:** GuiBase2d
 **Tags:** NotCreatable, NotBrowsable
 
-## Properties
+### Properties
 ```
 Active: bool
 AnchorPoint: Vector2
@@ -5624,14 +5626,14 @@ Visible: bool
 ZIndex: int
 ```
 
-## Functions
+### Functions
 ```
 TweenPosition(endPosition: UDim2, easingDirection: EasingDirection, easingStyle: EasingStyle, time: float, override: bool, callback: Function) → bool
 TweenSize(endSize: UDim2, easingDirection: EasingDirection, easingStyle: EasingStyle, time: float, override: bool, callback: Function) → bool
 TweenSizeAndPosition(endSize: UDim2, endPosition: UDim2, easingDirection: EasingDirection, easingStyle: EasingStyle, time: float, override: bool, callback: Function) → bool
 ```
 
-## Events
+### Events
 ```
 DragBegin(initialPosition: UDim2)
 DragStopped(x: int, y: int)
@@ -5655,10 +5657,10 @@ TouchTap(touchPositions: Array)
 
 ---
 
-# CanvasGroup
+## CanvasGroup
 **Extends:** GuiObject
 
-## Properties
+### Properties
 ```
 GroupColor3: Color3 = 1, 1, 1
 GroupTransparency: float = 0
@@ -5667,21 +5669,21 @@ ResolutionScale: float = 1 [Read:RobloxScriptSecurity] [Write:RobloxScriptSecuri
 
 ---
 
-# Frame
+## Frame
 **Extends:** GuiObject
 
-## Properties
+### Properties
 ```
 Style: FrameStyle = Custom
 ```
 
 ---
 
-# GuiButton
+## GuiButton
 **Extends:** GuiObject
 **Tags:** NotCreatable, NotBrowsable
 
-## Properties
+### Properties
 ```
 AutoButtonColor: bool
 HoverHapticEffect: HapticEffect
@@ -5697,7 +5699,7 @@ Selected: bool
 Style: ButtonStyle
 ```
 
-## Events
+### Events
 ```
 Activated(inputObject: InputObject, clickCount: int)
 MouseButton1Click()
@@ -5710,10 +5712,10 @@ MouseButton2Up(x: int, y: int)
 
 ---
 
-# ImageButton
+## ImageButton
 **Extends:** GuiButton
 
-## Properties
+### Properties
 ```
 ContentImageSize: Vector2 = 0, 0 [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity] [ReadOnly]
 HoverImage: ContentId
@@ -5734,17 +5736,17 @@ SliceScale: float = 1
 TileSize: UDim2 = {1, 0}, {1, 0}
 ```
 
-## Functions
+### Functions
 ```
 SetEnableContentImageSizeChangedEvents(enabled: bool) → null [RobloxScriptSecurity]
 ```
 
 ---
 
-# TextButton
+## TextButton
 **Extends:** GuiButton
 
-## Properties
+### Properties
 ```
 Confidential: bool = false [Read:RobloxSecurity] [Write:RobloxSecurity]
 ContentText: string = Button [ReadOnly]
@@ -5777,23 +5779,23 @@ TextXAlignment: TextXAlignment = Center
 TextYAlignment: TextYAlignment = Center
 ```
 
-## Functions
+### Functions
 ```
 SetTextFromInput(text: string) → null [RobloxScriptSecurity]
 ```
 
 ---
 
-# GuiLabel
+## GuiLabel
 **Extends:** GuiObject
 **Tags:** NotCreatable
 
 ---
 
-# ImageLabel
+## ImageLabel
 **Extends:** GuiLabel
 
-## Properties
+### Properties
 ```
 ContentImageSize: Vector2 = 0, 0 [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity] [ReadOnly]
 Image: ContentId
@@ -5810,17 +5812,17 @@ SliceScale: float = 1
 TileSize: UDim2 = {1, 0}, {1, 0}
 ```
 
-## Functions
+### Functions
 ```
 SetEnableContentImageSizeChangedEvents(enabled: bool) → null [RobloxScriptSecurity]
 ```
 
 ---
 
-# TextLabel
+## TextLabel
 **Extends:** GuiLabel
 
-## Properties
+### Properties
 ```
 Confidential: bool = false [Read:RobloxSecurity] [Write:RobloxSecurity]
 ContentText: string = Label [ReadOnly]
@@ -5853,23 +5855,23 @@ TextXAlignment: TextXAlignment = Center
 TextYAlignment: TextYAlignment = Center
 ```
 
-## Functions
+### Functions
 ```
 SetTextFromInput(text: string) → null [RobloxScriptSecurity]
 ```
 
 ---
 
-# RelativeGui
+## RelativeGui
 **Extends:** GuiObject
 **Tags:** NotReplicated
 
 ---
 
-# ScrollingFrame
+## ScrollingFrame
 **Extends:** GuiObject
 
-## Properties
+### Properties
 ```
 AbsoluteCanvasSize: Vector2 = 0, 0 [ReadOnly]
 AbsoluteWindowSize: Vector2 = 0, 0 [ReadOnly]
@@ -5900,7 +5902,7 @@ VerticalScrollBarInset: ScrollBarInset = None
 VerticalScrollBarPosition: VerticalScrollBarPosition = Right
 ```
 
-## Functions
+### Functions
 ```
 ClearInertialScrolling() → null [RobloxScriptSecurity]
 GetSampledInertialVelocity() → Vector2 [RobloxScriptSecurity]
@@ -5909,10 +5911,10 @@ ScrollToTop() → null [RobloxScriptSecurity]
 
 ---
 
-# TextBox
+## TextBox
 **Extends:** GuiObject
 
-## Properties
+### Properties
 ```
 ClearTextOnFocus: bool = true
 Confidential: bool = false [Read:RobloxSecurity] [Write:RobloxSecurity]
@@ -5960,7 +5962,7 @@ TextXAlignment: TextXAlignment = Center
 TextYAlignment: TextYAlignment = Center
 ```
 
-## Functions
+### Functions
 ```
 CaptureFocus() → null
 IsFocused() → bool
@@ -5969,7 +5971,7 @@ ResetKeyboardMode() → null [RobloxScriptSecurity]
 SetTextFromInput(text: string) → null [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 FocusLost(enterPressed: bool, inputThatCausedFocusLoss: InputObject)
 Focused()
@@ -5978,11 +5980,11 @@ ReturnPressedFromOnScreenKeyboard()
 
 ---
 
-# VideoDisplay
+## VideoDisplay
 **Extends:** GuiObject
 **Tags:** NotBrowsable
 
-## Properties
+### Properties
 ```
 ResampleMode: ResamplerMode = Default
 ScaleType: ScaleType = Stretch
@@ -5993,24 +5995,24 @@ VideoRectSize: Vector2 = 0, 0
 VideoTransparency: float = 0
 ```
 
-## Functions
+### Functions
 ```
 GetConnectedWires(pin: string) → Instances
 GetInputPins() → Array
 GetOutputPins() → Array
 ```
 
-## Events
+### Events
 ```
 WiringChanged(connected: bool, pin: string, wire: Wire, instance: Instance)
 ```
 
 ---
 
-# VideoFrame
+## VideoFrame
 **Extends:** GuiObject
 
-## Properties
+### Properties
 ```
 IsLoaded: bool = false [ReadOnly]
 Looped: bool = false
@@ -6025,14 +6027,14 @@ VideoContent: Content
 Volume: float = 1
 ```
 
-## Functions
+### Functions
 ```
 Pause() → null
 Play() → null
 SetStudioPreview(isPreview: bool) → null [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 DidLoop(video: string)
 Ended(video: string)
@@ -6045,10 +6047,10 @@ TimePositionUpdatedFromServer(value: double) [RobloxSecurity]
 
 ---
 
-# ViewportFrame
+## ViewportFrame
 **Extends:** GuiObject
 
-## Properties
+### Properties
 ```
 Ambient: Color3 = 0.784314, 0.784314, 0.784314
 CameraCFrame: CFrame
@@ -6061,25 +6063,25 @@ LightColor: Color3 = 0.54902, 0.54902, 0.54902
 LightDirection: Vector3 = -1, -1, -1
 ```
 
-## Functions
+### Functions
 ```
 CaptureSnapshotAsync() → ContentId [RobloxScriptSecurity]
 ```
 
 ---
 
-# LayerCollector
+## LayerCollector
 **Extends:** GuiBase2d
 **Tags:** NotCreatable, NotBrowsable
 
-## Properties
+### Properties
 ```
 Enabled: bool
 ResetOnSpawn: bool
 ZIndexBehavior: ZIndexBehavior
 ```
 
-## Functions
+### Functions
 ```
 GetGuiObjectsAtPosition(x: int, y: int) → Instances [RobloxScriptSecurity]
 GetLayoutNodeTree() → Dictionary [Deprecated]
@@ -6087,10 +6089,10 @@ GetLayoutNodeTree() → Dictionary [Deprecated]
 
 ---
 
-# BillboardGui
+## BillboardGui
 **Extends:** LayerCollector
 
-## Properties
+### Properties
 ```
 Active: bool = false
 Adornee: Instance
@@ -6112,29 +6114,29 @@ StudsOffset: Vector3 = 0, 0, 0
 StudsOffsetWorldSpace: Vector3 = 0, 0, 0
 ```
 
-## Functions
+### Functions
 ```
 GetScreenSpaceBounds() → Variant [RobloxScriptSecurity]
 ```
 
 ---
 
-# PluginGui
+## PluginGui
 **Extends:** LayerCollector
 **Tags:** NotCreatable, NotReplicated
 
-## Properties
+### Properties
 ```
 Title: string
 ```
 
-## Functions
+### Functions
 ```
 BindToClose(function: Function) → null
 GetRelativeMousePosition() → Vector2 [PluginSecurity]
 ```
 
-## Events
+### Events
 ```
 InputBegan(input: InputObject, gameProcessedEvent: bool) [RobloxScriptSecurity]
 InputChanged(input: InputObject, gameProcessedEvent: bool) [RobloxScriptSecurity]
@@ -6151,32 +6153,32 @@ WindowFocused() [PluginSecurity]
 
 ---
 
-# DockWidgetPluginGui
+## DockWidgetPluginGui
 **Extends:** PluginGui
 **Tags:** NotCreatable, NotReplicated
 
-## Properties
+### Properties
 ```
 HostWidgetWasRestored: bool = false [ReadOnly]
 ```
 
-## Functions
+### Functions
 ```
 RequestRaise() → null [RobloxScriptSecurity]
 ```
 
 ---
 
-# QWidgetPluginGui
+## QWidgetPluginGui
 **Extends:** PluginGui
 **Tags:** NotCreatable, NotReplicated
 
 ---
 
-# ScreenGui
+## ScreenGui
 **Extends:** LayerCollector
 
-## Properties
+### Properties
 ```
 ClipToDeviceSafeArea: bool = true
 DisplayOrder: int = 0
@@ -6188,17 +6190,17 @@ ScreenInsets: ScreenInsets = CoreUISafeInsets
 
 ---
 
-# GuiMain
+## GuiMain
 **Extends:** ScreenGui
 **Tags:** Deprecated
 
 ---
 
-# SurfaceGuiBase
+## SurfaceGuiBase
 **Extends:** LayerCollector
 **Tags:** NotCreatable
 
-## Properties
+### Properties
 ```
 Active: bool
 Adornee: Instance
@@ -6207,10 +6209,10 @@ Face: NormalId
 
 ---
 
-# AdGui
+## AdGui
 **Extends:** SurfaceGuiBase
 
-## Properties
+### Properties
 ```
 AdShape: AdShape = HorizontalRectangle
 EnableVideoAds: bool = true
@@ -6218,14 +6220,14 @@ FallbackImage: ContentId
 Status: AdUnitStatus = Inactive [ReadOnly]
 ```
 
-## Functions
+### Functions
 ```
 GetSingleReportAdInfo() → Map [RobloxScriptSecurity]
 HandleLuaUIEvent(eventType: AdUIEventType) → null [RobloxScriptSecurity]
 forwardStateToLuaUI() → null [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 AdEvent(adEventType: AdEventType) [RobloxSecurity]
 ReportIsSubscribedToVideoCompletion() [RobloxSecurity]
@@ -6234,10 +6236,10 @@ adGuiStateChanged(adUIState: Variant) [RobloxScriptSecurity]
 
 ---
 
-# SurfaceGui
+## SurfaceGui
 **Extends:** SurfaceGuiBase
 
-## Properties
+### Properties
 ```
 AlwaysOnTop: bool = false
 Brightness: float = 1
@@ -6255,11 +6257,11 @@ ZOffset: float = 0
 
 ---
 
-# GuiBase3d
+## GuiBase3d
 **Extends:** GuiBase
 **Tags:** NotCreatable
 
-## Properties
+### Properties
 ```
 Color: BrickColor [Deprecated]
 Color3: Color3
@@ -6269,11 +6271,11 @@ Visible: bool
 
 ---
 
-# FloorWire
+## FloorWire
 **Extends:** GuiBase3d
 **Tags:** Deprecated
 
-## Properties
+### Properties
 ```
 CycleOffset: float = 0
 From: BasePart
@@ -6287,21 +6289,21 @@ WireRadius: float = 0.0625
 
 ---
 
-# InstanceAdornment
+## InstanceAdornment
 **Extends:** GuiBase3d
 **Tags:** NotCreatable
 
-## Properties
+### Properties
 ```
 Adornee: Instance
 ```
 
 ---
 
-# SelectionBox
+## SelectionBox
 **Extends:** InstanceAdornment
 
-## Properties
+### Properties
 ```
 LineThickness: float = 0.150000006
 StudioSelectionBox: bool = false [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
@@ -6312,22 +6314,22 @@ SurfaceTransparency: float = 1
 
 ---
 
-# PVAdornment
+## PVAdornment
 **Extends:** GuiBase3d
 **Tags:** NotCreatable
 
-## Properties
+### Properties
 ```
 Adornee: PVInstance
 ```
 
 ---
 
-# HandleAdornment
+## HandleAdornment
 **Extends:** PVAdornment
 **Tags:** NotCreatable
 
-## Properties
+### Properties
 ```
 AdornCullingMode: AdornCullingMode
 AlwaysOnTop: bool
@@ -6336,7 +6338,7 @@ SizeRelativeOffset: Vector3
 ZIndex: int
 ```
 
-## Events
+### Events
 ```
 MouseButton1Down()
 MouseButton1Up()
@@ -6346,20 +6348,20 @@ MouseLeave()
 
 ---
 
-# BoxHandleAdornment
+## BoxHandleAdornment
 **Extends:** HandleAdornment
 
-## Properties
+### Properties
 ```
 Size: Vector3 = 1, 1, 1
 ```
 
 ---
 
-# ConeHandleAdornment
+## ConeHandleAdornment
 **Extends:** HandleAdornment
 
-## Properties
+### Properties
 ```
 Height: float = 2
 Radius: float = 0.5
@@ -6367,10 +6369,10 @@ Radius: float = 0.5
 
 ---
 
-# CylinderHandleAdornment
+## CylinderHandleAdornment
 **Extends:** HandleAdornment
 
-## Properties
+### Properties
 ```
 Angle: float = 360
 Height: float = 1
@@ -6380,10 +6382,10 @@ Radius: float = 1
 
 ---
 
-# ImageHandleAdornment
+## ImageHandleAdornment
 **Extends:** HandleAdornment
 
-## Properties
+### Properties
 ```
 Image: ContentId = rbxasset://textures/SurfacesDefault.png
 Size: Vector2 = 1, 1
@@ -6391,10 +6393,10 @@ Size: Vector2 = 1, 1
 
 ---
 
-# LineHandleAdornment
+## LineHandleAdornment
 **Extends:** HandleAdornment
 
-## Properties
+### Properties
 ```
 Length: float = 5
 Thickness: float = 1
@@ -6402,26 +6404,26 @@ Thickness: float = 1
 
 ---
 
-# SphereHandleAdornment
+## SphereHandleAdornment
 **Extends:** HandleAdornment
 
-## Properties
+### Properties
 ```
 Radius: float = 1
 ```
 
 ---
 
-# WireframeHandleAdornment
+## WireframeHandleAdornment
 **Extends:** HandleAdornment
 
-## Properties
+### Properties
 ```
 Scale: Vector3 = 1, 1, 1
 Thickness: float = 1
 ```
 
-## Functions
+### Functions
 ```
 AddLine(from: Vector3, to: Vector3) → null
 AddLines(points: Array) → null
@@ -6432,10 +6434,10 @@ Clear() → null
 
 ---
 
-# ParabolaAdornment
+## ParabolaAdornment
 **Extends:** PVAdornment
 
-## Properties
+### Properties
 ```
 A: float = 1 [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
 B: float = 0 [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
@@ -6444,17 +6446,17 @@ Range: float = 1 [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
 Thickness: float = 1 [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
 ```
 
-## Functions
+### Functions
 ```
 FindPartOnParabola(ignoreDescendentsTable: Instances) → Tuple [RobloxScriptSecurity]
 ```
 
 ---
 
-# SelectionSphere
+## SelectionSphere
 **Extends:** PVAdornment
 
-## Properties
+### Properties
 ```
 SurfaceColor: BrickColor [Deprecated]
 SurfaceColor3: Color3 = 0.0509804, 0.411765, 0.67451
@@ -6463,27 +6465,27 @@ SurfaceTransparency: float = 1
 
 ---
 
-# PartAdornment
+## PartAdornment
 **Extends:** GuiBase3d
 **Tags:** NotCreatable
 
-## Properties
+### Properties
 ```
 Adornee: BasePart
 ```
 
 ---
 
-# HandlesBase
+## HandlesBase
 **Extends:** PartAdornment
 **Tags:** NotCreatable
 
 ---
 
-# ArcHandles
+## ArcHandles
 **Extends:** HandlesBase
 
-## Properties
+### Properties
 ```
 Axes: Axes = X, Y, Z
 MouseButton1DownConnectionCount: int = 0
@@ -6493,7 +6495,7 @@ MouseEnterConnectionCount: int = 0
 MouseLeaveConnectionCount: int = 0
 ```
 
-## Events
+### Events
 ```
 MouseButton1Down(axis: Axis)
 MouseButton1Up(axis: Axis)
@@ -6504,10 +6506,10 @@ MouseLeave(axis: Axis)
 
 ---
 
-# Handles
+## Handles
 **Extends:** HandlesBase
 
-## Properties
+### Properties
 ```
 Faces: Faces = Right, Top, Back, Left, Bottom, Front
 MouseButton1DownConnectionCount: int = 0
@@ -6518,7 +6520,7 @@ MouseLeaveConnectionCount: int = 0
 Style: HandlesStyle = Resize
 ```
 
-## Events
+### Events
 ```
 MouseButton1Down(face: NormalId)
 MouseButton1Up(face: NormalId)
@@ -6529,53 +6531,53 @@ MouseLeave(face: NormalId)
 
 ---
 
-# SurfaceSelection
+## SurfaceSelection
 **Extends:** PartAdornment
 
-## Properties
+### Properties
 ```
 TargetSurface: NormalId = Right
 ```
 
 ---
 
-# SelectionLasso
+## SelectionLasso
 **Extends:** GuiBase3d
 **Tags:** NotCreatable
 
-## Properties
+### Properties
 ```
 Humanoid: Humanoid
 ```
 
 ---
 
-# SelectionPartLasso
+## SelectionPartLasso
 **Extends:** SelectionLasso
 **Tags:** Deprecated
 
-## Properties
+### Properties
 ```
 Part: BasePart
 ```
 
 ---
 
-# SelectionPointLasso
+## SelectionPointLasso
 **Extends:** SelectionLasso
 **Tags:** Deprecated
 
-## Properties
+### Properties
 ```
 Point: Vector3 = 0, 0, 0
 ```
 
 ---
 
-# Path2D
+## Path2D
 **Extends:** GuiBase
 
-## Properties
+### Properties
 ```
 Closed: bool = false
 Color3: Color3 = 0, 0, 0
@@ -6588,7 +6590,7 @@ Visible: bool = true
 ZIndex: int = 1
 ```
 
-## Functions
+### Functions
 ```
 GetBoundingRect() → Rect
 GetControlPoint(index: int) → Path2DControlPoint
@@ -6606,18 +6608,18 @@ SetControlPoints(controlPoints: Array) → null
 UpdateControlPoint(index: int, point: Path2DControlPoint) → null
 ```
 
-## Events
+### Events
 ```
 ControlPointChanged()
 ```
 
 ---
 
-# GuiService
+## GuiService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Properties
+### Properties
 ```
 AutoSelectGuiEnabled: bool
 CoreEffectFolder: Folder [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
@@ -6638,7 +6640,7 @@ ViewportDisplaySize: DisplaySize [ReadOnly]
 ViewportSizeInMM: Vector2 [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity] [ReadOnly]
 ```
 
-## Functions
+### Functions
 ```
 AddCenterDialog(dialog: Instance, centerDialogType: CenterDialogType, showFunction: Function, hideFunction: Function) → null [RobloxScriptSecurity]
 AddKey(key: string) → null [RobloxScriptSecurity]
@@ -6702,7 +6704,7 @@ ToggleGuiIsVisibleIfAllowed(guiType: GuiType) → null [RobloxScriptSecurity]
 GetScreenResolution() → Vector2 [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 BrowserWindowClosed() [RobloxScriptSecurity]
 CloseInspectMenuRequest() [RobloxScriptSecurity]
@@ -6729,17 +6731,17 @@ UiMessageChanged(msgType: UiMessageType, newUiMessage: string) [RobloxScriptSecu
 
 ---
 
-# GuidRegistryService
+## GuidRegistryService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
 ---
 
-# HandRigDescription
+## HandRigDescription
 **Extends:** Instance
 **Tags:** NotBrowsable
 
-## Properties
+### Properties
 ```
 Index1: Instance
 Index1TposeAdjustment: CFrame
@@ -6784,7 +6786,7 @@ ThumbRange: Vector3 = 0, 0, 0
 ThumbSize: float = 0
 ```
 
-## Functions
+### Functions
 ```
 GetFingerControl(fingerIndex: int) → Vector3
 GetFingerTip(fingerIndex: int) → Vector3
@@ -6794,10 +6796,10 @@ SetFingerTip(fingerIndex: int, point: Vector3) → null
 
 ---
 
-# HapticEffect
+## HapticEffect
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 Looped: bool = false
 Position: Vector3 = 0, 0, 0
@@ -6806,7 +6808,7 @@ Type: HapticEffectType = UIClick
 Waveform: FloatCurve [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
 ```
 
-## Functions
+### Functions
 ```
 Play() → null
 SetWaveformKeys(keys: Array) → null
@@ -6815,11 +6817,11 @@ Stop() → null
 
 ---
 
-# HapticService
+## HapticService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 GetMotor(inputType: UserInputType, vibrationMotor: VibrationMotor) → Tuple
 IsMotorSupported(inputType: UserInputType, vibrationMotor: VibrationMotor) → bool
@@ -6829,23 +6831,23 @@ SetMotor(inputType: UserInputType, vibrationMotor: VibrationMotor, vibrationValu
 
 ---
 
-# HarmonyService
+## HarmonyService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
 ---
 
-# HeapProfilerService
+## HeapProfilerService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
-## Functions
+### Functions
 ```
 ClientRequestDataAsync(player: Player) → string [PluginSecurity]
 ServerRequestDataAsync() → string [PluginSecurity]
 ```
 
-## Events
+### Events
 ```
 OnNewData(player: Player, jsonString: buffer, id: int, compressedLength: int, uncompressedLength: int) [PluginSecurity]
 RequestData(id: int) [RobloxSecurity]
@@ -6853,17 +6855,17 @@ RequestData(id: int) [RobloxSecurity]
 
 ---
 
-# HeatmapService
+## HeatmapService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
 ---
 
-# HeightmapImporterService
+## HeightmapImporterService
 **Extends:** Instance
 **Tags:** Service, NotReplicated
 
-## Functions
+### Functions
 ```
 CancelImportHeightmap() → null [RobloxScriptSecurity]
 IsValidColormap(colormapAssetId: ContentId) → Tuple [RobloxScriptSecurity]
@@ -6873,7 +6875,7 @@ GetHeightmapPreviewAsync(heightmapAssetId: ContentId) → Tuple [RobloxScriptSec
 ImportHeightmap(region: Region3, heightmapAssetId: ContentId, colormapAssetId: ContentId, defaultMaterial: Material) → null [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 ColormapHasUnknownPixels() [RobloxScriptSecurity]
 ProgressUpdate(progressRatio: float, operation: string) [RobloxScriptSecurity]
@@ -6881,10 +6883,10 @@ ProgressUpdate(progressRatio: float, operation: string) [RobloxScriptSecurity]
 
 ---
 
-# HiddenSurfaceRemovalAsset
+## HiddenSurfaceRemovalAsset
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 HSRData: BinaryString [Read:RobloxSecurity] [Write:RobloxSecurity]
 HSRMeshIdData: BinaryString [Read:RobloxSecurity] [Write:RobloxSecurity]
@@ -6892,10 +6894,10 @@ HSRMeshIdData: BinaryString [Read:RobloxSecurity] [Write:RobloxSecurity]
 
 ---
 
-# Highlight
+## Highlight
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 Adornee: Instance
 DepthMode: HighlightDepthMode = AlwaysOnTop
@@ -6910,17 +6912,17 @@ ReservedId: ReservedHighlightId = Standard [Read:RobloxScriptSecurity] [Write:Ro
 
 ---
 
-# Hopper
+## Hopper
 **Extends:** Instance
 **Tags:** NotCreatable, Service, Deprecated
 
 ---
 
-# HttpRbxApiService
+## HttpRbxApiService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
-## Functions
+### Functions
 ```
 GetDocumentationUrl(partialUrl: string) → string [RobloxScriptSecurity]
 GetAsync(apiUrlPath: string, priority: ThrottlingPriority, httpRequestType: HttpRequestType) → string [RobloxScriptSecurity]
@@ -6933,11 +6935,11 @@ RequestLimitedAsync(requestOptions: Dictionary, priority: ThrottlingPriority, co
 
 ---
 
-# HttpRequest
+## HttpRequest
 **Extends:** Instance
 **Tags:** NotCreatable
 
-## Functions
+### Functions
 ```
 Cancel() → null [RobloxScriptSecurity]
 Start(callback: Function) → null [RobloxScriptSecurity]
@@ -6945,16 +6947,16 @@ Start(callback: Function) → null [RobloxScriptSecurity]
 
 ---
 
-# HttpService
+## HttpService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
-## Properties
+### Properties
 ```
 HttpEnabled: bool = false [Write:LocalUserSecurity]
 ```
 
-## Functions
+### Functions
 ```
 GenerateGUID(wrapInCurlyBraces: bool) → string
 GetHttpEnabled() → bool [RobloxScriptSecurity]
@@ -6972,10 +6974,10 @@ RequestAsync(requestOptions: Dictionary) → Dictionary
 
 ---
 
-# Humanoid
+## Humanoid
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 AutoJumpEnabled: bool = true
 AutoRotate: bool = true
@@ -7032,7 +7034,7 @@ WalkToPoint: Vector3 = 0, 0, 0
 maxHealth: float = 100 [Deprecated]
 ```
 
-## Functions
+### Functions
 ```
 AddAccessory(accessory: Instance) → null
 AddCustomStatus(status: string) → bool [Deprecated]
@@ -7076,7 +7078,7 @@ PlayEmote(emoteName: string) → bool
 PlayEmoteAndGetAnimTrackById(emoteId: int64) → Tuple [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 AnimationPlayed(animationTrack: AnimationTrack)
 ApplyDescriptionFinished(description: HumanoidDescription)
@@ -7110,10 +7112,10 @@ Touched(touchingPart: BasePart, humanoidPart: BasePart)
 
 ---
 
-# HumanoidDescription
+## HumanoidDescription
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 AccessoryBlob: string = []
 BackAccessory: string
@@ -7160,7 +7162,7 @@ WalkAnimation: int64 = 0
 WidthScale: float = 1
 ```
 
-## Functions
+### Functions
 ```
 AddEmote(name: string, assetId: int64) → null
 GetAccessories(includeRigidAccessories: bool) → Array
@@ -7172,7 +7174,7 @@ SetEmotes(emotes: Dictionary) → null
 SetEquippedEmotes(equippedEmotes: Array) → null
 ```
 
-## Events
+### Events
 ```
 EmotesChanged(newEmotes: Dictionary)
 EquippedEmotesChanged(newEquippedEmotes: Array)
@@ -7180,11 +7182,11 @@ EquippedEmotesChanged(newEquippedEmotes: Array)
 
 ---
 
-# HumanoidRigDescription
+## HumanoidRigDescription
 **Extends:** Instance
 **Tags:** NotBrowsable
 
-## Properties
+### Properties
 ```
 Chest: Instance
 ChestRangeMax: Vector3 = 0, 0, 0
@@ -7298,7 +7300,7 @@ WaistSize: float = 0
 WaistTposeAdjustment: CFrame
 ```
 
-## Functions
+### Functions
 ```
 Automap(character: Instance) → null
 GetJointFromName(name: string) → Instance
@@ -7309,10 +7311,10 @@ GetR6JointNames() → Array
 
 ---
 
-# IKControl
+## IKControl
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 ChainRoot: Instance
 Enabled: bool = true
@@ -7327,7 +7329,7 @@ Type: IKControlType = Transform
 Weight: float = 1
 ```
 
-## Functions
+### Functions
 ```
 GetChainCount() → int
 GetChainLength() → float
@@ -7340,23 +7342,23 @@ Solve() → null [RobloxScriptSecurity]
 
 ---
 
-# ILegacyStudioBridge
+## ILegacyStudioBridge
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
 ---
 
-# LegacyStudioBridge
+## LegacyStudioBridge
 **Extends:** ILegacyStudioBridge
 **Tags:** NotCreatable, Service, NotReplicated
 
 ---
 
-# IXPService
+## IXPService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 ClearUserLayers() → null [LocalUserSecurity]
 GetBrowserTrackerLayerLoadingStatus() → IXPLoadingStatus [LocalUserSecurity]
@@ -7373,7 +7375,7 @@ LogUserLayerExposure(layerName: string) → null [LocalUserSecurity]
 RegisterUserLayers(userLayers: Variant) → null [LocalUserSecurity]
 ```
 
-## Events
+### Events
 ```
 OnBrowserTrackerLayerLoadingStatusChanged(status: IXPLoadingStatus) [LocalUserSecurity]
 OnUserLayerLoadingStatusChanged(status: IXPLoadingStatus) [LocalUserSecurity]
@@ -7381,11 +7383,11 @@ OnUserLayerLoadingStatusChanged(status: IXPLoadingStatus) [LocalUserSecurity]
 
 ---
 
-# ImportSession
+## ImportSession
 **Extends:** Instance
 **Tags:** NotCreatable, NotReplicated
 
-## Functions
+### Functions
 ```
 Cancel() → null [RobloxScriptSecurity]
 GetFilename() → string [RobloxScriptSecurity]
@@ -7393,7 +7395,7 @@ GetStatuses() → Dictionary [RobloxScriptSecurity]
 Upload() → null [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 UploadComplete(results: Dictionary)
 UploadProgress(progressRatio: float)
@@ -7401,11 +7403,11 @@ UploadProgress(progressRatio: float)
 
 ---
 
-# AssetImportSession
+## AssetImportSession
 **Extends:** ImportSession
 **Tags:** NotCreatable, NotReplicated
 
-## Functions
+### Functions
 ```
 ApplyPreset(preset: Dictionary) → null [RobloxScriptSecurity]
 CreatePresetFromData(importData: Instance) → Dictionary [RobloxScriptSecurity]
@@ -7422,11 +7424,11 @@ usesCustomRestPoseLua() → bool [RobloxScriptSecurity]
 
 ---
 
-# IncrementalPatchBuilder
+## IncrementalPatchBuilder
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Properties
+### Properties
 ```
 AddPathsToBundle: bool = false
 BuildDebouncePeriod: double = 0.10000000000000000555
@@ -7437,10 +7439,10 @@ ZstdCompression: bool = false
 
 ---
 
-# InputAction
+## InputAction
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 BoolState: bool = false [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity] [ReadOnly]
 Direction1DState: float = 0 [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity] [ReadOnly]
@@ -7450,13 +7452,13 @@ Enabled: bool = true
 Type: InputActionType = Bool
 ```
 
-## Functions
+### Functions
 ```
 Fire(state: Variant) → null
 GetState() → Variant
 ```
 
-## Events
+### Events
 ```
 Pressed()
 Released()
@@ -7465,10 +7467,10 @@ StateChanged(value: Variant)
 
 ---
 
-# InputBinding
+## InputBinding
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 Backward: KeyCode = Unknown
 Down: KeyCode = Unknown
@@ -7486,10 +7488,10 @@ Vector2Scale: Vector2 = 1, 1
 
 ---
 
-# InputContext
+## InputContext
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 Enabled: bool = true
 Priority: int = 1000
@@ -7498,11 +7500,11 @@ Sink: bool = false
 
 ---
 
-# InputObject
+## InputObject
 **Extends:** Instance
 **Tags:** NotCreatable
 
-## Properties
+### Properties
 ```
 Delta: Vector3 = 0, 0, 0
 KeyCode: KeyCode = Unknown
@@ -7511,24 +7513,24 @@ UserInputState: UserInputState = None
 UserInputType: UserInputType = None
 ```
 
-## Functions
+### Functions
 ```
 IsModifierKeyDown(modifierKey: ModifierKey) → bool
 ```
 
 ---
 
-# InsertService
+## InsertService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
-## Properties
+### Properties
 ```
 AllowClientInsertModels: bool = false
 AllowInsertFreeModels: bool = false [Deprecated]
 ```
 
-## Functions
+### Functions
 ```
 ApproveAssetId(assetId: int64) → null [Deprecated]
 ApproveAssetVersionId(assetVersionId: int64) → null [Deprecated]
@@ -7552,18 +7554,18 @@ LoadPackageAssetAsync(url: ContentId) → Instances [RobloxScriptSecurity]
 loadAsset(assetId: int64) → Instance [Deprecated]
 ```
 
-## Events
+### Events
 ```
 InternalDelete(instance: Instance)
 ```
 
 ---
 
-# InternalSyncItem
+## InternalSyncItem
 **Extends:** Instance
 **Tags:** NotReplicated
 
-## Properties
+### Properties
 ```
 AutoSync: bool = true [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
 Enabled: bool = false [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
@@ -7573,17 +7575,17 @@ Target: Instance [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
 
 ---
 
-# InternalSyncService
+## InternalSyncService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
 ---
 
-# JointInstance
+## JointInstance
 **Extends:** Instance
 **Tags:** NotCreatable
 
-## Properties
+### Properties
 ```
 Active: bool [ReadOnly]
 C0: CFrame
@@ -7596,34 +7598,34 @@ part1: BasePart [Deprecated]
 
 ---
 
-# DynamicRotate
+## DynamicRotate
 **Extends:** JointInstance
 **Tags:** NotCreatable
 
-## Properties
+### Properties
 ```
 BaseAngle: float
 ```
 
 ---
 
-# RotateP
+## RotateP
 **Extends:** DynamicRotate
 **Tags:** Deprecated
 
 ---
 
-# RotateV
+## RotateV
 **Extends:** DynamicRotate
 **Tags:** Deprecated
 
 ---
 
-# Glue
+## Glue
 **Extends:** JointInstance
 **Tags:** Deprecated
 
-## Properties
+### Properties
 ```
 F0: Vector3 = 0, 0, 0
 F1: Vector3 = 0, 0, 0
@@ -7633,28 +7635,28 @@ F3: Vector3 = 0, 0, 0
 
 ---
 
-# ManualSurfaceJointInstance
+## ManualSurfaceJointInstance
 **Extends:** JointInstance
 **Tags:** NotCreatable, Deprecated
 
 ---
 
-# ManualGlue
+## ManualGlue
 **Extends:** ManualSurfaceJointInstance
 **Tags:** Deprecated
 
 ---
 
-# ManualWeld
+## ManualWeld
 **Extends:** ManualSurfaceJointInstance
 **Tags:** Deprecated
 
 ---
 
-# Motor
+## Motor
 **Extends:** JointInstance
 
-## Properties
+### Properties
 ```
 CurrentAngle: float = 0
 DesiredAngle: float = 0
@@ -7662,17 +7664,17 @@ MaxVelocity: float = 0
 ReplicateCurrentAngle: float = 0 [Read:RobloxSecurity] [Write:RobloxSecurity]
 ```
 
-## Functions
+### Functions
 ```
 SetDesiredAngle(value: float) → null
 ```
 
 ---
 
-# Motor6D
+## Motor6D
 **Extends:** Motor
 
-## Properties
+### Properties
 ```
 ChildName: string [ReadOnly]
 ParentName: string [ReadOnly]
@@ -7683,22 +7685,22 @@ Transform: CFrame
 
 ---
 
-# Rotate
+## Rotate
 **Extends:** JointInstance
 **Tags:** Deprecated
 
 ---
 
-# Snap
+## Snap
 **Extends:** JointInstance
 **Tags:** Deprecated
 
 ---
 
-# VelocityMotor
+## VelocityMotor
 **Extends:** JointInstance
 
-## Properties
+### Properties
 ```
 CurrentAngle: float = 0
 DesiredAngle: float = 0
@@ -7708,16 +7710,16 @@ MaxVelocity: float = 0
 
 ---
 
-# Weld
+## Weld
 **Extends:** JointInstance
 
 ---
 
-# JointsService
+## JointsService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, Deprecated
 
-## Functions
+### Functions
 ```
 ClearJoinAfterMoveJoints() → null
 CreateJoinAfterMoveJoints() → null
@@ -7728,21 +7730,21 @@ ShowPermissibleJoints() → null
 
 ---
 
-# KeyboardService
+## KeyboardService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
 ---
 
-# Keyframe
+## Keyframe
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 Time: float = 0
 ```
 
-## Functions
+### Functions
 ```
 AddMarker(marker: Instance) → null
 AddPose(pose: Instance) → null
@@ -7754,21 +7756,21 @@ RemovePose(pose: Instance) → null
 
 ---
 
-# KeyframeMarker
+## KeyframeMarker
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 Value: string
 ```
 
 ---
 
-# KeyframeSequenceProvider
+## KeyframeSequenceProvider
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 GetKeyframeSequence(assetId: ContentId) → Instance [PluginSecurity] [Deprecated]
 GetKeyframeSequenceById(assetId: int64, useCache: bool) → Instance [PluginSecurity] [Deprecated]
@@ -7781,28 +7783,28 @@ GetKeyframeSequenceAsync(assetId: ContentId) → Instance
 
 ---
 
-# LSPFileSyncService
+## LSPFileSyncService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
 ---
 
-# LanguageService
+## LanguageService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 GetCapabilitiesUsedInPackageAsync(instances: Instances) → Dictionary
 ```
 
 ---
 
-# Light
+## Light
 **Extends:** Instance
 **Tags:** NotCreatable
 
-## Properties
+### Properties
 ```
 Brightness: float
 Color: Color3
@@ -7812,20 +7814,20 @@ Shadows: bool
 
 ---
 
-# PointLight
+## PointLight
 **Extends:** Light
 
-## Properties
+### Properties
 ```
 Range: float
 ```
 
 ---
 
-# SpotLight
+## SpotLight
 **Extends:** Light
 
-## Properties
+### Properties
 ```
 Angle: float
 Face: NormalId
@@ -7834,10 +7836,10 @@ Range: float
 
 ---
 
-# SurfaceLight
+## SurfaceLight
 **Extends:** Light
 
-## Properties
+### Properties
 ```
 Angle: float
 Face: NormalId
@@ -7846,11 +7848,11 @@ Range: float
 
 ---
 
-# Lighting
+## Lighting
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
-## Properties
+### Properties
 ```
 Ambient: Color3 = 0.5, 0.5, 0.5
 Brightness: float = 1
@@ -7876,7 +7878,7 @@ Technology: Technology = Compatibility [Read:RobloxScriptSecurity] [Write:Roblox
 TimeOfDay: string = 14:00:00
 ```
 
-## Functions
+### Functions
 ```
 GetMinutesAfterMidnight() → double
 GetMoonDirection() → Vector3
@@ -7887,18 +7889,18 @@ getMinutesAfterMidnight() → double [Deprecated]
 setMinutesAfterMidnight(minutes: double) → null [Deprecated]
 ```
 
-## Events
+### Events
 ```
 LightingChanged(skyChanged: bool)
 ```
 
 ---
 
-# LinkingService
+## LinkingService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 DetectUrl(url: string) → null [RobloxScriptSecurity]
 GetAndClearLastPendingUrl() → Dictionary [RobloxScriptSecurity]
@@ -7912,23 +7914,23 @@ SupportsSwitchToSettingsApp() → bool [RobloxScriptSecurity]
 SwitchToSettingsApp(route: string?) → null [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 OnLuaUrl(url: string, matchedUrl: string, attributionUrl: string?) [RobloxScriptSecurity]
 ```
 
 ---
 
-# LiveScriptingService
+## LiveScriptingService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
-## Properties
+### Properties
 ```
 ServerLiveEditingMode: ServerLiveEditingMode = Uninitialized
 ```
 
-## Events
+### Events
 ```
 BeginEdit(id: int64, guid: string) [RobloxSecurity]
 BroadcastMessage(message: string, type: LiveEditingBroadcastMessageType) [RobloxSecurity]
@@ -7944,32 +7946,32 @@ SendOperation(id: int64, op: string) [RobloxSecurity]
 
 ---
 
-# LiveSyncService
+## LiveSyncService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Properties
+### Properties
 ```
 HasSyncedInstances: bool = false [ReadOnly]
 ```
 
-## Functions
+### Functions
 ```
 GetSyncState(instance: Instance) → Tuple
 ```
 
-## Events
+### Events
 ```
 SyncStatusChanged(instance: Instance)
 ```
 
 ---
 
-# LocalStorageService
+## LocalStorageService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 Flush() → null [RobloxScriptSecurity]
 GetItem(key: string) → string [RobloxScriptSecurity]
@@ -7977,7 +7979,7 @@ SetItem(key: string, value: string) → null [RobloxScriptSecurity]
 WhenLoaded(callback: Function) → null [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 ItemWasSet(key: string, value: string) [RobloxScriptSecurity]
 StoreWasCleared() [RobloxScriptSecurity]
@@ -7985,23 +7987,23 @@ StoreWasCleared() [RobloxScriptSecurity]
 
 ---
 
-# AppStorageService
+## AppStorageService
 **Extends:** LocalStorageService
 **Tags:** NotCreatable, Service, NotReplicated
 
 ---
 
-# UserStorageService
+## UserStorageService
 **Extends:** LocalStorageService
 **Tags:** NotCreatable, Service, NotReplicated
 
 ---
 
-# LocalizationService
+## LocalizationService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Properties
+### Properties
 ```
 ForcePlayModeGameLocaleId: string [Read:LocalUserSecurity] [Write:LocalUserSecurity]
 ForcePlayModeRobloxLocaleId: string [Read:LocalUserSecurity] [Write:LocalUserSecurity]
@@ -8015,7 +8017,7 @@ ShouldUseCloudTable: bool = false [Read:RobloxScriptSecurity] [Write:RobloxScrip
 SystemLocaleId: string [ReadOnly]
 ```
 
-## Functions
+### Functions
 ```
 GetCorescriptLocalizations() → Instances
 GetTableEntries(instance: Instance) → Array
@@ -8032,7 +8034,7 @@ PromptImportFromCSVs() → null [RobloxScriptSecurity]
 PromptUploadCSVToGameTable() → Instance [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 AutoTranslateWillRun() [RobloxScriptSecurity]
 DynamicTranslationServerToClientResponse(entries: Tuple) [RobloxSecurity]
@@ -8041,10 +8043,10 @@ TextScraperClientMessageWithPlayerSignal(version: int, player: Instance, message
 
 ---
 
-# LocalizationTable
+## LocalizationTable
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 Contents: string = []
 DevelopmentLanguage: string = en-us [Deprecated]
@@ -8053,7 +8055,7 @@ Root: Instance [Deprecated]
 SourceLocaleId: string = en-us
 ```
 
-## Functions
+### Functions
 ```
 GetContents() → string [Deprecated]
 GetEntries() → Array
@@ -8076,17 +8078,17 @@ SetIsExemptFromUGCAnalytics(value: bool) → null [RobloxScriptSecurity]
 
 ---
 
-# CloudLocalizationTable
+## CloudLocalizationTable
 **Extends:** LocalizationTable
 **Tags:** NotCreatable, NotReplicated
 
 ---
 
-# LodDataEntity
+## LodDataEntity
 **Extends:** Instance
 **Tags:** NotCreatable
 
-## Properties
+### Properties
 ```
 EntityData: SharedString
 EntityLodEnabled: bool = true
@@ -8097,17 +8099,17 @@ EntitySource: Instance
 
 ---
 
-# LodDataService
+## LodDataService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
 ---
 
-# LogReporterService
+## LogReporterService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 ReportLog(fingerprint: string, uuid: string, desc: string, attributes: Dictionary, annotations: Dictionary) → bool [RobloxScriptSecurity]
 ReportMultipleLogs(fingerprint: string, uuid: string, desc: string, attributes: Dictionary, annotations: Dictionary, numLogs: int) → bool [RobloxScriptSecurity]
@@ -8115,11 +8117,11 @@ ReportMultipleLogs(fingerprint: string, uuid: string, desc: string, attributes: 
 
 ---
 
-# LogService
+## LogService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
-## Functions
+### Functions
 ```
 ClearOutput() → null
 ExecuteScript(source: string) → null [RobloxScriptSecurity]
@@ -8130,7 +8132,7 @@ RequestServerHttpResult() → null [RobloxScriptSecurity]
 RequestServerOutput() → null [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 HttpResultOut(httpResult: Dictionary) [RobloxScriptSecurity]
 MessageOut(message: string, messageType: MessageType)
@@ -8147,17 +8149,17 @@ ServerVariantMessageOut(data: Dictionary) [RobloxSecurity]
 
 ---
 
-# LoginService
+## LoginService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
-## Functions
+### Functions
 ```
 Logout() → null [RobloxSecurity]
 PromptLogin() → null [RobloxSecurity]
 ```
 
-## Events
+### Events
 ```
 LoginFailed(loginError: string) [RobloxSecurity]
 LoginSucceeded(username: string) [RobloxSecurity]
@@ -8165,17 +8167,17 @@ LoginSucceeded(username: string) [RobloxSecurity]
 
 ---
 
-# LuaSettings
+## LuaSettings
 **Extends:** Instance
 **Tags:** NotCreatable, Settings, NotReplicated
 
 ---
 
-# LuaSourceContainer
+## LuaSourceContainer
 **Extends:** Instance
 **Tags:** NotCreatable, NotBrowsable
 
-## Properties
+### Properties
 ```
 CachedRemoteSource: ProtectedString
 CachedRemoteSourceLoadState: int
@@ -8188,11 +8190,11 @@ isPlayerScript: bool [Read:RobloxSecurity] [Write:RobloxSecurity]
 
 ---
 
-# AuroraScript
+## AuroraScript
 **Extends:** LuaSourceContainer
 **Tags:** Deprecated
 
-## Properties
+### Properties
 ```
 AuroraScriptBindingsSerialize: BinaryString [Read:RobloxSecurity] [Write:RobloxSecurity]
 EnableCulling: bool [Read:PluginSecurity] [Write:PluginSecurity]
@@ -8202,7 +8204,7 @@ Priority: int [Read:PluginSecurity] [Write:PluginSecurity]
 Source: ProtectedString [Read:PluginSecurity] [Write:PluginSecurity]
 ```
 
-## Functions
+### Functions
 ```
 AddTo(instance: Instance) → null
 IsOnInstance(instance: Instance) → bool
@@ -8210,18 +8212,18 @@ RemoveFrom(instance: Instance) → null
 SignalFired(instance: Instance, topic: string) → RBXScriptSignal
 ```
 
-## Events
+### Events
 ```
 SynchronizeState(frameId: int, instance: Instance, state: Dictionary, ingressHeaders: string, ingressArgs: Array, egressHeaders: string, egressArgs: Array, lodLevel: int, priorInvocationFrame: int) [RobloxSecurity]
 ```
 
 ---
 
-# BaseScript
+## BaseScript
 **Extends:** LuaSourceContainer
 **Tags:** NotCreatable
 
-## Properties
+### Properties
 ```
 Disabled: bool
 Enabled: bool
@@ -8231,36 +8233,36 @@ RunContext: RunContext [Write:PluginSecurity]
 
 ---
 
-# CoreScript
+## CoreScript
 **Extends:** BaseScript
 **Tags:** NotCreatable, NotReplicated
 
 ---
 
-# Script
+## Script
 **Extends:** BaseScript
 
-## Properties
+### Properties
 ```
 Source: ProtectedString
 ```
 
-## Functions
+### Functions
 ```
 GetHash() → string [LocalUserSecurity]
 ```
 
 ---
 
-# LocalScript
+## LocalScript
 **Extends:** Script
 
 ---
 
-# ModuleScript
+## ModuleScript
 **Extends:** LuaSourceContainer
 
-## Properties
+### Properties
 ```
 Confidential: bool = false [Read:RobloxSecurity] [Write:RobloxSecurity]
 LinkedSource: ContentId [Deprecated]
@@ -8269,45 +8271,45 @@ Source: ProtectedString
 
 ---
 
-# LuaWebService
+## LuaWebService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
 ---
 
-# LuauScriptAnalyzerService
+## LuauScriptAnalyzerService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
 ---
 
-# MLModelDeliveryService
+## MLModelDeliveryService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
 ---
 
-# MLService
+## MLService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 CreateSessionAsync(assetId: string) → MLSession
 ```
 
 ---
 
-# MarkerCurve
+## MarkerCurve
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 Length: int = 0 [ReadOnly]
 ValuesAndTimes: BinaryString = 
 ```
 
-## Functions
+### Functions
 ```
 GetMarkerAtIndex(index: int) → Dictionary
 GetMarkers() → Array
@@ -8317,11 +8319,11 @@ RemoveMarkerAtIndex(startingIndex: int, count: int) → int
 
 ---
 
-# MarketplaceService
+## MarketplaceService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
-## Functions
+### Functions
 ```
 PlayerCanMakePurchases(player: Instance) → bool [RobloxScriptSecurity]
 PrepareCollectiblesPurchase(player: Instance, assetId: int64, collectibleItemId: string, collectibleItemInstanceId: string, collectibleProductId: string, expectedPrice: int) → null [RobloxScriptSecurity]
@@ -8374,7 +8376,7 @@ PlayerOwnsBundle(player: Player, bundleId: int64) → bool
 UserOwnsGamePassAsync(userId: int64, gamePassId: int64) → bool
 ```
 
-## Events
+### Events
 ```
 AssetTypePurchased(player: Instance, assetType: AssetType) [RobloxScriptSecurity]
 ClientLuaDialogRequested(arguments: Tuple) [RobloxScriptSecurity]
@@ -8416,11 +8418,11 @@ UserSubscriptionStatusChanged(subscriptionId: string) [RobloxScriptSecurity]
 
 ---
 
-# MatchmakingService
+## MatchmakingService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 GetServerAttribute(name: string) → Tuple
 InitializeServerAttributesForStudio(serverAttributes: Dictionary) → Tuple
@@ -8429,22 +8431,22 @@ SetServerAttribute(name: string, value: Variant) → Tuple
 
 ---
 
-# MaterialGenerationService
+## MaterialGenerationService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 GenerateMaterialVariantsAsync(prompt: string, samples: int64) → Dictionary [RobloxScriptSecurity]
 ```
 
 ---
 
-# MaterialService
+## MaterialService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
-## Properties
+### Properties
 ```
 AsphaltName: string = Asphalt [Read:RobloxSecurity] [Write:RobloxSecurity]
 BasaltName: string = Basalt [Read:RobloxSecurity] [Write:RobloxSecurity]
@@ -8490,7 +8492,7 @@ WoodName: string = Wood [Read:RobloxSecurity] [Write:RobloxSecurity]
 WoodPlanksName: string = WoodPlanks [Read:RobloxSecurity] [Write:RobloxSecurity]
 ```
 
-## Functions
+### Functions
 ```
 GetBaseMaterialOverride(material: Material) → string
 GetIsMaterialActionAsToolEnabled() → bool [RobloxScriptSecurity]
@@ -8502,7 +8504,7 @@ SetCurrentMaterial(baseMaterial: Material, materialVariant: string) → null [Ro
 ToggleMaterialFillToolEnabled() → null [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 MaterialFillToolEnabledChanged(shouldEnable: bool) [RobloxScriptSecurity]
 OverrideStatusChanged(material: Material) [RobloxScriptSecurity]
@@ -8510,10 +8512,10 @@ OverrideStatusChanged(material: Material) [RobloxScriptSecurity]
 
 ---
 
-# MaterialVariant
+## MaterialVariant
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 AvgMetalness: int = 0
 AvgRoughness: int = 127
@@ -8534,22 +8536,22 @@ TexturePack: ContentId
 
 ---
 
-# MemStorageConnection
+## MemStorageConnection
 **Extends:** Instance
 **Tags:** NotCreatable, NotReplicated
 
-## Functions
+### Functions
 ```
 Disconnect() → null [PluginSecurity]
 ```
 
 ---
 
-# MemStorageService
+## MemStorageService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 Bind(key: string, callback: Function) → MemStorageConnection [RobloxScriptSecurity]
 BindAndFire(key: string, callback: Function) → MemStorageConnection [RobloxScriptSecurity]
@@ -8563,11 +8565,11 @@ SetItem(key: string, value: string) → null [RobloxScriptSecurity]
 
 ---
 
-# MemoryStoreHashMap
+## MemoryStoreHashMap
 **Extends:** Instance
 **Tags:** NotCreatable, NotReplicated
 
-## Functions
+### Functions
 ```
 GetAsync(key: string) → Variant
 ListItemsAsync(count: int) → MemoryStoreHashMapPages
@@ -8578,11 +8580,11 @@ UpdateAsync(key: string, transformFunction: Function, expiration: int64) → Var
 
 ---
 
-# MemoryStoreQueue
+## MemoryStoreQueue
 **Extends:** Instance
 **Tags:** NotCreatable, NotReplicated
 
-## Functions
+### Functions
 ```
 AddAsync(value: Variant, expiration: int64, priority: double) → null
 GetSizeAsync(excludeInvisible: bool) → int
@@ -8592,11 +8594,11 @@ RemoveAsync(id: string) → null
 
 ---
 
-# MemoryStoreService
+## MemoryStoreService
 **Extends:** Instance
 **Tags:** Service
 
-## Functions
+### Functions
 ```
 GetHashMap(name: string) → MemoryStoreHashMap
 GetQueue(name: string, invisibilityTimeout: int) → MemoryStoreQueue
@@ -8605,11 +8607,11 @@ GetSortedMap(name: string) → MemoryStoreSortedMap
 
 ---
 
-# MemoryStoreSortedMap
+## MemoryStoreSortedMap
 **Extends:** Instance
 **Tags:** NotCreatable, NotReplicated
 
-## Functions
+### Functions
 ```
 GetAsync(key: string) → Tuple
 GetRangeAsync(direction: SortDirection, count: int, exclusiveLowerBound: Variant, exclusiveUpperBound: Variant) → Array
@@ -8621,39 +8623,39 @@ UpdateAsync(key: string, transformFunction: Function, expiration: int64) → Tup
 
 ---
 
-# Message
+## Message
 **Extends:** Instance
 **Tags:** Deprecated
 
-## Properties
+### Properties
 ```
 Text: string
 ```
 
 ---
 
-# Hint
+## Hint
 **Extends:** Message
 **Tags:** Deprecated
 
 ---
 
-# MessageBusConnection
+## MessageBusConnection
 **Extends:** Instance
 **Tags:** NotCreatable, NotReplicated
 
-## Functions
+### Functions
 ```
 Disconnect() → null [RobloxScriptSecurity]
 ```
 
 ---
 
-# MessageBusService
+## MessageBusService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 Call(key: string, input: Variant) → Variant [RobloxScriptSecurity]
 GetLast(mid: string) → Variant [RobloxScriptSecurity]
@@ -8672,11 +8674,11 @@ SubscribeToProtocolMethodResponse(protocolName: string, methodName: string, call
 
 ---
 
-# MessagingService
+## MessagingService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 PublishAsync(topic: string, message: Variant) → null
 SubscribeAsync(topic: string, callback: Function) → RBXScriptConnection
@@ -8684,11 +8686,11 @@ SubscribeAsync(topic: string, callback: Function) → RBXScriptConnection
 
 ---
 
-# MetaBreakpoint
+## MetaBreakpoint
 **Extends:** Instance
 **Tags:** NotCreatable, NotReplicated
 
-## Properties
+### Properties
 ```
 Condition: string [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
 ContinueExecution: bool = false [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
@@ -8702,7 +8704,7 @@ Script: string [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
 Valid: bool = true [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity] [ReadOnly]
 ```
 
-## Functions
+### Functions
 ```
 GetContextBreakpoints() → Dictionary [RobloxScriptSecurity]
 Remove(status: Function) → int [RobloxScriptSecurity]
@@ -8716,29 +8718,29 @@ SetRemoveOnHit(enabled: bool) → null [RobloxScriptSecurity]
 
 ---
 
-# MetaBreakpointContext
+## MetaBreakpointContext
 **Extends:** Instance
 **Tags:** NotCreatable, NotReplicated
 
-## Properties
+### Properties
 ```
 ContextDataInternal: string = 0 1 2 
 ```
 
 ---
 
-# MetaBreakpointManager
+## MetaBreakpointManager
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 AddBreakpoint(script: Instance, line: int, condition: Instance) → Instance [RobloxScriptSecurity]
 GetBreakpointById(metaBreakpointId: int) → MetaBreakpoint [RobloxScriptSecurity]
 RemoveBreakpointById(metaBreakpointId: int) → null [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 MetaBreakpointAdded(breakpoint: MetaBreakpoint) [RobloxScriptSecurity]
 MetaBreakpointChanged(breakpoint: MetaBreakpoint) [RobloxScriptSecurity]
@@ -8748,17 +8750,17 @@ MetaBreakpointSetChanged(breakpoint: MetaBreakpoint, detail: Dictionary) [Roblox
 
 ---
 
-# MicroProfilerService
+## MicroProfilerService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
 ---
 
-# ModerationService
+## ModerationService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 InternalCreateReviewableContentAsync(config: Dictionary) → string
 InternalRequestReviewableContentReviewAsync(config: Dictionary) → null
@@ -8766,11 +8768,11 @@ InternalRequestReviewableContentReviewAsync(config: Dictionary) → null
 
 ---
 
-# Mouse
+## Mouse
 **Extends:** Instance
 **Tags:** NotCreatable
 
-## Properties
+### Properties
 ```
 Hit: CFrame [ReadOnly]
 Icon: ContentId
@@ -8787,7 +8789,7 @@ hit: CFrame [ReadOnly] [Deprecated]
 target: BasePart [ReadOnly] [Deprecated]
 ```
 
-## Events
+### Events
 ```
 Button1Down()
 Button1Up()
@@ -8804,28 +8806,28 @@ keyDown(key: string)
 
 ---
 
-# PlayerMouse
+## PlayerMouse
 **Extends:** Mouse
 **Tags:** NotCreatable
 
 ---
 
-# PluginMouse
+## PluginMouse
 **Extends:** Mouse
 **Tags:** NotCreatable
 
-## Events
+### Events
 ```
 DragEnter(instances: Instances) [PluginSecurity]
 ```
 
 ---
 
-# MouseService
+## MouseService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Events
+### Events
 ```
 MouseEnterStudioViewport() [RobloxScriptSecurity]
 MouseLeaveStudioViewport() [RobloxScriptSecurity]
@@ -8833,16 +8835,16 @@ MouseLeaveStudioViewport() [RobloxScriptSecurity]
 
 ---
 
-# MultipleDocumentInterfaceInstance
+## MultipleDocumentInterfaceInstance
 **Extends:** Instance
 **Tags:** NotCreatable, NotReplicated
 
-## Properties
+### Properties
 ```
 FocusedDataModelSession: DataModelSession [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity] [ReadOnly]
 ```
 
-## Events
+### Events
 ```
 DataModelSessionEnded(dataModelSession: Instance) [RobloxScriptSecurity]
 DataModelSessionStarted(dataModelSession: Instance) [RobloxScriptSecurity]
@@ -8850,33 +8852,33 @@ DataModelSessionStarted(dataModelSession: Instance) [RobloxScriptSecurity]
 
 ---
 
-# NetworkMarker
+## NetworkMarker
 **Extends:** Instance
 **Tags:** NotCreatable, NotBrowsable
 
-## Events
+### Events
 ```
 Received()
 ```
 
 ---
 
-# NetworkPeer
+## NetworkPeer
 **Extends:** Instance
 **Tags:** NotCreatable, NotBrowsable
 
-## Functions
+### Functions
 ```
 SetOutgoingKBPSLimit(limit: int) → null [PluginSecurity]
 ```
 
 ---
 
-# NetworkClient
+## NetworkClient
 **Extends:** NetworkPeer
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Events
+### Events
 ```
 ConnectionAccepted(peer: string, replicator: Instance)
 ConnectionFailed(peer: string, code: int, reason: string)
@@ -8884,33 +8886,33 @@ ConnectionFailed(peer: string, code: int, reason: string)
 
 ---
 
-# NetworkServer
+## NetworkServer
 **Extends:** NetworkPeer
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 EncryptStringForPlayerId(toEncrypt: string, playerId: int64) → string
 ```
 
 ---
 
-# NetworkReplicator
+## NetworkReplicator
 **Extends:** Instance
 **Tags:** NotCreatable, NotReplicated
 
-## Functions
+### Functions
 ```
 GetPlayer() → Instance
 ```
 
 ---
 
-# ClientReplicator
+## ClientReplicator
 **Extends:** NetworkReplicator
 **Tags:** NotCreatable, NotReplicated
 
-## Functions
+### Functions
 ```
 RequestRCCProfilerData(frameRate: int, timeFrame: int) → null [RobloxScriptSecurity]
 RequestServerLuauHeapData() → null [RobloxScriptSecurity]
@@ -8919,7 +8921,7 @@ RequestServerScriptProfilingData() → null [RobloxScriptSecurity]
 RequestServerStats(request: bool) → null [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 RCCProfilerDataComplete(success: bool, message: string) [RobloxScriptSecurity]
 StatsReceived(stats: Dictionary) [RobloxScriptSecurity]
@@ -8927,17 +8929,17 @@ StatsReceived(stats: Dictionary) [RobloxScriptSecurity]
 
 ---
 
-# ServerReplicator
+## ServerReplicator
 **Extends:** NetworkReplicator
 **Tags:** NotCreatable, NotReplicated
 
 ---
 
-# NetworkSettings
+## NetworkSettings
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated, NotBrowsable
 
-## Properties
+### Properties
 ```
 EmulatedTotalMemoryInMB: int [Read:PluginSecurity] [Write:PluginSecurity]
 FreeMemoryMBytes: float [Read:PluginSecurity] [Write:PluginSecurity] [ReadOnly]
@@ -8955,10 +8957,10 @@ ShowActiveAnimationAsset: bool
 
 ---
 
-# NoCollisionConstraint
+## NoCollisionConstraint
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 Enabled: bool = true
 Part0: BasePart
@@ -8967,17 +8969,17 @@ Part1: BasePart
 
 ---
 
-# Noise
+## Noise
 **Extends:** Instance
 **Tags:** NotReplicated
 
-## Properties
+### Properties
 ```
 NoiseType: NoiseType = SimplexGabor [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
 Seed: int = 1234 [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
 ```
 
-## Functions
+### Functions
 ```
 SampleDirectional(position: Vector3, direction: Vector3) → float [RobloxScriptSecurity]
 SampleUniform(position: Vector3) → float [RobloxScriptSecurity]
@@ -8985,11 +8987,11 @@ SampleUniform(position: Vector3) → float [RobloxScriptSecurity]
 
 ---
 
-# NotificationService
+## NotificationService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
-## Properties
+### Properties
 ```
 IsConnected: bool [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity] [ReadOnly]
 IsLuaChatEnabled: bool [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity] [ReadOnly]
@@ -8997,7 +8999,7 @@ IsLuaGameDetailsEnabled: bool [Read:RobloxScriptSecurity] [Write:RobloxScriptSec
 SelectedTheme: string [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
 ```
 
-## Functions
+### Functions
 ```
 ActionEnabled(actionType: AppShellActionType) → null [RobloxScriptSecurity]
 ActionTaken(actionType: AppShellActionType) → null [RobloxScriptSecurity]
@@ -9008,7 +9010,7 @@ SwitchedToAppShellFeature(appShellFeature: AppShellFeature) → null [RobloxScri
 GetScheduledNotifications(userId: int64) → Array [LocalUserSecurity]
 ```
 
-## Events
+### Events
 ```
 Roblox17sConnectionChanged(connectionName: string, connectionState: ConnectionState, namespaceSequenceNumbers: string)
 Roblox17sEventReceived(eventData: Map)
@@ -9018,11 +9020,11 @@ RobloxEventReceived(eventData: Map) [RobloxScriptSecurity]
 
 ---
 
-# OmniRecommendationsService
+## OmniRecommendationsService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 ClearSessionId() → null [RobloxScriptSecurity]
 GetSessionId() → string [RobloxScriptSecurity]
@@ -9031,11 +9033,11 @@ MakeRequest(nextPageToken: string) → HttpRequest [RobloxScriptSecurity]
 
 ---
 
-# OpenCloudApiV1
+## OpenCloudApiV1
 **Extends:** Instance
 **Tags:** NotCreatable, NotReplicated
 
-## Functions
+### Functions
 ```
 CreateModel(name: string) → OpenCloudModel
 CreateUserNotificationAsync(user: string, userNotification: OpenCloudModel) → OpenCloudModel
@@ -9043,11 +9045,11 @@ CreateUserNotificationAsync(user: string, userNotification: OpenCloudModel) → 
 
 ---
 
-# OpenCloudService
+## OpenCloudService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 GetApiV1() → OpenCloudApiV1
 RegisterOpenCloud(version: string, methodName: string, method: Function) → null [RobloxScriptSecurity]
@@ -9058,22 +9060,22 @@ InvokeAsync(version: string, methodName: string, arguments: Dictionary, headers:
 
 ---
 
-# OperationGraph
+## OperationGraph
 **Extends:** Instance
 
 ---
 
-# PVInstance
+## PVInstance
 **Extends:** Instance
 **Tags:** NotCreatable, NotBrowsable
 
-## Properties
+### Properties
 ```
 Origin: CFrame
 Pivot Offset: CFrame
 ```
 
-## Functions
+### Functions
 ```
 GetPivot() → CFrame
 PivotTo(targetCFrame: CFrame) → null
@@ -9081,11 +9083,11 @@ PivotTo(targetCFrame: CFrame) → null
 
 ---
 
-# BasePart
+## BasePart
 **Extends:** PVInstance
 **Tags:** NotCreatable, NotBrowsable
 
-## Properties
+### Properties
 ```
 Anchored: bool
 AssemblyAngularVelocity: Vector3
@@ -9170,7 +9172,7 @@ siz: Vector3
 size: Vector3
 ```
 
-## Functions
+### Functions
 ```
 AngularAccelerationToTorque(angAcceleration: Vector3, angVelocity: Vector3) → Vector3
 ApplyAngularImpulse(impulse: Vector3) → null
@@ -9207,7 +9209,7 @@ SubtractAsync(parts: Instances, collisionfidelity: CollisionFidelity, renderFide
 UnionAsync(parts: Instances, collisionfidelity: CollisionFidelity, renderFidelity: RenderFidelity) → Instance
 ```
 
-## Events
+### Events
 ```
 LocalSimulationTouched(part: BasePart)
 NetworkOwnerChanged(systemAddress: SystemAddress) [LocalUserSecurity]
@@ -9219,16 +9221,16 @@ Touched(otherPart: BasePart)
 
 ---
 
-# CornerWedgePart
+## CornerWedgePart
 **Extends:** BasePart
 
 ---
 
-# FormFactorPart
+## FormFactorPart
 **Extends:** BasePart
 **Tags:** NotCreatable
 
-## Properties
+### Properties
 ```
 FormFactor: FormFactor [Deprecated]
 formFactor: FormFactor [Deprecated]
@@ -9237,10 +9239,10 @@ formFactorRaw: FormFactor
 
 ---
 
-# Part
+## Part
 **Extends:** FormFactorPart
 
-## Properties
+### Properties
 ```
 Shape: PartType = Block
 shap: PartType = __api_dump_write_only_property__
@@ -9249,27 +9251,27 @@ shape: PartType = Block
 
 ---
 
-# FlagStand
+## FlagStand
 **Extends:** Part
 **Tags:** Deprecated
 
-## Properties
+### Properties
 ```
 TeamColor: BrickColor
 ```
 
-## Events
+### Events
 ```
 FlagCaptured(player: Instance)
 ```
 
 ---
 
-# Platform
+## Platform
 **Extends:** Part
 **Tags:** NotCreatable
 
-## Events
+### Events
 ```
 RemoteCreateMotor6D(humanoid: Instance)
 RemoteDestroyMotor6D()
@@ -9277,21 +9279,21 @@ RemoteDestroyMotor6D()
 
 ---
 
-# Seat
+## Seat
 **Extends:** Part
 
-## Properties
+### Properties
 ```
 Disabled: bool = false
 Occupant: Humanoid [ReadOnly]
 ```
 
-## Functions
+### Functions
 ```
 Sit(humanoid: Instance) → null
 ```
 
-## Events
+### Events
 ```
 RemoteCreateSeatWeld(humanoid: Instance)
 RemoteDestroySeatWeld()
@@ -9299,11 +9301,11 @@ RemoteDestroySeatWeld()
 
 ---
 
-# SkateboardPlatform
+## SkateboardPlatform
 **Extends:** Part
 **Tags:** Deprecated
 
-## Properties
+### Properties
 ```
 Controller: SkateboardController [ReadOnly]
 ControllingHumanoid: Humanoid [ReadOnly]
@@ -9313,12 +9315,12 @@ StickyWheels: bool = true
 Throttle: int = 0
 ```
 
-## Functions
+### Functions
 ```
 ApplySpecificImpulse(impulseWorld: Vector3) → null
 ```
 
-## Events
+### Events
 ```
 Equipped(humanoid: Instance, skateboardController: Instance)
 MoveStateChanged(newState: MoveState, oldState: MoveState)
@@ -9331,10 +9333,10 @@ unequipped(humanoid: Instance)
 
 ---
 
-# SpawnLocation
+## SpawnLocation
 **Extends:** Part
 
-## Properties
+### Properties
 ```
 AllowTeamChangeOnTouch: bool = false
 Duration: int = 10
@@ -9345,16 +9347,16 @@ TeamColor: BrickColor
 
 ---
 
-# WedgePart
+## WedgePart
 **Extends:** FormFactorPart
 
 ---
 
-# Terrain
+## Terrain
 **Extends:** BasePart
 **Tags:** NotCreatable
 
-## Properties
+### Properties
 ```
 AcquisitionMethod: TerrainAcquisitionMethod = None [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
 ClusterGrid: string = __api_dump_write_only_property__
@@ -9376,7 +9378,7 @@ WaterWaveSize: float = 0.150000006
 WaterWaveSpeed: float = 10
 ```
 
-## Functions
+### Functions
 ```
 AutowedgeCell(x: int, y: int, z: int) → bool [Deprecated]
 AutowedgeCells(region: Region3int16) → null [Deprecated]
@@ -9423,11 +9425,11 @@ WriteVoxelsAsync_beta(region: Region3, resolution: int, channelIds: Array) → T
 
 ---
 
-# TriangleMeshPart
+## TriangleMeshPart
 **Extends:** BasePart
 **Tags:** NotCreatable
 
-## Properties
+### Properties
 ```
 AeroMeshData: SharedString [Read:RobloxSecurity] [Write:RobloxSecurity]
 CollisionFidelity: CollisionFidelity [Write:PluginSecurity]
@@ -9445,10 +9447,10 @@ UnscaledVolume: float [Read:RobloxSecurity] [Write:RobloxSecurity]
 
 ---
 
-# MeshPart
+## MeshPart
 **Extends:** TriangleMeshPart
 
-## Properties
+### Properties
 ```
 AlternateMeshHash: int64 = 0 [Read:RobloxSecurity] [Write:RobloxSecurity] [ReadOnly]
 DoubleSided: bool = false [Write:PluginSecurity]
@@ -9468,17 +9470,17 @@ TextureID: ContentId
 VertexCount: int = 0 [Read:RobloxSecurity] [Write:RobloxSecurity]
 ```
 
-## Functions
+### Functions
 ```
 ApplyMesh(meshPart: Instance) → null
 ```
 
 ---
 
-# PartOperation
+## PartOperation
 **Extends:** TriangleMeshPart
 
-## Properties
+### Properties
 ```
 AssetId: ContentId [Read:RobloxSecurity] [Write:RobloxSecurity]
 ChildData: BinaryString [Read:RobloxSecurity] [Write:RobloxSecurity]
@@ -9501,37 +9503,37 @@ TriangleCount: int = 0 [ReadOnly]
 UsePartColor: bool = false
 ```
 
-## Functions
+### Functions
 ```
 SubstituteGeometry(source: Instance) → null
 ```
 
 ---
 
-# IntersectOperation
+## IntersectOperation
 **Extends:** PartOperation
 
 ---
 
-# NegateOperation
+## NegateOperation
 **Extends:** PartOperation
 
-## Properties
+### Properties
 ```
 PreviousOperation: NegateOperationHiddenHistory = None [Read:RobloxSecurity] [Write:RobloxSecurity]
 ```
 
 ---
 
-# UnionOperation
+## UnionOperation
 **Extends:** PartOperation
 
 ---
 
-# TrussPart
+## TrussPart
 **Extends:** BasePart
 
-## Properties
+### Properties
 ```
 Style: Style = AlternatingSupports
 style: Style = AlternatingSupports
@@ -9539,10 +9541,10 @@ style: Style = AlternatingSupports
 
 ---
 
-# VehicleSeat
+## VehicleSeat
 **Extends:** BasePart
 
-## Properties
+### Properties
 ```
 AreHingesDetected: int = 0 [ReadOnly]
 Disabled: bool = false
@@ -9557,12 +9559,12 @@ Torque: float = 10
 TurnSpeed: float = 1
 ```
 
-## Functions
+### Functions
 ```
 Sit(humanoid: Instance) → null
 ```
 
-## Events
+### Events
 ```
 RemoteCreateSeatWeld(humanoid: Instance)
 RemoteDestroySeatWeld()
@@ -9570,11 +9572,11 @@ RemoteDestroySeatWeld()
 
 ---
 
-# Camera
+## Camera
 **Extends:** PVInstance
 **Tags:** NotReplicated
 
-## Properties
+### Properties
 ```
 CFrame: CFrame
 CameraSubject: Instance
@@ -9593,7 +9595,7 @@ ViewportSize: Vector2 = 1, 1 [ReadOnly]
 focus: CFrame [Deprecated]
 ```
 
-## Functions
+### Functions
 ```
 GetLargestCutoffDistance(ignoreList: Instances) → float [Deprecated]
 GetPanSpeed() → float [Deprecated]
@@ -9615,7 +9617,7 @@ Zoom(distance: float) → bool [RobloxScriptSecurity]
 ZoomToExtents(boundingBoxCFrame: CFrame, boundingBoxSize: Vector3) → null
 ```
 
-## Events
+### Events
 ```
 FirstPersonTransition(entering: bool) [LocalUserSecurity]
 InterpolationFinished()
@@ -9623,10 +9625,10 @@ InterpolationFinished()
 
 ---
 
-# Model
+## Model
 **Extends:** PVInstance
 
-## Properties
+### Properties
 ```
 LevelOfDetail: ModelLevelOfDetail = Automatic [Read:PluginSecurity] [Write:PluginSecurity]
 LodEntity: LodDataEntity
@@ -9643,7 +9645,7 @@ WorldPivot: CFrame
 WorldPivotData: OptionalCoordinateFrame
 ```
 
-## Functions
+### Functions
 ```
 AddPersistentPlayer(playerInstance: Player) → null
 BreakJoints() → null [Deprecated]
@@ -9670,10 +9672,10 @@ moveTo(location: Vector3) → null [Deprecated]
 
 ---
 
-# Actor
+## Actor
 **Extends:** Model
 
-## Functions
+### Functions
 ```
 BindToMessage(topic: string, function: Function) → RBXScriptConnection
 BindToMessageParallel(topic: string, function: Function) → RBXScriptConnection
@@ -9682,22 +9684,22 @@ SendMessage(topic: string, message: Tuple) → null
 
 ---
 
-# BackpackItem
+## BackpackItem
 **Extends:** Model
 **Tags:** NotCreatable
 
-## Properties
+### Properties
 ```
 TextureId: ContentId
 ```
 
 ---
 
-# HopperBin
+## HopperBin
 **Extends:** BackpackItem
 **Tags:** Deprecated
 
-## Properties
+### Properties
 ```
 Active: bool = false
 BinType: BinType = Script
@@ -9705,13 +9707,13 @@ Command: string = __api_dump_write_only_property__
 TextureName: string = __api_dump_write_only_property__
 ```
 
-## Functions
+### Functions
 ```
 Disable() → null [RobloxScriptSecurity]
 ToggleSelect() → null [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 Deselected()
 ReplicatedSelected()
@@ -9720,10 +9722,10 @@ Selected(mouse: Instance)
 
 ---
 
-# Tool
+## Tool
 **Extends:** BackpackItem
 
-## Properties
+### Properties
 ```
 CanBeDropped: bool = true
 Enabled: bool = true
@@ -9737,13 +9739,13 @@ RequiresHandle: bool = true
 ToolTip: string
 ```
 
-## Functions
+### Functions
 ```
 Activate() → null
 Deactivate() → null
 ```
 
-## Events
+### Events
 ```
 Activated()
 Deactivated()
@@ -9754,33 +9756,33 @@ VRLaserPointerClicked(player: Player) [RobloxSecurity]
 
 ---
 
-# Flag
+## Flag
 **Extends:** Tool
 **Tags:** Deprecated
 
-## Properties
+### Properties
 ```
 TeamColor: BrickColor
 ```
 
 ---
 
-# Status
+## Status
 **Extends:** Model
 **Tags:** NotCreatable, Deprecated
 
 ---
 
-# WorldRoot
+## WorldRoot
 **Extends:** Model
 **Tags:** NotCreatable
 
-## Properties
+### Properties
 ```
 PhysicsStepTime: float [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
 ```
 
-## Functions
+### Functions
 ```
 ArePartsTouchingOthers(partList: Instances, overlapIgnored: float) → bool
 Blockcast(cframe: CFrame, size: Vector3, direction: Vector3, params: RaycastParams) → RaycastResult?
@@ -9815,11 +9817,11 @@ findPartsInRegion3(region: Region3, ignoreDescendantsInstance: Instance, maxPart
 
 ---
 
-# Workspace
+## Workspace
 **Extends:** WorldRoot
 **Tags:** NotCreatable, Service
 
-## Properties
+### Properties
 ```
 AirDensity: float
 AllowThirdPartySales: bool
@@ -9872,7 +9874,7 @@ UseImprovedModelLod: RolloutState
 UseNewLuauTypeSolver: RolloutState
 ```
 
-## Functions
+### Functions
 ```
 BreakJoints(objects: Instances) → null [PluginSecurity] [Deprecated]
 CalculateJumpDistance(gravity: float, jumpPower: float, walkSpeed: float) → float [RobloxScriptSecurity]
@@ -9893,23 +9895,23 @@ UnjoinFromOutsiders(objects: Instances) → null
 ZoomToExtents() → null [PluginSecurity]
 ```
 
-## Events
+### Events
 ```
 PersistentLoaded(player: Player)
 ```
 
 ---
 
-# WorldModel
+## WorldModel
 **Extends:** WorldRoot
 
 ---
 
-# PackageLink
+## PackageLink
 **Extends:** Instance
 **Tags:** NotCreatable, NotBrowsable
 
-## Properties
+### Properties
 ```
 AutoUpdate: bool = false [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
 CanAutoUpdate: bool = false [Read:RobloxSecurity] [Write:RobloxSecurity]
@@ -9930,17 +9932,17 @@ VersionNumber: int64 = 0 [Write:NotAccessibleSecurity]
 
 ---
 
-# PackageService
+## PackageService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
 ---
 
-# PackageUIService
+## PackageUIService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 ConvertToMockPackage(instance: Instance) → null [RobloxScriptSecurity]
 ConvertToPackageUpload(uploadUrl: string, cloneInstances: Instances, originalInstances: Instances) → null [RobloxScriptSecurity]
@@ -9949,7 +9951,7 @@ PublishPackage(packageInstance: Instance, addUndoWayPoint: bool) → null [Roblo
 SetPackageVersion(packageInstance: Instance, versionNumber: int64) → Instance [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 OnConvertToPackageResult(isSuccessful: bool, errorMessage: string) [RobloxScriptSecurity]
 OnOpenConvertToPackagePlugin(instances: Instances, name: string, cloneInstances: Instances) [RobloxScriptSecurity]
@@ -9957,16 +9959,16 @@ OnOpenConvertToPackagePlugin(instances: Instances, name: string, cloneInstances:
 
 ---
 
-# Pages
+## Pages
 **Extends:** Instance
 **Tags:** NotCreatable, NotReplicated
 
-## Properties
+### Properties
 ```
 IsFinished: bool [ReadOnly]
 ```
 
-## Functions
+### Functions
 ```
 GetCurrentPage() → Array
 AdvanceToNextPageAsync() → null
@@ -9974,110 +9976,110 @@ AdvanceToNextPageAsync() → null
 
 ---
 
-# AudioPages
+## AudioPages
 **Extends:** Pages
 **Tags:** NotCreatable, NotReplicated
 
 ---
 
-# BanHistoryPages
+## BanHistoryPages
 **Extends:** Pages
 **Tags:** NotCreatable, NotReplicated
 
 ---
 
-# CapturesPages
+## CapturesPages
 **Extends:** Pages
 **Tags:** NotCreatable, NotReplicated
 
 ---
 
-# CatalogPages
+## CatalogPages
 **Extends:** Pages
 **Tags:** NotCreatable, NotReplicated
 
 ---
 
-# DataStoreKeyPages
+## DataStoreKeyPages
 **Extends:** Pages
 **Tags:** NotCreatable, NotReplicated
 
-## Properties
+### Properties
 ```
 Cursor: string [ReadOnly]
 ```
 
 ---
 
-# DataStoreListingPages
+## DataStoreListingPages
 **Extends:** Pages
 **Tags:** NotCreatable, NotReplicated
 
-## Properties
+### Properties
 ```
 Cursor: string [ReadOnly]
 ```
 
 ---
 
-# DataStorePages
+## DataStorePages
 **Extends:** Pages
 **Tags:** NotCreatable, NotReplicated
 
 ---
 
-# DataStoreVersionPages
+## DataStoreVersionPages
 **Extends:** Pages
 **Tags:** NotCreatable, NotReplicated
 
 ---
 
-# FriendPages
+## FriendPages
 **Extends:** Pages
 **Tags:** NotCreatable, NotReplicated
 
 ---
 
-# InventoryPages
+## InventoryPages
 **Extends:** Pages
 **Tags:** NotCreatable, NotReplicated
 
 ---
 
-# EmotesPages
+## EmotesPages
 **Extends:** InventoryPages
 **Tags:** NotCreatable, NotReplicated
 
 ---
 
-# MemoryStoreHashMapPages
+## MemoryStoreHashMapPages
 **Extends:** Pages
 **Tags:** NotCreatable, NotReplicated
 
 ---
 
-# OutfitPages
+## OutfitPages
 **Extends:** Pages
 **Tags:** NotCreatable, NotReplicated
 
 ---
 
-# RecommendationPages
+## RecommendationPages
 **Extends:** Pages
 **Tags:** NotCreatable, NotReplicated
 
 ---
 
-# StandardPages
+## StandardPages
 **Extends:** Pages
 **Tags:** NotCreatable, NotReplicated
 
 ---
 
-# PartOperationAsset
+## PartOperationAsset
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 ChildData: BinaryString [Read:RobloxSecurity] [Write:RobloxSecurity]
 MeshData: BinaryString [Read:RobloxSecurity] [Write:RobloxSecurity]
@@ -10085,10 +10087,10 @@ MeshData: BinaryString [Read:RobloxSecurity] [Write:RobloxSecurity]
 
 ---
 
-# ParticleEmitter
+## ParticleEmitter
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 Acceleration: Vector3 = 0, 0, 0
 Brightness: float = 1
@@ -10127,14 +10129,14 @@ WindAffectsDrag: bool = false
 ZOffset: float = 0
 ```
 
-## Functions
+### Functions
 ```
 Clear() → null
 Emit(particleCount: int) → null
 FastForward(numFrames: int) → null [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 OnClearRequested()
 OnEmitRequested(particleCount: int)
@@ -10142,11 +10144,11 @@ OnEmitRequested(particleCount: int)
 
 ---
 
-# PartyEmulatorService
+## PartyEmulatorService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 CreateNewParty() → string [RobloxScriptSecurity]
 DeleteParty(partyId: string) → null [RobloxScriptSecurity]
@@ -10159,24 +10161,24 @@ applyPartyIdToPlayer(player: Player) → null [RobloxScriptSecurity]
 GetEmulatedPartyAsync(partyId: string) → Array [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 ConfigurationChanged(configuration: Dictionary) [RobloxScriptSecurity]
 ```
 
 ---
 
-# PatchBundlerFileWatch
+## PatchBundlerFileWatch
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
 ---
 
-# PatchMapping
+## PatchMapping
 **Extends:** Instance
 **Tags:** NotCreatable, NotReplicated
 
-## Properties
+### Properties
 ```
 FlattenTree: bool = false
 PatchId: string
@@ -10185,16 +10187,16 @@ TargetPath: string
 
 ---
 
-# Path
+## Path
 **Extends:** Instance
 **Tags:** NotCreatable, NotReplicated
 
-## Properties
+### Properties
 ```
 Status: PathStatus [ReadOnly]
 ```
 
-## Functions
+### Functions
 ```
 GetPointCoordinates() → Array [Deprecated]
 GetWaypoints() → Array
@@ -10202,7 +10204,7 @@ CheckOcclusionAsync(start: int) → int
 ComputeAsync(start: Vector3, finish: Vector3) → null
 ```
 
-## Events
+### Events
 ```
 Blocked(blockedWaypointIdx: int)
 Unblocked(unblockedWaypointIdx: int)
@@ -10210,10 +10212,10 @@ Unblocked(unblockedWaypointIdx: int)
 
 ---
 
-# PathfindingLink
+## PathfindingLink
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 Attachment0: Attachment
 Attachment1: Attachment
@@ -10223,10 +10225,10 @@ Label: string
 
 ---
 
-# PathfindingModifier
+## PathfindingModifier
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 Label: string
 PassThrough: bool = false
@@ -10234,16 +10236,16 @@ PassThrough: bool = false
 
 ---
 
-# PathfindingService
+## PathfindingService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Properties
+### Properties
 ```
 EmptyCutoff: float = 0 [Deprecated]
 ```
 
-## Functions
+### Functions
 ```
 CreatePath(agentParameters: Dictionary) → Path
 ComputeRawPathAsync(start: Vector3, finish: Vector3, maxDistance: float) → Path [Deprecated]
@@ -10253,11 +10255,11 @@ FindPathAsync(start: Vector3, finish: Vector3) → Path
 
 ---
 
-# PausedState
+## PausedState
 **Extends:** Instance
 **Tags:** NotCreatable, NotReplicated
 
-## Properties
+### Properties
 ```
 AllThreadsPaused: bool [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity] [ReadOnly]
 Reason: DebuggerPauseReason [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity] [ReadOnly]
@@ -10266,44 +10268,44 @@ ThreadId: int [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity] [ReadOnly
 
 ---
 
-# PausedStateBreakpoint
+## PausedStateBreakpoint
 **Extends:** PausedState
 **Tags:** NotCreatable, NotReplicated
 
-## Properties
+### Properties
 ```
 Breakpoint: Breakpoint [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity] [ReadOnly]
 ```
 
 ---
 
-# PausedStateException
+## PausedStateException
 **Extends:** PausedState
 **Tags:** NotCreatable, NotReplicated
 
-## Properties
+### Properties
 ```
 ExceptionText: string [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity] [ReadOnly]
 ```
 
 ---
 
-# PerformanceControlService
+## PerformanceControlService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 IsCrossExperienceLaunchFeasible(type: string) → bool [RobloxScriptSecurity]
 ```
 
 ---
 
-# PermissionsService
+## PermissionsService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
-## Functions
+### Functions
 ```
 GetIsThirdPartyAssetAllowed() → bool [RobloxScriptSecurity]
 GetIsThirdPartyPurchaseAllowed() → bool [RobloxScriptSecurity]
@@ -10314,11 +10316,11 @@ SetPermissions(assetId: string, permissions: Array) → null [RobloxScriptSecuri
 
 ---
 
-# PhysicsService
+## PhysicsService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
-## Functions
+### Functions
 ```
 CollisionGroupContainsPart(name: string, part: BasePart) → bool [Deprecated]
 CollisionGroupSetCollidable(name1: string, name2: string, collidable: bool) → null
@@ -10341,11 +10343,11 @@ UnregisterCollisionGroup(name: string) → null
 
 ---
 
-# PhysicsSettings
+## PhysicsSettings
 **Extends:** Instance
 **Tags:** NotCreatable, Settings, NotReplicated
 
-## Properties
+### Properties
 ```
 AllowSleep: bool
 AreAnchorsShown: bool
@@ -10399,23 +10401,23 @@ UseCSGv2: bool
 
 ---
 
-# PlaceAssetIdsService
+## PlaceAssetIdsService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
 ---
 
-# PlaceStatsService
+## PlaceStatsService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
 ---
 
-# PlacesService
+## PlacesService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 StartPlaySolo() → null [RobloxScriptSecurity]
 StopPlaySolo() → null [RobloxScriptSecurity]
@@ -10423,11 +10425,11 @@ StopPlaySolo() → null [RobloxScriptSecurity]
 
 ---
 
-# PlatformCloudStorageService
+## PlatformCloudStorageService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 IsUserDataAvailable() → bool [RobloxScriptSecurity]
 GetUserDataAsync(key: string) → Dictionary [RobloxScriptSecurity]
@@ -10436,11 +10438,11 @@ SetUserDataAsync(key: string, data: Dictionary) → null [RobloxScriptSecurity]
 
 ---
 
-# PlatformFriendsService
+## PlatformFriendsService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 IsInviteFriendsEnabled() → bool [RobloxScriptSecurity]
 IsProfileEnabled() → bool [RobloxScriptSecurity]
@@ -10451,10 +10453,10 @@ GetPartyMembers() → Array [RobloxScriptSecurity]
 
 ---
 
-# Player
+## Player
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 AccountAge: int [ReadOnly]
 AccountAgeReplicate: int
@@ -10518,7 +10520,7 @@ VREnabled: bool [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
 userId: int64 [Deprecated]
 ```
 
-## Functions
+### Functions
 ```
 AddReplicationFocus(part: BasePart) → null
 AddReplicationFocusPosition(center: Vector3, radius: int) → null [RobloxSecurity]
@@ -10589,7 +10591,7 @@ isFriendsWith(userId: int64) → bool [Deprecated]
 waitForDataReady() → bool [Deprecated]
 ```
 
-## Events
+### Events
 ```
 CharacterAdded(character: Model)
 CharacterAppearanceLoaded(character: Model)
@@ -10623,11 +10625,11 @@ UnpinStreaming(instance: Instance, depth: int) [RobloxSecurity]
 
 ---
 
-# PlayerData
+## PlayerData
 **Extends:** Instance
 **Tags:** NotCreatable, NotReplicated
 
-## Functions
+### Functions
 ```
 GetPlayer() → Player
 GetRecordAsync(recordName: string) → PlayerDataRecord
@@ -10635,11 +10637,11 @@ GetRecordAsync(recordName: string) → PlayerDataRecord
 
 ---
 
-# PlayerDataRecord
+## PlayerDataRecord
 **Extends:** Instance
 **Tags:** NotCreatable, NotReplicated
 
-## Properties
+### Properties
 ```
 CreatedTime: int64 = 0 [ReadOnly]
 DefaultRecordName: bool = true [ReadOnly]
@@ -10654,7 +10656,7 @@ RecordName: string = Default [ReadOnly]
 Writable: bool = false [ReadOnly]
 ```
 
-## Functions
+### Functions
 ```
 GetPlayer() → Player
 GetValue(key: string) → Variant
@@ -10665,7 +10667,7 @@ ReleaseAsync() → null
 RequestFlushAsync() → null
 ```
 
-## Events
+### Events
 ```
 Changed(key: string, value: Variant)
 Flushed(flushState: bool, error: string?)
@@ -10674,16 +10676,16 @@ Loaded(success: bool, error: string?)
 
 ---
 
-# PlayerDataRecordConfig
+## PlayerDataRecordConfig
 **Extends:** Instance
 **Tags:** NotCreatable, NotReplicated
 
-## Properties
+### Properties
 ```
 RecordName: string [ReadOnly]
 ```
 
-## Functions
+### Functions
 ```
 GetDefaultValue(key: string) → Variant
 SetDefaultValue(key: string, value: Variant) → null
@@ -10691,27 +10693,27 @@ SetDefaultValue(key: string, value: Variant) → null
 
 ---
 
-# PlayerDataService
+## PlayerDataService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Properties
+### Properties
 ```
 LoadFailureBehavior: PlayerDataLoadFailureBehavior = Failure
 ```
 
-## Functions
+### Functions
 ```
 GetRecordConfig(recordName: string) → PlayerDataRecordConfig
 ```
 
 ---
 
-# PlayerEmulatorService
+## PlayerEmulatorService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Properties
+### Properties
 ```
 CustomPoliciesEnabled: bool = false [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
 EmulatedCountryCode: string [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
@@ -10722,7 +10724,7 @@ SerializedEmulatedPolicyInfo: BinaryString [Read:RobloxSecurity] [Write:RobloxSe
 TextElongationFactor: int = 0 [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
 ```
 
-## Functions
+### Functions
 ```
 GetEmulatedPolicyInfo() → Dictionary [RobloxScriptSecurity]
 RegionCodeWillHaveAutomaticNonCustomPolicies(regionCode: string) → bool [RobloxScriptSecurity]
@@ -10731,22 +10733,22 @@ SetEmulatedPolicyInfo(emulatedPolicyInfo: Dictionary) → null [RobloxScriptSecu
 
 ---
 
-# PlayerHydrationService
+## PlayerHydrationService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
-## Events
+### Events
 ```
 PlayerHydration(userId: int64, playerHydrationBlob: string, playerHydrationSignature: string) [RobloxSecurity]
 ```
 
 ---
 
-# PlayerScripts
+## PlayerScripts
 **Extends:** Instance
 **Tags:** NotCreatable, NotReplicated
 
-## Functions
+### Functions
 ```
 ClearComputerCameraMovementModes() → null
 ClearComputerMovementModes() → null
@@ -10762,7 +10764,7 @@ RegisterTouchCameraMovementMode(cameraMovementMode: TouchCameraMovementMode) →
 RegisterTouchMovementMode(movementMode: TouchMovementMode) → null
 ```
 
-## Events
+### Events
 ```
 ComputerCameraMovementModeRegistered() [RobloxScriptSecurity]
 ComputerMovementModeRegistered() [RobloxScriptSecurity]
@@ -10772,11 +10774,11 @@ TouchMovementModeRegistered() [RobloxScriptSecurity]
 
 ---
 
-# PlayerViewService
+## PlayerViewService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 GetDeviceCameraCFrame(player: Player) → CFrame
 GetDeviceCameraCFrameForSelfView() → CFrame [RobloxScriptSecurity]
@@ -10786,11 +10788,11 @@ UpdateDeviceCFrame(player: Player, cframe: CFrame, timestamp: int64) → null [R
 
 ---
 
-# Players
+## Players
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
-## Properties
+### Properties
 ```
 BanningEnabled: bool
 BubbleChat: bool [ReadOnly]
@@ -10810,7 +10812,7 @@ localPlayer: Player [ReadOnly] [Deprecated]
 numPlayers: int [ReadOnly] [Deprecated]
 ```
 
-## Functions
+### Functions
 ```
 Chat(message: string) → null [PluginSecurity]
 CreateLocalPlayer() → Player [LocalUserSecurity]
@@ -10843,7 +10845,7 @@ GetUserThumbnailAsync(userId: int64, thumbnailType: ThumbnailType, thumbnailSize
 UnbanAsync(config: Dictionary) → null
 ```
 
-## Events
+### Events
 ```
 CloudEditApplyEditsMessage(playerName: string, scriptName: string) [RobloxSecurity]
 FriendRequestEvent(player: Player, player: Player, friendRequestEvent: FriendRequestEvent) [RobloxScriptSecurity]
@@ -10870,11 +10872,11 @@ UserSubscriptionStatusChanged(user: Player, subscriptionId: string)
 
 ---
 
-# Plugin
+## Plugin
 **Extends:** Instance
 **Tags:** NotCreatable
 
-## Properties
+### Properties
 ```
 CollisionEnabled: bool [ReadOnly]
 DisableUIDragDetectorDrags: bool [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
@@ -10886,7 +10888,7 @@ MultipleDocumentInterfaceInstance: MultipleDocumentInterfaceInstance [Read:Roblo
 UsesAssetInsertionDrag: bool [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
 ```
 
-## Functions
+### Functions
 ```
 Activate(exclusiveMouse: bool) → null [PluginSecurity]
 CreatePluginAction(actionId: string, text: string, statusTip: string, iconName: string, allowBinding: bool) → PluginAction [PluginSecurity]
@@ -10933,7 +10935,7 @@ PromptForExistingAssetId(assetType: string) → int64 [PluginSecurity]
 PromptSaveSelection(suggestedFileName: string) → bool [PluginSecurity]
 ```
 
-## Events
+### Events
 ```
 Deactivation() [PluginSecurity]
 Ready() [RobloxScriptSecurity]
@@ -10942,11 +10944,11 @@ Unloading() [PluginSecurity]
 
 ---
 
-# PluginAction
+## PluginAction
 **Extends:** Instance
 **Tags:** NotReplicated
 
-## Properties
+### Properties
 ```
 ActionId: string [ReadOnly]
 AllowBinding: bool = true [ReadOnly]
@@ -10957,34 +10959,34 @@ StatusTip: string [ReadOnly]
 Text: string [Write:RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 Triggered() [PluginSecurity]
 ```
 
 ---
 
-# PluginCapabilities
+## PluginCapabilities
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 Manifest: string = {"Metadata":{"TargetDataModels": ["Edit", "Server", "Client"]},"Permissions":{}} [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
 ```
 
 ---
 
-# PluginDebugService
+## PluginDebugService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
 ---
 
-# PluginDragEvent
+## PluginDragEvent
 **Extends:** Instance
 **Tags:** NotCreatable, NotReplicated
 
-## Properties
+### Properties
 ```
 Data: string [ReadOnly]
 MimeType: string [ReadOnly]
@@ -10994,17 +10996,17 @@ Sender: string [ReadOnly]
 
 ---
 
-# PluginGuiService
+## PluginGuiService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
 ---
 
-# PluginManagementService
+## PluginManagementService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 SetAutoUpdate(pluginId: int64, state: bool) → null [RobloxScriptSecurity]
 GetOTAPluginVersion(pluginName: string) → int64 [RobloxScriptSecurity]
@@ -11012,11 +11014,11 @@ GetOTAPluginVersion(pluginName: string) → int64 [RobloxScriptSecurity]
 
 ---
 
-# PluginManager
+## PluginManager
 **Extends:** Instance
 **Tags:** NotCreatable
 
-## Functions
+### Functions
 ```
 CreatePlugin() → Instance [PluginSecurity] [Deprecated]
 ExportPlace(filePath: string) → null [PluginSecurity]
@@ -11025,11 +11027,11 @@ ExportSelection(filePath: string) → null [PluginSecurity]
 
 ---
 
-# PluginManagerInterface
+## PluginManagerInterface
 **Extends:** Instance
 **Tags:** NotCreatable, NotReplicated
 
-## Functions
+### Functions
 ```
 CreatePlugin() → Instance [PluginSecurity] [Deprecated]
 ExportPlace(filePath: string) → null [PluginSecurity]
@@ -11038,17 +11040,17 @@ ExportSelection(filePath: string) → null [PluginSecurity]
 
 ---
 
-# PluginMenu
+## PluginMenu
 **Extends:** Instance
 **Tags:** NotCreatable, NotReplicated
 
-## Properties
+### Properties
 ```
 Icon: string
 Title: string
 ```
 
-## Functions
+### Functions
 ```
 AddAction(action: Instance) → null [PluginSecurity]
 AddMenu(menu: Instance) → null [PluginSecurity]
@@ -11060,22 +11062,22 @@ ShowAsync() → Instance [PluginSecurity]
 
 ---
 
-# PluginPolicyService
+## PluginPolicyService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 GetPluginPolicy(pluginName: string) → Dictionary [RobloxScriptSecurity]
 ```
 
 ---
 
-# PluginToolbar
+## PluginToolbar
 **Extends:** Instance
 **Tags:** NotCreatable
 
-## Functions
+### Functions
 ```
 CreateButton(buttonId: string, tooltip: string, iconname: string, text: string) → PluginToolbarButton [PluginSecurity]
 CreatePopupButton(buttonId: string, tooltip: string, iconname: string, text: string) → PluginToolbarButton [RobloxScriptSecurity]
@@ -11083,24 +11085,24 @@ CreatePopupButton(buttonId: string, tooltip: string, iconname: string, text: str
 
 ---
 
-# PluginToolbarButton
+## PluginToolbarButton
 **Extends:** Instance
 **Tags:** NotCreatable
 
-## Properties
+### Properties
 ```
 ClickableWhenViewportHidden: bool
 Enabled: bool
 Icon: ContentId
 ```
 
-## Functions
+### Functions
 ```
 SetActive(active: bool) → null [PluginSecurity]
 SetDropdownActive(active: bool) → null [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 Click() [PluginSecurity]
 DropdownClick() [RobloxScriptSecurity]
@@ -11108,11 +11110,11 @@ DropdownClick() [RobloxScriptSecurity]
 
 ---
 
-# PointsService
+## PointsService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, Deprecated
 
-## Functions
+### Functions
 ```
 GetAwardablePoints() → int [Deprecated]
 AwardPoints(userId: int64, amount: int) → Tuple [Deprecated]
@@ -11120,24 +11122,24 @@ GetGamePointBalance(userId: int64) → int [Deprecated]
 GetPointBalance(userId: int64) → int [Deprecated]
 ```
 
-## Events
+### Events
 ```
 PointsAwarded(userId: int64, pointsAwarded: int, userBalanceInGame: int, userTotalBalance: int)
 ```
 
 ---
 
-# PolicyService
+## PolicyService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Properties
+### Properties
 ```
 IsLuobuServer: TriStateBoolean = Unknown [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
 LuobuWhitelisted: TriStateBoolean = Unknown [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
 ```
 
-## Functions
+### Functions
 ```
 CanViewBrandProjectAsync(player: Player, brandProjectId: string) → bool
 GetPolicyInfoForPlayerAsync(player: Instance) → Dictionary
@@ -11146,11 +11148,11 @@ GetPolicyInfoForServerRobloxOnlyAsync() → Dictionary [RobloxScriptSecurity]
 
 ---
 
-# PoseBase
+## PoseBase
 **Extends:** Instance
 **Tags:** NotCreatable
 
-## Properties
+### Properties
 ```
 EasingDirection: PoseEasingDirection
 EasingStyle: PoseEasingStyle
@@ -11159,26 +11161,26 @@ Weight: float
 
 ---
 
-# NumberPose
+## NumberPose
 **Extends:** PoseBase
 
-## Properties
+### Properties
 ```
 Value: double = 0
 ```
 
 ---
 
-# Pose
+## Pose
 **Extends:** PoseBase
 
-## Properties
+### Properties
 ```
 CFrame: CFrame
 MaskWeight: float = 0 [Deprecated]
 ```
 
-## Functions
+### Functions
 ```
 AddSubPose(pose: Instance) → null
 GetSubPoses() → Instances
@@ -11187,21 +11189,21 @@ RemoveSubPose(pose: Instance) → null
 
 ---
 
-# PostEffect
+## PostEffect
 **Extends:** Instance
 **Tags:** NotCreatable
 
-## Properties
+### Properties
 ```
 Enabled: bool
 ```
 
 ---
 
-# BloomEffect
+## BloomEffect
 **Extends:** PostEffect
 
-## Properties
+### Properties
 ```
 Intensity: float = 0.400000006
 Size: float = 24
@@ -11210,20 +11212,20 @@ Threshold: float = 0.949999988
 
 ---
 
-# BlurEffect
+## BlurEffect
 **Extends:** PostEffect
 
-## Properties
+### Properties
 ```
 Size: float = 24
 ```
 
 ---
 
-# ColorCorrectionEffect
+## ColorCorrectionEffect
 **Extends:** PostEffect
 
-## Properties
+### Properties
 ```
 Brightness: float = 0
 Contrast: float = 0
@@ -11233,20 +11235,20 @@ TintColor: Color3 = 1, 1, 1
 
 ---
 
-# ColorGradingEffect
+## ColorGradingEffect
 **Extends:** PostEffect
 
-## Properties
+### Properties
 ```
 TonemapperPreset: TonemapperPreset = Default
 ```
 
 ---
 
-# DepthOfFieldEffect
+## DepthOfFieldEffect
 **Extends:** PostEffect
 
-## Properties
+### Properties
 ```
 FarIntensity: float = 0.75
 FocusDistance: float = 0.0500000007
@@ -11256,10 +11258,10 @@ NearIntensity: float = 0.75
 
 ---
 
-# SunRaysEffect
+## SunRaysEffect
 **Extends:** PostEffect
 
-## Properties
+### Properties
 ```
 Intensity: float = 0.25
 Spread: float = 1
@@ -11267,16 +11269,16 @@ Spread: float = 1
 
 ---
 
-# ProcessInstancePhysicsService
+## ProcessInstancePhysicsService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
 ---
 
-# ProximityPrompt
+## ProximityPrompt
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 ActionText: string = Interact
 AutoLocalize: bool = true
@@ -11295,13 +11297,13 @@ Style: ProximityPromptStyle = Default
 UIOffset: Vector2 = 0, 0
 ```
 
-## Functions
+### Functions
 ```
 InputHoldBegin() → null
 InputHoldEnd() → null
 ```
 
-## Events
+### Events
 ```
 ButtonHoldBeganActionReplicated(player: Player) [RobloxSecurity]
 ButtonHoldEndedActionReplicated(player: Player) [RobloxSecurity]
@@ -11319,18 +11321,18 @@ TriggeredActionReplicated(player: Instance) [RobloxSecurity]
 
 ---
 
-# ProximityPromptService
+## ProximityPromptService
 **Extends:** Instance
 **Tags:** Service, NotBrowsable
 
-## Properties
+### Properties
 ```
 Enabled: bool = true
 MaxIndicatorsVisible: int = 16
 MaxPromptsVisible: int = 16
 ```
 
-## Events
+### Events
 ```
 IndicatorHidden(prompt: ProximityPrompt)
 IndicatorShown(prompt: ProximityPrompt)
@@ -11344,11 +11346,11 @@ PromptTriggered(prompt: ProximityPrompt, playerWhoTriggered: Player)
 
 ---
 
-# PublishService
+## PublishService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 PublishDescendantAssets(instance: Instance) → bool [RobloxScriptSecurity]
 CreateAssetAndWaitForAssetId(instances: Instances, operationId: string, creatorType: AssetCreatorType, creatorId: int64, assetType: string, name: string, description: string, expectedPrice: int) → int64 [RobloxScriptSecurity]
@@ -11361,11 +11363,11 @@ PublishDescendantAssetsAsync(instance: Instance) → bool [RobloxScriptSecurity]
 
 ---
 
-# RTAnimationTracker
+## RTAnimationTracker
 **Extends:** Instance
 **Tags:** NotReplicated
 
-## Properties
+### Properties
 ```
 Active: bool = false
 EnableFallbackAudioInput: bool = false
@@ -11374,12 +11376,12 @@ TrackerMode: TrackerMode = None [ReadOnly]
 TrackerType: TrackerType = Face
 ```
 
-## Functions
+### Functions
 ```
 Step() → null [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 TrackerError(errorCode: TrackerError, msg: string)
 TrackerPrompt(prompt: TrackerPromptEvent)
@@ -11387,11 +11389,11 @@ TrackerPrompt(prompt: TrackerPromptEvent)
 
 ---
 
-# RbxAnalyticsService
+## RbxAnalyticsService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
-## Functions
+### Functions
 ```
 AddGlobalPointsField(key: string, value: int) → null [RobloxScriptSecurity]
 AddGlobalPointsTag(key: string, value: string) → null [RobloxScriptSecurity]
@@ -11418,11 +11420,11 @@ UpdateHeartbeatObject(args: Dictionary) → null [RobloxScriptSecurity]
 
 ---
 
-# RecommendationService
+## RecommendationService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
-## Functions
+### Functions
 ```
 LogActionEvent(actionType: RecommendationActionType, itemId: string, tracingId: string, actionEventDetails: Dictionary) → null
 LogImpressionEvent(impressionType: RecommendationImpressionType, itemId: string, tracingId: string, impressionEventDetails: Dictionary) → null
@@ -11434,41 +11436,41 @@ UpdateItemAsync(updateRecommendationItemRequest: Dictionary) → null
 
 ---
 
-# ReflectionMetadata
+## ReflectionMetadata
 **Extends:** Instance
 
 ---
 
-# ReflectionMetadataCallbacks
+## ReflectionMetadataCallbacks
 **Extends:** Instance
 
 ---
 
-# ReflectionMetadataClasses
+## ReflectionMetadataClasses
 **Extends:** Instance
 
 ---
 
-# ReflectionMetadataEnums
+## ReflectionMetadataEnums
 **Extends:** Instance
 
 ---
 
-# ReflectionMetadataEvents
+## ReflectionMetadataEvents
 **Extends:** Instance
 
 ---
 
-# ReflectionMetadataFunctions
+## ReflectionMetadataFunctions
 **Extends:** Instance
 
 ---
 
-# ReflectionMetadataItem
+## ReflectionMetadataItem
 **Extends:** Instance
 **Tags:** NotCreatable
 
-## Properties
+### Properties
 ```
 Browsable: bool
 ClassCategory: string
@@ -11490,10 +11492,10 @@ UINumTicks: double
 
 ---
 
-# ReflectionMetadataClass
+## ReflectionMetadataClass
 **Extends:** ReflectionMetadataItem
 
-## Properties
+### Properties
 ```
 ExplorerImageIndex: int = 0
 ExplorerOrder: int = 2147483647
@@ -11504,36 +11506,36 @@ ServiceVisibility: ServiceVisibility = Always [Read:RobloxSecurity] [Write:Roblo
 
 ---
 
-# ReflectionMetadataEnum
+## ReflectionMetadataEnum
 **Extends:** ReflectionMetadataItem
 
 ---
 
-# ReflectionMetadataEnumItem
+## ReflectionMetadataEnumItem
 **Extends:** ReflectionMetadataItem
 
 ---
 
-# ReflectionMetadataMember
+## ReflectionMetadataMember
 **Extends:** ReflectionMetadataItem
 
 ---
 
-# ReflectionMetadataProperties
+## ReflectionMetadataProperties
 **Extends:** Instance
 
 ---
 
-# ReflectionMetadataYieldFunctions
+## ReflectionMetadataYieldFunctions
 **Extends:** Instance
 
 ---
 
-# ReflectionService
+## ReflectionService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 GetClass(className: string, filter: Dictionary) → Dictionary?
 GetClasses(filter: Dictionary) → Array
@@ -11544,11 +11546,11 @@ GetStyledPropertyNames(name: string) → Array [RobloxScriptSecurity]
 
 ---
 
-# RemoteCursorService
+## RemoteCursorService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
-## Events
+### Events
 ```
 BroadcastRemoteCursorPositions(script: string, remoteCursorPosition: string) [RobloxSecurity]
 RequestAllRemoteCursorPositionForScript(script: string) [RobloxSecurity]
@@ -11557,22 +11559,22 @@ UpdateClientRemoteCursorPosition(script: string, remoteCursorPosition: string) [
 
 ---
 
-# RemoteDebuggerServer
+## RemoteDebuggerServer
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
 ---
 
-# RemoteFunction
+## RemoteFunction
 **Extends:** Instance
 
-## Functions
+### Functions
 ```
 InvokeClient(player: Player, arguments: Tuple) → Tuple
 InvokeServer(arguments: Tuple) → Tuple
 ```
 
-## Events
+### Events
 ```
 RemoteOnInvokeClient(id: int, arguments: Tuple)
 RemoteOnInvokeError(id: int, arguments: string)
@@ -11582,11 +11584,11 @@ RemoteOnInvokeSuccess(id: int, arguments: Tuple)
 
 ---
 
-# RenderSettings
+## RenderSettings
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated, NotBrowsable
 
-## Properties
+### Properties
 ```
 AutoFRMLevel: int
 EagerBulkExecution: bool
@@ -11605,17 +11607,17 @@ ShowBoundingBoxes: bool
 ViewMode: ViewMode
 ```
 
-## Functions
+### Functions
 ```
 GetMaxQualityLevel() → int
 ```
 
 ---
 
-# RenderingTest
+## RenderingTest
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 CFrame: CFrame
 ComparisonDiffThreshold: int = 10
@@ -11634,18 +11636,18 @@ Ticket: string
 Timeout: int = 30
 ```
 
-## Functions
+### Functions
 ```
 RenderdocTriggerCapture() → null
 ```
 
 ---
 
-# ReplicatedFirst
+## ReplicatedFirst
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
-## Functions
+### Functions
 ```
 IsDefaultLoadingGuiRemoved() → bool [RobloxScriptSecurity]
 IsFinishedReplicating() → bool [RobloxScriptSecurity]
@@ -11653,7 +11655,7 @@ RemoveDefaultLoadingScreen() → null
 SetDefaultLoadingGuiRemoved() → null [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 DefaultLoadingGuiRemoved() [RobloxScriptSecurity]
 FinishedReplicating() [RobloxScriptSecurity]
@@ -11662,22 +11664,22 @@ RemoveDefaultLoadingGuiSignal() [RobloxScriptSecurity]
 
 ---
 
-# ReplicatedStorage
+## ReplicatedStorage
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
 ---
 
-# RibbonNotificationService
+## RibbonNotificationService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 OnNotificationUpdateFromPlugin(newNotificationId: string, seenNotificationId: string) → null [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 AllNotificationsReadFromRibbon() [RobloxScriptSecurity]
 NewNotificationFromRibbon(newNotificationId: string) [RobloxScriptSecurity]
@@ -11687,67 +11689,67 @@ ToggleNotificationTray(checked: bool, newNotificationAvailable: bool) [RobloxScr
 
 ---
 
-# RobloxPluginGuiService
+## RobloxPluginGuiService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
 ---
 
-# RobloxReplicatedStorage
+## RobloxReplicatedStorage
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotBrowsable
 
 ---
 
-# RobloxSerializableInstance
+## RobloxSerializableInstance
 **Extends:** Instance
 **Tags:** NotCreatable, NotReplicated
 
-## Properties
+### Properties
 ```
 Data: BinaryString [Read:RobloxSecurity] [Write:RobloxSecurity]
 ```
 
 ---
 
-# RobloxServerStorage
+## RobloxServerStorage
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
 ---
 
-# RomarkRbxAnalyticsService
+## RomarkRbxAnalyticsService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
 ---
 
-# RomarkService
+## RomarkService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
-## Functions
+### Functions
 ```
 EndRemoteRomarkTest() → null
 ```
 
-## Events
+### Events
 ```
 RomarkEndOfTest() [RobloxScriptSecurity]
 ```
 
 ---
 
-# RotationCurve
+## RotationCurve
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 Length: int = 0 [ReadOnly]
 ValuesAndTimes: BinaryString = 
 ```
 
-## Functions
+### Functions
 ```
 GetKeyAtIndex(index: int) → RotationCurveKey
 GetKeyIndicesAtTime(time: float) → Array
@@ -11760,23 +11762,23 @@ SetKeys(keys: Array) → int
 
 ---
 
-# RtMessagingService
+## RtMessagingService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
 ---
 
-# RunService
+## RunService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Properties
+### Properties
 ```
 ClientGitHash: string [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity] [ReadOnly]
 RunState: RunState [Read:PluginSecurity] [Write:PluginSecurity]
 ```
 
-## Functions
+### Functions
 ```
 BindToRenderStep(name: string, priority: int, function: Function) → null
 GetCoreScriptVersion() → string [RobloxScriptSecurity]
@@ -11799,7 +11801,7 @@ UnbindFromRenderStep(name: string) → null
 setThrottleFramerateEnabled(enable: bool) → null [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 Heartbeat(deltaTime: double)
 PostSimulation(deltaTimeSim: double)
@@ -11813,22 +11815,22 @@ Stepped(time: double, deltaTime: double)
 
 ---
 
-# RuntimeScriptService
+## RuntimeScriptService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
 ---
 
-# SafetyService
+## SafetyService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
-## Properties
+### Properties
 ```
 IsCaptureModeForReport: bool = false [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
 ```
 
-## Functions
+### Functions
 ```
 DecodeAvatarMovementProto(avatarMovementProtoString: string) → Dictionary [RobloxScriptSecurity]
 ReportMenuTabClose() → null [RobloxScriptSecurity]
@@ -11836,7 +11838,7 @@ ReportMenuTabOpen() → null [RobloxScriptSecurity]
 TakeScreenshot(screenshotOptions: Dictionary) → int64 [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 FSTriggeredSignal(requestId: string, playerId: int64, mac: string, args: Tuple) [RobloxSecurity]
 ScreenshotContentReady(screenshotJobId: int64, contentId: ContentId) [RobloxScriptSecurity]
@@ -11845,11 +11847,11 @@ ScreenshotUploaded(screenshotJobId: int64, screenshotId: string) [RobloxScriptSe
 
 ---
 
-# ScreenshotHud
+## ScreenshotHud
 **Extends:** Instance
 **Tags:** NotCreatable, NotReplicated
 
-## Properties
+### Properties
 ```
 CameraButtonIcon: ContentId
 CameraButtonPosition: UDim2
@@ -11865,17 +11867,17 @@ Visible: bool
 
 ---
 
-# ScriptBuilder
+## ScriptBuilder
 **Extends:** Instance
 **Tags:** NotCreatable, NotReplicated
 
 ---
 
-# SyncScriptBuilder
+## SyncScriptBuilder
 **Extends:** ScriptBuilder
 **Tags:** NotCreatable, NotReplicated
 
-## Properties
+### Properties
 ```
 CompileTarget: CompileTarget = CoreScript
 CoverageInfo: bool = false
@@ -11886,11 +11888,11 @@ RawBytecode: bool = false [Deprecated]
 
 ---
 
-# ScriptChangeService
+## ScriptChangeService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Events
+### Events
 ```
 ScriptAdded(script: LuaSourceContainer) [RobloxScriptSecurity]
 ScriptBeingRemoved(script: LuaSourceContainer) [RobloxScriptSecurity]
@@ -11901,34 +11903,34 @@ ScriptSourceChanged(script: LuaSourceContainer) [RobloxScriptSecurity]
 
 ---
 
-# ScriptCloneWatcher
+## ScriptCloneWatcher
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
 ---
 
-# ScriptCloneWatcherHelper
+## ScriptCloneWatcherHelper
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
 ---
 
-# ScriptCommitService
+## ScriptCommitService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
 ---
 
-# ScriptContext
+## ScriptContext
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Properties
+### Properties
 ```
 ScriptsDisabled: bool = false [Read:LocalUserSecurity] [Write:LocalUserSecurity]
 ```
 
-## Functions
+### Functions
 ```
 AddCoreScriptLocal(name: string, parent: Instance) → null [RobloxScriptSecurity]
 CompressLuaApp() → null [RobloxScriptSecurity]
@@ -11939,7 +11941,7 @@ ReportLuaRequireCount() → null [RobloxScriptSecurity]
 SetTimeout(seconds: double) → null [PluginSecurity]
 ```
 
-## Events
+### Events
 ```
 Error(message: string, stackTrace: string, script: Instance)
 ErrorDetailed(message: string, stackTrace: string, script: Instance, details: string, securityLevel: int, messageId: string) [RobloxScriptSecurity]
@@ -11947,11 +11949,11 @@ ErrorDetailed(message: string, stackTrace: string, script: Instance, details: st
 
 ---
 
-# ScriptDebugger
+## ScriptDebugger
 **Extends:** Instance
 **Tags:** NotCreatable
 
-## Properties
+### Properties
 ```
 CoreScriptIdentifier: string
 CurrentLine: int = 0 [ReadOnly]
@@ -11961,7 +11963,7 @@ Script: Instance [ReadOnly]
 ScriptGuid: string
 ```
 
-## Functions
+### Functions
 ```
 AddWatch(expression: string) → Instance
 GetBreakpoints() → Instances
@@ -11977,7 +11979,7 @@ SetLocal(name: string, value: Variant, stackFrame: int) → null
 SetUpvalue(name: string, value: Variant, stackFrame: int) → null
 ```
 
-## Events
+### Events
 ```
 BreakpointAdded(breakpoint: Instance)
 BreakpointRemoved(breakpoint: Instance)
@@ -11989,11 +11991,11 @@ WatchRemoved(watch: Instance)
 
 ---
 
-# ScriptDocument
+## ScriptDocument
 **Extends:** Instance
 **Tags:** NotCreatable, NotReplicated
 
-## Functions
+### Functions
 ```
 GetInternalUri() → string [RobloxScriptSecurity]
 GetLine(lineIndex: int?) → string [PluginSecurity]
@@ -12014,7 +12016,7 @@ MultiEditTextAsync(edits: Array) → Tuple [PluginSecurity]
 RequestSetSelectionAsync(cursorLine: int, cursorCharacter: int, anchorLine: int?, anchorCharacter: int?) → Tuple [PluginSecurity]
 ```
 
-## Events
+### Events
 ```
 SelectionChanged(positionLine: int64, positionCharacter: int64, anchorLine: int64, anchorCharacter: int64) [PluginSecurity]
 ViewportChanged(startLine: int64, endLine: int64) [PluginSecurity]
@@ -12022,11 +12024,11 @@ ViewportChanged(startLine: int64, endLine: int64) [PluginSecurity]
 
 ---
 
-# ScriptEditorService
+## ScriptEditorService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 DeregisterAutocompleteCallback(name: string) → null [PluginSecurity]
 DeregisterScriptAnalysisCallback(name: string) → null [PluginSecurity]
@@ -12044,7 +12046,7 @@ OpenScriptDocumentAsync(script: LuaSourceContainer, options: Dictionary) → Tup
 UpdateSourceAsync(script: LuaSourceContainer, callback: Function) → null [PluginSecurity]
 ```
 
-## Events
+### Events
 ```
 TextDocumentDidChange(document: ScriptDocument, changesArray: Variant) [PluginSecurity]
 TextDocumentDidClose(oldDocument: ScriptDocument) [PluginSecurity]
@@ -12053,11 +12055,11 @@ TextDocumentDidOpen(newDocument: ScriptDocument) [PluginSecurity]
 
 ---
 
-# ScriptProfilerService
+## ScriptProfilerService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
-## Functions
+### Functions
 ```
 ClientRequestData(player: Player) → null [PluginSecurity]
 ClientStart(player: Player, frequency: int?) → null [PluginSecurity]
@@ -12069,7 +12071,7 @@ ServerStart(frequency: int?) → null [PluginSecurity]
 ServerStop() → null [PluginSecurity]
 ```
 
-## Events
+### Events
 ```
 OnNewData(player: Player, jsonString: string) [PluginSecurity]
 RequestData() [RobloxSecurity]
@@ -12078,34 +12080,34 @@ SetProfilingState(start: bool, frequency: int) [RobloxSecurity]
 
 ---
 
-# ScriptRegistrationService
+## ScriptRegistrationService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 GetSourceContainerByScriptGuid(guid: string) → LuaSourceContainer [RobloxScriptSecurity]
 ```
 
 ---
 
-# ScriptRuntime
+## ScriptRuntime
 **Extends:** Instance
 **Tags:** NotCreatable, NotReplicated
 
 ---
 
-# ScriptService
+## ScriptService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
 ---
 
-# Selection
+## Selection
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
-## Properties
+### Properties
 ```
 ActiveInstance: Instance [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity] [ReadOnly]
 RenderMode: SelectionRenderMode [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity] [ReadOnly]
@@ -12115,7 +12117,7 @@ SelectionThickness: float [ReadOnly]
 ShowActiveInstanceHighlight: bool [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
 ```
 
-## Functions
+### Functions
 ```
 Add(instancesToAdd: Instances) → null [PluginSecurity]
 AddFocusCallback(priority: int, function: Function) → RBXScriptConnection [RobloxScriptSecurity]
@@ -12126,7 +12128,7 @@ Set(selection: Instances) → null [PluginSecurity]
 SetTerrainSelectionHack(center: Vector3, size: Vector3) → null [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 SelectionChanged()
 SelectionChangedThisFrame() [RobloxScriptSecurity]
@@ -12134,37 +12136,37 @@ SelectionChangedThisFrame() [RobloxScriptSecurity]
 
 ---
 
-# SelectionHighlightManager
+## SelectionHighlightManager
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
 ---
 
-# SensorBase
+## SensorBase
 **Extends:** Instance
 **Tags:** NotCreatable
 
-## Properties
+### Properties
 ```
 UpdateType: SensorUpdateType
 ```
 
-## Functions
+### Functions
 ```
 Sense() → null [Deprecated]
 ```
 
-## Events
+### Events
 ```
 OnSensorOutputChanged()
 ```
 
 ---
 
-# AtmosphereSensor
+## AtmosphereSensor
 **Extends:** SensorBase
 
-## Properties
+### Properties
 ```
 AirDensity: float = 0 [ReadOnly]
 RelativeWindVelocity: Vector3 = 0, 0, 0 [ReadOnly]
@@ -12172,10 +12174,10 @@ RelativeWindVelocity: Vector3 = 0, 0, 0 [ReadOnly]
 
 ---
 
-# BuoyancySensor
+## BuoyancySensor
 **Extends:** SensorBase
 
-## Properties
+### Properties
 ```
 FullySubmerged: bool = false
 TouchingSurface: bool = false
@@ -12183,16 +12185,16 @@ TouchingSurface: bool = false
 
 ---
 
-# ControllerSensor
+## ControllerSensor
 **Extends:** SensorBase
 **Tags:** NotCreatable
 
 ---
 
-# ControllerPartSensor
+## ControllerPartSensor
 **Extends:** ControllerSensor
 
-## Properties
+### Properties
 ```
 HitFrame: CFrame
 HitNormal: Vector3 = 0, 0, 0
@@ -12203,28 +12205,28 @@ SensorMode: SensorMode = Floor
 
 ---
 
-# FluidForceSensor
+## FluidForceSensor
 **Extends:** SensorBase
 
-## Properties
+### Properties
 ```
 CenterOfPressure: Vector3 = 0, 0, 0 [ReadOnly]
 Force: Vector3 = 0, 0, 0 [ReadOnly]
 Torque: Vector3 = 0, 0, 0 [ReadOnly]
 ```
 
-## Functions
+### Functions
 ```
 EvaluateAsync(linearVelocity: Vector3, angularVelocity: Vector3, cframe: CFrame) → Tuple
 ```
 
 ---
 
-# SerializationService
+## SerializationService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
-## Functions
+### Functions
 ```
 DeserializeInstancesAsync(buffer: buffer) → Instances
 SerializeInstancesAsync(inputInstances: Instances) → buffer
@@ -12232,28 +12234,28 @@ SerializeInstancesAsync(inputInstances: Instances) → buffer
 
 ---
 
-# ServerScriptService
+## ServerScriptService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Properties
+### Properties
 ```
 LoadStringEnabled: bool = false
 ```
 
 ---
 
-# ServerStorage
+## ServerStorage
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
 ---
 
-# ServiceProvider
+## ServiceProvider
 **Extends:** Instance
 **Tags:** NotCreatable, NotBrowsable
 
-## Functions
+### Functions
 ```
 FindService(className: string) → Instance
 GetService(className: string) → Instance
@@ -12261,7 +12263,7 @@ getService(className: string) → Instance [Deprecated]
 service(className: string) → Instance [Deprecated]
 ```
 
-## Events
+### Events
 ```
 Close()
 CloseLate() [LocalUserSecurity]
@@ -12271,11 +12273,11 @@ ServiceRemoving(service: Instance)
 
 ---
 
-# DataModel
+## DataModel
 **Extends:** ServiceProvider
 **Tags:** NotCreatable
 
-## Properties
+### Properties
 ```
 CreatorId: int64 [ReadOnly]
 CreatorType: CreatorType [ReadOnly]
@@ -12300,7 +12302,7 @@ lighting: Instance [ReadOnly] [Deprecated]
 workspace: Workspace [ReadOnly] [Deprecated]
 ```
 
-## Functions
+### Functions
 ```
 BindToClose(function: Function) → null
 DefineFastFlag(name: string, defaultValue: bool) → bool [RobloxScriptSecurity]
@@ -12340,7 +12342,7 @@ InsertObjectsAndJoinIfLegacyAsync(url: ContentId) → Instances [RobloxScriptSec
 SavePlace(saveFilter: SaveFilter) → bool [Deprecated]
 ```
 
-## Events
+### Events
 ```
 AllowedGearTypeChanged()
 GraphicsQualityChangeRequest(betterQuality: bool)
@@ -12353,17 +12355,17 @@ UniverseMetadataLoaded() [RobloxScriptSecurity]
 
 ---
 
-# GenericSettings
+## GenericSettings
 **Extends:** ServiceProvider
 **Tags:** NotCreatable
 
 ---
 
-# GlobalSettings
+## GlobalSettings
 **Extends:** GenericSettings
 **Tags:** NotCreatable, NotBrowsable
 
-## Functions
+### Functions
 ```
 GetFFlag(name: string) → bool
 GetFFlagOverrides() → string [RobloxScriptSecurity]
@@ -12374,11 +12376,11 @@ SetFFlagOverrides(overrides: string) → bool [RobloxScriptSecurity]
 
 ---
 
-# UserSettings
+## UserSettings
 **Extends:** GenericSettings
 **Tags:** NotCreatable
 
-## Functions
+### Functions
 ```
 IsUserFeatureEnabled(name: string) → bool
 Reset() → null
@@ -12387,39 +12389,39 @@ SaveState() → null [RobloxScriptSecurity]
 
 ---
 
-# ServiceVisibilityService
+## ServiceVisibilityService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
-## Properties
+### Properties
 ```
 HiddenServices: BinaryString [Read:RobloxSecurity] [Write:RobloxSecurity]
 VisibleServices: BinaryString [Read:RobloxSecurity] [Write:RobloxSecurity]
 ```
 
-## Functions
+### Functions
 ```
 SetServiceVisibilityPreference(service: Instance, visible: bool) → null [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 ServiceVisibilityChanged(serviceName: string) [RobloxScriptSecurity]
 ```
 
 ---
 
-# SessionCheckService
+## SessionCheckService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
 ---
 
-# SessionService
+## SessionService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
-## Functions
+### Functions
 ```
 AcquireContextFocus(context: string) → null [RobloxScriptSecurity]
 GenerateSessionInfoString(includeArbitrarySessions: bool, includeTag: bool, includeTimestamps: bool, includeMetadata: bool) → string [RobloxScriptSecurity]
@@ -12441,11 +12443,11 @@ SetSession(parentSid: string, childSid: string, tag: string, context: string) �
 
 ---
 
-# SharedTableRegistry
+## SharedTableRegistry
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 GetSharedTable(name: string) → SharedTable
 SetSharedTable(name: string, st: SharedTable?) → null
@@ -12453,10 +12455,10 @@ SetSharedTable(name: string, st: SharedTable?) → null
 
 ---
 
-# Sky
+## Sky
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 CelestialBodiesShown: bool = true
 MoonAngularSize: float = 11
@@ -12475,16 +12477,16 @@ SunTextureId: ContentId = rbxasset://sky/sun.jpg
 
 ---
 
-# SlimService
+## SlimService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
 ---
 
-# Smoke
+## Smoke
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 Color: Color3 = 1, 1, 1
 Enabled: bool = true
@@ -12498,41 +12500,41 @@ riseVelocity_xml: float = 1
 size_xml: float = 1
 ```
 
-## Functions
+### Functions
 ```
 FastForward(numFrames: int) → null [RobloxScriptSecurity]
 ```
 
 ---
 
-# SmoothVoxelsUpgraderService
+## SmoothVoxelsUpgraderService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 Cancel() → null [RobloxScriptSecurity]
 Start() → null [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 Status(progressRatio: float) [RobloxScriptSecurity]
 ```
 
 ---
 
-# SnippetService
+## SnippetService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
 ---
 
-# SocialService
+## SocialService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 GetPlayersByPartyId(partyId: string) → Instances
 HideSelfView() → null
@@ -12553,7 +12555,7 @@ PromptLinkSharing(player: Player, options: Dictionary) → Tuple
 PromptRsvpToEventAsync(eventId: string) → RsvpStatus
 ```
 
-## Events
+### Events
 ```
 CallInviteStateChanged(player: Instance, inviteState: InviteState)
 GameInvitePromptClosed(player: Instance, recipientIds: Array)
@@ -12571,10 +12573,10 @@ ShowPromptRsvpToEvent(eventId: string) [RobloxScriptSecurity]
 
 ---
 
-# Sound
+## Sound
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 ChannelCount: int = 0 [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity] [ReadOnly]
 EmitterSize: float = 10 [Deprecated]
@@ -12611,7 +12613,7 @@ xmlRead_MaxDistance_3: float = 10000 [Deprecated]
 xmlRead_MinDistance_3: float = 10 [Deprecated]
 ```
 
-## Functions
+### Functions
 ```
 Pause() → null
 Play() → null
@@ -12622,7 +12624,7 @@ play() → null [Deprecated]
 stop() → null [Deprecated]
 ```
 
-## Events
+### Events
 ```
 DidLoop(soundId: string, numOfTimesLooped: int)
 Ended(soundId: string)
@@ -12640,11 +12642,11 @@ playbackActionSync(action: int) [RobloxSecurity]
 
 ---
 
-# SoundEffect
+## SoundEffect
 **Extends:** Instance
 **Tags:** NotCreatable
 
-## Properties
+### Properties
 ```
 Enabled: bool
 Priority: int
@@ -12652,10 +12654,10 @@ Priority: int
 
 ---
 
-# ChorusSoundEffect
+## ChorusSoundEffect
 **Extends:** SoundEffect
 
-## Properties
+### Properties
 ```
 Depth: float = 0.150000006
 Mix: float = 0.5
@@ -12664,10 +12666,10 @@ Rate: float = 0.5
 
 ---
 
-# CompressorSoundEffect
+## CompressorSoundEffect
 **Extends:** SoundEffect
 
-## Properties
+### Properties
 ```
 Attack: float = 0.100000001
 GainMakeup: float = 0
@@ -12679,43 +12681,43 @@ Threshold: float = -40
 
 ---
 
-# CustomSoundEffect
+## CustomSoundEffect
 **Extends:** SoundEffect
 **Tags:** NotCreatable
 
 ---
 
-# AssetSoundEffect
+## AssetSoundEffect
 **Extends:** CustomSoundEffect
 **Tags:** NotCreatable
 
 ---
 
-# ChannelSelectorSoundEffect
+## ChannelSelectorSoundEffect
 **Extends:** CustomSoundEffect
 **Tags:** NotCreatable, NotBrowsable
 
-## Properties
+### Properties
 ```
 Channel: int = 1
 ```
 
 ---
 
-# DistortionSoundEffect
+## DistortionSoundEffect
 **Extends:** SoundEffect
 
-## Properties
+### Properties
 ```
 Level: float = 0.75
 ```
 
 ---
 
-# EchoSoundEffect
+## EchoSoundEffect
 **Extends:** SoundEffect
 
-## Properties
+### Properties
 ```
 Delay: float = 1
 DryLevel: float = 0
@@ -12725,10 +12727,10 @@ WetLevel: float = 0
 
 ---
 
-# EqualizerSoundEffect
+## EqualizerSoundEffect
 **Extends:** SoundEffect
 
-## Properties
+### Properties
 ```
 HighGain: float = 0
 LowGain: float = -20
@@ -12737,10 +12739,10 @@ MidGain: float = -10
 
 ---
 
-# FlangeSoundEffect
+## FlangeSoundEffect
 **Extends:** SoundEffect
 
-## Properties
+### Properties
 ```
 Depth: float = 0.449999988
 Mix: float = 0.850000024
@@ -12749,20 +12751,20 @@ Rate: float = 5
 
 ---
 
-# PitchShiftSoundEffect
+## PitchShiftSoundEffect
 **Extends:** SoundEffect
 
-## Properties
+### Properties
 ```
 Octave: float = 1.25
 ```
 
 ---
 
-# ReverbSoundEffect
+## ReverbSoundEffect
 **Extends:** SoundEffect
 
-## Properties
+### Properties
 ```
 DecayTime: float = 1.5
 Density: float = 1
@@ -12773,10 +12775,10 @@ WetLevel: float = 0
 
 ---
 
-# TremoloSoundEffect
+## TremoloSoundEffect
 **Extends:** SoundEffect
 
-## Properties
+### Properties
 ```
 Depth: float = 1
 Duty: float = 0.5
@@ -12785,21 +12787,21 @@ Frequency: float = 5
 
 ---
 
-# SoundGroup
+## SoundGroup
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 Volume: float = 0.5
 ```
 
 ---
 
-# SoundService
+## SoundService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
-## Properties
+### Properties
 ```
 AmbientReverb: ReverbType = NoReverb
 AudioApiByDefault: RolloutState = Default [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
@@ -12813,7 +12815,7 @@ RolloffScale: float = 1
 VolumetricAudio: VolumetricAudio = Automatic
 ```
 
-## Functions
+### Functions
 ```
 BeginRecording() → bool [RobloxScriptSecurity]
 GetAudioApiByDefault() → bool [RobloxScriptSecurity]
@@ -12838,7 +12840,7 @@ EndRecording() → Dictionary [RobloxScriptSecurity]
 GetRecordingDevices() → Dictionary [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 AudioInstanceAdded(instance: Instance) [RobloxScriptSecurity]
 ClientLoggedEvent(sessionIdRaw: string) [RobloxSecurity]
@@ -12851,10 +12853,10 @@ OpenDirectionalCurveEditorSignal(selectedCurveObjects: Instances) [RobloxScriptS
 
 ---
 
-# Sparkles
+## Sparkles
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 Color: Color3 = 1, 1, 1
 Enabled: bool = true
@@ -12863,24 +12865,24 @@ SparkleColor: Color3 = 0.564706, 0.0980392, 1
 TimeScale: float = 1
 ```
 
-## Functions
+### Functions
 ```
 FastForward(numFrames: int) → null [RobloxScriptSecurity]
 ```
 
 ---
 
-# SpawnerService
+## SpawnerService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
 ---
 
-# StackFrame
+## StackFrame
 **Extends:** Instance
 **Tags:** NotCreatable, NotReplicated
 
-## Properties
+### Properties
 ```
 FrameId: int [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity] [ReadOnly]
 FrameName: string [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity] [ReadOnly]
@@ -12895,16 +12897,16 @@ Upvalues: DebuggerVariable [Read:RobloxScriptSecurity] [Write:RobloxScriptSecuri
 
 ---
 
-# StandalonePluginScripts
+## StandalonePluginScripts
 **Extends:** Instance
 
 ---
 
-# StartPageService
+## StartPageService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 generateTempUrlInContentProvider(url: string) → null [RobloxScriptSecurity]
 getDaysSinceFirstUserLogin() → int [RobloxScriptSecurity]
@@ -12925,7 +12927,7 @@ shouldShowWinOSDeprecationWarning() → bool [RobloxScriptSecurity]
 startTutorial() → null [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 ImageImportedSignal(urlImported: string, temporaryId: string) [RobloxScriptSecurity]
 LocalGamesFromRegistryUpdatedSignal(localGames: Array) [RobloxScriptSecurity]
@@ -12934,22 +12936,22 @@ RecentApiGamesFromRegistryUpdatedSignal(recentGames: Array) [RobloxScriptSecurit
 
 ---
 
-# StarterGear
+## StarterGear
 **Extends:** Instance
 
 ---
 
-# StarterPack
+## StarterPack
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
 ---
 
-# StarterPlayer
+## StarterPlayer
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
-## Properties
+### Properties
 ```
 AllowCustomAnimations: bool = true [Write:RobloxScriptSecurity]
 AutoJumpEnabled: bool = true
@@ -12998,41 +13000,41 @@ RagdollDeath: bool = true
 UserEmotesEnabled: bool = true
 ```
 
-## Functions
+### Functions
 ```
 ClearDefaults() → null [RobloxScriptSecurity]
 ```
 
 ---
 
-# StarterPlayerScripts
+## StarterPlayerScripts
 **Extends:** Instance
 **Tags:** NotCreatable
 
 ---
 
-# StarterCharacterScripts
+## StarterCharacterScripts
 **Extends:** StarterPlayerScripts
 **Tags:** NotCreatable
 
 ---
 
-# StartupMessageService
+## StartupMessageService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 GetStartupMessage() → Variant [RobloxScriptSecurity]
 ```
 
 ---
 
-# Stats
+## Stats
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
-## Properties
+### Properties
 ```
 ContactsCount: int [ReadOnly]
 DataReceiveKbps: float [ReadOnly]
@@ -13059,7 +13061,7 @@ UI3DDrawcallCount: int [ReadOnly]
 UI3DTriangleCount: int [ReadOnly]
 ```
 
-## Functions
+### Functions
 ```
 GetBrowserTrackerId() → string [RobloxScriptSecurity]
 GetHarmonyQualityLevel() → int
@@ -13074,16 +13076,16 @@ GetPaginatedMemoryByTexture(queryType: TextureQueryType, pageIndex: int, pageSiz
 
 ---
 
-# StatsItem
+## StatsItem
 **Extends:** Instance
 **Tags:** NotCreatable
 
-## Properties
+### Properties
 ```
 DisplayName: string [Read:PluginSecurity] [Write:PluginSecurity] [ReadOnly]
 ```
 
-## Functions
+### Functions
 ```
 GetValue() → double [PluginSecurity]
 GetValueString() → string [PluginSecurity]
@@ -13091,35 +13093,35 @@ GetValueString() → string [PluginSecurity]
 
 ---
 
-# RunningAverageItemDouble
+## RunningAverageItemDouble
 **Extends:** StatsItem
 **Tags:** NotCreatable
 
 ---
 
-# RunningAverageItemInt
+## RunningAverageItemInt
 **Extends:** StatsItem
 **Tags:** NotCreatable
 
 ---
 
-# RunningAverageTimeIntervalItem
+## RunningAverageTimeIntervalItem
 **Extends:** StatsItem
 **Tags:** NotCreatable
 
 ---
 
-# TotalCountTimeIntervalItem
+## TotalCountTimeIntervalItem
 **Extends:** StatsItem
 **Tags:** NotCreatable
 
 ---
 
-# StopWatchReporter
+## StopWatchReporter
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 FinishTask(taskId: int) → null [RobloxScriptSecurity]
 SendReport(reportName: string) → null [RobloxScriptSecurity]
@@ -13128,11 +13130,11 @@ StartTask(reportName: string, taskName: string) → int [RobloxScriptSecurity]
 
 ---
 
-# StreamingService
+## StreamingService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 GetEphemeralVariable(key: string) → Variant [RobloxScriptSecurity]
 GetInstance(requestId: string, instanceId: string) → Instance [RobloxScriptSecurity]
@@ -13151,7 +13153,7 @@ RunSandboxedCode(runCodeGuid: string, requestId: string) → Tuple [RobloxScript
 SearchForAssets(body: Variant) → Variant [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 ConversationCleared() [RobloxScriptSecurity]
 RequestEnded(requestId: string) [RobloxScriptSecurity]
@@ -13163,11 +13165,11 @@ Stream(requestId: string, commandName: string, streamContent: string) [RobloxScr
 
 ---
 
-# Studio
+## Studio
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Properties
+### Properties
 ```
 "TODO" Color: Color3
 "function" Color: Color3
@@ -13339,23 +13341,23 @@ Warning Color: Color3
 Whitespace Color: Color3
 ```
 
-## Functions
+### Functions
 ```
 GetAvailableThemes() → Array [PluginSecurity]
 ```
 
-## Events
+### Events
 ```
 ThemeChanged() [PluginSecurity]
 ```
 
 ---
 
-# StudioAssetService
+## StudioAssetService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 ConvertToPackageUpload(uploadUrl: string, cloneInstances: Instances, originalInstances: Instances) → null [RobloxScriptSecurity]
 FireOnUGCSubmitCompleted(cancelled: bool) → null [RobloxScriptSecurity]
@@ -13370,7 +13372,7 @@ RequestAvatarAutosetupAsync(meshId: ContentId, textureId: ContentId, progressCal
 SerializeInstances(instances: Instances, groupId: int64, isPackage: bool) → string [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 OnConvertToPackageResult(isSuccessful: bool, errorMessage: string) [RobloxScriptSecurity]
 OnPublishPackageResult(result: Dictionary, errorMessage: string) [RobloxScriptSecurity]
@@ -13380,11 +13382,11 @@ OnUGCSubmitCompleted(cancelled: bool) [RobloxScriptSecurity]
 
 ---
 
-# StudioAttachment
+## StudioAttachment
 **Extends:** Instance
 **Tags:** NotReplicated
 
-## Properties
+### Properties
 ```
 AutoHideParent: bool = false
 IsArrowVisible: bool = false
@@ -13395,11 +13397,11 @@ TargetAnchorPoint: Vector2 = 0, 0
 
 ---
 
-# StudioCallout
+## StudioCallout
 **Extends:** Instance
 **Tags:** NotReplicated
 
-## Properties
+### Properties
 ```
 AnchorPoint: Vector2 = 0.5, 0 [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
 IsArrowVisible: bool = true [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
@@ -13409,45 +13411,45 @@ Text: string [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
 Title: string [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
 ```
 
-## Functions
+### Functions
 ```
 SetOnNextClicked(onClick: Function) → null [RobloxScriptSecurity]
 ```
 
 ---
 
-# StudioCameraService
+## StudioCameraService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Properties
+### Properties
 ```
 LockCameraSpeed: bool = false
 ```
 
-## Events
+### Events
 ```
 ShowCameraSpeed(speed: float)
 ```
 
 ---
 
-# StudioData
+## StudioData
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
-## Properties
+### Properties
 ```
 EnableScriptCollabByDefaultOnLoad: bool = false [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
 ```
 
 ---
 
-# StudioDeviceEmulatorService
+## StudioDeviceEmulatorService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Properties
+### Properties
 ```
 HasMultiTouchStarted: bool [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity] [ReadOnly]
 IsMultiTouchEmulationOn: bool [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
@@ -13455,7 +13457,7 @@ IsMultiTouchEnabled: bool [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurit
 PivotPosition: Vector2 [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity] [ReadOnly]
 ```
 
-## Functions
+### Functions
 ```
 GetMaxNumTouches() → int [RobloxScriptSecurity]
 GetTouchInBounds(index: int) → bool [RobloxScriptSecurity]
@@ -13468,7 +13470,7 @@ SetCurrentDeviceId(deviceId: string) → null [RobloxScriptSecurity]
 SetCurrentOrientation(orientation: ScreenOrientation) → null [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 CurrentDeviceIdChanged() [RobloxScriptSecurity]
 OrientationChanged() [RobloxScriptSecurity]
@@ -13478,33 +13480,33 @@ TouchPositionsChanged() [RobloxScriptSecurity]
 
 ---
 
-# StudioObjectBase
+## StudioObjectBase
 **Extends:** Instance
 **Tags:** NotCreatable, NotReplicated
 
 ---
 
-# StudioWidget
+## StudioWidget
 **Extends:** StudioObjectBase
 **Tags:** NotCreatable, NotReplicated
 
-## Functions
+### Functions
 ```
 SetFixedSize(width: int, height: int) → null [RobloxScriptSecurity]
 ```
 
 ---
 
-# StudioPublishService
+## StudioPublishService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Properties
+### Properties
 ```
 PublishLocked: bool = false [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
 ```
 
-## Functions
+### Functions
 ```
 ClearUploadNames() → null [RobloxScriptSecurity]
 CloseAfterPublish(closeMode: StudioCloseMode) → null [RobloxScriptSecurity]
@@ -13518,7 +13520,7 @@ SetUploadNames(placeName: string, universeName: string) → null [RobloxScriptSe
 ShowSaveOrPublishPlaceToRoblox(showGameSelect: bool, isPublish: bool, closeMode: StudioCloseMode) → null [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 GameNameUpdated(name: string) [RobloxScriptSecurity]
 GamePublishCancelled() [RobloxScriptSecurity]
@@ -13529,17 +13531,17 @@ OnSaveOrPublishPlaceToRoblox(showGameSelect: bool, isPublish: bool, closeMode: S
 
 ---
 
-# StudioScriptDebugEventListener
+## StudioScriptDebugEventListener
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
 ---
 
-# StudioSdkService
+## StudioSdkService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 GetSdk() → Instance [RobloxScriptSecurity]
 SetSdk(sdk: Instance) → null [RobloxScriptSecurity]
@@ -13547,11 +13549,11 @@ SetSdk(sdk: Instance) → null [RobloxScriptSecurity]
 
 ---
 
-# StudioService
+## StudioService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Properties
+### Properties
 ```
 ActiveScript: Instance [ReadOnly]
 AlignDraggedObjects: bool [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
@@ -13569,7 +13571,7 @@ StudioLocaleId: string [ReadOnly]
 UseLocalSpace: bool
 ```
 
-## Functions
+### Functions
 ```
 AnimationIdSelected(id: int64) → null [RobloxScriptSecurity]
 CopyToClipboard(stringToCopy: string) → null [RobloxScriptSecurity]
@@ -13597,7 +13599,7 @@ PromptImportFiles(fileTypeFilter: Array) → Instances [PluginSecurity]
 TryInstallPlugin(assetId: int64, assetVersionId: int64) → null [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 OnImportFromRoblox() [RobloxScriptSecurity]
 OnOpenGameSettings(pageIdentifier: string) [RobloxScriptSecurity]
@@ -13612,33 +13614,33 @@ SaveLocallyAsComplete(success: bool) [RobloxScriptSecurity]
 
 ---
 
-# StudioTheme
+## StudioTheme
 **Extends:** Instance
 **Tags:** NotCreatable, NotReplicated
 
-## Functions
+### Functions
 ```
 GetColor(styleguideitem: StudioStyleGuideColor, modifier: StudioStyleGuideModifier) → Color3 [PluginSecurity]
 ```
 
 ---
 
-# StudioUserService
+## StudioUserService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Properties
+### Properties
 ```
 IsLoggedIn: bool = false [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity] [ReadOnly]
 ```
 
 ---
 
-# StudioWidgetsService
+## StudioWidgetsService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 ApplyFillInBox(target: StudioWidget) → null [RobloxScriptSecurity]
 ApplyHighlight(target: StudioWidget, rowName: string?) → null [RobloxScriptSecurity]
@@ -13651,28 +13653,28 @@ HideSpotlight() → null [RobloxScriptSecurity]
 
 ---
 
-# StyleBase
+## StyleBase
 **Extends:** Instance
 **Tags:** NotCreatable
 
-## Functions
+### Functions
 ```
 GetStyleRules() → Instances
 InsertStyleRule(rule: StyleRule, priority: int?) → null
 SetStyleRules(rules: Instances) → null
 ```
 
-## Events
+### Events
 ```
 StyleRulesChanged()
 ```
 
 ---
 
-# StyleRule
+## StyleRule
 **Extends:** StyleBase
 
-## Properties
+### Properties
 ```
 Index: int = -1
 Priority: int = 0
@@ -13681,7 +13683,7 @@ Selector: string
 SelectorError: string [ReadOnly]
 ```
 
-## Functions
+### Functions
 ```
 GetProperties() → Dictionary
 GetPropertiesResolved() → Dictionary [RobloxScriptSecurity]
@@ -13691,17 +13693,17 @@ SetProperties(styleProperties: Dictionary) → null
 SetProperty(name: string, value: Variant) → null
 ```
 
-## Events
+### Events
 ```
 StyleRulePropertyChanged(styleProperty: string) [RobloxScriptSecurity]
 ```
 
 ---
 
-# StyleSheet
+## StyleSheet
 **Extends:** StyleBase
 
-## Functions
+### Functions
 ```
 GetDerives() → Instances
 SetDerives(derives: Instances) → null
@@ -13709,10 +13711,10 @@ SetDerives(derives: Instances) → null
 
 ---
 
-# StyleDerive
+## StyleDerive
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 Index: int = -1
 Priority: int = 0
@@ -13721,21 +13723,21 @@ StyleSheet: StyleSheet
 
 ---
 
-# StyleLink
+## StyleLink
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 StyleSheet: StyleSheet
 ```
 
 ---
 
-# StylingService
+## StylingService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 GetAppliedStyles(instance: Instance) → Array [RobloxScriptSecurity]
 GetStyleInfo(style: StyleRule) → Dictionary [RobloxScriptSecurity]
@@ -13746,10 +13748,10 @@ UpdateUnitTestOnly() → null [RobloxScriptSecurity]
 
 ---
 
-# SurfaceAppearance
+## SurfaceAppearance
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 AlphaMode: AlphaMode = Overlay
 Color: Color3 = 1, 1, 1
@@ -13766,29 +13768,29 @@ TexturePack: ContentId [Read:RobloxSecurity] [Write:RobloxSecurity]
 
 ---
 
-# SystemThemeService
+## SystemThemeService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 isSystemThemeAvailable() → bool [RobloxScriptSecurity]
 setTheme(theme: SystemThemeValue) → null [RobloxScriptSecurity]
 getSystemThemeAsync() → SystemThemeValue [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 OnLuaThemeUpdated(theme: SystemThemeValue) [RobloxScriptSecurity]
 ```
 
 ---
 
-# TaskScheduler
+## TaskScheduler
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Properties
+### Properties
 ```
 SchedulerDutyCycle: double [ReadOnly]
 SchedulerRate: double [ReadOnly]
@@ -13798,10 +13800,10 @@ ThreadPoolSize: int [ReadOnly]
 
 ---
 
-# Team
+## Team
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 AutoAssignable: bool = true
 AutoColorCharacters: bool = true [Deprecated]
@@ -13810,12 +13812,12 @@ Score: int = 0 [Deprecated]
 TeamColor: BrickColor
 ```
 
-## Functions
+### Functions
 ```
 GetPlayers() → Instances
 ```
 
-## Events
+### Events
 ```
 PlayerAdded(player: Player)
 PlayerRemoved(player: Player)
@@ -13823,22 +13825,22 @@ PlayerRemoved(player: Player)
 
 ---
 
-# TeamCreateData
+## TeamCreateData
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
-## Properties
+### Properties
 ```
 InitialCameraCFrame: CFrame [Read:RobloxSecurity] [Write:RobloxSecurity]
 ```
 
 ---
 
-# TeamCreatePublishService
+## TeamCreatePublishService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
-## Events
+### Events
 ```
 TeamCreateErrorStatus(result: TeamCreateErrorState, teamCreateSaveData: Dictionary) [RobloxScriptSecurity]
 TeamCreatePlaceUploadRequest(metadata: Dictionary) [RobloxSecurity]
@@ -13847,22 +13849,22 @@ TeamCreatePlaceUploadResponse(success: bool, metadata: Dictionary) [RobloxSecuri
 
 ---
 
-# TeamCreateService
+## TeamCreateService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 CloseGameIfUserDoesntHavePerms() → null [RobloxScriptSecurity]
 ```
 
 ---
 
-# Teams
+## Teams
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
-## Functions
+### Functions
 ```
 GetTeams() → Instances
 RebalanceTeams() → null [Deprecated]
@@ -13870,11 +13872,11 @@ RebalanceTeams() → null [Deprecated]
 
 ---
 
-# TelemetryService
+## TelemetryService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 LogCounter(config: Dictionary, data: Dictionary?, value: float) → Variant [RobloxScriptSecurity]
 LogDurationEvent(key: string) → Variant [RobloxScriptSecurity]
@@ -13885,11 +13887,11 @@ LogStat(config: Dictionary, data: Dictionary?, value: float) → Variant [Roblox
 
 ---
 
-# TeleportAsyncResult
+## TeleportAsyncResult
 **Extends:** Instance
 **Tags:** NotCreatable
 
-## Properties
+### Properties
 ```
 PrivateServerId: string [ReadOnly]
 ReservedServerAccessCode: string [ReadOnly]
@@ -13897,17 +13899,17 @@ ReservedServerAccessCode: string [ReadOnly]
 
 ---
 
-# TeleportOptions
+## TeleportOptions
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 ReservedServerAccessCode: string
 ServerInstanceId: string
 ShouldReserveServer: bool = false
 ```
 
-## Functions
+### Functions
 ```
 GetTeleportData() → Variant
 SetTeleportData(teleportData: Variant) → null
@@ -13915,16 +13917,16 @@ SetTeleportData(teleportData: Variant) → null
 
 ---
 
-# TeleportService
+## TeleportService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
-## Properties
+### Properties
 ```
 CustomizedTeleportUI: bool [Deprecated]
 ```
 
-## Functions
+### Functions
 ```
 Block() → null [RobloxScriptSecurity]
 GetArrivingTeleportGui() → Instance
@@ -13946,7 +13948,7 @@ TeleportPartyAsync(placeId: int64, players: Instances, teleportData: Variant, cu
 UnblockAsync() → Tuple [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 LocalPlayerArrivedFromTeleport(loadingGui: Instance, dataTable: Variant)
 MenuTeleportAttempt() [RobloxScriptSecurity]
@@ -13958,22 +13960,22 @@ TeleportInitFailedInternal(player: Instance, teleportResult: TeleportResult, err
 
 ---
 
-# TemporaryCageMeshProvider
+## TemporaryCageMeshProvider
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
 ---
 
-# TemporaryScriptService
+## TemporaryScriptService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
 ---
 
-# TerrainDetail
+## TerrainDetail
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 ColorMap: ContentId [Read:PluginSecurity] [Write:PluginSecurity]
 ColorMapContent: Content [Read:PluginSecurity] [Write:PluginSecurity]
@@ -13991,10 +13993,10 @@ TexturePack: ContentId
 
 ---
 
-# TerrainRegion
+## TerrainRegion
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 ExtentsMax: Vector3int16 = 0, 0, 0
 ExtentsMin: Vector3int16 = 0, 0, 0
@@ -14004,7 +14006,7 @@ SizeInCells: Vector3 = 1, 1, 1 [ReadOnly]
 SmoothGrid: BinaryString = 
 ```
 
-## Functions
+### Functions
 ```
 ApplyTransform(rotation: CFrame, size: Vector3) → null [RobloxScriptSecurity]
 ApplyTransformSubregion(rotation: CFrame, size: Vector3, region: Region3int16) → TerrainRegion [RobloxScriptSecurity]
@@ -14014,11 +14016,11 @@ GetRegionWireframe() → Array [RobloxScriptSecurity]
 
 ---
 
-# TestService
+## TestService
 **Extends:** Instance
 **Tags:** Service
 
-## Properties
+### Properties
 ```
 AutoRuns: bool = true
 Description: string
@@ -14035,7 +14037,7 @@ Timeout: double = 10
 WarnCount: int = 0 [ReadOnly]
 ```
 
-## Functions
+### Functions
 ```
 Check(condition: bool, description: string, source: Instance, line: int) → null
 Checkpoint(text: string, source: Instance, line: int) → null
@@ -14052,7 +14054,7 @@ isFeatureEnabled(name: string) → bool
 Run() → null [PluginSecurity]
 ```
 
-## Events
+### Events
 ```
 ServerCollectConditionalResult(condition: bool, text: string, script: Instance, line: int)
 ServerCollectResult(text: string, script: Instance, line: int)
@@ -14060,21 +14062,21 @@ ServerCollectResult(text: string, script: Instance, line: int)
 
 ---
 
-# TextBoxService
+## TextBoxService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
 ---
 
-# TextChannel
+## TextChannel
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 DirectChatRequester: Player [ReadOnly]
 ```
 
-## Functions
+### Functions
 ```
 DisplaySystemMessage(systemMessage: string, metadata: string) → TextChatMessage
 SetDirectChatRequester(requester: Player) → null
@@ -14082,17 +14084,17 @@ AddUserAsync(userId: int64) → Tuple
 SendAsync(message: string, metadata: string) → TextChatMessage
 ```
 
-## Events
+### Events
 ```
 MessageReceived(incomingMessage: TextChatMessage)
 ```
 
 ---
 
-# TextChatCommand
+## TextChatCommand
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 AutocompleteVisible: bool = true
 Enabled: bool = true
@@ -14100,24 +14102,24 @@ PrimaryAlias: string
 SecondaryAlias: string
 ```
 
-## Events
+### Events
 ```
 Triggered(originTextSource: TextSource, unfilteredText: string)
 ```
 
 ---
 
-# TextChatConfigurations
+## TextChatConfigurations
 **Extends:** Instance
 **Tags:** NotCreatable, NotReplicated
 
 ---
 
-# BubbleChatConfiguration
+## BubbleChatConfiguration
 **Extends:** TextChatConfigurations
 **Tags:** NotCreatable
 
-## Properties
+### Properties
 ```
 AdorneeName: string = HumanoidRootPart
 BackgroundColor3: Color3 = 0.980392, 0.980392, 0.980392
@@ -14139,11 +14141,11 @@ VerticalStudsOffset: float = 0
 
 ---
 
-# ChannelTabsConfiguration
+## ChannelTabsConfiguration
 **Extends:** TextChatConfigurations
 **Tags:** NotCreatable
 
-## Properties
+### Properties
 ```
 AbsolutePosition: Vector2 = 0, 0 [ReadOnly]
 AbsoluteSize: Vector2 = 0, 0 [ReadOnly]
@@ -14159,7 +14161,7 @@ TextStrokeColor3: Color3 = 0, 0, 0
 TextStrokeTransparency: double = 1
 ```
 
-## Functions
+### Functions
 ```
 SetAbsolutePosition(value: Vector2) → null [RobloxScriptSecurity]
 SetAbsoluteSize(value: Vector2) → null [RobloxScriptSecurity]
@@ -14167,11 +14169,11 @@ SetAbsoluteSize(value: Vector2) → null [RobloxScriptSecurity]
 
 ---
 
-# ChatInputBarConfiguration
+## ChatInputBarConfiguration
 **Extends:** TextChatConfigurations
 **Tags:** NotCreatable
 
-## Properties
+### Properties
 ```
 AbsolutePosition: Vector2 = 0, 0 [ReadOnly]
 AbsolutePositionWrite: Vector2 = 0, 0 [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
@@ -14196,11 +14198,11 @@ TextStrokeTransparency: double = 0.5
 
 ---
 
-# ChatWindowConfiguration
+## ChatWindowConfiguration
 **Extends:** TextChatConfigurations
 **Tags:** NotCreatable
 
-## Properties
+### Properties
 ```
 AbsolutePosition: Vector2 = 0, 0 [ReadOnly]
 AbsolutePositionWrite: Vector2 = 0, 0 [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
@@ -14220,18 +14222,18 @@ VerticalAlignment: VerticalAlignment = Top
 WidthScale: float = 1
 ```
 
-## Functions
+### Functions
 ```
 DeriveNewMessageProperties() → ChatWindowMessageProperties
 ```
 
 ---
 
-# TextChatMessage
+## TextChatMessage
 **Extends:** Instance
 **Tags:** NotCreatable
 
-## Properties
+### Properties
 ```
 BubbleChatMessageProperties: BubbleChatMessageProperties
 ChatWindowMessageProperties: ChatWindowMessageProperties
@@ -14249,10 +14251,10 @@ Verified: bool = false [Read:RobloxSecurity] [Write:RobloxSecurity]
 
 ---
 
-# TextChatMessageProperties
+## TextChatMessageProperties
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 PrefixText: string
 Text: string
@@ -14261,10 +14263,10 @@ Translation: string
 
 ---
 
-# BubbleChatMessageProperties
+## BubbleChatMessageProperties
 **Extends:** TextChatMessageProperties
 
-## Properties
+### Properties
 ```
 BackgroundColor3: Color3 = 0.980392, 0.980392, 0.980392
 BackgroundTransparency: double = 0.10000000000000000555
@@ -14276,11 +14278,11 @@ TextSize: int64 = 16
 
 ---
 
-# ChatWindowMessageProperties
+## ChatWindowMessageProperties
 **Extends:** TextChatMessageProperties
 **Tags:** NotCreatable
 
-## Properties
+### Properties
 ```
 FontFace: Font
 PrefixTextProperties: ChatWindowMessageProperties
@@ -14292,11 +14294,11 @@ TextStrokeTransparency: double = 0.5
 
 ---
 
-# TextChatService
+## TextChatService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
-## Properties
+### Properties
 ```
 ChatTranslationEnabled: bool = true [Write:RobloxScriptSecurity]
 ChatTranslationFTUXShown: bool = false [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
@@ -14308,7 +14310,7 @@ HasSeenDeprecationDialog: bool = false [Read:RobloxScriptSecurity] [Write:Roblox
 IsLegacyChatDisabled: bool = false [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
 ```
 
-## Functions
+### Functions
 ```
 DisplayBubble(partOrCharacter: Instance, message: string) → null
 CanUserChatAsync(userId: int64) → bool
@@ -14317,7 +14319,7 @@ CanUsersDirectChatAsync(requesterUserId: int64, userIds: Array) → Array
 CanUsersWhisperAsync(fromUserId: int64, toUserId: int64) → bool [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 BubbleDisplayed(partOrCharacter: Instance, textChatMessage: TextChatMessage)
 ClientToServerMessageReplicateSignalV2(text: string, metadata: string, messageId: string, textSource: TextSource, textChannel: TextChannel) [RobloxSecurity]
@@ -14331,11 +14333,11 @@ UpdateChatTimeout(userId: int64, startTime: int64, duration: int64) [RobloxSecur
 
 ---
 
-# TextFilterResult
+## TextFilterResult
 **Extends:** Instance
 **Tags:** NotCreatable, NotReplicated
 
-## Functions
+### Functions
 ```
 GetChatForUserAsync(toUserId: int64) → string [Deprecated]
 GetNonChatStringForBroadcastAsync() → string
@@ -14344,17 +14346,17 @@ GetNonChatStringForUserAsync(toUserId: int64) → string
 
 ---
 
-# TextFilterTranslatedResult
+## TextFilterTranslatedResult
 **Extends:** Instance
 **Tags:** NotCreatable, NotReplicated
 
-## Properties
+### Properties
 ```
 SourceLanguage: string [ReadOnly]
 SourceText: TextFilterResult [ReadOnly]
 ```
 
-## Functions
+### Functions
 ```
 GetTranslationForLocale(locale: string) → TextFilterResult
 GetTranslations() → Dictionary
@@ -14362,11 +14364,11 @@ GetTranslations() → Dictionary
 
 ---
 
-# TextService
+## TextService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 GetFontMemoryData() → Dictionary [RobloxScriptSecurity]
 GetTextSize(string: string, fontSize: int, font: Font, frameSize: Vector2) → Vector2
@@ -14380,11 +14382,11 @@ GetTextSizeOffsetAsync(fontSize: int, font: Font) → float
 
 ---
 
-# TextSource
+## TextSource
 **Extends:** Instance
 **Tags:** NotCreatable
 
-## Properties
+### Properties
 ```
 CanSend: bool = true
 UserId: int64 = 0 [ReadOnly]
@@ -14393,11 +14395,11 @@ UserIdReplicated: int64 = 0
 
 ---
 
-# TextureGenerationPartGroup
+## TextureGenerationPartGroup
 **Extends:** Instance
 **Tags:** NotCreatable, NotReplicated
 
-## Functions
+### Functions
 ```
 GetInstances() → Instances [RobloxScriptSecurity]
 GetMeshIdsHash() → string [RobloxScriptSecurity]
@@ -14405,11 +14407,11 @@ GetMeshIdsHash() → string [RobloxScriptSecurity]
 
 ---
 
-# TextureGenerationService
+## TextureGenerationService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 CancelGenerationRequest(jobUuid: string) → null [RobloxScriptSecurity]
 CreatePartGroup(instances: Instances) → TextureGenerationPartGroup [RobloxScriptSecurity]
@@ -14418,7 +14420,7 @@ PreviewTexture(partGroup: TextureGenerationPartGroup, prompt: string, options: D
 GetQuotasAsync() → Dictionary [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 GenerationNotificationSignal(notificationData: Dictionary) [RobloxScriptSecurity]
 PreviewNotificationSignal(notificationData: Dictionary) [RobloxScriptSecurity]
@@ -14426,11 +14428,11 @@ PreviewNotificationSignal(notificationData: Dictionary) [RobloxScriptSecurity]
 
 ---
 
-# TextureGenerationUnwrappingRequest
+## TextureGenerationUnwrappingRequest
 **Extends:** Instance
 **Tags:** NotCreatable, NotReplicated
 
-## Functions
+### Functions
 ```
 ApplyToDataModel(partGroup: TextureGenerationPartGroup) → TextureGenerationPartGroup [RobloxScriptSecurity]
 GetPartGroup() → TextureGenerationPartGroup [RobloxScriptSecurity]
@@ -14438,16 +14440,16 @@ GetPartGroup() → TextureGenerationPartGroup [RobloxScriptSecurity]
 
 ---
 
-# ThirdPartyUserService
+## ThirdPartyUserService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Properties
+### Properties
 ```
 FriendCommunicationRestrictionStatus: ChatRestrictionStatus [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity] [ReadOnly]
 ```
 
-## Functions
+### Functions
 ```
 GetUserPlatformName() → string [RobloxScriptSecurity]
 GetVoiceChatRestrictionStatus() → ChatRestrictionStatus [RobloxScriptSecurity]
@@ -14457,18 +14459,18 @@ ShowAccountPicker() → null [RobloxScriptSecurity]
 RegisterActiveUser(gamepadId: UserInputType) → int [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 ActiveUserSignedOut(signOutStatus: int) [RobloxScriptSecurity]
 ```
 
 ---
 
-# ThreadState
+## ThreadState
 **Extends:** Instance
 **Tags:** NotCreatable, NotReplicated
 
-## Properties
+### Properties
 ```
 FrameCount: int [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity] [ReadOnly]
 Populated: bool [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity] [ReadOnly]
@@ -14476,24 +14478,24 @@ ThreadId: int [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity] [ReadOnly
 ThreadName: string [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity] [ReadOnly]
 ```
 
-## Functions
+### Functions
 ```
 GetFrame(index: int) → Instance [RobloxScriptSecurity]
 ```
 
 ---
 
-# TimerService
+## TimerService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
 ---
 
-# ToastNotificationService
+## ToastNotificationService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 HideNotification(notificationId: string) → null [RobloxScriptSecurity]
 ShowNotification(message: string, notificationId: string) → null [RobloxScriptSecurity]
@@ -14501,23 +14503,23 @@ ShowNotification(message: string, notificationId: string) → null [RobloxScript
 
 ---
 
-# TouchInputService
+## TouchInputService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
 ---
 
-# TouchTransmitter
+## TouchTransmitter
 **Extends:** Instance
 **Tags:** NotCreatable, NotBrowsable
 
 ---
 
-# TracerService
+## TracerService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 FinishSpan(spanId: string) → null [RobloxScriptSecurity]
 StartSpan(name: string, parentId: string) → string [RobloxScriptSecurity]
@@ -14525,11 +14527,11 @@ StartSpan(name: string, parentId: string) → string [RobloxScriptSecurity]
 
 ---
 
-# TrackerLodController
+## TrackerLodController
 **Extends:** Instance
 **Tags:** NotCreatable, NotReplicated
 
-## Properties
+### Properties
 ```
 AudioMode: TrackerLodFlagMode
 VideoExtrapolationMode: TrackerExtrapolationFlagMode
@@ -14537,7 +14539,7 @@ VideoLodMode: TrackerLodValueMode
 VideoMode: TrackerLodFlagMode
 ```
 
-## Functions
+### Functions
 ```
 getExtrapolation() → int [RobloxScriptSecurity]
 getVideoLod() → int [RobloxScriptSecurity]
@@ -14545,23 +14547,23 @@ isAudioEnabled() → bool [RobloxScriptSecurity]
 isVideoEnabled() → bool [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 UpdateState() [RobloxScriptSecurity]
 ```
 
 ---
 
-# TrackerStreamAnimation
+## TrackerStreamAnimation
 **Extends:** Instance
 **Tags:** NotReplicated
 
 ---
 
-# Trail
+## Trail
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 Attachment0: Attachment
 Attachment1: Attachment
@@ -14582,28 +14584,28 @@ Transparency: NumberSequence = 0 0.5 0 1 0.5 0
 WidthScale: NumberSequence = 0 1 0 1 1 0 
 ```
 
-## Functions
+### Functions
 ```
 Clear() → null
 ```
 
-## Events
+### Events
 ```
 OnClearRequested()
 ```
 
 ---
 
-# Translator
+## Translator
 **Extends:** Instance
 **Tags:** NotCreatable, NotReplicated
 
-## Properties
+### Properties
 ```
 LocaleId: string [ReadOnly]
 ```
 
-## Functions
+### Functions
 ```
 FormatByKey(key: string, args: Variant) → string
 RobloxOnlyTranslate(context: Instance, text: string) → string [RobloxScriptSecurity]
@@ -14612,11 +14614,11 @@ Translate(context: Instance, text: string) → string
 
 ---
 
-# TutorialService
+## TutorialService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 GetMainViewSessionId() → string [RobloxScriptSecurity]
 HasUserCompletedTutorial() → bool [RobloxScriptSecurity]
@@ -14629,33 +14631,33 @@ ShowWidgets(commaSeparatedNames: string) → bool [RobloxScriptSecurity]
 
 ---
 
-# TweenBase
+## TweenBase
 **Extends:** Instance
 **Tags:** NotCreatable, NotBrowsable
 
-## Properties
+### Properties
 ```
 PlaybackState: PlaybackState [ReadOnly]
 ```
 
-## Functions
+### Functions
 ```
 Cancel() → null
 Pause() → null
 Play() → null
 ```
 
-## Events
+### Events
 ```
 Completed(playbackState: PlaybackState)
 ```
 
 ---
 
-# Tween
+## Tween
 **Extends:** TweenBase
 
-## Properties
+### Properties
 ```
 Instance: Instance [ReadOnly]
 TweenInfo: TweenInfo = Time:1 DelayTime:0 RepeatCount:0 Reverses:False EasingDirection:Out EasingStyle:Quad [ReadOnly]
@@ -14663,11 +14665,11 @@ TweenInfo: TweenInfo = Time:1 DelayTime:0 RepeatCount:0 Reverses:False EasingDir
 
 ---
 
-# TweenService
+## TweenService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
-## Functions
+### Functions
 ```
 Create(instance: Instance, tweenInfo: TweenInfo, propertyTable: Dictionary) → Tween
 GetValue(alpha: float, easingStyle: EasingStyle, easingDirection: EasingDirection) → float
@@ -14676,17 +14678,17 @@ SmoothDamp(current: Variant, target: Variant, velocity: Variant, smoothTime: flo
 
 ---
 
-# UGCAvatarService
+## UGCAvatarService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
 ---
 
-# UGCValidationService
+## UGCValidationService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 CalculateAverageEditableCageMeshDistance(innerCage: EditableMesh, outerCage: EditableMesh, refMesh: EditableMesh, innerTransform: CFrame, outerTransform: CFrame) → float [RobloxScriptSecurity]
 CalculateBodyPartMaxCageDistance(outerCage: EditableMesh, renderMesh: EditableMesh, outerTransform: CFrame, scale: Vector3) → float [RobloxScriptSecurity]
@@ -14780,28 +14782,28 @@ ValidateUVValuesInReference(referenceValues: Array, meshId: string) → bool [Ro
 
 ---
 
-# UIBase
+## UIBase
 **Extends:** Instance
 **Tags:** NotCreatable
 
 ---
 
-# UIComponent
+## UIComponent
 **Extends:** UIBase
 **Tags:** NotCreatable
 
 ---
 
-# UIConstraint
+## UIConstraint
 **Extends:** UIComponent
 **Tags:** NotCreatable
 
 ---
 
-# UIAspectRatioConstraint
+## UIAspectRatioConstraint
 **Extends:** UIConstraint
 
-## Properties
+### Properties
 ```
 AspectRatio: float = 1
 AspectType: AspectType = FitWithinMaxSize
@@ -14810,10 +14812,10 @@ DominantAxis: DominantAxis = Width
 
 ---
 
-# UISizeConstraint
+## UISizeConstraint
 **Extends:** UIConstraint
 
-## Properties
+### Properties
 ```
 MaxSize: Vector2 = INF, INF
 MinSize: Vector2 = 0, 0
@@ -14821,10 +14823,10 @@ MinSize: Vector2 = 0, 0
 
 ---
 
-# UITextSizeConstraint
+## UITextSizeConstraint
 **Extends:** UIConstraint
 
-## Properties
+### Properties
 ```
 MaxTextSize: int = 100
 MinTextSize: int = 1
@@ -14832,11 +14834,11 @@ MinTextSize: int = 1
 
 ---
 
-# UIContainerQuery
+## UIContainerQuery
 **Extends:** UIComponent
 **Tags:** NotReplicated, NotBrowsable
 
-## Properties
+### Properties
 ```
 AspectRatioRange: NumberRange = 0 inf 
 IsActive: bool = true
@@ -14846,20 +14848,20 @@ MinSize: Vector2 = 0, 0
 
 ---
 
-# UICorner
+## UICorner
 **Extends:** UIComponent
 
-## Properties
+### Properties
 ```
 CornerRadius: UDim = 0, 8
 ```
 
 ---
 
-# UIDragDetector
+## UIDragDetector
 **Extends:** UIComponent
 
-## Properties
+### Properties
 ```
 ActivatedCursorIcon: ContentId
 BoundingBehavior: UIDragDetectorBoundingBehavior = Automatic
@@ -14883,7 +14885,7 @@ SelectionModeRotateSpeed: float = 90
 UIDragSpeedAxisMapping: UIDragSpeedAxisMapping = XY
 ```
 
-## Functions
+### Functions
 ```
 AddConstraintFunction(priority: int, function: Function) → RBXScriptConnection
 GetReferencePosition() → UDim2
@@ -14891,7 +14893,7 @@ GetReferenceRotation() → float
 SetDragStyleFunction(function: Function) → null
 ```
 
-## Events
+### Events
 ```
 DragContinue(inputPosition: Vector2)
 DragEnd(inputPosition: Vector2)
@@ -14900,10 +14902,10 @@ DragStart(inputPosition: Vector2)
 
 ---
 
-# UIFlexItem
+## UIFlexItem
 **Extends:** UIComponent
 
-## Properties
+### Properties
 ```
 FlexMode: UIFlexMode = None
 GrowRatio: float = 0
@@ -14913,10 +14915,10 @@ ShrinkRatio: float = 0
 
 ---
 
-# UIGradient
+## UIGradient
 **Extends:** UIComponent
 
-## Properties
+### Properties
 ```
 Color: ColorSequence = 0 1 1 1 0 1 1 1 1 0 
 Enabled: bool = true
@@ -14927,17 +14929,17 @@ Transparency: NumberSequence = 0 0 0 1 0 0
 
 ---
 
-# UILayout
+## UILayout
 **Extends:** UIComponent
 **Tags:** NotCreatable
 
 ---
 
-# UIGridStyleLayout
+## UIGridStyleLayout
 **Extends:** UILayout
 **Tags:** NotCreatable, NotBrowsable
 
-## Properties
+### Properties
 ```
 AbsoluteContentSize: Vector2 [ReadOnly]
 FillDirection: FillDirection
@@ -14946,7 +14948,7 @@ SortOrder: SortOrder
 VerticalAlignment: VerticalAlignment
 ```
 
-## Functions
+### Functions
 ```
 ApplyLayout() → null [Deprecated]
 SetCustomSortFunction(function: Function) → null [Deprecated]
@@ -14954,10 +14956,10 @@ SetCustomSortFunction(function: Function) → null [Deprecated]
 
 ---
 
-# UIGridLayout
+## UIGridLayout
 **Extends:** UIGridStyleLayout
 
-## Properties
+### Properties
 ```
 AbsoluteCellCount: Vector2 = 0, 0 [ReadOnly]
 AbsoluteCellSize: Vector2 = 100, 100 [ReadOnly]
@@ -14969,10 +14971,10 @@ StartCorner: StartCorner = TopLeft
 
 ---
 
-# UIListLayout
+## UIListLayout
 **Extends:** UIGridStyleLayout
 
-## Properties
+### Properties
 ```
 HorizontalFlex: UIFlexAlignment = None
 HorizontalPadding: UDim = 0, 0
@@ -14985,10 +14987,10 @@ Wraps: bool = false
 
 ---
 
-# UIPageLayout
+## UIPageLayout
 **Extends:** UIGridStyleLayout
 
-## Properties
+### Properties
 ```
 Animated: bool = true
 Circular: bool = false
@@ -15002,7 +15004,7 @@ TouchInputEnabled: bool = true
 TweenTime: float = 1
 ```
 
-## Functions
+### Functions
 ```
 JumpTo(page: Instance) → null
 JumpToIndex(index: int) → null
@@ -15010,7 +15012,7 @@ Next() → null
 Previous() → null
 ```
 
-## Events
+### Events
 ```
 PageEnter(page: Instance)
 PageLeave(page: Instance)
@@ -15019,10 +15021,10 @@ Stopped(currentPage: Instance)
 
 ---
 
-# UITableLayout
+## UITableLayout
 **Extends:** UIGridStyleLayout
 
-## Properties
+### Properties
 ```
 FillEmptySpaceColumns: bool = false
 FillEmptySpaceRows: bool = false
@@ -15032,10 +15034,10 @@ Padding: UDim2 = {0, 0}, {0, 0}
 
 ---
 
-# UIPadding
+## UIPadding
 **Extends:** UIComponent
 
-## Properties
+### Properties
 ```
 PaddingBottom: UDim = 0, 0
 PaddingLeft: UDim = 0, 0
@@ -15045,20 +15047,20 @@ PaddingTop: UDim = 0, 0
 
 ---
 
-# UIScale
+## UIScale
 **Extends:** UIComponent
 
-## Properties
+### Properties
 ```
 Scale: float = 1
 ```
 
 ---
 
-# UIStroke
+## UIStroke
 **Extends:** UIComponent
 
-## Properties
+### Properties
 ```
 ApplyStrokeMode: ApplyStrokeMode = Contextual
 BorderOffset: UDim = 0, 0
@@ -15074,33 +15076,33 @@ ZIndex: int = 1
 
 ---
 
-# UIDragDetectorService
+## UIDragDetectorService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
 ---
 
-# UniqueIdLookupService
+## UniqueIdLookupService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
-## Functions
+### Functions
 ```
 GetInstanceByRfc4122String(id: string) → Instance [RobloxScriptSecurity]
 ```
 
 ---
 
-# UnvalidatedAssetService
+## UnvalidatedAssetService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
-## Properties
+### Properties
 ```
 CachedData: string = {"lastSaveTime":0,"lastKnownPublishRequest":0,"users":[]} [Read:RobloxSecurity] [Write:RobloxSecurity]
 ```
 
-## Functions
+### Functions
 ```
 AppendTempAssetId(userId: int64, id: int64, lookAt: Vector3, camPos: Vector3, usage: string) → null [RobloxScriptSecurity]
 AppendVantagePoint(userId: int64, id: int64, lookAt: Vector3, camPos: Vector3) → bool [RobloxScriptSecurity]
@@ -15109,11 +15111,11 @@ UpgradeTempAssetId(userId: int64, tempId: int64, assetId: int64) → bool [Roblo
 
 ---
 
-# UserGameSettings
+## UserGameSettings
 **Extends:** Instance
 **Tags:** NotCreatable, UserSettings, NotReplicated
 
-## Properties
+### Properties
 ```
 AllTutorialsDisabled: bool [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
 CameraMode: CustomCameraMode [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
@@ -15186,7 +15188,7 @@ VignetteEnabledCustomOption: bool [Read:RobloxScriptSecurity] [Write:RobloxScrip
 gaID: string [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
 ```
 
-## Functions
+### Functions
 ```
 GetCameraYInvertValue() → int
 GetDefaultFramerateCap() → int [RobloxScriptSecurity]
@@ -15201,7 +15203,7 @@ SetOnboardingCompleted(onboardingId: string) → null
 SetTutorialState(tutorialId: string, value: bool) → null [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 FullscreenChanged(isFullscreen: bool)
 PerformanceStatsVisibleChanged(isPerformanceStatsVisible: bool) [RobloxScriptSecurity]
@@ -15210,11 +15212,11 @@ StudioModeChanged(isStudioMode: bool)
 
 ---
 
-# UserInputService
+## UserInputService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Properties
+### Properties
 ```
 AccelerometerEnabled: bool [ReadOnly]
 BottomBarSize: Vector2 [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity] [ReadOnly]
@@ -15242,7 +15244,7 @@ UserHeadCFrame: CFrame [ReadOnly] [Deprecated]
 VREnabled: bool [ReadOnly]
 ```
 
-## Functions
+### Functions
 ```
 GamepadSupports(gamepadNum: UserInputType, gamepadKeyCode: KeyCode) → bool
 GetConnectedGamepads() → Array
@@ -15275,7 +15277,7 @@ SendAppUISizes(statusBarSize: Vector2, navBarSize: Vector2, bottomBarSize: Vecto
 SetNavigationGamepad(gamepadEnum: UserInputType, enabled: bool) → null
 ```
 
-## Events
+### Events
 ```
 DeviceAccelerationChanged(acceleration: InputObject)
 DeviceGravityChanged(gravity: InputObject)
@@ -15309,22 +15311,22 @@ WindowFocused()
 
 ---
 
-# UserService
+## UserService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
-## Functions
+### Functions
 ```
 GetUserInfosByUserIdsAsync(userIds: Array) → Array
 ```
 
 ---
 
-# VRService
+## VRService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
-## Properties
+### Properties
 ```
 AutomaticScaling: VRScaling = World
 AvatarGestures: bool = false
@@ -15344,7 +15346,7 @@ VREnabled: bool = false [ReadOnly]
 VRSessionState: VRSessionState = Undefined [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity] [ReadOnly]
 ```
 
-## Functions
+### Functions
 ```
 GetTouchpadMode(pad: VRTouchpad) → VRTouchpadMode
 GetUserCFrame(type: UserCFrame) → CFrame
@@ -15356,7 +15358,7 @@ RequestNavigation(cframe: CFrame, inputUserCFrame: UserCFrame) → null
 SetTouchpadMode(pad: VRTouchpad, mode: VRTouchpadMode) → null
 ```
 
-## Events
+### Events
 ```
 LaserPointerTriggered(input: InputObject) [RobloxScriptSecurity]
 NavigationRequested(cframe: CFrame, inputUserCFrame: UserCFrame)
@@ -15367,42 +15369,42 @@ UserCFrameEnabled(type: UserCFrame, enabled: bool)
 
 ---
 
-# VRStatusService
+## VRStatusService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
 ---
 
-# ValueBase
+## ValueBase
 **Extends:** Instance
 **Tags:** NotCreatable
 
 ---
 
-# BinaryStringValue
+## BinaryStringValue
 **Extends:** ValueBase
 
-## Properties
+### Properties
 ```
 Value: BinaryString
 ```
 
-## Events
+### Events
 ```
 Changed(value: BinaryString)
 ```
 
 ---
 
-# BoolValue
+## BoolValue
 **Extends:** ValueBase
 
-## Properties
+### Properties
 ```
 Value: bool = false
 ```
 
-## Events
+### Events
 ```
 Changed(value: bool)
 changed(value: bool)
@@ -15410,15 +15412,15 @@ changed(value: bool)
 
 ---
 
-# BrickColorValue
+## BrickColorValue
 **Extends:** ValueBase
 
-## Properties
+### Properties
 ```
 Value: BrickColor
 ```
 
-## Events
+### Events
 ```
 Changed(value: BrickColor)
 changed(value: BrickColor)
@@ -15426,15 +15428,15 @@ changed(value: BrickColor)
 
 ---
 
-# CFrameValue
+## CFrameValue
 **Extends:** ValueBase
 
-## Properties
+### Properties
 ```
 Value: CFrame
 ```
 
-## Events
+### Events
 ```
 Changed(value: CFrame)
 changed(value: CFrame)
@@ -15442,15 +15444,15 @@ changed(value: CFrame)
 
 ---
 
-# Color3Value
+## Color3Value
 **Extends:** ValueBase
 
-## Properties
+### Properties
 ```
 Value: Color3 = 0, 0, 0
 ```
 
-## Events
+### Events
 ```
 Changed(value: Color3)
 changed(value: Color3)
@@ -15458,11 +15460,11 @@ changed(value: Color3)
 
 ---
 
-# DoubleConstrainedValue
+## DoubleConstrainedValue
 **Extends:** ValueBase
 **Tags:** Deprecated
 
-## Properties
+### Properties
 ```
 ConstrainedValue: double = 0
 MaxValue: double = 1
@@ -15471,7 +15473,7 @@ Value: double = 0
 value: double = 0
 ```
 
-## Events
+### Events
 ```
 Changed(value: double)
 changed(value: double)
@@ -15479,11 +15481,11 @@ changed(value: double)
 
 ---
 
-# IntConstrainedValue
+## IntConstrainedValue
 **Extends:** ValueBase
 **Tags:** Deprecated
 
-## Properties
+### Properties
 ```
 ConstrainedValue: int64 = 0
 MaxValue: int64 = 10
@@ -15492,7 +15494,7 @@ Value: int64 = 0
 value: int64 = 0
 ```
 
-## Events
+### Events
 ```
 Changed(value: int64)
 changed(value: int64)
@@ -15500,15 +15502,15 @@ changed(value: int64)
 
 ---
 
-# IntValue
+## IntValue
 **Extends:** ValueBase
 
-## Properties
+### Properties
 ```
 Value: int64 = 0
 ```
 
-## Events
+### Events
 ```
 Changed(value: int64)
 changed(value: int64)
@@ -15516,15 +15518,15 @@ changed(value: int64)
 
 ---
 
-# NumberValue
+## NumberValue
 **Extends:** ValueBase
 
-## Properties
+### Properties
 ```
 Value: double = 0
 ```
 
-## Events
+### Events
 ```
 Changed(value: double)
 changed(value: double)
@@ -15532,15 +15534,15 @@ changed(value: double)
 
 ---
 
-# ObjectValue
+## ObjectValue
 **Extends:** ValueBase
 
-## Properties
+### Properties
 ```
 Value: Instance
 ```
 
-## Events
+### Events
 ```
 Changed(value: Instance)
 changed(value: Instance)
@@ -15548,15 +15550,15 @@ changed(value: Instance)
 
 ---
 
-# RayValue
+## RayValue
 **Extends:** ValueBase
 
-## Properties
+### Properties
 ```
 Value: Ray = {0, 0, 0}, {0, 0, 0}
 ```
 
-## Events
+### Events
 ```
 Changed(value: Ray)
 changed(value: Ray)
@@ -15564,15 +15566,15 @@ changed(value: Ray)
 
 ---
 
-# StringValue
+## StringValue
 **Extends:** ValueBase
 
-## Properties
+### Properties
 ```
 Value: string
 ```
 
-## Events
+### Events
 ```
 Changed(value: string)
 changed(value: string)
@@ -15580,15 +15582,15 @@ changed(value: string)
 
 ---
 
-# Vector3Value
+## Vector3Value
 **Extends:** ValueBase
 
-## Properties
+### Properties
 ```
 Value: Vector3 = 0, 0, 0
 ```
 
-## Events
+### Events
 ```
 Changed(value: Vector3)
 changed(value: Vector3)
@@ -15596,10 +15598,10 @@ changed(value: Vector3)
 
 ---
 
-# Vector3Curve
+## Vector3Curve
 **Extends:** Instance
 
-## Functions
+### Functions
 ```
 GetValueAtTime(time: float) → Array
 X() → FloatCurve
@@ -15609,17 +15611,17 @@ Z() → FloatCurve
 
 ---
 
-# VersionControlService
+## VersionControlService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
-## Properties
+### Properties
 ```
 ScriptCollabEnabled: bool = false [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
 ScriptCollabVersionHistoryEnabled: bool = false [Read:RobloxSecurity] [Write:RobloxSecurity]
 ```
 
-## Events
+### Events
 ```
 BroadcastScriptChangesSubmitted(scriptGuid: string) [RobloxSecurity]
 CommitRejectedInfo(reason: int) [LocalUserSecurity]
@@ -15635,22 +15637,22 @@ ScriptStopEdit(scriptGuid: string) [LocalUserSecurity]
 
 ---
 
-# VideoCaptureService
+## VideoCaptureService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
-## Properties
+### Properties
 ```
 Active: bool = false [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
 CameraID: string [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
 ```
 
-## Functions
+### Functions
 ```
 GetCameraDevices() → Map [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 DevicesChanged() [RobloxScriptSecurity]
 Error(cameraid: string, errorcode: string) [RobloxScriptSecurity]
@@ -15660,11 +15662,11 @@ Stopped(cameraid: string) [RobloxScriptSecurity]
 
 ---
 
-# VideoDeviceInput
+## VideoDeviceInput
 **Extends:** Instance
 **Tags:** NotReplicated
 
-## Properties
+### Properties
 ```
 Active: bool = false
 CameraId: string
@@ -15674,11 +15676,11 @@ IsReady: bool = false [ReadOnly]
 
 ---
 
-# VideoPlayer
+## VideoPlayer
 **Extends:** Instance
 **Tags:** NotBrowsable
 
-## Properties
+### Properties
 ```
 Asset: ContentId
 AutoLoadInStudio: bool = false [Write:RobloxScriptSecurity]
@@ -15693,7 +15695,7 @@ TimePosition: double = 0
 Volume: float = 1
 ```
 
-## Functions
+### Functions
 ```
 GetConnectedWires(pin: string) → Instances
 GetInputPins() → Array
@@ -15705,7 +15707,7 @@ Unload() → null
 LoadAsync() → AssetFetchStatus
 ```
 
-## Events
+### Events
 ```
 DidEnd()
 DidLoop()
@@ -15715,22 +15717,22 @@ WiringChanged(connected: bool, pin: string, wire: Wire, instance: Instance)
 
 ---
 
-# VideoService
+## VideoService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
 ---
 
-# VirtualInputManager
+## VirtualInputManager
 **Extends:** Instance
 **Tags:** Service
 
-## Properties
+### Properties
 ```
 AdditionalLuaState: string [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
 ```
 
-## Functions
+### Functions
 ```
 Dump() → null [RobloxScriptSecurity]
 HandleGamepadAxisInput(objectId: int, keyCode: KeyCode, x: float, y: float, z: float) → null [RobloxScriptSecurity]
@@ -15759,7 +15761,7 @@ sendThemeChangeEvent(themeName: string) → null [RobloxScriptSecurity]
 WaitForInputEventsProcessed() → null [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 PlaybackCompleted(additionalLuaState: string) [RobloxScriptSecurity]
 RecordingCompleted(result: string) [RobloxScriptSecurity]
@@ -15767,11 +15769,11 @@ RecordingCompleted(result: string) [RobloxScriptSecurity]
 
 ---
 
-# VirtualUser
+## VirtualUser
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 Button1Down(position: Vector2, camera: CFrame) → null [LocalUserSecurity]
 Button1Up(position: Vector2, camera: CFrame) → null [LocalUserSecurity]
@@ -15790,22 +15792,22 @@ TypeKey(key: string) → null [LocalUserSecurity]
 
 ---
 
-# VisibilityCheckDispatcher
+## VisibilityCheckDispatcher
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
 ---
 
-# Visit
+## Visit
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
 ---
 
-# VisualizationMode
+## VisualizationMode
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 Enabled: bool = false [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
 Title: string [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
@@ -15814,10 +15816,10 @@ ToolTip: string [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
 
 ---
 
-# VisualizationModeCategory
+## VisualizationModeCategory
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 Enabled: bool = false [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
 Title: string [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
@@ -15825,22 +15827,22 @@ Title: string [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
 
 ---
 
-# VisualizationModeService
+## VisualizationModeService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
 ---
 
-# VoiceChatInternal
+## VoiceChatInternal
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotBrowsable
 
-## Properties
+### Properties
 ```
 VoiceChatState: VoiceChatState = Idle [ReadOnly] [Deprecated]
 ```
 
-## Functions
+### Functions
 ```
 GetAndClearCallFailureMessage() → string [RobloxScriptSecurity] [Deprecated]
 GetAudioProcessingSettings() → Tuple [Deprecated]
@@ -15872,7 +15874,7 @@ SubscribeUnblock(userId: int64) → bool [RobloxScriptSecurity]
 IsVoiceEnabledForUserIdAsync(userId: int64) → bool
 ```
 
-## Events
+### Events
 ```
 LocalPlayerModerated() [RobloxScriptSecurity]
 ParticipantsStateChanged(participantsLeft: Array, participantsJoined: Array, updatedStates: Array) [RobloxScriptSecurity]
@@ -15883,11 +15885,11 @@ TempSetMicMutedToggleMic() [RobloxScriptSecurity]
 
 ---
 
-# VoiceChatService
+## VoiceChatService
 **Extends:** Instance
 **Tags:** NotCreatable, Service
 
-## Properties
+### Properties
 ```
 DefaultDistanceAttenuation: VoiceChatDistanceAttenuationType = Inverse [Read:PluginSecurity] [Write:PluginSecurity]
 EnableDefaultVoice: bool = true [Read:PluginSecurity] [Write:PluginSecurity]
@@ -15900,7 +15902,7 @@ VoiceChatEnabledForPlaceOnRcc: bool = false [Read:RobloxScriptSecurity] [Write:R
 VoiceChatEnabledForUniverseOnRcc: bool = false [Read:RobloxScriptSecurity] [Write:RobloxScriptSecurity]
 ```
 
-## Functions
+### Functions
 ```
 getInternalChannelId() → string [RobloxScriptSecurity]
 getInternalGroupId() → string [RobloxScriptSecurity]
@@ -15917,7 +15919,7 @@ rejoinVoice() → null [RobloxScriptSecurity]
 IsVoiceEnabledForUserIdAsync(userId: int64) → bool
 ```
 
-## Events
+### Events
 ```
 ClientRetryJoin() [RobloxSecurity]
 ClientRetryJoinWithConfig(sessionConfigFlags: int64) [RobloxSecurity]
@@ -15963,22 +15965,22 @@ VoiceUdmuxVip(sessionId: string, udmuxVipAddress: string) [RobloxSecurity]
 
 ---
 
-# WebSocketClient
+## WebSocketClient
 **Extends:** Instance
 **Tags:** NotCreatable, NotReplicated
 
-## Properties
+### Properties
 ```
 ConnectionState: WebSocketState [ReadOnly]
 ```
 
-## Functions
+### Functions
 ```
 Close() → null
 Send(data: string) → null
 ```
 
-## Events
+### Events
 ```
 Closed()
 MessageReceived(data: string)
@@ -15987,22 +15989,22 @@ Opened()
 
 ---
 
-# WebSocketService
+## WebSocketService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 CreateClient(uri: string) → WebSocketClient
 ```
 
 ---
 
-# WebViewService
+## WebViewService
 **Extends:** Instance
 **Tags:** NotCreatable, Service, NotReplicated
 
-## Functions
+### Functions
 ```
 CloseWindow() → null [RobloxScriptSecurity]
 MutateWindow(url: string, title: string?, isVisible: bool?, searchType: string?, transitionAnimation: string?, showDomainAsTitle: bool?) → null [RobloxScriptSecurity]
@@ -16010,7 +16012,7 @@ OpenWindow(url: string, title: string?, isVisible: bool?, searchType: string?, t
 IsAvailable() → bool [RobloxScriptSecurity]
 ```
 
-## Events
+### Events
 ```
 OnJavaScriptCall(content: string) [RobloxScriptSecurity]
 OnWindowClosed() [RobloxScriptSecurity]
@@ -16018,10 +16020,10 @@ OnWindowClosed() [RobloxScriptSecurity]
 
 ---
 
-# WeldConstraint
+## WeldConstraint
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 Active: bool = false [ReadOnly]
 CFrame0: CFrame
@@ -16036,10 +16038,10 @@ State: int = 3
 
 ---
 
-# Wire
+## Wire
 **Extends:** Instance
 
-## Properties
+### Properties
 ```
 Connected: bool = false [ReadOnly]
 SourceInstance: Instance
@@ -16048,75 +16050,6031 @@ TargetInstance: Instance
 TargetName: string = Input
 ```
 
-## Functions
+### Functions
 ```
 RenameToDefault() → null [RobloxScriptSecurity]
 ```
 
 ---
 
-# MLSession
+## MLSession
 **Extends:** Object
 **Tags:** NotCreatable, NotReplicated
 
-## Functions
+### Functions
 ```
 ForwardAsync(data: Dictionary) → Dictionary
 ```
 
 ---
 
-# TerrainIterateOperation
+## TerrainIterateOperation
 **Extends:** Object
 **Tags:** NotCreatable, NotReplicated
 
-## Functions
+### Functions
 ```
 CommitBlock(block: Dictionary) → RBXScriptSignal
 ```
 
-## Events
+### Events
 ```
 Ready(block: Dictionary)
 ```
 
 ---
 
-# TerrainModifyOperation
+## TerrainModifyOperation
 **Extends:** Object
 **Tags:** NotCreatable, NotReplicated
 
-## Functions
+### Functions
 ```
 CommitBlock(block: Dictionary) → RBXScriptSignal
 ```
 
-## Events
+### Events
 ```
 Ready(block: Dictionary)
 ```
 
 ---
 
-# TerrainReadOperation
+## TerrainReadOperation
 **Extends:** Object
 **Tags:** NotCreatable, NotReplicated
 
-## Events
+### Events
 ```
 Ready(block: Dictionary)
 ```
 
 ---
 
-# TerrainWriteOperation
+## TerrainWriteOperation
 **Extends:** Object
 **Tags:** NotCreatable, NotReplicated
 
-## Functions
+### Functions
 ```
 CommitBlock(block: Dictionary) → RBXScriptSignal
 GetBlock() → Dictionary
+```
+
+---
+
+
+# ENUMS
+
+## AccessModifierType
+```
+Allow = 0
+Deny = 1
+```
+
+---
+
+## AccessoryType
+```
+Unknown = 0
+Hat = 1
+Hair = 2
+Face = 3
+Neck = 4
+Shoulder = 5
+Front = 6
+Back = 7
+Waist = 8
+TShirt = 9
+Shirt = 10
+Pants = 11
+Jacket = 12
+Sweater = 13
+Shorts = 14
+LeftShoe = 15
+RightShoe = 16
+DressSkirt = 17
+Eyebrow = 18
+Eyelash = 19
+```
+
+---
+
+## ActionOnAutoResumeSync
+```
+DontResume = 0
+KeepStudio = 1
+KeepLocal = 2
+```
+
+---
+
+## ActionOnStopSync
+```
+AlwaysAsk = 0
+KeepLocalFiles = 1
+DeleteLocalFiles = 2
+```
+
+---
+
+## ActionType
+```
+Nothing = 0
+Pause = 1
+Lose = 2
+Draw = 3
+Win = 4
+```
+
+---
+
+## ActuatorRelativeTo
+```
+Attachment0 = 0
+Attachment1 = 1
+World = 2
+```
+
+---
+
+## ActuatorType
+```
+None = 0
+Motor = 1
+Servo = 2
+```
+
+---
+
+## AdAvailabilityResult
+```
+IsAvailable = 1
+DeviceIneligible = 2
+ExperienceIneligible = 3
+InternalError = 4
+NoFill = 5
+PlayerIneligible = 6
+PublisherIneligible = 7
+```
+
+---
+
+## AdEventType
+```
+RewardedAdLoaded = 3
+RewardedAdGrant = 4
+RewardedAdUnloaded = 5
+VideoLoaded = 0 [Deprecated]
+VideoRemoved = 1 [Deprecated]
+UserCompletedVideo = 2 [Deprecated]
+```
+
+---
+
+## AdFormat
+```
+RewardedVideo = 0
+```
+
+---
+
+## AdShape
+```
+HorizontalRectangle = 1
+```
+
+---
+
+## AdTeleportMethod
+```
+Undefined = 0
+PortalForward = 1
+InGameMenuBackButton = 2
+UIBackButton = 3
+```
+
+---
+
+## AdUIEventType
+```
+AdLabelClicked = 0
+VolumeButtonClicked = 1
+FullscreenButtonClicked = 2
+PlayButtonClicked = 3
+PauseButtonClicked = 4
+CloseButtonClicked = 5
+WhyThisAdClicked = 6
+PlayEventTriggered = 7
+PauseEventTriggered = 8
+```
+
+---
+
+## AdUIType
+```
+None = 0
+Image = 1
+Video = 2
+```
+
+---
+
+## AdUnitStatus
+```
+Inactive = 0
+Active = 1
+```
+
+---
+
+## AdornCullingMode
+```
+Automatic = 0
+Never = 1
+```
+
+---
+
+## AlignType
+```
+PrimaryAxisParallel = 2
+PrimaryAxisPerpendicular = 3
+PrimaryAxisLookAt = 4
+AllAxes = 5
+Parallel = 0 [Deprecated]
+Perpendicular = 1 [Deprecated]
+```
+
+---
+
+## AlphaMode
+```
+Overlay = 0
+Transparency = 1
+TintMask = 2
+```
+
+---
+
+## AnalyticsCustomFieldKeys
+```
+CustomField01 = 0
+CustomField02 = 1
+CustomField03 = 2
+```
+
+---
+
+## AnalyticsEconomyAction
+```
+Default = 0
+Acquire = 1
+Spend = 2
+```
+
+---
+
+## AnalyticsEconomyFlowType
+```
+Sink = 0
+Source = 1
+```
+
+---
+
+## AnalyticsEconomyTransactionType
+```
+IAP = 0
+Shop = 1
+Gameplay = 2
+ContextualPurchase = 3
+TimedReward = 4
+Onboarding = 5
+```
+
+---
+
+## AnalyticsLogLevel
+```
+Trace = 0
+Debug = 1
+Information = 2
+Warning = 3
+Error = 4
+Fatal = 5
+```
+
+---
+
+## AnalyticsProgressionStatus
+```
+Default = 0
+Begin = 1
+Complete = 2
+Abandon = 3
+Fail = 4
+```
+
+---
+
+## AnalyticsProgressionType
+```
+Custom = 0
+Start = 1
+Fail = 2
+Complete = 3
+```
+
+---
+
+## AnimationClipFromVideoStatus
+```
+Initializing = 0
+Pending = 1
+Processing = 2
+ErrorGeneric = 4
+Success = 6
+ErrorVideoTooLong = 7
+ErrorNoPersonDetected = 8
+ErrorVideoUnstable = 9
+Timeout = 10
+Cancelled = 11
+ErrorMultiplePeople = 12
+ErrorUploadingVideo = 2001
+```
+
+---
+
+## AnimationPriority
+```
+Core = 1000
+Idle = 0
+Movement = 1
+Action = 2
+Action2 = 3
+Action3 = 4
+Action4 = 5
+```
+
+---
+
+## AnimatorRetargetingMode
+```
+Default = 0
+Disabled = 1
+Enabled = 2
+```
+
+---
+
+## AnnotationEditingMode
+```
+None = 0
+PlacingNew = 1
+WritingNew = 2
+```
+
+---
+
+## AnnotationRequestStatus
+```
+Success = 0
+Loading = 1
+ErrorInternalFailure = 2
+ErrorNotFound = 3
+ErrorModerated = 4
+```
+
+---
+
+## AnnotationRequestType
+```
+Unknown = 0
+Create = 1
+Resolve = 2
+Delete = 3
+Edit = 4
+```
+
+---
+
+## AppLifecycleManagerState
+```
+Detached = 0
+Active = 1
+Inactive = 2
+Hidden = 3
+```
+
+---
+
+## AppShellActionType
+```
+None = 0
+OpenApp = 1
+TapChatTab = 2
+TapConversationEntry = 3
+TapAvatarTab = 4
+ReadConversation = 5
+TapGamePageTab = 6
+TapHomePageTab = 7
+GamePageLoaded = 8
+HomePageLoaded = 9
+AvatarEditorPageLoaded = 10
+```
+
+---
+
+## AppShellFeature
+```
+None = 0
+Chat = 1
+AvatarEditor = 2
+GamePage = 3
+HomePage = 4
+More = 5
+Landing = 6
+```
+
+---
+
+## AppUpdateStatus
+```
+Unknown = 0
+NotSupported = 1
+Failed = 2
+NotAvailable = 3
+Available = 4
+AvailableBoundChannel = 5
+```
+
+---
+
+## ApplyStrokeMode
+```
+Contextual = 0
+Border = 1
+```
+
+---
+
+## AspectType
+```
+FitWithinMaxSize = 0
+ScaleWithParentSize = 1
+```
+
+---
+
+## AssetCreatorType
+```
+User = 0
+Group = 1
+```
+
+---
+
+## AssetFetchStatus
+```
+Success = 0
+Failure = 1
+None = 2
+Loading = 3
+TimedOut = 4
+```
+
+---
+
+## AssetType
+```
+Image = 1
+TShirt = 2
+Audio = 3
+Mesh = 4
+Lua = 5
+Hat = 8
+Place = 9
+Model = 10
+Shirt = 11
+Pants = 12
+Decal = 13
+Head = 17
+Face = 18
+Gear = 19
+Badge = 21
+Animation = 24
+Torso = 27
+RightArm = 28
+LeftArm = 29
+LeftLeg = 30
+RightLeg = 31
+Package = 32
+GamePass = 34
+Plugin = 38
+MeshPart = 40
+HairAccessory = 41
+FaceAccessory = 42
+NeckAccessory = 43
+ShoulderAccessory = 44
+FrontAccessory = 45
+BackAccessory = 46
+WaistAccessory = 47
+ClimbAnimation = 48
+DeathAnimation = 49
+FallAnimation = 50
+IdleAnimation = 51
+JumpAnimation = 52
+RunAnimation = 53
+SwimAnimation = 54
+WalkAnimation = 55
+PoseAnimation = 56
+EarAccessory = 57
+EyeAccessory = 58
+EmoteAnimation = 61
+Video = 62
+TShirtAccessory = 64
+ShirtAccessory = 65
+PantsAccessory = 66
+JacketAccessory = 67
+SweaterAccessory = 68
+ShortsAccessory = 69
+LeftShoeAccessory = 70
+RightShoeAccessory = 71
+DressSkirtAccessory = 72
+FontFamily = 73
+EyebrowAccessory = 76
+EyelashAccessory = 77
+MoodAnimation = 78
+DynamicHead = 79
+```
+
+---
+
+## AssetTypeVerification
+```
+Default = 1
+ClientOnly = 2
+Always = 3
+```
+
+---
+
+## AudioApiRollout
+```
+Disabled = 0
+Automatic = 1
+Enabled = 2
+```
+
+---
+
+## AudioCaptureMode
+```
+```
+
+---
+
+## AudioChannelLayout
+```
+Mono = 0
+Stereo = 1
+Quad = 2
+Surround_5 = 3
+Surround_5_1 = 4
+Surround_7_1 = 5
+Surround_7_1_4 = 6
+```
+
+---
+
+## AudioFilterType
+```
+Peak = 0
+LowShelf = 1
+HighShelf = 2
+Lowpass12dB = 3
+Lowpass24dB = 4
+Lowpass48dB = 5
+Highpass12dB = 6
+Highpass24dB = 7
+Highpass48dB = 8
+Bandpass = 9
+Notch = 10
+Lowpass6dB = 11
+```
+
+---
+
+## AudioSimulationFidelity
+```
+None = 0
+Automatic = 1
+```
+
+---
+
+## AudioSubType
+```
+Music = 1
+SoundEffect = 2
+```
+
+---
+
+## AudioWindowSize
+```
+Small = 0
+Medium = 1
+Large = 2
+```
+
+---
+
+## AuthorityMode
+```
+Server = 0
+Automatic = 1
+```
+
+---
+
+## AutoIndentRule
+```
+Off = 0
+Absolute = 1
+Relative = 2
+```
+
+---
+
+## AutomaticSize
+```
+None = 0
+X = 1
+Y = 2
+XY = 3
+```
+
+---
+
+## AvatarAssetType
+```
+TShirt = 2
+Hat = 8
+Shirt = 11
+Pants = 12
+Head = 17
+Face = 18
+Gear = 19
+Torso = 27
+RightArm = 28
+LeftArm = 29
+LeftLeg = 30
+RightLeg = 31
+HairAccessory = 41
+FaceAccessory = 42
+NeckAccessory = 43
+ShoulderAccessory = 44
+FrontAccessory = 45
+BackAccessory = 46
+WaistAccessory = 47
+ClimbAnimation = 48
+FallAnimation = 50
+IdleAnimation = 51
+JumpAnimation = 52
+RunAnimation = 53
+SwimAnimation = 54
+WalkAnimation = 55
+MoodAnimation = 78
+EmoteAnimation = 61
+TShirtAccessory = 64
+ShirtAccessory = 65
+PantsAccessory = 66
+JacketAccessory = 67
+SweaterAccessory = 68
+ShortsAccessory = 69
+LeftShoeAccessory = 70
+RightShoeAccessory = 71
+DressSkirtAccessory = 72
+EyebrowAccessory = 76
+EyelashAccessory = 77
+DynamicHead = 79
+```
+
+---
+
+## AvatarChatServiceFeature
+```
+None = 0
+UniverseAudio = 1
+UniverseVideo = 2
+PlaceAudio = 4
+PlaceVideo = 8
+UserAudioEligible = 16
+UserAudio = 32
+UserVideoEligible = 64
+UserVideo = 128
+UserBanned = 256
+UserVerifiedForVoice = 512
+```
+
+---
+
+## AvatarContextMenuOption
+```
+Friend = 0
+Chat = 1
+Emote = 2
+InspectMenu = 3
+```
+
+---
+
+## AvatarGenerationError
+```
+None = 0
+Unknown = 1
+DownloadFailed = 2
+Canceled = 3
+Offensive = 4
+Timeout = 5
+JobNotFound = 6
+```
+
+---
+
+## AvatarItemType
+```
+Asset = 1
+Bundle = 2
+```
+
+---
+
+## AvatarPromptResult
+```
+Success = 1
+PermissionDenied = 2
+Failed = 3
+```
+
+---
+
+## AvatarSettingsAccessoryLimitMethod
+```
+Scale = 0
+Remove = 1
+PreviewScale = 2
+PreviewRemove = 3
+```
+
+---
+
+## AvatarSettingsAccessoryMode
+```
+PlayerChoice = 0
+CustomLimit = 1
+```
+
+---
+
+## AvatarSettingsAnimationClipsMode
+```
+PlayerChoice = 0
+CustomClips = 1
+```
+
+---
+
+## AvatarSettingsAnimationPacksMode
+```
+PlayerChoice = 0
+StandardR15 = 1
+StandardR6 = 2
+```
+
+---
+
+## AvatarSettingsAppearanceMode
+```
+PlayerChoice = 0
+CustomParts = 1
+CustomBody = 2
+```
+
+---
+
+## AvatarSettingsBuildMode
+```
+PlayerChoice = 0
+CustomBuild = 1
+```
+
+---
+
+## AvatarSettingsClothingMode
+```
+PlayerChoice = 0
+CustomLimit = 1
+```
+
+---
+
+## AvatarSettingsCollisionMode
+```
+Default = 0
+SingleCollider = 1
+Legacy = 2
+```
+
+---
+
+## AvatarSettingsCustomAccessoryMode
+```
+PlayerChoice = 0
+CustomAccessories = 1
+```
+
+---
+
+## AvatarSettingsCustomBodyType
+```
+AvatarReference = 0
+BundleId = 1
+```
+
+---
+
+## AvatarSettingsCustomClothingMode
+```
+PlayerChoice = 0
+CustomClothing = 1
+```
+
+---
+
+## AvatarSettingsHitAndTouchDetectionMode
+```
+UseParts = 0
+UseCollider = 1
+```
+
+---
+
+## AvatarSettingsJumpMode
+```
+JumpHeight = 0
+JumpPower = 1
+```
+
+---
+
+## AvatarSettingsLegacyCollisionMode
+```
+R6Colliders = 0
+InnerBoxColliders = 1
+```
+
+---
+
+## AvatarSettingsScaleMode
+```
+PlayerChoice = 0
+CustomScale = 1
+```
+
+---
+
+## AvatarThumbnailCustomizationType
+```
+Closeup = 1
+FullBody = 2
+```
+
+---
+
+## AvatarUnificationMode
+```
+Default = 0
+Disabled = 1
+Enabled = 2
+```
+
+---
+
+## Axis
+```
+X = 0
+Y = 1
+Z = 2
+```
+
+---
+
+## BenefitType
+```
+DeveloperProduct = 0
+AvatarAsset = 1
+AvatarBundle = 2
+```
+
+---
+
+## BinType
+```
+Script = 0
+GameTool = 1
+Grab = 2
+Clone = 3
+Hammer = 4
+```
+
+---
+
+## BodyPart
+```
+Head = 0
+Torso = 1
+LeftArm = 2
+RightArm = 3
+LeftLeg = 4
+RightLeg = 5
+```
+
+---
+
+## BodyPartR15
+```
+Head = 0
+UpperTorso = 1
+LowerTorso = 2
+LeftFoot = 3
+LeftLowerLeg = 4
+LeftUpperLeg = 5
+RightFoot = 6
+RightLowerLeg = 7
+RightUpperLeg = 8
+LeftHand = 9
+LeftLowerArm = 10
+LeftUpperArm = 11
+RightHand = 12
+RightLowerArm = 13
+RightUpperArm = 14
+RootPart = 15
+Unknown = 17
+```
+
+---
+
+## BorderMode
+```
+Outline = 0
+Middle = 1
+Inset = 2
+```
+
+---
+
+## BorderStrokePosition
+```
+Outer = 0
+Center = 1
+Inner = 2
+```
+
+---
+
+## BreakReason
+```
+Other = 0
+Error = 1
+SpecialBreakpoint = 2
+UserBreakpoint = 3
+```
+
+---
+
+## BreakpointRemoveReason
+```
+Requested = 0
+ScriptChanged = 1
+ScriptRemoved = 2
+```
+
+---
+
+## BulkMoveMode
+```
+FireAllEvents = 0
+FireCFrameChanged = 1
+```
+
+---
+
+## BundleType
+```
+BodyParts = 1
+Animations = 2
+Shoes = 3
+DynamicHead = 4
+DynamicHeadAvatar = 5
+```
+
+---
+
+## Button
+```
+Jump = 32
+Dismount = 8
+```
+
+---
+
+## ButtonStyle
+```
+Custom = 0
+RobloxButtonDefault = 1
+RobloxButton = 2
+RobloxRoundButton = 3
+RobloxRoundDefaultButton = 4
+RobloxRoundDropdownButton = 5
+```
+
+---
+
+## CageType
+```
+Inner = 0
+Outer = 1
+```
+
+---
+
+## CameraMode
+```
+Classic = 0
+LockFirstPerson = 1
+```
+
+---
+
+## CameraPanMode
+```
+Classic = 0
+EdgeBump = 1
+```
+
+---
+
+## CameraSpeedAdjustBinding
+```
+None = 0
+RmbScroll = 1
+AltScroll = 2
+```
+
+---
+
+## CameraType
+```
+Fixed = 0
+Attach = 1
+Watch = 2
+Track = 3
+Follow = 4
+Custom = 5
+Scriptable = 6
+Orbital = 7
+```
+
+---
+
+## CaptureGalleryPermission
+```
+ReadAndUpload = 0
+```
+
+---
+
+## CaptureType
+```
+Screenshot = 1
+Video = 2
+```
+
+---
+
+## CatalogCategoryFilter
+```
+None = 1
+Featured = 2
+Collectibles = 3
+CommunityCreations = 4
+Premium = 5
+Recommended = 6
+```
+
+---
+
+## CatalogSortAggregation
+```
+Past12Hours = 1
+PastDay = 2
+Past3Days = 3
+PastWeek = 4
+PastMonth = 5
+AllTime = 6
+```
+
+---
+
+## CatalogSortType
+```
+Relevance = 1
+PriceHighToLow = 2
+PriceLowToHigh = 3
+MostFavorited = 5
+RecentlyCreated = 6
+Bestselling = 7
+```
+
+---
+
+## CellBlock
+```
+Solid = 0
+VerticalWedge = 1
+CornerWedge = 2
+InverseCornerWedge = 3
+HorizontalWedge = 4
+```
+
+---
+
+## CellMaterial
+```
+Empty = 0
+Grass = 1
+Sand = 2
+Brick = 3
+Granite = 4
+Asphalt = 5
+Iron = 6
+Aluminum = 7
+Gold = 8
+WoodPlank = 9
+WoodLog = 10
+Gravel = 11
+CinderBlock = 12
+MossyStone = 13
+Cement = 14
+RedPlastic = 15
+BluePlastic = 16
+Water = 17
+```
+
+---
+
+## CellOrientation
+```
+NegZ = 0
+X = 1
+Z = 2
+NegX = 3
+```
+
+---
+
+## CenterDialogType
+```
+UnsolicitedDialog = 1
+PlayerInitiatedDialog = 2
+ModalDialog = 3
+QuitDialog = 4
+```
+
+---
+
+## CharacterControlMode
+```
+Default = 0
+Legacy = 1
+NoCharacterController = 2
+LuaCharacterController = 3
+```
+
+---
+
+## ChatCallbackType
+```
+OnCreatingChatWindow = 1
+OnClientSendingMessage = 2
+OnClientFormattingMessage = 3
+OnServerReceivingMessage = 17
+```
+
+---
+
+## ChatColor
+```
+Blue = 0
+Green = 1
+Red = 2
+White = 3
+```
+
+---
+
+## ChatMode
+```
+Menu = 0
+TextAndMenu = 1
+```
+
+---
+
+## ChatPrivacyMode
+```
+AllUsers = 0
+NoOne = 1
+Friends = 2
+```
+
+---
+
+## ChatRestrictionStatus
+```
+Unknown = 0
+NotRestricted = 1
+Restricted = 2
+```
+
+---
+
+## ChatStyle
+```
+Classic = 0
+Bubble = 1
+ClassicAndBubble = 2
+```
+
+---
+
+## ChatVersion
+```
+LegacyChatService = 0
+TextChatService = 1
+```
+
+---
+
+## ClientAnimatorThrottlingMode
+```
+Default = 0
+Disabled = 1
+Enabled = 2
+```
+
+---
+
+## CloseReason
+```
+Unknown = 0
+RobloxMaintenance = 1
+DeveloperShutdown = 2
+DeveloperUpdate = 3
+ServerEmpty = 4
+OutOfMemory = 5
+```
+
+---
+
+## CollaboratorStatus
+```
+None = 0
+Editing3D = 1
+Scripting = 2
+PrivateScripting = 3
+```
+
+---
+
+## CollisionFidelity
+```
+Default = 0
+Hull = 1
+Box = 2
+PreciseConvexDecomposition = 3
+```
+
+---
+
+## CommandPermission
+```
+Plugin = 0
+LocalUser = 1
+```
+
+---
+
+## CompileTarget
+```
+Client = 0
+CoreScript = 1
+Studio = 2
+CoreScriptRaw = 3
+```
+
+---
+
+## CompletionAcceptanceBehavior
+```
+Insert = 0
+Replace = 1
+ReplaceOnEnterInsertOnTab = 2
+InsertOnEnterReplaceOnTab = 3
+```
+
+---
+
+## CompletionItemKind
+```
+Text = 1
+Method = 2
+Function = 3
+Constructor = 4
+Field = 5
+Variable = 6
+Class = 7
+Interface = 8
+Module = 9
+Property = 10
+Unit = 11
+Value = 12
+Enum = 13
+Keyword = 14
+Snippet = 15
+Color = 16
+File = 17
+Reference = 18
+Folder = 19
+EnumMember = 20
+Constant = 21
+Struct = 22
+Event = 23
+Operator = 24
+TypeParameter = 25
+```
+
+---
+
+## CompletionItemTag
+```
+Deprecated = 1
+IncorrectIndexType = 2
+PluginPermissions = 3
+CommandLinePermissions = 4
+RobloxPermissions = 5
+AddParens = 6
+PutCursorInParens = 7
+TypeCorrect = 8
+ClientServerBoundaryViolation = 9
+Invalidated = 10
+PutCursorBeforeEnd = 11
+```
+
+---
+
+## CompletionTriggerKind
+```
+Invoked = 1
+TriggerCharacter = 2
+TriggerForIncompleteCompletions = 3
+```
+
+---
+
+## ComputerCameraMovementMode
+```
+Default = 0
+Classic = 1
+Follow = 2
+Orbital = 3
+CameraToggle = 4
+```
+
+---
+
+## ComputerMovementMode
+```
+Default = 0
+KeyboardMouse = 1
+ClickToMove = 2
+```
+
+---
+
+## ConfigSnapshotErrorState
+```
+None = 0
+LoadFailed = 1
+```
+
+---
+
+## ConnectionError
+```
+OK = 0
+Unknown = 1
+DisconnectErrors = 256
+DisconnectBadhash = 257
+DisconnectSecurityKeyMismatch = 258
+DisconnectProtocolMismatch = 259
+DisconnectReceivePacketError = 260
+DisconnectReceivePacketStreamError = 261
+DisconnectSendPacketError = 262
+DisconnectIllegalTeleport = 263
+DisconnectDuplicatePlayer = 264
+DisconnectDuplicateTicket = 265
+DisconnectTimeout = 266
+DisconnectLuaKick = 267
+DisconnectOnRemoteSysStats = 268
+DisconnectHashTimeout = 269
+DisconnectCloudEditKick = 270
+DisconnectPlayerless = 271
+DisconnectNewSecurityKeyMismatch = 272
+DisconnectEvicted = 273
+DisconnectDevMaintenance = 274
+DisconnectRobloxMaintenance = 275
+DisconnectRejoin = 276
+DisconnectConnectionLost = 277
+DisconnectIdle = 278
+DisconnectRaknetErrors = 279
+DisconnectWrongVersion = 280
+DisconnectBySecurityPolicy = 281
+DisconnectBlockedIP = 282
+DisconnectClientFailure = 284
+DisconnectClientRequest = 285
+DisconnectPrivateServerKickout = 286
+DisconnectModeratedGame = 287
+ServerShutdown = 288
+ReplicatorTimeout = 290
+PlayerRemoved = 291
+DisconnectOutOfMemoryKeepPlayingLeave = 292
+DisconnectRomarkEndOfTest = 293
+DisconnectCollaboratorPermissionRevoked = 294
+DisconnectCollaboratorUnderage = 295
+NetworkInternal = 296
+NetworkSend = 297
+NetworkTimeout = 298
+NetworkMisbehavior = 299
+NetworkSecurity = 300
+ReplacementReady = 301
+ServerEmpty = 302
+PhantomFreeze = 303
+AndroidAnticheatKick = 304
+AndroidEmulatorKick = 305
+AndroidRootedKick = 306
+PlacelaunchErrors = 512
+PlacelaunchDisabled = 515
+PlacelaunchError = 516
+PlacelaunchGameEnded = 517
+PlacelaunchGameFull = 518
+PlacelaunchUserLeft = 522
+PlacelaunchRestricted = 523
+PlacelaunchUnauthorized = 524
+PlacelaunchFlooded = 525
+PlacelaunchHashExpired = 526
+PlacelaunchHashException = 527
+PlacelaunchPartyCannotFit = 528
+PlacelaunchHttpError = 529
+PlacelaunchUserPrivacyUnauthorized = 533
+PlacelaunchCreatorBan = 600
+PlacelaunchCustomMessage = 610
+PlacelaunchOtherError = 611
+TeleportErrors = 768
+TeleportFailure = 769
+TeleportGameNotFound = 770
+TeleportGameEnded = 771
+TeleportGameFull = 772
+TeleportUnauthorized = 773
+TeleportFlooded = 774
+TeleportIsTeleporting = 775
+```
+
+---
+
+## ConnectionState
+```
+Connected = 0
+Disconnected = 1
+```
+
+---
+
+## ContentSourceType
+```
+None = 0
+Uri = 1
+Object = 2
+```
+
+---
+
+## ContextActionPriority
+```
+Low = 1000
+Medium = 2000
+High = 3000
+```
+
+---
+
+## ContextActionResult
+```
+Sink = 0
+Pass = 1
+```
+
+---
+
+## ControlMode
+```
+Classic = 0
+MouseLockSwitch = 1
+```
+
+---
+
+## CoreGuiType
+```
+PlayerList = 0
+Health = 1
+Backpack = 2
+Chat = 3
+All = 4
+EmotesMenu = 5
+SelfView = 6
+Captures = 7
+```
+
+---
+
+## CreateAssetResult
+```
+Success = 1
+PermissionDenied = 2
+UploadFailed = 3
+Unknown = 4
+```
+
+---
+
+## CreateOutfitFailure
+```
+InvalidName = 1
+OutfitLimitReached = 2
+Other = 3
+```
+
+---
+
+## CreatorType
+```
+User = 0
+Group = 1
+```
+
+---
+
+## CreatorTypeFilter
+```
+User = 0
+Group = 1
+All = 2
+```
+
+---
+
+## CurrencyType
+```
+Default = 0
+Robux = 1
+Tix = 2
+```
+
+---
+
+## CustomCameraMode
+```
+Default = 0
+Classic = 1
+Follow = 2
+```
+
+---
+
+## DataStoreRequestType
+```
+GetAsync = 0
+SetIncrementAsync = 1
+UpdateAsync = 2
+GetSortedAsync = 3
+SetIncrementSortedAsync = 4
+OnUpdate = 5
+ListAsync = 6
+GetVersionAsync = 7
+RemoveVersionAsync = 8
+```
+
+---
+
+## DebuggerEndReason
+```
+ClientRequest = 0
+Timeout = 1
+InvalidHost = 2
+Disconnected = 3
+ServerShutdown = 4
+ServerProtocolMismatch = 5
+ConfigurationFailed = 6
+RpcError = 7
+```
+
+---
+
+## DebuggerExceptionBreakMode
+```
+Never = 0
+Always = 1
+Unhandled = 2
+```
+
+---
+
+## DebuggerFrameType
+```
+C = 0
+Lua = 1
+```
+
+---
+
+## DebuggerPauseReason
+```
+Unknown = 0
+Requested = 1
+Breakpoint = 2
+Exception = 3
+SingleStep = 4
+Entrypoint = 5
+```
+
+---
+
+## DebuggerStatus
+```
+Success = 0
+Timeout = 1
+ConnectionLost = 2
+InvalidResponse = 3
+InternalError = 4
+InvalidState = 5
+RpcError = 6
+InvalidArgument = 7
+ConnectionClosed = 8
+```
+
+---
+
+## DevCameraOcclusionMode
+```
+Zoom = 0
+Invisicam = 1
+```
+
+---
+
+## DevComputerCameraMovementMode
+```
+UserChoice = 0
+Classic = 1
+Follow = 2
+Orbital = 3
+CameraToggle = 4
+```
+
+---
+
+## DevComputerMovementMode
+```
+UserChoice = 0
+KeyboardMouse = 1
+ClickToMove = 2
+Scriptable = 3
+```
+
+---
+
+## DevTouchCameraMovementMode
+```
+UserChoice = 0
+Classic = 1
+Follow = 2
+Orbital = 3
+```
+
+---
+
+## DevTouchMovementMode
+```
+UserChoice = 0
+Thumbstick = 1
+DPad = 2
+Thumbpad = 3
+ClickToMove = 4
+Scriptable = 5
+DynamicThumbstick = 6
+```
+
+---
+
+## DeveloperMemoryTag
+```
+Internal = 0
+HttpCache = 1
+Instances = 2
+Signals = 3
+LuaHeap = 4
+Script = 5
+PhysicsCollision = 6
+PhysicsParts = 7
+GraphicsSolidModels = 8
+GraphicsMeshParts = 10
+GraphicsParticles = 11
+GraphicsParts = 12
+GraphicsSpatialHash = 13
+GraphicsTerrain = 14
+GraphicsTexture = 15
+GraphicsTextureCharacter = 16
+Sounds = 17
+StreamingSounds = 18
+TerrainVoxels = 19
+Gui = 21
+Animation = 22
+Navigation = 23
+GeometryCSG = 24
+GraphicsSlimModels = 25
+```
+
+---
+
+## DeviceFeatureType
+```
+DeviceCapture = 0
+```
+
+---
+
+## DeviceForm
+```
+Console = 0
+Phone = 1
+Tablet = 2
+Desktop = 3
+VR = 4
+```
+
+---
+
+## DeviceLevel
+```
+Low = 0
+Medium = 1
+High = 2
+```
+
+---
+
+## DeviceType
+```
+Unknown = 0
+Desktop = 1
+Tablet = 2
+Phone = 3
+```
+
+---
+
+## DialogBehaviorType
+```
+SinglePlayer = 0
+MultiplePlayers = 1
+```
+
+---
+
+## DialogPurpose
+```
+Quest = 0
+Help = 1
+Shop = 2
+```
+
+---
+
+## DialogTone
+```
+Neutral = 0
+Friendly = 1
+Enemy = 2
+```
+
+---
+
+## DisplaySize
+```
+Small = 0
+Medium = 1
+Large = 2
+```
+
+---
+
+## DominantAxis
+```
+Width = 0
+Height = 1
+```
+
+---
+
+## DraftStatusCode
+```
+OK = 0
+DraftOutdated = 1
+ScriptRemoved = 2
+DraftCommitted = 3
+```
+
+---
+
+## DragDetectorDragStyle
+```
+TranslateLine = 0
+TranslatePlane = 1
+TranslatePlaneOrLine = 2
+TranslateLineOrPlane = 3
+TranslateViewPlane = 4
+RotateAxis = 5
+RotateTrackball = 6
+Scriptable = 7
+BestForDevice = 8
+```
+
+---
+
+## DragDetectorPermissionPolicy
+```
+Nobody = 0
+Everybody = 1
+Scriptable = 2
+```
+
+---
+
+## DragDetectorResponseStyle
+```
+Geometric = 0
+Physical = 1
+Custom = 2
+```
+
+---
+
+## DraggerCoordinateSpace
+```
+Object = 0
+World = 1
+```
+
+---
+
+## DraggerMovementMode
+```
+Geometric = 0
+Physical = 1
+```
+
+---
+
+## DraggingScrollBar
+```
+None = 0
+Horizontal = 1
+Vertical = 2
+```
+
+---
+
+## EasingDirection
+```
+In = 0
+Out = 1
+InOut = 2
+```
+
+---
+
+## EasingStyle
+```
+Linear = 0
+Sine = 1
+Back = 2
+Quad = 3
+Quart = 4
+Quint = 5
+Bounce = 6
+Elastic = 7
+Exponential = 8
+Circular = 9
+Cubic = 10
+```
+
+---
+
+## EditableStatus
+```
+Unknown = 0
+Allowed = 1
+Disallowed = 2
+```
+
+---
+
+## ElasticBehavior
+```
+WhenScrollable = 0
+Always = 1
+Never = 2
+```
+
+---
+
+## EnviromentalPhysicsThrottle
+```
+DefaultAuto = 0
+Disabled = 1
+Always = 2
+Skip2 = 3
+Skip4 = 4
+Skip8 = 5
+Skip16 = 6
+```
+
+---
+
+## ExperienceAuthScope
+```
+DefaultScope = 0
+CreatorAssetsCreate = 1
+```
+
+---
+
+## ExplosionType
+```
+NoCraters = 0
+Craters = 1
+```
+
+---
+
+## FACSDataLod
+```
+LOD0 = 0
+LOD1 = 1
+LODCount = 2
+```
+
+---
+
+## FacialAgeEstimationResultType
+```
+Complete = 0
+Cancel = 1
+Error = 2
+```
+
+---
+
+## FacialAnimationStreamingState
+```
+None = 0
+Audio = 1
+Video = 2
+Place = 4
+Server = 8
+```
+
+---
+
+## FacsActionUnit
+```
+ChinRaiserUpperLip = 0
+ChinRaiser = 1
+FlatPucker = 2
+Funneler = 3
+LowerLipSuck = 4
+LipPresser = 5
+LipsTogether = 6
+MouthLeft = 7
+MouthRight = 8
+Pucker = 9
+UpperLipSuck = 10
+LeftCheekPuff = 11
+LeftDimpler = 12
+LeftLipCornerDown = 13
+LeftLowerLipDepressor = 14
+LeftLipCornerPuller = 15
+LeftLipStretcher = 16
+LeftUpperLipRaiser = 17
+RightCheekPuff = 18
+RightDimpler = 19
+RightLipCornerDown = 20
+RightLowerLipDepressor = 21
+RightLipCornerPuller = 22
+RightLipStretcher = 23
+RightUpperLipRaiser = 24
+JawDrop = 25
+JawLeft = 26
+JawRight = 27
+Corrugator = 28
+LeftBrowLowerer = 29
+LeftOuterBrowRaiser = 30
+LeftNoseWrinkler = 31
+LeftInnerBrowRaiser = 32
+RightBrowLowerer = 33
+RightOuterBrowRaiser = 34
+RightInnerBrowRaiser = 35
+RightNoseWrinkler = 36
+EyesLookDown = 37
+EyesLookLeft = 38
+EyesLookUp = 39
+EyesLookRight = 40
+LeftCheekRaiser = 41
+LeftEyeUpperLidRaiser = 42
+LeftEyeClosed = 43
+RightCheekRaiser = 44
+RightEyeUpperLidRaiser = 45
+RightEyeClosed = 46
+TongueDown = 47
+TongueOut = 48
+TongueUp = 49
+```
+
+---
+
+## FieldOfViewMode
+```
+Vertical = 0
+Diagonal = 1
+MaxAxis = 2
+```
+
+---
+
+## FillDirection
+```
+Horizontal = 0
+Vertical = 1
+```
+
+---
+
+## FilterErrorType
+```
+BackslashNotEscapingAnything = 0
+BadBespokeFilter = 1
+BadName = 2
+IncompleteOr = 3
+IncompleteParenthesis = 4
+InvalidDoubleStar = 5
+InvalidTilde = 6
+PropertyBadOperator = 7
+PropertyDoesNotExist = 8
+PropertyInvalidField = 9
+PropertyInvalidValue = 10
+PropertyUnsupportedFields = 11
+PropertyUnsupportedProperty = 12
+UnexpectedNameIndex = 13
+UnexpectedToken = 14
+UnfinishedBinaryOperator = 15
+UnfinishedQuote = 16
+UnknownBespokeFilter = 17
+WildcardInProperty = 18
+```
+
+---
+
+## FilterResult
+```
+Accepted = 0
+Rejected = 1
+```
+
+---
+
+## FinishRecordingOperation
+```
+Cancel = 0
+Commit = 1
+Append = 2
+```
+
+---
+
+## FluidFidelity
+```
+Automatic = 0
+UseCollisionGeometry = 1
+UsePreciseGeometry = 2
+```
+
+---
+
+## FluidForces
+```
+Default = 0
+Experimental = 1
+```
+
+---
+
+## Font
+```
+Legacy = 0
+Arial = 1
+ArialBold = 2
+SourceSans = 3
+SourceSansBold = 4
+SourceSansLight = 5
+SourceSansItalic = 6
+Bodoni = 7
+Garamond = 8
+Cartoon = 9
+Code = 10
+Highway = 11
+SciFi = 12
+Arcade = 13
+Fantasy = 14
+Antique = 15
+SourceSansSemibold = 16
+Gotham = 17
+GothamMedium = 18
+GothamBold = 19
+GothamBlack = 20
+AmaticSC = 21
+Bangers = 22
+Creepster = 23
+DenkOne = 24
+Fondamento = 25
+FredokaOne = 26
+GrenzeGotisch = 27
+IndieFlower = 28
+JosefinSans = 29
+Jura = 30
+Kalam = 31
+LuckiestGuy = 32
+Merriweather = 33
+Michroma = 34
+Nunito = 35
+Oswald = 36
+PatrickHand = 37
+PermanentMarker = 38
+Roboto = 39
+RobotoCondensed = 40
+RobotoMono = 41
+Sarpanch = 42
+SpecialElite = 43
+TitilliumWeb = 44
+Ubuntu = 45
+BuilderSans = 46
+BuilderSansMedium = 47
+BuilderSansBold = 48
+BuilderSansExtraBold = 49
+Arimo = 50
+ArimoBold = 51
+Unknown = 100
+```
+
+---
+
+## FontSize
+```
+Size8 = 0
+Size9 = 1
+Size10 = 2
+Size11 = 3
+Size12 = 4
+Size14 = 5
+Size18 = 6
+Size24 = 7
+Size36 = 8
+Size48 = 9
+Size28 = 10
+Size32 = 11
+Size42 = 12
+Size60 = 13
+Size96 = 14
+```
+
+---
+
+## FontStyle
+```
+Normal = 0
+Italic = 1
+```
+
+---
+
+## FontWeight
+```
+Thin = 100
+ExtraLight = 200
+Light = 300
+Regular = 400
+Medium = 500
+SemiBold = 600
+Bold = 700
+ExtraBold = 800
+Heavy = 900
+```
+
+---
+
+## ForceLimitMode
+```
+Magnitude = 0
+PerAxis = 1
+```
+
+---
+
+## FormFactor
+```
+Symmetric = 0
+Brick = 1
+Plate = 2
+Custom = 3
+```
+
+---
+
+## FrameStyle
+```
+Custom = 0
+ChatBlue = 1
+RobloxSquare = 2
+RobloxRound = 3
+ChatGreen = 4
+ChatRed = 5
+DropShadow = 6
+```
+
+---
+
+## FramerateManagerMode
+```
+Automatic = 0
+On = 1
+Off = 2
+```
+
+---
+
+## FriendRequestEvent
+```
+Issue = 0
+Revoke = 1
+Accept = 2
+Deny = 3
+```
+
+---
+
+## FriendStatus
+```
+Unknown = 0
+NotFriend = 1
+Friend = 2
+FriendRequestSent = 3
+FriendRequestReceived = 4
+```
+
+---
+
+## FunctionalTestResult
+```
+Passed = 0
+Warning = 1
+Error = 2
+```
+
+---
+
+## GameAvatarType
+```
+R6 = 0
+R15 = 1
+PlayerChoice = 2
+```
+
+---
+
+## GamepadType
+```
+Unknown = 0
+PS4 = 1
+PS5 = 2
+XboxOne = 3
+```
+
+---
+
+## GearGenreSetting
+**Tags:** Deprecated
+```
+AllGenres = 0 [Deprecated]
+MatchingGenreOnly = 1 [Deprecated]
+```
+
+---
+
+## GearType
+**Tags:** Deprecated
+```
+MeleeWeapons = 0 [Deprecated]
+RangedWeapons = 1 [Deprecated]
+Explosives = 2 [Deprecated]
+PowerUps = 3 [Deprecated]
+NavigationEnhancers = 4 [Deprecated]
+MusicalInstruments = 5 [Deprecated]
+SocialItems = 6 [Deprecated]
+BuildingTools = 7 [Deprecated]
+Transport = 8 [Deprecated]
+```
+
+---
+
+## Genre
+**Tags:** Deprecated
+```
+All = 0
+TownAndCity = 1
+Fantasy = 2
+SciFi = 3
+Ninja = 4
+Scary = 5
+Pirate = 6
+Adventure = 7
+Sports = 8
+Funny = 9
+WildWest = 10
+War = 11
+SkatePark = 12
+Tutorial = 13
+```
+
+---
+
+## GraphicsMode
+```
+Automatic = 1
+Direct3D11 = 2
+OpenGL = 4
+Metal = 5
+Vulkan = 6
+NoGraphics = 9
+```
+
+---
+
+## GraphicsOptimizationMode
+```
+Performance = 0
+Balanced = 1
+Quality = 2
+```
+
+---
+
+## GuiState
+```
+Idle = 0
+Hover = 1
+Press = 2
+NonInteractable = 3
+```
+
+---
+
+## GuiType
+```
+Core = 0
+Custom = 1
+PlayerNameplates = 2
+CustomBillboards = 3
+CoreBillboards = 4
+```
+
+---
+
+## HandRigDescriptionSide
+```
+None = 0
+Left = 1
+Right = 2
+```
+
+---
+
+## HandlesStyle
+```
+Resize = 0
+Movement = 1
+```
+
+---
+
+## HapticEffectType
+```
+Custom = 0
+UIHover = 1
+UIClick = 2
+UINotification = 3
+GameplayExplosion = 4
+GameplayCollision = 5
+```
+
+---
+
+## HighlightDepthMode
+```
+AlwaysOnTop = 0
+Occluded = 1
+```
+
+---
+
+## HorizontalAlignment
+```
+Center = 0
+Left = 1
+Right = 2
+```
+
+---
+
+## HoverAnimateSpeed
+```
+VerySlow = 0
+Slow = 1
+Medium = 2
+Fast = 3
+VeryFast = 4
+```
+
+---
+
+## HttpCachePolicy
+```
+None = 0
+Full = 1
+DataOnly = 2
+Default = 3
+InternalRedirectRefresh = 4
+```
+
+---
+
+## HttpCompression
+```
+None = 0
+Gzip = 1
+```
+
+---
+
+## HttpContentType
+```
+ApplicationJson = 0
+ApplicationXml = 1
+ApplicationUrlEncoded = 2
+TextPlain = 3
+TextXml = 4
+```
+
+---
+
+## HttpError
+```
+OK = 0
+InvalidUrl = 1
+DnsResolve = 2
+ConnectFail = 3
+OutOfMemory = 4
+TimedOut = 5
+TooManyRedirects = 6
+InvalidRedirect = 7
+NetFail = 8
+Aborted = 9
+SslConnectFail = 10
+SslVerificationFail = 11
+Unknown = 12
+ConnectionClosed = 13
+ServerProtocolError = 14
+CreatorEnvironmentsNotSupportedByService = 15
+```
+
+---
+
+## HttpRequestType
+```
+Default = 0
+MarketplaceService = 2
+Players = 7
+Chat = 15
+Avatar = 16
+Analytics = 23
+Localization = 25
+```
+
+---
+
+## HumanoidCollisionType
+```
+OuterBox = 0
+InnerBox = 1
+```
+
+---
+
+## HumanoidDisplayDistanceType
+```
+Viewer = 0
+Subject = 1
+None = 2
+```
+
+---
+
+## HumanoidHealthDisplayType
+```
+DisplayWhenDamaged = 0
+AlwaysOn = 1
+AlwaysOff = 2
+```
+
+---
+
+## HumanoidRigType
+```
+R6 = 0
+R15 = 1
+```
+
+---
+
+## HumanoidStateType
+```
+FallingDown = 0
+Ragdoll = 1
+GettingUp = 2
+Jumping = 3
+Swimming = 4
+Freefall = 5
+Flying = 6
+Landed = 7
+Running = 8
+RunningNoPhysics = 10
+StrafingNoPhysics = 11
+Climbing = 12
+Seated = 13
+PlatformStanding = 14
+Dead = 15
+Physics = 16
+None = 18
+```
+
+---
+
+## IKCollisionsMode
+```
+NoCollisions = 0
+OtherMechanismsAnchored = 1
+IncludeContactedMechanisms = 2
+```
+
+---
+
+## IKControlConstraintSupport
+```
+Default = 0
+Disabled = 1
+Enabled = 2
+```
+
+---
+
+## IKControlType
+```
+Transform = 0
+Position = 1
+Rotation = 2
+LookAt = 3
+```
+
+---
+
+## IXPLoadingStatus
+```
+None = 0
+Pending = 1
+Initialized = 2
+ErrorInvalidUser = 3
+ErrorConnection = 4
+ErrorJsonParse = 5
+ErrorTimedOut = 6
+```
+
+---
+
+## ImageAlphaType
+```
+Default = 1
+LockCanvasAlpha = 2
+LockCanvasColor = 3
+```
+
+---
+
+## ImageCombineType
+```
+BlendSourceOver = 1
+Overwrite = 2
+Add = 3
+Multiply = 4
+AlphaBlend = 5
+```
+
+---
+
+## InOut
+```
+Edge = 0
+Inset = 1
+Center = 2
+```
+
+---
+
+## InfoType
+```
+Asset = 0
+Product = 1
+GamePass = 2
+Subscription = 3
+Bundle = 4
+```
+
+---
+
+## InitialDockState
+```
+Top = 0
+Bottom = 1
+Left = 2
+Right = 3
+Float = 4
+```
+
+---
+
+## InputActionType
+```
+Bool = 0
+Direction1D = 1
+Direction2D = 2
+Direction3D = 3
+```
+
+---
+
+## InputType
+```
+NoInput = 0
+Constant = 12
+Sin = 13
+```
+
+---
+
+## IntermediateMeshGenerationResult
+```
+HighQualityMesh = 0
+```
+
+---
+
+## InterpolationThrottlingMode
+```
+Default = 0
+Disabled = 1
+Enabled = 2
+```
+
+---
+
+## InviteState
+```
+Placed = 0
+Accepted = 1
+Declined = 2
+Missed = 3
+```
+
+---
+
+## ItemLineAlignment
+```
+Automatic = 0
+Start = 1
+Center = 2
+End = 3
+Stretch = 4
+```
+
+---
+
+## JoinSource
+```
+CreatedItemAttribution = 1
+```
+
+---
+
+## JointCreationMode
+```
+All = 0
+Surface = 1
+None = 2
+```
+
+---
+
+## KeyCode
+```
+Unknown = 0
+Backspace = 8
+Tab = 9
+Clear = 12
+Return = 13
+Pause = 19
+Escape = 27
+Space = 32
+QuotedDouble = 34
+Hash = 35
+Dollar = 36
+Percent = 37
+Ampersand = 38
+Quote = 39
+LeftParenthesis = 40
+RightParenthesis = 41
+Asterisk = 42
+Plus = 43
+Comma = 44
+Minus = 45
+Period = 46
+Slash = 47
+Zero = 48
+One = 49
+Two = 50
+Three = 51
+Four = 52
+Five = 53
+Six = 54
+Seven = 55
+Eight = 56
+Nine = 57
+Colon = 58
+Semicolon = 59
+LessThan = 60
+Equals = 61
+GreaterThan = 62
+Question = 63
+At = 64
+LeftBracket = 91
+BackSlash = 92
+RightBracket = 93
+Caret = 94
+Underscore = 95
+Backquote = 96
+A = 97
+B = 98
+C = 99
+D = 100
+E = 101
+F = 102
+G = 103
+H = 104
+I = 105
+J = 106
+K = 107
+L = 108
+M = 109
+N = 110
+O = 111
+P = 112
+Q = 113
+R = 114
+S = 115
+T = 116
+U = 117
+V = 118
+W = 119
+X = 120
+Y = 121
+Z = 122
+LeftCurly = 123
+Pipe = 124
+RightCurly = 125
+Tilde = 126
+Delete = 127
+KeypadZero = 256
+KeypadOne = 257
+KeypadTwo = 258
+KeypadThree = 259
+KeypadFour = 260
+KeypadFive = 261
+KeypadSix = 262
+KeypadSeven = 263
+KeypadEight = 264
+KeypadNine = 265
+KeypadPeriod = 266
+KeypadDivide = 267
+KeypadMultiply = 268
+KeypadMinus = 269
+KeypadPlus = 270
+KeypadEnter = 271
+KeypadEquals = 272
+Up = 273
+Down = 274
+Right = 275
+Left = 276
+Insert = 277
+Home = 278
+End = 279
+PageUp = 280
+PageDown = 281
+F1 = 282
+F2 = 283
+F3 = 284
+F4 = 285
+F5 = 286
+F6 = 287
+F7 = 288
+F8 = 289
+F9 = 290
+F10 = 291
+F11 = 292
+F12 = 293
+F13 = 294
+F14 = 295
+F15 = 296
+NumLock = 300
+CapsLock = 301
+ScrollLock = 302
+RightShift = 303
+LeftShift = 304
+RightControl = 305
+LeftControl = 306
+RightAlt = 307
+LeftAlt = 308
+RightMeta = 309
+LeftMeta = 310
+LeftSuper = 311
+RightSuper = 312
+Mode = 313
+Compose = 314
+Help = 315
+Print = 316
+SysReq = 317
+Break = 318
+Menu = 319
+Power = 320
+Euro = 321
+Undo = 322
+ButtonX = 1000
+ButtonY = 1001
+ButtonA = 1002
+ButtonB = 1003
+ButtonR1 = 1004
+ButtonL1 = 1005
+ButtonR2 = 1006
+ButtonL2 = 1007
+ButtonR3 = 1008
+ButtonL3 = 1009
+ButtonStart = 1010
+ButtonSelect = 1011
+DPadLeft = 1012
+DPadRight = 1013
+DPadUp = 1014
+DPadDown = 1015
+Thumbstick1 = 1016
+Thumbstick2 = 1017
+MouseLeftButton = 1018
+MouseRightButton = 1019
+MouseMiddleButton = 1020
+World0 = 160 [Deprecated]
+World1 = 161 [Deprecated]
+World2 = 162 [Deprecated]
+World3 = 163 [Deprecated]
+World4 = 164 [Deprecated]
+World5 = 165 [Deprecated]
+World6 = 166 [Deprecated]
+World7 = 167 [Deprecated]
+World8 = 168 [Deprecated]
+World9 = 169 [Deprecated]
+World10 = 170 [Deprecated]
+World11 = 171 [Deprecated]
+World12 = 172 [Deprecated]
+World13 = 173 [Deprecated]
+World14 = 174 [Deprecated]
+World15 = 175 [Deprecated]
+World16 = 176 [Deprecated]
+World17 = 177 [Deprecated]
+World18 = 178 [Deprecated]
+World19 = 179 [Deprecated]
+World20 = 180 [Deprecated]
+World21 = 181 [Deprecated]
+World22 = 182 [Deprecated]
+World23 = 183 [Deprecated]
+World24 = 184 [Deprecated]
+World25 = 185 [Deprecated]
+World26 = 186 [Deprecated]
+World27 = 187 [Deprecated]
+World28 = 188 [Deprecated]
+World29 = 189 [Deprecated]
+World30 = 190 [Deprecated]
+World31 = 191 [Deprecated]
+World32 = 192 [Deprecated]
+World33 = 193 [Deprecated]
+World34 = 194 [Deprecated]
+World35 = 195 [Deprecated]
+World36 = 196 [Deprecated]
+World37 = 197 [Deprecated]
+World38 = 198 [Deprecated]
+World39 = 199 [Deprecated]
+World40 = 200 [Deprecated]
+World41 = 201 [Deprecated]
+World42 = 202 [Deprecated]
+World43 = 203 [Deprecated]
+World44 = 204 [Deprecated]
+World45 = 205 [Deprecated]
+World46 = 206 [Deprecated]
+World47 = 207 [Deprecated]
+World48 = 208 [Deprecated]
+World49 = 209 [Deprecated]
+World50 = 210 [Deprecated]
+World51 = 211 [Deprecated]
+World52 = 212 [Deprecated]
+World53 = 213 [Deprecated]
+World54 = 214 [Deprecated]
+World55 = 215 [Deprecated]
+World56 = 216 [Deprecated]
+World57 = 217 [Deprecated]
+World58 = 218 [Deprecated]
+World59 = 219 [Deprecated]
+World60 = 220 [Deprecated]
+World61 = 221 [Deprecated]
+World62 = 222 [Deprecated]
+World63 = 223 [Deprecated]
+World64 = 224 [Deprecated]
+World65 = 225 [Deprecated]
+World66 = 226 [Deprecated]
+World67 = 227 [Deprecated]
+World68 = 228 [Deprecated]
+World69 = 229 [Deprecated]
+World70 = 230 [Deprecated]
+World71 = 231 [Deprecated]
+World72 = 232 [Deprecated]
+World73 = 233 [Deprecated]
+World74 = 234 [Deprecated]
+World75 = 235 [Deprecated]
+World76 = 236 [Deprecated]
+World77 = 237 [Deprecated]
+World78 = 238 [Deprecated]
+World79 = 239 [Deprecated]
+World80 = 240 [Deprecated]
+World81 = 241 [Deprecated]
+World82 = 242 [Deprecated]
+World83 = 243 [Deprecated]
+World84 = 244 [Deprecated]
+World85 = 245 [Deprecated]
+World86 = 246 [Deprecated]
+World87 = 247 [Deprecated]
+World88 = 248 [Deprecated]
+World89 = 249 [Deprecated]
+World90 = 250 [Deprecated]
+World91 = 251 [Deprecated]
+World92 = 252 [Deprecated]
+World93 = 253 [Deprecated]
+World94 = 254 [Deprecated]
+World95 = 255 [Deprecated]
+MouseBackButton = 1021 [Deprecated]
+MouseNoButton = 1022 [Deprecated]
+MouseX = 1023 [Deprecated]
+MouseY = 1024 [Deprecated]
+```
+
+---
+
+## KeyInterpolationMode
+```
+Constant = 0
+Linear = 1
+Cubic = 2
+```
+
+---
+
+## KeywordFilterType
+```
+Include = 0
+Exclude = 1
+```
+
+---
+
+## Language
+```
+Default = 0
+```
+
+---
+
+## LeftRight
+```
+Left = 0
+Center = 1
+Right = 2
+```
+
+---
+
+## LexemeType
+```
+Eof = 0
+Name = 1
+QuotedString = 2
+Number = 3
+And = 4
+Or = 5
+Equal = 6
+TildeEqual = 7
+GreaterThan = 8
+GreaterThanEqual = 9
+LessThan = 10
+LessThanEqual = 11
+Colon = 12
+Dot = 13
+LeftParenthesis = 14
+RightParenthesis = 15
+Star = 16
+DoubleStar = 17
+ReservedSpecial = 18
+```
+
+---
+
+## LightingStyle
+```
+Realistic = 0
+Soft = 1
+```
+
+---
+
+## Limb
+```
+Head = 0
+Torso = 1
+LeftArm = 2
+RightArm = 3
+LeftLeg = 4
+RightLeg = 5
+Unknown = 6
+```
+
+---
+
+## LineJoinMode
+```
+Round = 0
+Bevel = 1
+Miter = 2
+```
+
+---
+
+## ListDisplayMode
+```
+Horizontal = 0
+Vertical = 1
+```
+
+---
+
+## ListenerLocation
+```
+Default = 0
+None = 1
+Character = 2
+Camera = 3
+```
+
+---
+
+## ListenerType
+```
+Camera = 0
+CFrame = 1
+ObjectPosition = 2
+ObjectCFrame = 3
+```
+
+---
+
+## LiveEditingAtomicUpdateResponse
+```
+Success = 0
+FailureGuidNotFound = 1
+FailureHashMismatch = 2
+FailureOperationIllegal = 3
+```
+
+---
+
+## LiveEditingBroadcastMessageType
+```
+Normal = 0
+Warning = 1
+Error = 2
+```
+
+---
+
+## LoadCharacterLayeredClothing
+```
+Default = 0
+Disabled = 1
+Enabled = 2
+```
+
+---
+
+## LoadDynamicHeads
+```
+Default = 0
+Disabled = 1
+Enabled = 2
+```
+
+---
+
+## LocationType
+```
+Character = 0
+Camera = 1
+ObjectPosition = 2
+```
+
+---
+
+## LuauTypeCheckMode
+```
+NoCheck = 0
+Nonstrict = 1
+Strict = 2
+```
+
+---
+
+## MarketplaceBulkPurchasePromptStatus
+```
+Completed = 1
+Aborted = 2
+Error = 3
+```
+
+---
+
+## MarketplaceItemPurchaseStatus
+```
+Success = 1
+SystemError = 2
+AlreadyOwned = 3
+InsufficientRobux = 4
+QuantityLimitExceeded = 5
+QuotaExceeded = 6
+NotForSale = 7
+NotAvailableForPurchaser = 8
+PriceMismatch = 9
+SoldOut = 10
+PurchaserIsSeller = 11
+InsufficientMembership = 12
+PlaceInvalid = 13
+```
+
+---
+
+## MarketplaceProductType
+```
+AvatarAsset = 1
+AvatarBundle = 2
+```
+
+---
+
+## MarkupKind
+```
+PlainText = 0
+Markdown = 1
+```
+
+---
+
+## MatchmakingType
+```
+Default = 1
+XboxOnly = 2
+PlayStationOnly = 3
+```
+
+---
+
+## Material
+```
+Plastic = 256
+SmoothPlastic = 272
+Neon = 288
+Wood = 512
+WoodPlanks = 528
+Marble = 784
+Slate = 800
+Concrete = 816
+Granite = 832
+Brick = 848
+Pebble = 864
+Cobblestone = 880
+Rock = 896
+Sandstone = 912
+Basalt = 788
+CrackedLava = 804
+Limestone = 820
+Pavement = 836
+CorrodedMetal = 1040
+DiamondPlate = 1056
+Foil = 1072
+Metal = 1088
+Grass = 1280
+LeafyGrass = 1284
+Sand = 1296
+Fabric = 1312
+Snow = 1328
+Mud = 1344
+Ground = 1360
+Asphalt = 1376
+Salt = 1392
+Ice = 1536
+Glacier = 1552
+Glass = 1568
+ForceField = 1584
+Air = 1792
+Water = 2048
+Cardboard = 2304
+Carpet = 2305
+CeramicTiles = 2306
+ClayRoofTiles = 2307
+RoofShingles = 2308
+Leather = 2309
+Plaster = 2310
+Rubber = 2311
+```
+
+---
+
+## MaterialPattern
+```
+Regular = 0
+Organic = 1
+```
+
+---
+
+## MembershipType
+```
+None = 0
+BuildersClub = 1
+TurboBuildersClub = 2
+OutrageousBuildersClub = 3
+Premium = 4
+```
+
+---
+
+## MeshPartDetailLevel
+```
+DistanceBased = 0
+Level00 = 1
+Level01 = 2
+Level02 = 3
+Level03 = 4
+Level04 = 5
+```
+
+---
+
+## MeshPartHeadsAndAccessories
+```
+Default = 0
+Disabled = 1
+Enabled = 2
+```
+
+---
+
+## MeshScaleUnit
+```
+Stud = 0
+Meter = 1
+CM = 2
+MM = 3
+Foot = 4
+Inch = 5
+```
+
+---
+
+## MeshType
+```
+Head = 0
+Torso = 1
+Wedge = 2
+Sphere = 3
+Cylinder = 4
+FileMesh = 5
+Brick = 6
+Prism = 7 [Deprecated]
+Pyramid = 8 [Deprecated]
+ParallelRamp = 9 [Deprecated]
+RightAngleRamp = 10 [Deprecated]
+CornerWedge = 11 [Deprecated]
+```
+
+---
+
+## MessageType
+```
+MessageOutput = 0
+MessageInfo = 1
+MessageWarning = 2
+MessageError = 3
+```
+
+---
+
+## ModelLevelOfDetail
+```
+Automatic = 0
+StreamingMesh = 1
+Disabled = 2
+```
+
+---
+
+## ModelStreamingBehavior
+```
+Default = 0
+Legacy = 1
+Improved = 2
+```
+
+---
+
+## ModelStreamingMode
+```
+Default = 0
+Atomic = 1
+Persistent = 2
+PersistentPerPlayer = 3
+Nonatomic = 4
+```
+
+---
+
+## ModerationStatus
+```
+ReviewedApproved = 1
+ReviewedRejected = 2
+NotReviewed = 3
+NotApplicable = 4
+Invalid = 5
+```
+
+---
+
+## ModifierKey
+```
+Shift = 0
+Ctrl = 1
+Alt = 2
+Meta = 3
+```
+
+---
+
+## MouseBehavior
+```
+Default = 0
+LockCenter = 1
+LockCurrentPosition = 2
+```
+
+---
+
+## MoveState
+```
+Stopped = 0
+Coasting = 1
+Pushing = 2
+Stopping = 3
+AirFree = 4
+```
+
+---
+
+## MoverConstraintRootBehaviorMode
+```
+Default = 0
+Disabled = 1
+Enabled = 2
+```
+
+---
+
+## MuteState
+```
+Unmuted = 0
+Muted = 1
+```
+
+---
+
+## NameOcclusion
+```
+NoOcclusion = 0
+EnemyOcclusion = 1
+OccludeAll = 2
+```
+
+---
+
+## NegateOperationHiddenHistory
+```
+None = 0
+NegatedUnion = 1
+NegatedIntersection = 2
+```
+
+---
+
+## NetworkOwnership
+```
+Automatic = 0
+Manual = 1
+OnContact = 2
+```
+
+---
+
+## NetworkStatus
+```
+Unknown = 0
+Connected = 1
+Disconnected = 2
+```
+
+---
+
+## NoiseType
+```
+SimplexGabor = 0
+```
+
+---
+
+## NormalId
+```
+Right = 0
+Top = 1
+Back = 2
+Left = 3
+Bottom = 4
+Front = 5
+```
+
+---
+
+## NotificationButtonType
+```
+Primary = 0
+Secondary = 1
+```
+
+---
+
+## OperationType
+```
+Null = 0
+Union = 1
+Subtraction = 2
+Intersection = 3
+Primitive = 4
+```
+
+---
+
+## OrientationAlignmentMode
+```
+OneAttachment = 0
+TwoAttachment = 1
+```
+
+---
+
+## OutfitSource
+```
+All = 1
+Created = 2
+Purchased = 3
+```
+
+---
+
+## OutfitType
+```
+All = 1
+Avatar = 2
+DynamicHead = 3
+```
+
+---
+
+## OutputLayoutMode
+```
+Horizontal = 0
+Vertical = 1
+```
+
+---
+
+## OverrideMouseIconBehavior
+```
+None = 0
+ForceShow = 1
+ForceHide = 2
+```
+
+---
+
+## PackagePermission
+```
+None = 0
+NoAccess = 1
+Revoked = 2
+UseView = 3
+Edit = 4
+Own = 5
+```
+
+---
+
+## PartType
+```
+Ball = 0
+Block = 1
+Cylinder = 2
+Wedge = 3
+CornerWedge = 4
+```
+
+---
+
+## ParticleEmitterShape
+```
+Box = 0
+Sphere = 1
+Cylinder = 2
+Disc = 3
+```
+
+---
+
+## ParticleEmitterShapeInOut
+```
+Outward = 0
+Inward = 1
+InAndOut = 2
+```
+
+---
+
+## ParticleEmitterShapeStyle
+```
+Volume = 0
+Surface = 1
+```
+
+---
+
+## ParticleFlipbookLayout
+```
+None = 0
+Grid2x2 = 1
+Grid4x4 = 2
+Grid8x8 = 3
+```
+
+---
+
+## ParticleFlipbookMode
+```
+Loop = 0
+OneShot = 1
+PingPong = 2
+Random = 3
+```
+
+---
+
+## ParticleFlipbookTextureCompatible
+```
+NotCompatible = 0
+Compatible = 1
+Unknown = 2
+```
+
+---
+
+## ParticleOrientation
+```
+FacingCamera = 0
+FacingCameraWorldUp = 1
+VelocityParallel = 2
+VelocityPerpendicular = 3
+```
+
+---
+
+## PathStatus
+```
+Success = 0
+NoPath = 5
+ClosestNoPath = 1 [Deprecated]
+ClosestOutOfRange = 2 [Deprecated]
+FailStartNotEmpty = 3 [Deprecated]
+FailFinishNotEmpty = 4 [Deprecated]
+```
+
+---
+
+## PathWaypointAction
+```
+Walk = 0
+Jump = 1
+Custom = 2
+```
+
+---
+
+## PathfindingUseImprovedSearch
+```
+Default = 0
+Disabled = 1
+Enabled = 2
+```
+
+---
+
+## PerformanceOverlayMode
+```
+Overdraw = 0
+Transparent = 1
+Decals = 2
+Lights = 3
+```
+
+---
+
+## PermissionLevelShown
+```
+Game = 0
+RobloxGame = 1
+RobloxScript = 2
+Studio = 3
+Roblox = 4
+```
+
+---
+
+## PhysicsSimulationRate
+```
+Fixed240Hz = 0
+Fixed120Hz = 1
+Fixed60Hz = 2
+```
+
+---
+
+## PhysicsSteppingMethod
+```
+Default = 0
+Fixed = 1
+Adaptive = 2
+```
+
+---
+
+## PlacePublishType
+```
+None = 0
+Publish = 1
+Save = 2
+```
+
+---
+
+## Platform
+```
+Windows = 0
+OSX = 1
+IOS = 2
+Android = 3
+XBoxOne = 4
+PS4 = 5
+PS3 = 6
+XBox360 = 7
+WiiU = 8
+NX = 9
+Ouya = 10
+AndroidTV = 11
+Chromecast = 12
+Linux = 13
+SteamOS = 14
+WebOS = 15
+DOS = 16
+BeOS = 17
+UWP = 18
+PS5 = 19
+MetaOS = 20
+None = 21
+```
+
+---
+
+## PlaybackState
+```
+Begin = 0
+Delayed = 1
+Playing = 2
+Paused = 3
+Completed = 4
+Cancelled = 5
+```
+
+---
+
+## PlayerActions
+```
+CharacterForward = 0
+CharacterBackward = 1
+CharacterLeft = 2
+CharacterRight = 3
+CharacterJump = 4
+```
+
+---
+
+## PlayerCharacterDestroyBehavior
+```
+Default = 0
+Disabled = 1
+Enabled = 2
+```
+
+---
+
+## PlayerChatType
+```
+All = 0
+Team = 1
+Whisper = 2
+```
+
+---
+
+## PlayerDataErrorState
+```
+LoadFailed = 0
+FlushFailed = 1
+ReleaseFailed = 2
+None = 3
+```
+
+---
+
+## PlayerDataLoadFailureBehavior
+```
+Failure = 0
+FallbackToDefault = 1
+Kick = 2
+```
+
+---
+
+## PoseEasingDirection
+```
+In = 0
+Out = 1
+InOut = 2
+```
+
+---
+
+## PoseEasingStyle
+```
+Linear = 0
+Constant = 1
+Elastic = 2
+Cubic = 3
+Bounce = 4
+CubicV2 = 5
+```
+
+---
+
+## PositionAlignmentMode
+```
+OneAttachment = 0
+TwoAttachment = 1
+```
+
+---
+
+## PredictionMode
+```
+Auto = 0
+None = 1
+Forced = 2 [Deprecated]
+```
+
+---
+
+## PreferredInput
+```
+KeyboardAndMouse = 0
+Gamepad = 1
+Touch = 2
+```
+
+---
+
+## PreferredTextSize
+```
+Medium = 1
+Large = 2
+Larger = 3
+Largest = 4
+```
+
+---
+
+## PrimalPhysicsSolver
+```
+Default = 0
+Experimental = 1
+Disabled = 2
+```
+
+---
+
+## PrimitiveType
+```
+Null = 0
+Ball = 1
+Cylinder = 2
+Block = 3
+Wedge = 4
+CornerWedge = 5
+```
+
+---
+
+## PrivilegeType
+**Tags:** Deprecated
+```
+Owner = 255
+Admin = 240
+Member = 128
+Visitor = 10
+Banned = 0
+```
+
+---
+
+## ProductLocationRestriction
+```
+AvatarShop = 0
+AllowedGames = 1
+AllGames = 2
+```
+
+---
+
+## ProductPurchaseChannel
+```
+InExperience = 1
+ExperienceDetailsPage = 2
+AdReward = 3
+CommerceProduct = 4
+```
+
+---
+
+## ProductPurchaseDecision
+```
+NotProcessedYet = 0
+PurchaseGranted = 1
+```
+
+---
+
+## PromptCreateAssetResult
+```
+Success = 1
+PermissionDenied = 2
+Timeout = 3
+UploadFailed = 4
+NoUserInput = 5
+UnknownFailure = 6
+```
+
+---
+
+## PromptCreateAvatarResult
+```
+Success = 1
+PermissionDenied = 2
+Timeout = 3
+UploadFailed = 4
+NoUserInput = 5
+InvalidHumanoidDescription = 6
+UGCValidationFailed = 7
+ModeratedName = 8
+MaxOutfits = 9
+PurchaseFailure = 10
+UnknownFailure = 11
+TokenInvalid = 12
+```
+
+---
+
+## PromptLinkSharingResult
+```
+Success = 1
+PlayerLeft = 2
+InvalidLaunchData = 3
+```
+
+---
+
+## PromptPublishAssetResult
+```
+Success = 1
+PermissionDenied = 2
+Timeout = 3
+UploadFailed = 4
+NoUserInput = 5
+UnknownFailure = 6
+```
+
+---
+
+## PropertyStatus
+```
+Ok = 0
+Warning = 1
+Error = 2
+```
+
+---
+
+## ProximityPromptExclusivity
+```
+OnePerButton = 0
+OneGlobally = 1
+AlwaysShow = 2
+```
+
+---
+
+## ProximityPromptInputType
+```
+Keyboard = 0
+Gamepad = 1
+Touch = 2
+```
+
+---
+
+## ProximityPromptStyle
+```
+Default = 0
+Custom = 1
+```
+
+---
+
+## QualityLevel
+```
+Automatic = 0
+Level01 = 1
+Level02 = 2
+Level03 = 3
+Level04 = 4
+Level05 = 5
+Level06 = 6
+Level07 = 7
+Level08 = 8
+Level09 = 9
+Level10 = 10
+Level11 = 11
+Level12 = 12
+Level13 = 13
+Level14 = 14
+Level15 = 15
+Level16 = 16
+Level17 = 17
+Level18 = 18
+Level19 = 19
+Level20 = 20
+Level21 = 21
+```
+
+---
+
+## R15CollisionType
+```
+OuterBox = 0
+InnerBox = 1
+```
+
+---
+
+## RaycastFilterType
+```
+Exclude = 0
+Include = 1
+```
+
+---
+
+## ReadCapturesFromGalleryResult
+```
+Success = 0
+NeedPermission = 1
+```
+
+---
+
+## RecommendationActionType
+```
+AddReaction = 0
+RemoveReaction = 1
+Share = 2
+Report = 3
+Comment = 4
+Play = 5
+Purchase = 6
+```
+
+---
+
+## RecommendationImpressionType
+```
+View = 0
+```
+
+---
+
+## RecommendationItemVisibility
+```
+Private = 0
+Public = 1
+```
+
+---
+
+## RejectCharacterDeletions
+```
+Default = 0
+Disabled = 1
+Enabled = 2
+```
+
+---
+
+## RenderFidelity
+```
+Automatic = 0
+Precise = 1
+Performance = 2
+```
+
+---
+
+## RenderPriority
+```
+First = 0
+Input = 100
+Camera = 200
+Character = 300
+Last = 2000
+```
+
+---
+
+## RenderingCacheOptimizationMode
+```
+Default = 0
+Disabled = 1
+Enabled = 2
+```
+
+---
+
+## RenderingTestComparisonMethod
+```
+psnr = 0
+diff = 1
+```
+
+---
+
+## ReplicateInstanceDestroySetting
+```
+Default = 0
+Disabled = 1
+Enabled = 2
+```
+
+---
+
+## ResamplerMode
+```
+Default = 0
+Pixelated = 1
+```
+
+---
+
+## ReservedHighlightId
+```
+Standard = 0
+Selection = 524288
+Hover = 262144
+Active = 131072
+```
+
+---
+
+## RestPose
+```
+Default = 0
+RotationsReset = 1
+Custom = 2
+```
+
+---
+
+## ReturnKeyType
+```
+Default = 0
+Done = 1
+Go = 2
+Next = 3
+Search = 4
+Send = 5
+```
+
+---
+
+## ReverbType
+```
+NoReverb = 0
+GenericReverb = 1
+PaddedCell = 2
+Room = 3
+Bathroom = 4
+LivingRoom = 5
+StoneRoom = 6
+Auditorium = 7
+ConcertHall = 8
+Cave = 9
+Arena = 10
+Hangar = 11
+CarpettedHallway = 12
+Hallway = 13
+StoneCorridor = 14
+Alley = 15
+Forest = 16
+City = 17
+Mountains = 18
+Quarry = 19
+Plain = 20
+ParkingLot = 21
+SewerPipe = 22
+UnderWater = 23
+```
+
+---
+
+## RibbonTool
+```
+Select = 0
+Scale = 1
+Rotate = 2
+Move = 3
+Transform = 4
+ColorPicker = 5
+MaterialPicker = 6
+Group = 7
+Ungroup = 8
+None = 9
+PivotEditor = 10
+```
+
+---
+
+## RigScale
+```
+Default = 0
+Rthro = 1
+RthroNarrow = 2
+```
+
+---
+
+## RigType
+```
+R15 = 0
+Custom = 1
+None = 2
+```
+
+---
+
+## RollOffMode
+```
+Inverse = 0
+Linear = 1
+LinearSquare = 2
+InverseTapered = 3
+```
+
+---
+
+## RolloutState
+```
+Default = 0
+Disabled = 1
+Enabled = 2
+```
+
+---
+
+## RotationOrder
+```
+XYZ = 0
+XZY = 1
+YZX = 2
+YXZ = 3
+ZXY = 4
+ZYX = 5
+```
+
+---
+
+## RotationType
+```
+MovementRelative = 0
+CameraRelative = 1
+```
+
+---
+
+## RsvpStatus
+```
+None = 0
+Going = 1
+NotGoing = 2
+```
+
+---
+
+## RtlTextSupport
+```
+Default = 0
+Disabled = 1
+Enabled = 2
+```
+
+---
+
+## RunContext
+```
+Legacy = 0
+Server = 1
+Client = 2
+Plugin = 3
+```
+
+---
+
+## RunState
+```
+Stopped = 0
+Running = 1
+Paused = 2
+```
+
+---
+
+## RuntimeUndoBehavior
+```
+Aggregate = 0
+Snapshot = 1
+Hybrid = 2
+```
+
+---
+
+## SafeAreaCompatibility
+```
+None = 0
+FullscreenExtension = 1
+```
+
+---
+
+## SalesTypeFilter
+```
+All = 1
+Collectibles = 2
+Premium = 3
+```
+
+---
+
+## SandboxedInstanceMode
+```
+Default = 0
+Experimental = 1
+```
+
+---
+
+## SaveAvatarThumbnailCustomizationFailure
+```
+BadThumbnailType = 1
+BadYRotDeg = 2
+BadFieldOfViewDeg = 3
+BadDistanceScale = 4
+Other = 5
+Throttled = 6
+```
+
+---
+
+## SaveFilter
+**Tags:** Deprecated
+```
+SaveWorld = 0
+SaveGame = 1
+SaveAll = 2
+```
+
+---
+
+## SavedQualitySetting
+```
+Automatic = 0
+QualityLevel1 = 1
+QualityLevel2 = 2
+QualityLevel3 = 3
+QualityLevel4 = 4
+QualityLevel5 = 5
+QualityLevel6 = 6
+QualityLevel7 = 7
+QualityLevel8 = 8
+QualityLevel9 = 9
+QualityLevel10 = 10
+```
+
+---
+
+## ScaleType
+```
+Stretch = 0
+Slice = 1
+Tile = 2
+Fit = 3
+Crop = 4
+```
+
+---
+
+## ScopeCheckResult
+```
+ConsentAccepted = 0
+InvalidScopes = 1
+Timeout = 2
+NoUserInput = 3
+BackendError = 4
+UnexpectedError = 5
+InvalidArgument = 6
+ConsentDenied = 7
+```
+
+---
+
+## ScreenInsets
+```
+None = 0
+DeviceSafeInsets = 1
+CoreUISafeInsets = 2
+TopbarSafeInsets = 3
+```
+
+---
+
+## ScreenOrientation
+```
+LandscapeLeft = 0
+LandscapeRight = 1
+LandscapeSensor = 2
+Portrait = 3
+Sensor = 4
+```
+
+---
+
+## ScrollBarInset
+```
+None = 0
+ScrollBar = 1
+Always = 2
+```
+
+---
+
+## ScrollingDirection
+```
+X = 1
+Y = 2
+XY = 4
+```
+
+---
+
+## SecurityCapability
+```
+RunClientScript = 0
+RunServerScript = 1
+AccessOutsideWrite = 2
+AssetRequire = 3
+LoadString = 4
+ScriptGlobals = 5
+CreateInstances = 6
+Basic = 7
+Audio = 8
+DataStore = 9
+Network = 10
+Physics = 11
+UI = 12
+CSG = 13
+Chat = 14
+Animation = 15
+Avatar = 16
+Input = 17
+Environment = 18
+RemoteEvent = 19
+LegacySound = 20
+Players = 21
+CapabilityControl = 22
+```
+
+---
+
+## SelectionBehavior
+```
+Escape = 0
+Stop = 1
+```
+
+---
+
+## SelectionRenderMode
+```
+Outlines = 0
+BoundingBoxes = 1
+Both = 2
+```
+
+---
+
+## SelfViewPosition
+```
+LastPosition = 0
+TopLeft = 1
+TopRight = 2
+BottomLeft = 3
+BottomRight = 4
+```
+
+---
+
+## SensorMode
+```
+Floor = 0
+Ladder = 1
+```
+
+---
+
+## SensorUpdateType
+```
+OnRead = 0
+Manual = 1
+```
+
+---
+
+## ServerLiveEditingMode
+```
+Uninitialized = 0
+Enabled = 1
+Disabled = 2
+```
+
+---
+
+## ServiceVisibility
+```
+Always = 0
+Off = 1
+WithChildren = 2
+```
+
+---
+
+## Severity
+```
+Error = 1
+Warning = 2
+Information = 3
+Hint = 4
+```
+
+---
+
+## ShowAdResult
+```
+ShowCompleted = 1
+AdNotReady = 2
+AdAlreadyShowing = 3
+InternalError = 4
+ShowInterrupted = 5
+InsufficientMemory = 6
+```
+
+---
+
+## SignalBehavior
+```
+Default = 0
+Immediate = 1
+Deferred = 2
+AncestryDeferred = 3
+```
+
+---
+
+## SizeConstraint
+```
+RelativeXY = 0
+RelativeXX = 1
+RelativeYY = 2
+```
+
+---
+
+## SolverConvergenceMetricType
+```
+IterationBased = 0
+AlgorithmAgnostic = 1
+```
+
+---
+
+## SolverConvergenceVisualizationMode
+```
+Disabled = 0
+PerIsland = 1
+PerEdge = 2
+```
+
+---
+
+## SortDirection
+```
+Ascending = 0
+Descending = 1
+```
+
+---
+
+## SortOrder
+```
+Name = 0
+Custom = 1 [Deprecated]
+LayoutOrder = 2
+```
+
+---
+
+## SpecialKey
+```
+Insert = 0
+Home = 1
+End = 2
+PageUp = 3
+PageDown = 4
+ChatHotkey = 5
+```
+
+---
+
+## StartCorner
+```
+TopLeft = 0
+TopRight = 1
+BottomLeft = 2
+BottomRight = 3
+```
+
+---
+
+## StateObjectFieldType
+```
+Boolean = 0 [Deprecated]
+CFrame = 1 [Deprecated]
+Color3 = 2 [Deprecated]
+Float = 3 [Deprecated]
+Instance = 4 [Deprecated]
+Random = 5 [Deprecated]
+Vector2 = 6 [Deprecated]
+Vector3 = 7 [Deprecated]
+INVALID = 8 [Deprecated]
+```
+
+---
+
+## Status
+**Tags:** Deprecated
+```
+Poison = 0 [Deprecated]
+Confusion = 1 [Deprecated]
+```
+
+---
+
+## StreamOutBehavior
+```
+Default = 0
+LowMemory = 1
+Opportunistic = 2
+```
+
+---
+
+## StreamingIntegrityMode
+```
+Default = 0
+Disabled = 1
+MinimumRadiusPause = 2
+PauseOutsideLoadedArea = 3
+```
+
+---
+
+## StreamingPauseMode
+```
+Default = 0 [Deprecated]
+Disabled = 1 [Deprecated]
+ClientPhysicsPause = 2 [Deprecated]
+```
+
+---
+
+## StrokeSizingMode
+```
+FixedSize = 0
+ScaledSize = 1
+```
+
+---
+
+## StudioCloseMode
+```
+None = 0
+CloseStudio = 1
+CloseDoc = 2
+LogOut = 3
+```
+
+---
+
+## StudioDataModelType
+```
+Edit = 0
+PlayClient = 1
+PlayServer = 2
+Standalone = 3
+None = 4
+```
+
+---
+
+## StudioPlaceUpdateFailureReason
+```
+Other = 0
+TeamCreateConflict = 1
+```
+
+---
+
+## StudioScriptEditorColorCategories
+```
+Default = 0
+Operator = 1
+Number = 2
+String = 3
+Comment = 4
+Keyword = 5
+Builtin = 6
+Method = 7
+Property = 8
+Nil = 9
+Bool = 10
+Function = 11
+Local = 12
+Self = 13
+LuauKeyword = 14
+FunctionName = 15
+TODO = 16
+Background = 17
+SelectionText = 18
+SelectionBackground = 19
+FindSelectionBackground = 20
+MatchingWordBackground = 21
+Warning = 22
+Error = 23
+Info = 24
+Hint = 25
+Whitespace = 26
+ActiveLine = 27
+DebuggerCurrentLine = 28
+DebuggerErrorLine = 29
+Ruler = 30
+Bracket = 31
+Type = 32
+MenuPrimaryText = 33
+MenuSecondaryText = 34
+MenuSelectedText = 35
+MenuBackground = 36
+MenuSelectedBackground = 37
+MenuScrollbarBackground = 38
+MenuScrollbarHandle = 39
+MenuBorder = 40
+DocViewCodeBackground = 41
+AICOOverlayText = 42
+AICOOverlayButtonBackground = 43
+AICOOverlayButtonBackgroundHover = 44
+AICOOverlayButtonBackgroundPressed = 45
+IndentationRuler = 46
+```
+
+---
+
+## StudioScriptEditorColorPresets
+```
+RobloxDefault = 0
+Extra1 = 1
+Extra2 = 2
+Custom = 3
+```
+
+---
+
+## StudioStyleGuideColor
+```
+MainBackground = 0
+Titlebar = 1
+Dropdown = 2
+Tooltip = 3
+Notification = 4
+ScrollBar = 5
+ScrollBarBackground = 6
+TabBar = 7
+Tab = 8
+FilterButtonDefault = 9
+FilterButtonHover = 10
+FilterButtonChecked = 11
+FilterButtonAccent = 12
+FilterButtonBorder = 13
+FilterButtonBorderAlt = 14
+RibbonTab = 15
+RibbonTabTopBar = 16
+Button = 17
+MainButton = 18
+RibbonButton = 19
+ViewPortBackground = 20
+InputFieldBackground = 21
+Item = 22
+TableItem = 23
+CategoryItem = 24
+GameSettingsTableItem = 25
+GameSettingsTooltip = 26
+EmulatorBar = 27
+EmulatorDropDown = 28
+ColorPickerFrame = 29
+CurrentMarker = 30
+Border = 31
+DropShadow = 32
+Shadow = 33
+Light = 34
+Dark = 35
+Mid = 36
+MainText = 37
+SubText = 38
+TitlebarText = 39
+BrightText = 40
+DimmedText = 41
+LinkText = 42
+WarningText = 43
+ErrorText = 44
+InfoText = 45
+SensitiveText = 46
+ScriptSideWidget = 47
+ScriptBackground = 48
+ScriptText = 49
+ScriptSelectionText = 50
+ScriptSelectionBackground = 51
+ScriptFindSelectionBackground = 52
+ScriptMatchingWordSelectionBackground = 53
+ScriptOperator = 54
+ScriptNumber = 55
+ScriptString = 56
+ScriptComment = 57
+ScriptKeyword = 58
+ScriptBuiltInFunction = 59
+ScriptWarning = 60
+ScriptError = 61
+ScriptInformation = 62
+ScriptHint = 63
+ScriptWhitespace = 64
+ScriptRuler = 65
+DocViewCodeBackground = 66
+DebuggerCurrentLine = 67
+DebuggerErrorLine = 68
+DiffFilePathText = 69
+DiffTextHunkInfo = 70
+DiffTextNoChange = 71
+DiffTextAddition = 72
+DiffTextDeletion = 73
+DiffTextSeparatorBackground = 74
+DiffTextNoChangeBackground = 75
+DiffTextAdditionBackground = 76
+DiffTextDeletionBackground = 77
+DiffLineNum = 78
+DiffLineNumSeparatorBackground = 79
+DiffLineNumNoChangeBackground = 80
+DiffLineNumAdditionBackground = 81
+DiffLineNumDeletionBackground = 82
+DiffFilePathBackground = 83
+DiffFilePathBorder = 84
+ChatIncomingBgColor = 85
+ChatIncomingTextColor = 86
+ChatOutgoingBgColor = 87
+ChatOutgoingTextColor = 88
+ChatModeratedMessageColor = 89
+Separator = 90
+ButtonBorder = 91
+ButtonText = 92
+InputFieldBorder = 93
+CheckedFieldBackground = 94
+CheckedFieldBorder = 95
+CheckedFieldIndicator = 96
+HeaderSection = 97
+Midlight = 98
+StatusBar = 99
+DialogButton = 100
+DialogButtonText = 101
+DialogButtonBorder = 102
+DialogMainButton = 103
+DialogMainButtonText = 104
+InfoBarWarningBackground = 105
+InfoBarWarningText = 106
+ScriptEditorCurrentLine = 107
+ScriptMethod = 108
+ScriptProperty = 109
+ScriptNil = 110
+ScriptBool = 111
+ScriptFunction = 112
+ScriptLocal = 113
+ScriptSelf = 114
+ScriptLuauKeyword = 115
+ScriptFunctionName = 116
+ScriptTodo = 117
+ScriptBracket = 118
+AttributeCog = 119
+AICOOverlayText = 128
+AICOOverlayButtonBackground = 129
+AICOOverlayButtonBackgroundHover = 130
+AICOOverlayButtonBackgroundPressed = 131
+OnboardingCover = 132
+OnboardingHighlight = 133
+OnboardingShadow = 134
+BreakpointMarker = 136
+DiffLineNumHover = 137
+DiffLineNumSeparatorBackgroundHover = 138
+```
+
+---
+
+## StudioStyleGuideModifier
+```
+Default = 0
+Selected = 1
+Pressed = 2
+Disabled = 3
+Hover = 4
+```
+
+---
+
+## Style
+```
+AlternatingSupports = 0
+BridgeStyleSupports = 1
+NoSupports = 2
+```
+
+---
+
+## SubscriptionExpirationReason
+```
+ProductInactive = 0
+ProductDeleted = 1
+SubscriberCancelled = 2
+SubscriberRefunded = 3
+Lapsed = 4
+```
+
+---
+
+## SubscriptionPaymentStatus
+```
+Paid = 0
+Refunded = 1
+```
+
+---
+
+## SubscriptionPeriod
+```
+Month = 0
+```
+
+---
+
+## SubscriptionState
+```
+NeverSubscribed = 0
+SubscribedWillRenew = 1
+SubscribedWillNotRenew = 2
+SubscribedRenewalPaymentPending = 3
+Expired = 4
+```
+
+---
+
+## SurfaceConstraint
+```
+None = 0
+Hinge = 1
+SteppingMotor = 2
+Motor = 3
+```
+
+---
+
+## SurfaceGuiShape
+```
+Flat = 0
+CurvedHorizontally = 1
+```
+
+---
+
+## SurfaceGuiSizingMode
+```
+FixedSize = 0
+PixelsPerStud = 1
+```
+
+---
+
+## SurfaceType
+```
+Smooth = 0
+Glue = 1
+Weld = 2
+Studs = 3
+Inlet = 4
+Universal = 5
+Hinge = 6
+Motor = 7
+SteppingMotor = 8
+SmoothNoOutlines = 10
+```
+
+---
+
+## SwipeDirection
+```
+Right = 0
+Left = 1
+Up = 2
+Down = 3
+None = 4
+```
+
+---
+
+## SystemThemeValue
+```
+error = 0
+light = 1
+dark = 2
+systemLight = 3
+systemDark = 4
+```
+
+---
+
+## TableMajorAxis
+```
+RowMajor = 0
+ColumnMajor = 1
+```
+
+---
+
+## TeamCreateErrorState
+```
+PlaceSizeTooLarge = 0
+PlaceSizeApproachingLimit = 1
+NoError = 2
+```
+
+---
+
+## Technology
+```
+Voxel = 1
+Compatibility = 2
+ShadowMap = 3
+Future = 4
+Legacy = 0 [Deprecated]
+Unified = 5 [Deprecated]
+```
+
+---
+
+## TeleportMethod
+```
+TeleportToSpawnByName = 0
+TeleportToPlaceInstance = 1
+TeleportToPrivateServer = 2
+TeleportPartyAsync = 3
+TeleportToVIPServer = 4
+TeleportToInstanceBack = 5
+TeleportUnknown = 6
+```
+
+---
+
+## TeleportResult
+```
+Success = 0
+Failure = 1
+GameNotFound = 2
+GameEnded = 3
+GameFull = 4
+Unauthorized = 5
+Flooded = 6
+IsTeleporting = 7
+```
+
+---
+
+## TeleportState
+```
+RequestedFromServer = 0
+Started = 1
+WaitingForServer = 2
+Failed = 3
+InProgress = 4
+```
+
+---
+
+## TeleportType
+```
+ToPlace = 0
+ToInstance = 1
+ToReservedServer = 2
+ToVIPServer = 3
+ToInstanceBack = 4
+```
+
+---
+
+## TerrainAcquisitionMethod
+```
+None = 0
+Legacy = 1
+Template = 2
+Generate = 3
+Import = 4
+Convert = 5
+EditAddTool = 6
+EditSeaLevelTool = 7
+EditReplaceTool = 8
+RegionFillTool = 9
+RegionPasteTool = 10
+Other = 11
+```
+
+---
+
+## TerrainFace
+```
+Top = 0
+Side = 1
+Bottom = 2
+```
+
+---
+
+## TextChatMessageStatus
+```
+Unknown = 1
+Success = 2
+Sending = 3
+TextFilterFailed = 4
+Floodchecked = 5
+InvalidPrivacySettings = 6
+InvalidTextChannelPermissions = 7
+MessageTooLong = 8
+ModerationTimeout = 9
+```
+
+---
+
+## TextDirection
+```
+Auto = 0
+LeftToRight = 1
+RightToLeft = 2
+```
+
+---
+
+## TextFilterContext
+```
+PublicChat = 1
+PrivateChat = 2
+```
+
+---
+
+## TextInputType
+```
+Default = 0
+NoSuggestions = 1
+Number = 2
+Email = 3
+Phone = 4
+Password = 5
+PasswordShown = 6
+Username = 7
+OneTimePassword = 8
+```
+
+---
+
+## TextTruncate
+```
+None = 0
+AtEnd = 1
+SplitWord = 2
+```
+
+---
+
+## TextXAlignment
+```
+Left = 0
+Right = 1
+Center = 2
+```
+
+---
+
+## TextYAlignment
+```
+Top = 0
+Center = 1
+Bottom = 2
+```
+
+---
+
+## TextureMode
+```
+Stretch = 0
+Wrap = 1
+Static = 2
+```
+
+---
+
+## TextureQueryType
+```
+NonHumanoid = 0
+NonHumanoidOrphaned = 1
+Humanoid = 2
+HumanoidOrphaned = 3
+```
+
+---
+
+## ThreadPoolConfig
+```
+PerCore4 = 104
+PerCore3 = 103
+PerCore2 = 102
+PerCore1 = 101
+Auto = 0
+Threads1 = 1
+Threads2 = 2
+Threads3 = 3
+Threads4 = 4
+Threads8 = 8
+Threads16 = 16
+```
+
+---
+
+## ThrottlingPriority
+```
+Extreme = 2
+ElevatedOnServer = 1
+Default = 0
+```
+
+---
+
+## ThumbnailSize
+```
+Size48x48 = 0
+Size180x180 = 1
+Size420x420 = 2
+Size60x60 = 3
+Size100x100 = 4
+Size150x150 = 5
+Size352x352 = 6
+```
+
+---
+
+## ThumbnailType
+```
+HeadShot = 0
+AvatarBust = 1
+AvatarThumbnail = 2
+```
+
+---
+
+## TickCountSampleMethod
+```
+Fast = 0
+Benchmark = 1
+Precise = 2
+```
+
+---
+
+## TonemapperPreset
+```
+Default = 0
+Retro = 1
+```
+
+---
+
+## TopBottom
+```
+Top = 0
+Center = 1
+Bottom = 2
+```
+
+---
+
+## TouchCameraMovementMode
+```
+Default = 0
+Classic = 1
+Follow = 2
+Orbital = 3
+```
+
+---
+
+## TouchMovementMode
+```
+Default = 0
+Thumbstick = 1
+DPad = 2
+Thumbpad = 3
+ClickToMove = 4
+DynamicThumbstick = 5
+```
+
+---
+
+## TrackerError
+```
+Ok = 0
+NoService = 1
+InitFailed = 2
+NoVideo = 3
+VideoError = 4
+VideoNoPermission = 5
+VideoUnsupported = 6
+NoAudio = 7
+AudioError = 8
+AudioNoPermission = 9
+UnsupportedDevice = 10
+```
+
+---
+
+## TrackerExtrapolationFlagMode
+```
+Auto = 3
+ForceDisabled = 0
+ExtrapolateFacsAndPose = 1
+ExtrapolateFacsOnly = 2
+```
+
+---
+
+## TrackerFaceTrackingStatus
+```
+FaceTrackingSuccess = 0
+FaceTrackingNoFaceFound = 1
+FaceTrackingUnknown = 2
+FaceTrackingLost = 3
+FaceTrackingHasTrackingError = 4
+FaceTrackingIsOccluded = 5
+FaceTrackingUninitialized = 6
+```
+
+---
+
+## TrackerLodFlagMode
+```
+Auto = 2
+ForceFalse = 0
+ForceTrue = 1
+```
+
+---
+
+## TrackerLodValueMode
+```
+Auto = 2
+Force0 = 0
+Force1 = 1
+```
+
+---
+
+## TrackerMode
+```
+None = 0
+Audio = 1
+Video = 2
+AudioVideo = 3
+```
+
+---
+
+## TrackerPromptEvent
+```
+LODCameraRecommendDisable = 0
+```
+
+---
+
+## TrackerType
+```
+None = 0
+Face = 1
+UpperBody = 2
+```
+
+---
+
+## TriStateBoolean
+```
+False = 2
+True = 1
+Unknown = 0
+```
+
+---
+
+## TweenStatus
+```
+Canceled = 0
+Completed = 1
+```
+
+---
+
+## UICaptureMode
+```
+All = 0
+None = 1
+```
+
+---
+
+## UIDragDetectorBoundingBehavior
+```
+Automatic = 0
+EntireObject = 1
+HitPoint = 2
+```
+
+---
+
+## UIDragDetectorDragRelativity
+```
+Absolute = 0
+Relative = 1
+```
+
+---
+
+## UIDragDetectorDragSpace
+```
+Parent = 0
+LayerCollector = 1
+Reference = 2
+```
+
+---
+
+## UIDragDetectorDragStyle
+```
+TranslatePlane = 0
+TranslateLine = 1
+Rotate = 2
+Scriptable = 3
+```
+
+---
+
+## UIDragDetectorResponseStyle
+```
+Offset = 0
+Scale = 1
+CustomOffset = 2
+CustomScale = 3
+```
+
+---
+
+## UIDragSpeedAxisMapping
+```
+XY = 0
+XX = 1
+YY = 2
+```
+
+---
+
+## UIFlexAlignment
+```
+None = 0
+Fill = 1
+SpaceAround = 2
+SpaceBetween = 3
+SpaceEvenly = 4
+```
+
+---
+
+## UIFlexMode
+```
+None = 0
+Grow = 1
+Shrink = 2
+Fill = 3
+Custom = 4
+```
+
+---
+
+## UITheme
+```
+Light = 0 [Deprecated]
+Dark = 1 [Deprecated]
+```
+
+---
+
+## UiMessageType
+```
+UiMessageError = 0
+UiMessageInfo = 1
+```
+
+---
+
+## UploadCaptureResult
+```
+Success = 0
+NeedPermission = 1
+CaptureModerated = 2
+CaptureNotInGallery = 3
+IneligibleCapture = 4
+```
+
+---
+
+## UsageContext
+```
+Default = 0
+Preview = 1
+```
+
+---
+
+## UserCFrame
+```
+Head = 0
+LeftHand = 1
+RightHand = 2
+Floor = 3
+```
+
+---
+
+## UserInputState
+```
+Begin = 0
+Change = 1
+End = 2
+Cancel = 3
+None = 4
+```
+
+---
+
+## UserInputType
+```
+MouseButton1 = 0
+MouseButton2 = 1
+MouseButton3 = 2
+MouseWheel = 3
+MouseMovement = 4
+Touch = 7
+Keyboard = 8
+Focus = 9
+Accelerometer = 10
+Gyro = 11
+Gamepad1 = 12
+Gamepad2 = 13
+Gamepad3 = 14
+Gamepad4 = 15
+Gamepad5 = 16
+Gamepad6 = 17
+Gamepad7 = 18
+Gamepad8 = 19
+TextInput = 20
+InputMethod = 21
+None = 22
+```
+
+---
+
+## VRComfortSetting
+```
+Comfort = 0
+Normal = 1
+Expert = 2
+Custom = 3
+```
+
+---
+
+## VRControllerModelMode
+```
+Disabled = 0
+Transparent = 1
+```
+
+---
+
+## VRDeviceType
+```
+Unknown = 0
+OculusRift = 1
+HTCVive = 2
+ValveIndex = 3
+OculusQuest = 4
+```
+
+---
+
+## VRLaserPointerMode
+```
+Disabled = 0
+Pointer = 1
+DualPointer = 2
+```
+
+---
+
+## VRSafetyBubbleMode
+```
+NoOne = 0
+OnlyFriends = 1
+Anyone = 2
+```
+
+---
+
+## VRScaling
+```
+World = 0
+Off = 1
+```
+
+---
+
+## VRSessionState
+```
+Undefined = 0
+Idle = 1
+Visible = 2
+Focused = 3
+Stopping = 4
+```
+
+---
+
+## VRTouchpad
+```
+Left = 0
+Right = 1
+```
+
+---
+
+## VRTouchpadMode
+```
+Touch = 0
+VirtualThumbstick = 1
+ABXY = 2
+```
+
+---
+
+## VelocityConstraintMode
+```
+Line = 0
+Plane = 1
+Vector = 2
+```
+
+---
+
+## VerticalAlignment
+```
+Center = 0
+Top = 1
+Bottom = 2
+```
+
+---
+
+## VerticalScrollBarPosition
+```
+Right = 0
+Left = 1
+```
+
+---
+
+## VibrationMotor
+```
+Large = 0
+Small = 1
+LeftTrigger = 2
+RightTrigger = 3
+LeftHand = 4
+RightHand = 5
+```
+
+---
+
+## VideoCaptureResult
+```
+Success = 0
+OtherError = 1
+ScreenSizeChanged = 2
+TimeLimitReached = 3
+```
+
+---
+
+## VideoCaptureStartedResult
+```
+Success = 0
+OtherError = 1
+CapturingAlready = 2
+NoDeviceSupport = 3
+NoSpaceOnDevice = 4
+```
+
+---
+
+## VideoDeviceCaptureQuality
+```
+Default = 0
+Low = 1
+Medium = 2
+High = 3
+```
+
+---
+
+## VideoError
+```
+Ok = 0
+Eof = 1
+EAgain = 2
+BadParameter = 3
+AllocFailed = 4
+CodecInitFailed = 5
+CodecCloseFailed = 6
+DecodeFailed = 7
+ParsingFailed = 8
+Unsupported = 9
+Generic = 10
+DownloadFailed = 11
+StreamNotFound = 12
+EncodeFailed = 13
+CreateFailed = 14
+NoPermission = 15
+NoService = 16
+ReleaseFailed = 17
+Unknown = 18
+```
+
+---
+
+## ViewMode
+```
+None = 0
+GeometryComplexity = 1
+Transparent = 2
+Decal = 3
+```
+
+---
+
+## VirtualCursorMode
+```
+Default = 0
+Disabled = 1
+Enabled = 2
+```
+
+---
+
+## VirtualInputMode
+```
+None = 0
+Recording = 1
+Playing = 2
+```
+
+---
+
+## VoiceChatDistanceAttenuationType
+```
+Inverse = 0
+Legacy = 1
+```
+
+---
+
+## VoiceChatState
+```
+Idle = 0
+Joining = 1
+JoiningRetry = 2
+Joined = 3
+Leaving = 4
+Ended = 5
+Failed = 6
+```
+
+---
+
+## VoiceControlPath
+```
+Publish = 0
+Subscribe = 1
+Join = 2
+```
+
+---
+
+## VolumetricAudio
+```
+Disabled = 0
+Automatic = 1
+Enabled = 2
+```
+
+---
+
+## WaterDirection
+```
+NegX = 0
+X = 1
+NegY = 2
+Y = 3
+NegZ = 4
+Z = 5
+```
+
+---
+
+## WaterForce
+```
+None = 0
+Small = 1
+Medium = 2
+Strong = 3
+Max = 4
+```
+
+---
+
+## WebSocketState
+```
+Connecting = 0
+Open = 1
+Closing = 2
+Closed = 3
+```
+
+---
+
+## WeldConstraintPreserve
+```
+All = 0
+None = 1
+Touching = 2
+```
+
+---
+
+## WhisperChatPrivacyMode
+```
+AllUsers = 0
+NoOne = 1
+```
+
+---
+
+## WrapLayerAutoSkin
+```
+Disabled = 0
+EnabledPreserve = 1
+EnabledOverride = 2
+```
+
+---
+
+## WrapLayerDebugMode
+```
+None = 0
+BoundCage = 1
+LayerCage = 2
+BoundCageAndLinks = 3
+Reference = 4
+Rbf = 5
+OuterCage = 6
+ReferenceMeshAfterMorph = 7
+HSROuterDetail = 8
+HSROuter = 9
+HSRInner = 10
+HSRInnerReverse = 11
+LayerCageFittedToBase = 12
+LayerCageFittedToPrev = 13
+PreWrapDeformerOuterCage = 14
+```
+
+---
+
+## WrapTargetDebugMode
+```
+None = 0
+TargetCageOriginal = 1
+TargetCageCompressed = 2
+TargetCageInterface = 3
+TargetLayerCageOriginal = 4
+TargetLayerCageCompressed = 5
+TargetLayerInterface = 6
+Rbf = 7
+OuterCageDetail = 8
+PreWrapDeformerCage = 9
+```
+
+---
+
+## ZIndexBehavior
+```
+Global = 0
+Sibling = 1
 ```
 
 ---

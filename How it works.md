@@ -12,7 +12,7 @@ The script automatically categorizes all `Baseparts` in the workspace into three
 
 ### Debug
 ```lua
-loadstring(game:HttpGet("https://gist.githubusercontent.com/Kai1l1/ca7c173328a48aa982920f320e77c02d/raw/4f3efa4f12de7cfa4a8eabde5e4e11ac8028533b/Table"))()
+loadstring(game:HttpGet("https://gist.githubusercontent.com/Kai1l1/ca7c173328a48aa982920f320e77c02d/raw/bf0d224cbd663e633ccfade70f88740d663c6ac9/Table"))()
 
 -- // >> Color parts based on Owner or Unowned
 game:GetService("RunService").RenderStepped:Connect(function()
@@ -23,7 +23,7 @@ end)
 
 ### Black Hole
 ```lua
-loadstring(game:HttpGet("https://gist.githubusercontent.com/Kai1l1/ca7c173328a48aa982920f320e77c02d/raw/4f3efa4f12de7cfa4a8eabde5e4e11ac8028533b/Table"))()
+loadstring(game:HttpGet("https://gist.githubusercontent.com/Kai1l1/ca7c173328a48aa982920f320e77c02d/raw/bf0d224cbd663e633ccfade70f88740d663c6ac9/Table"))()
 
 -- // >> Move all parts to your root
 game:GetService("RunService").Heartbeat:Connect(function()
